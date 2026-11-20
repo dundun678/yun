@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5.7 三角函数的应用 · 选择题逐题练习（在线练习）</title>
+<style>
+:root{
+  --bg:#f1f6fc; --card:#ffffff; --ink:#1e2a38; --muted:#6b7c90; --line:#e2ebf5;
+  --blue:#2563eb; --blue-d:#1d4ed8; --blue-l:#eaf2ff;
+  --teal:#0d9488; --teal-l:#e7f7f4;
+  --yellow:#e8a317; --yellow-l:#fff5dc;
+  --green:#15803d; --green-l:#edfaf0; --green-b:#b7e4c4;
+  --red:#c0392b; --red-l:#fdf0ee; --red-b:#f3c3bb;
+}
+*{box-sizing:border-box}
+[hidden]{display:none !important}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Microsoft YaHei","PingFang SC","Segoe UI","Cambria Math",sans-serif;
+  font-size:16px; line-height:1.85; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:920px; margin:0 auto; padding:26px 18px 70px}
+sub,sup{font-size:.72em; line-height:0}
+.paper,.notice,.q,.submit-bar{
+  background:var(--card); border:1px solid var(--line); border-radius:14px;
+  box-shadow:0 3px 16px rgba(31,64,110,.055);
+}
+.paper{padding:28px 30px 24px; margin-bottom:16px; border-top:4px solid var(--blue)}
+.kicker{
+  display:inline-block; font-size:12.5px; letter-spacing:.5px; color:var(--teal);
+  background:var(--teal-l); border-radius:20px; padding:3px 13px; margin-bottom:12px; font-weight:600;
+}
+h1{font-size:27px; line-height:1.4; margin:0 0 6px; letter-spacing:.5px; color:#16283f}
+.subtitle{color:var(--muted); font-size:14.5px; margin:0 0 18px}
+
+/* 成绩面板：位于标题下方，提交后显示 */
+.result{
+  display:flex; align-items:center; gap:28px; flex-wrap:wrap;
+  background:linear-gradient(105deg,#eef5ff 0%,#f7fbff 60%,#e9f8f4 100%);
+  border:1px solid #cfe1fa; border-radius:12px; padding:18px 24px; margin:4px 0 18px;
+  animation:pop .45s ease-out;
+}
+@keyframes pop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.result-label{font-size:13px; color:var(--muted); letter-spacing:1px; margin-bottom:2px}
+.result-score{font-size:38px; font-weight:800; color:var(--blue-d); line-height:1.15}
+.result-score small{font-size:17px; font-weight:600; margin-left:3px}
+.result-score .slash{font-size:15px; font-weight:500; color:var(--muted); margin-left:8px}
+.result-right{border-left:1px dashed #bcd3ee; padding-left:28px; min-width:170px}
+.grade-badge{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:52px; height:52px; border-radius:14px; font-size:30px; font-weight:800;
+  color:#fff; background:var(--blue); box-shadow:0 4px 12px rgba(37,99,235,.25);
+}
+.grade-badge.g-A{background:#15803d} .grade-badge.g-B{background:#2563eb}
+.grade-badge.g-C{background:#0d9488} .grade-badge.g-D{background:#e8a317}
+.grade-badge.g-E{background:#c0392b}
+.grade-desc{font-size:13.5px; color:var(--muted); margin-top:6px}
+
+.meta{display:flex; gap:9px; flex-wrap:wrap; margin-bottom:14px}
+.pill{font-size:13px; padding:3px 12px; border-radius:20px; font-weight:600}
+.pill.blue{background:var(--blue-l); color:var(--blue-d)}
+.pill.teal{background:var(--teal-l); color:var(--teal)}
+.pill.yellow{background:var(--yellow-l); color:#a9700a}
+.grade-scale{
+  border-top:1px dashed var(--line); padding-top:12px; font-size:13px; color:var(--muted);
+  display:flex; gap:8px 14px; flex-wrap:wrap; align-items:center;
+}
+.gs-title{font-weight:600; color:#4a5b70}
+.grade-scale .b{padding:1px 9px; border-radius:6px; background:#f3f7fc; border:1px solid var(--line); font-weight:500; color:#41546b}
+.grade-scale b.g{display:inline-block; min-width:18px; text-align:center; color:var(--blue-d)}
+
+.notice{padding:15px 20px; font-size:14.5px; color:#41546b; margin-bottom:22px; background:#fbfdff}
+.notice b{color:var(--blue-d)}
+
+.section-title{
+  font-size:17px; font-weight:700; color:#1c3352; margin:26px 4px 13px;
+  padding-left:12px; border-left:4px solid var(--teal);
+}
+.section-title span{font-size:13.5px; font-weight:500; color:var(--muted); margin-left:8px}
+
+.q{padding:22px 26px 20px; margin-bottom:16px; scroll-margin-top:20px}
+.q-head{display:flex; align-items:center; gap:10px; margin-bottom:12px; flex-wrap:wrap}
+.qno{
+  display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px;
+  border-radius:9px; background:var(--blue); color:#fff; font-weight:700; font-size:15px; flex:none;
+}
+.q-type{font-size:13px; color:var(--teal); background:var(--teal-l); border-radius:6px; padding:2px 9px; font-weight:600}
+.q-pts{font-size:13px; color:#a9700a; background:var(--yellow-l); border-radius:20px; padding:2px 11px; font-weight:600}
+.q-got{margin-left:auto; font-size:13.5px; font-weight:700; padding:2px 12px; border-radius:20px}
+.q-got.full{color:var(--green); background:var(--green-l); border:1px solid var(--green-b)}
+.q-got.part{color:#a9700a; background:var(--yellow-l); border:1px solid #f0dca8}
+.q-got.zero{color:var(--red); background:var(--red-l); border:1px solid var(--red-b)}
+.q-stem{font-size:16.2px; line-height:2; margin-bottom:14px; text-align:justify}
+.q-stem .blank{display:inline-block; min-width:52px; border-bottom:1px solid #8fa4bb; margin:0 4px}
+
+/* 选项紧凑排布：4 列（一行四选项）/ 2 列（两行）/ 1 列（逐行）
+   列数由 build_html.py 依据该题选项文本长度自动判定，也可在 JSON 中用 option_cols 覆盖 */
+.opts{display:grid; gap:9px; grid-template-columns:1fr}
+.opts.cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.opts.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.opts.cols-1{grid-template-columns:1fr}
+.opts.cols-4 .opt{padding:9px 10px; gap:8px}
+.opt{
+  display:flex; align-items:flex-start; gap:11px; padding:10px 14px;
+  border:1px solid var(--line); border-radius:10px; background:#fcfdff;
+  cursor:pointer; transition:background .15s,border-color .15s,transform .1s;
+}
+.opt:hover{background:var(--blue-l); border-color:#bcd4f7}
+.opt input{width:17px; height:17px; margin-top:6px; flex:none; accent-color:var(--blue); cursor:pointer}
+.ol{font-weight:700; color:var(--blue-d); flex:none; min-width:20px}
+.ot{flex:1; min-width:0; line-height:1.9; overflow-wrap:anywhere}
+.opt.is-correct{background:var(--green-l); border-color:var(--green-b)}
+.opt.is-correct .ol{color:var(--green)}
+.opt.is-wrong{background:var(--red-l); border-color:var(--red-b)}
+.opt.is-wrong .ol{color:var(--red)}
+.opt.locked{cursor:default}
+.opt.locked:hover{background:inherit; border-color:var(--line)}
+.opt.locked.is-correct:hover{background:var(--green-l); border-color:var(--green-b)}
+.opt.locked.is-wrong:hover{background:var(--red-l); border-color:var(--red-b)}
+
+.sol{
+  margin-top:16px; border:1px solid #cfe9d6; border-left:4px solid var(--green);
+  border-radius:10px; background:#f7fdf9; padding:16px 20px 14px;
+  animation:fadein .4s ease-out;
+}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.sol-answer{font-size:16px; font-weight:700; color:var(--green); margin-bottom:10px}
+.sol-answer b{font-size:19px; letter-spacing:2px}
+.sol-title{font-size:15px; font-weight:700; color:#1c3352; margin:12px 0 6px}
+.sol-body{font-size:14.7px; line-height:1.95; color:#34465c}
+.sol-body p{margin:6px 0}
+.sol-meta{font-size:13.2px; color:var(--muted); background:#f0f6fb; border-radius:8px; padding:7px 12px}
+.sol-sub{font-weight:700; color:var(--blue-d)}
+.judge{padding-left:2px}
+.jl{font-weight:700; color:#1c3352; margin-right:4px}
+.tip{color:#8a5a06; background:var(--yellow-l); border-radius:8px; padding:7px 12px}
+
+.submit-bar{padding:18px 24px; display:flex; align-items:center; gap:16px; flex-wrap:wrap; position:relative}
+button{
+  font-family:inherit; font-size:16px; font-weight:700; border-radius:10px;
+  padding:11px 34px; cursor:pointer; border:1px solid transparent; transition:all .15s;
+}
+#startBtn,#submitBtn{background:var(--blue); color:#fff; box-shadow:0 4px 12px rgba(37,99,235,.22)}
+#startBtn:hover,#submitBtn:hover{background:var(--blue-d); transform:translateY(-1px)}
+#prevBtn,#nextBtn,#resetBtn{background:#fff; color:var(--blue-d); border-color:#bcd4f7}
+#prevBtn:hover,#nextBtn:hover,#resetBtn:hover{background:var(--blue-l)}
+.bar-info{font-size:13.5px; color:var(--muted); margin-left:auto; text-align:right}
+.bar-info b{color:var(--blue-d)}
+.foot{text-align:center; color:#8b9bb0; font-size:12.5px; margin-top:22px}
+@media (max-width:620px){
+  .wrap{padding:14px 10px 50px} .paper{padding:20px 18px} h1{font-size:22px}
+  .q{padding:18px 16px} .result{gap:16px; padding:15px 18px}
+  .result-right{border-left:0; padding-left:0; border-top:1px dashed #bcd3ee; padding-top:12px; width:100%}
+  .bar-info{margin-left:0; text-align:left; width:100%}
+  /* 窄屏自动降列，避免 4 列过挤 */
+  .opts.cols-4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .opts.cols-2{grid-template-columns:1fr}
+  button{padding:11px 22px}
+}
+@media print{
+  body{background:#fff} .submit-bar{display:none} .paper,.notice,.q{box-shadow:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===== 试卷标题区 ===== -->
+  <header class="paper">
+    <div class="kicker">人教A版 · 必修第一册 · 第五章 三角函数 · 周测卷</div>
+    <h1>5.7 三角函数的应用 · 选择题逐题练习</h1>
+    <p class="subtitle">检测范围：本节全部小节（1 个小节 / 9 条知识点） ｜ 仅保留原卷的单项选择题与多项选择题及答案、解析</p>
+
+    <!-- 得分与等级：提交后显示在标题下方 -->
+    <div class="result" id="result" hidden>
+      <div class="result-left">
+        <div class="result-label">本次测试得分</div>
+        <div class="result-score"><span id="scoreNum">0</span><small>分</small><span class="slash">/ 满分 26 分</span></div>
+      </div>
+      <div class="result-right">
+        <div class="result-label">等级评定</div>
+        <div class="grade-badge" id="gradeBadge">A</div>
+        <div class="grade-desc" id="gradeDesc"></div>
+      </div>
+    </div>
+
+    <div class="meta">
+      <span class="pill blue">满分 26 分</span>
+      <span class="pill teal">单项选择题 5 题 × 4 分 = 20 分</span>
+      <span class="pill teal">多项选择题 1 题 × 6 分 = 6 分</span>
+      <span class="pill yellow">建议用时 14 分钟</span>
+    </div>
+    <!-- 等级划分：答题中隐藏，提交答案后随成绩一起显示 -->
+    <div class="grade-scale" id="gradeScale" hidden>
+      <span class="gs-title">等级划分（26 分等分为 5 档，每档 5.2 分）</span>
+      <span class="b"><b class="g">A</b> 20.8 ~ 26</span>
+      <span class="b"><b class="g">B</b> 15.6 ~ 20.8</span>
+      <span class="b"><b class="g">C</b> 10.4 ~ 15.6</span>
+      <span class="b"><b class="g">D</b> 5.2 ~ 10.4</span>
+      <span class="b"><b class="g">E</b> 0 ~ 5.2</span>
+    </div>
+  </header>
+
+  <!-- 答题说明：答题中隐藏，提交答案后显示 -->
+  <div class="notice" id="notice" hidden>
+    <b>答题说明：</b>单项选择题每题 4 分，答对得 4 分，答错或不答得 0 分；多项选择题每题 6 分，按正确选项个数均摊（3 个正确选项时每选对 1 个得 2 分，2 个正确选项时每选对 1 个得 3 分），但只要选错任意选项或不作答，该题即得 0 分。所有选项默认不勾选。作答完成后点击下方「提交答案」，系统将自动评分，并在每道题下方完整显示答案与解析。
+  </div>
+
+  <form id="quiz" autocomplete="off">
+        <div class="section-title" hidden>一、单项选择题<span>共 5 小题，共 20 分；每题只有一个选项符合题目要求</span></div>
+    <article class="q" data-type="single" data-answer="B" data-max="4.0" hidden>
+      <div class="q-head"><span class="qno">1</span><span class="q-type">单项选择题</span><span class="q-pts">4 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">关于简谐运动及其三角函数模型，下列说法正确的是<span class="blank"></span></div>
+      <div class="opts cols-1">
+        <label class="opt"><input type="radio" name="q1" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot">只要一组数据随时间增大而增大，就可以直接用 <i>y</i>=<i>A</i>sin (ω<i>x</i>+φ) 拟合</span></label>
+        <label class="opt"><input type="radio" name="q1" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot">简谐运动是某物理量随时间按正弦规律作周期性往复变化的运动，可用 <i>y</i>=<i>A</i>sin (ω<i>x</i>+φ) 刻画；其中 <i>A</i>、<i>T</i>、<i>f</i>、ω、φ 分别是振幅、周期、频率、角频率、初相</span></label>
+        <label class="opt"><input type="radio" name="q1" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot">描述简谐运动的物理量中，周期 <i>T</i> 与角频率 ω 满足 <i>T</i>=2πω</span></label>
+        <label class="opt"><input type="radio" name="q1" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot">简谐运动的振幅 <i>A</i> 等于振子在一个周期内通过的路程</span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>B</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">单项选择题 · 4 分 ｜ 人教A版 · 必修第一册 · 5.7 三角函数的应用</p>
+          <p><b>思路：</b>本题把「应用前提」「简谐运动」「描述简谐运动的物理量」三条合在一道送分题里，正确项须同时符合三者。</p>
+          <p><b>解答：</b>A 把「随时间单调增大」的数据也用正弦型模型拟合，违背应用前提（必须呈周期性往复变化），错；B 先给出简谐运动的定义（物理量按正弦规律周期性往复），再点明 <i>A</i>,<i>T</i>,<i>f</i>,ω,φ 五个描述物理量，三条全对，正确；C 把周期与角频率的关系写成 <i>T</i>=2πω，正确关系应为 <i>T</i>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">2π</span><span style="display:block;padding:0 .26em">ω</span></span>，漏了倒数，错；D 把振幅当成一个周期内的路程，实际一个周期路程为 4<i>A</i>，错。</p>
+          <p class="tip"><b>易错点：</b>把「有规律地变化」当成「周期性地往复」；只有周而复始、且峰谷基本稳定的量才适合正弦型模型，单调量不行。</p>
+        </div>
+      </div>
+    </article>
+    <article class="q" data-type="single" data-answer="A" data-max="4.0" hidden>
+      <div class="q-head"><span class="qno">2</span><span class="q-type">单项选择题</span><span class="q-pts">4 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">下列问题中，最适合直接用 <i>y</i>=<i>A</i>sin (ω<i>x</i>+φ)+<i>b</i> 型三角函数模型拟合的是<span class="blank"></span></div>
+      <div class="opts cols-1">
+        <label class="opt"><input type="radio" name="q2" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot">某城市一天内每小时的气温，逐日重复出现昼夜起伏，且最高温、最低温基本稳定</span></label>
+        <label class="opt"><input type="radio" name="q2" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot">某水库蓄水量在主汛期持续单调上涨，没有回落</span></label>
+        <label class="opt"><input type="radio" name="q2" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot">某产品年产量按近似固定的年增长率逐年递增</span></label>
+        <label class="opt"><input type="radio" name="q2" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot">某同学一次百米跑中速度随时间的变化（起跑加速、途中匀速、冲刺后减速停住）</span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>A</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">单项选择题 · 4 分 ｜ 人教A版 · 必修第一册 · 5.7 三角函数的应用</p>
+          <p><b>思路：</b>应用前提是「现象周期性往复、存在稳定的最大值与最小值」，逐项核对四个情境是否周而复始。</p>
+          <p class="sol-sub">逐选项判定：</p>
+          <p class="judge"><span class="jl">A．</span>气温逐日重复昼夜起伏、最高最低温基本稳定，是典型的周期现象，适合用 <i>y</i>=<i>A</i>sin (ω<i>x</i>+φ)+<i>b</i> 拟合，正确。</p>
+          <p class="judge"><span class="jl">B．</span>蓄水量「持续单调上涨、没有回落」，不往复，不具周期性，错。</p>
+          <p class="judge"><span class="jl">C．</span>产量按固定年增长率递增是指数式增长，有规律但不周期，错（把「有规律」误当「周期」）。</p>
+          <p class="judge"><span class="jl">D．</span>一次百米跑的速度起跑加速、途中匀速、冲后停住，是一次性过程，不重复出现，错。</p>
+          <p class="tip"><b>易错点：</b>把「曲线有起伏」「数据有规律」等同于「周期往复」；D 虽有升有降，却只发生一次，不构成周期。</p>
+        </div>
+      </div>
+    </article>
+    <article class="q" data-type="single" data-answer="B" data-max="4.0" hidden>
+      <div class="q-head"><span class="qno">3</span><span class="q-type">单项选择题</span><span class="q-pts">4 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">某弹簧振子做简谐运动，位移 <i>y</i>（cm）随时间 <i>t</i>（s）变化的关系为 <i>y</i>=6sin (4π<i>t</i>+<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">π</span><span style="display:block;padding:0 .26em">3</span></span>)。下列判断正确的是<span class="blank"></span></div>
+      <div class="opts cols-1">
+        <label class="opt"><input type="radio" name="q3" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot">振幅为 12 cm，周期为 <span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">2</span></span> s</span></label>
+        <label class="opt"><input type="radio" name="q3" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot">振幅为 6 cm，周期为 <span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">2</span></span> s，频率为 2 Hz，<i>t</i>=0 时位移为 3√3 cm</span></label>
+        <label class="opt"><input type="radio" name="q3" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot">振幅为 6 cm，频率为 4π Hz，初相为 4π<i>t</i>+<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">π</span><span style="display:block;padding:0 .26em">3</span></span></span></label>
+        <label class="opt"><input type="radio" name="q3" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot">振子从平衡位置开始运动，且 <i>t</i>=0 时向负方向运动</span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>B</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">单项选择题 · 4 分 ｜ 人教A版 · 必修第一册 · 5.7 三角函数的应用</p>
+          <p><b>思路：</b>由 <i>y</i>=6sin (4π<i>t</i>+<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">π</span><span style="display:block;padding:0 .26em">3</span></span>) 读出 <i>A</i>=6、ω=4π、φ=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">π</span><span style="display:block;padding:0 .26em">3</span></span>，再算 <i>T</i>,<i>f</i>,<i>y</i>(0) 逐项判定。</p>
+          <p><b>解答：</b><i>T</i>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">2π</span><span style="display:block;padding:0 .26em">4π</span></span>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">2</span></span> s，<i>f</i>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em"><i>T</i></span></span>=2 Hz，<i>y</i>(0)=6sin <span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">π</span><span style="display:block;padding:0 .26em">3</span></span>=3√3 cm，且 <i>y</i>′(0)=6·4πcos <span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">π</span><span style="display:block;padding:0 .26em">3</span></span>&gt;0，故 <i>t</i>=0 时向正方向运动、不在平衡位置。A 把振幅写成 12（把 2<i>A</i> 当振幅），错；B 振幅 6、周期 <span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">2</span></span> s、频率 2 Hz、<i>t</i>=0 位移 3√3 cm 全对，正确；C 把 ω=4π 当频率、把含 <i>t</i> 的相位当初相，两处皆错；D 说从平衡位置出发且向负方向运动，与 <i>y</i>(0)=3√3≠0、<i>y</i>′(0)&gt;0 矛盾，错。</p>
+          <p class="tip"><b>易错点：</b>混淆角频率 ω 与频率 <i>f</i>（<i>f</i>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">ω</span><span style="display:block;padding:0 .26em">2π</span></span>）；把相位 ω<i>t</i>+φ 整体当成初相。</p>
+        </div>
+      </div>
+    </article>
+    <article class="q" data-type="single" data-answer="A" data-max="4.0" hidden>
+      <div class="q-head"><span class="qno">4</span><span class="q-type">单项选择题</span><span class="q-pts">4 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">某弹簧振子做简谐运动，实验测得位移 <i>y</i>（cm）与时间 <i>t</i>（s）的部分数据如下： | <i>t</i> | 0 | 0.1 | 0.2 | 0.3 | 0.4 | 0.5 | 0.6 | |---|---|---|---|---|---|---|---| | <i>y</i> | −20 | −10 | 10 | 20 | 10 | −10 | −20 | 由散点图可判断 <i>y</i> 可写成 <i>y</i>=<i>A</i>sin (ω<i>t</i>+φ)（<i>A</i>&gt;0, ω&gt;0, |φ|&lt;π）。则振幅 <i>A</i>、角频率 ω、初相 φ 依次是<span class="blank"></span></div>
+      <div class="opts cols-2">
+        <label class="opt"><input type="radio" name="q4" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot">20, <span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">10π</span><span style="display:block;padding:0 .26em">3</span></span>, −<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">π</span><span style="display:block;padding:0 .26em">2</span></span></span></label>
+        <label class="opt"><input type="radio" name="q4" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot">20, <span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">20π</span><span style="display:block;padding:0 .26em">3</span></span>, −<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">π</span><span style="display:block;padding:0 .26em">2</span></span></span></label>
+        <label class="opt"><input type="radio" name="q4" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot">40, <span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">10π</span><span style="display:block;padding:0 .26em">3</span></span>, −<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">π</span><span style="display:block;padding:0 .26em">2</span></span></span></label>
+        <label class="opt"><input type="radio" name="q4" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot">20, <span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">10π</span><span style="display:block;padding:0 .26em">3</span></span>, <span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">π</span><span style="display:block;padding:0 .26em">2</span></span></span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>A</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">单项选择题 · 4 分 ｜ 人教A版 · 必修第一册 · 5.7 三角函数的应用</p>
+          <p><b>思路：</b>由数据表与散点图，用待定系数法依次定 <i>A</i>（最值）、<i>T</i>（相邻同类极值间距）、ω=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">2π</span><span style="display:block;padding:0 .26em"><i>T</i></span></span>、φ（初始位移）。</p>
+          <p><b>解答：</b>表中最大位移 20、最小位移 −20，故 <i>A</i>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">20−(−20)</span><span style="display:block;padding:0 .26em">2</span></span>=20；相邻两次最小值出现在 <i>t</i>=0 与 <i>t</i>=0.6，故 <i>T</i>=0.6 s，ω=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">2π</span><span style="display:block;padding:0 .26em">0.6</span></span>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">10π</span><span style="display:block;padding:0 .26em">3</span></span>；<i>t</i>=0 时 <i>y</i>=−20，故 20sin φ=−20，sin φ=−1，取 |φ|&lt;π 得 φ=−<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">π</span><span style="display:block;padding:0 .26em">2</span></span>。故 A 正确。B 把 <i>t</i>=0 到 <i>t</i>=0.3（最小值到最大值的半周期 0.3）当成整周期，得 ω=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">2π</span><span style="display:block;padding:0 .26em">0.3</span></span>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">20π</span><span style="display:block;padding:0 .26em">3</span></span>，错；C 把最大值减最小值 40 当成振幅，错；D 把初相符号弄反，φ=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">π</span><span style="display:block;padding:0 .26em">2</span></span> 时 <i>y</i>(0)=20 与表中 −20 不符，错。</p>
+          <p class="tip"><b>易错点：</b>把「最小值到最大值」的半周期当成周期；求 <i>T</i> 要取相邻两个同类极值（峰到峰、谷到谷）的间距。</p>
+        </div>
+      </div>
+    </article>
+    <article class="q" data-type="single" data-answer="B" data-max="4.0" hidden>
+      <div class="q-head"><span class="qno">5</span><span class="q-type">单项选择题</span><span class="q-pts">4 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">某交变电流 <i>i</i>（A）随时间 <i>t</i>（s）变化的图象是一条正弦曲线，读图得电流峰值 5 A，相邻两次达到峰值的时间间隔为 <span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">50</span></span> s，且 <i>t</i>=0 时 <i>i</i>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">5√3</span><span style="display:block;padding:0 .26em">2</span></span> A 并正在增大。若写成 <i>i</i>=5sin (ω<i>t</i>+φ)（ω&gt;0, |φ|&lt;<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">π</span><span style="display:block;padding:0 .26em">2</span></span>），则<span class="blank"></span></div>
+      <div class="opts cols-2">
+        <label class="opt"><input type="radio" name="q5" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot"><i>f</i>=50 Hz，ω=100π，φ=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">π</span><span style="display:block;padding:0 .26em">6</span></span></span></label>
+        <label class="opt"><input type="radio" name="q5" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot"><i>f</i>=50 Hz，ω=100π，φ=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">π</span><span style="display:block;padding:0 .26em">3</span></span></span></label>
+        <label class="opt"><input type="radio" name="q5" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot"><i>f</i>=25 Hz，ω=50π，φ=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">π</span><span style="display:block;padding:0 .26em">3</span></span></span></label>
+        <label class="opt"><input type="radio" name="q5" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot"><i>f</i>=50 Hz，ω=100π，φ=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">2π</span><span style="display:block;padding:0 .26em">3</span></span></span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>B</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">单项选择题 · 4 分 ｜ 人教A版 · 必修第一册 · 5.7 三角函数的应用</p>
+          <p><b>思路：</b>交变电流模型由峰值定 <i>A</i>、由相邻峰值间隔定 <i>T</i>，进而得 <i>f</i> 与 ω，再由 <i>t</i>=0 的电流值与增减方向定 φ。</p>
+          <p><b>解答：</b><i>A</i>=5，<i>T</i>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">50</span></span> s，故 <i>f</i>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em"><i>T</i></span></span>=50 Hz，ω=2π<i>f</i>=100π。由 <i>i</i>(0)=5sin φ=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">5√3</span><span style="display:block;padding:0 .26em">2</span></span> 得 sin φ=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">√3</span><span style="display:block;padding:0 .26em">2</span></span>，候选为 φ=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">π</span><span style="display:block;padding:0 .26em">3</span></span> 或 <span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">2π</span><span style="display:block;padding:0 .26em">3</span></span>；又 |φ|&lt;<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">π</span><span style="display:block;padding:0 .26em">2</span></span> 且 <i>i</i>′(0)=5ωcos φ&gt;0（正在增大），故取 φ=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">π</span><span style="display:block;padding:0 .26em">3</span></span>。B 全对。A 把 sin φ=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">√3</span><span style="display:block;padding:0 .26em">2</span></span> 误记成 φ=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">π</span><span style="display:block;padding:0 .26em">6</span></span>，错；C 把周期 <span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">50</span></span> 当成 <span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">25</span></span> 得 <i>f</i>=25 Hz、ω=50π，错；D 取 φ=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">2π</span><span style="display:block;padding:0 .26em">3</span></span>，既超出 |φ|&lt;<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">π</span><span style="display:block;padding:0 .26em">2</span></span>，又使 cos φ&lt;0（电流减小），错。</p>
+          <p class="tip"><b>易错点：</b>由 sin φ=<i>a</i> 解出两个角后，未用「正在增大」（即 cos φ&gt;0）与取值范围筛掉第二象限解。</p>
+        </div>
+      </div>
+    </article>
+    <div class="section-title" hidden>二、多项选择题<span>共 1 小题，共 6 分；有多个选项符合题目要求</span></div>
+    <article class="q" data-type="multi" data-answer="AB" data-max="6.0" hidden>
+      <div class="q-head"><span class="qno">6</span><span class="q-type">多项选择题</span><span class="q-pts">6 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">关于用 <i>y</i>=<i>A</i>sin (ω<i>x</i>+φ)+<i>b</i> 拟合一组呈周期变化的数据，符合「建模的一般步骤」的说法是<span class="blank"></span></div>
+      <div class="opts cols-1">
+        <label class="opt"><input type="checkbox" name="q6" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot">先把数据绘成散点图、确认呈周期性往复变化，再决定采用正弦型模型</span></label>
+        <label class="opt"><input type="checkbox" name="q6" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot">求参数宜按「由最大值、最小值定 <i>A</i> 与 <i>b</i>，由相邻同类极值间距定 <i>T</i> 从而得 ω=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">2π</span><span style="display:block;padding:0 .26em"><i>T</i></span></span>，再由特殊点定 φ」的顺序进行</span></label>
+        <label class="opt"><input type="checkbox" name="q6" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot">把四个数据点代入联立，所得方程组是线性方程组，故四个参数可直接唯一解出，无需画散点图</span></label>
+        <label class="opt"><input type="checkbox" name="q6" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot">模型确定后无需检验，可把自变量取任意大作长期预测</span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>AB</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">多项选择题 · 6 分 ｜ 人教A版 · 必修第一册 · 5.7 三角函数的应用</p>
+          <p><b>思路：</b>建模的一般步骤为「画散点图、判断周期性 → 选模型 → 按最值、周期、特殊点定参数 → 检验与修正 → 在适用范围内使用」。逐项核对。</p>
+          <p><b>解答：</b>A 是选择模型的前提，正确；B 是标准的待定系数顺序（<i>A</i>,<i>b</i> 由最值、ω 由 <i>T</i>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">2π</span><span style="display:block;padding:0 .26em">ω</span></span>、φ 由特殊点），正确；C 错，<i>y</i>=<i>A</i>sin (ω<i>x</i>+φ)+<i>b</i> 中 ω,φ 出现在正弦内部，代入四点得到的是超越方程组而非线性方程组，且解不唯一，离开散点图与周期性判断极易凑出无意义的模型（反例：一组单调数据也能硬凑出四个参数，却毫无预测价值）；D 错，模型只在观测范围内经过检验才可信，无条件外推到任意大时刻会失效（反例：把某昼夜气温模型外推到半年后，季节趋势已改变）。</p>
+          <p class="tip"><b>易错点：</b>以为「数据点够多、联立方程就够」，跳过散点图与周期性判断；还把含 ω,φ 的非线性拟合误认成线性方程组。</p>
+        </div>
+      </div>
+    </article>
+  </form>
+
+  <!-- ===== 逐题导航 / 提交区 ===== -->
+  <div class="submit-bar">
+    <button type="button" id="startBtn">开始答题</button>
+    <button type="button" id="prevBtn" hidden>上一题</button>
+    <button type="button" id="nextBtn" hidden>下一题</button>
+    <button type="button" id="submitBtn" hidden>提交答案</button>
+    <button type="button" id="resetBtn" hidden>重新作答</button>
+    <div class="bar-info"><span id="navInfo">点击「开始答题」逐题作答</span>　·　已作答 <b id="progress">0 / 6</b> 题　·　未作答的题目按 0 分计</div>
+  </div>
+
+  <div class="foot">依据《5.7 三角函数的应用.md》选择题部分改编 · 满分 26 分</div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var TOTAL = 26;          // 满分（由 build_html.py 注入）
+  var questions = Array.prototype.slice.call(document.querySelectorAll('.q'));
+  var form = document.getElementById('quiz');
+  var startBtn = document.getElementById('startBtn');
+  var prevBtn = document.getElementById('prevBtn');
+  var nextBtn = document.getElementById('nextBtn');
+  var submitBtn = document.getElementById('submitBtn');
+  var resetBtn = document.getElementById('resetBtn');
+  var navInfo = document.getElementById('navInfo');
+  var sections = Array.prototype.slice.call(form.querySelectorAll('.section-title'));
+  var current = -1;               // -1 = 尚未开始答题
+  var progress = document.getElementById('progress');
+  var resultBox = document.getElementById('result');
+  var gradeScale = document.getElementById('gradeScale');
+  var noticeBox = document.getElementById('notice');
+  var scoreNum = document.getElementById('scoreNum');
+  var gradeBadge = document.getElementById('gradeBadge');
+  var gradeDesc = document.getElementById('gradeDesc');
+
+  // 5 等分等级（BANDS 由 build_html.py 注入）
+  var BANDS = [{"g": "A", "min": 20.8, "desc": "优秀 · 概念清晰，运算与转化掌握扎实"}, {"g": "B", "min": 15.6, "desc": "良好 · 主干知识扎实，个别细节待巩固"}, {"g": "C", "min": 10.4, "desc": "中等 · 基本思路具备，易错点仍需复盘"}, {"g": "D", "min": 5.2, "desc": "及格 · 建议逐题对照解析重做错题"}, {"g": "E", "min": 0.0, "desc": "待提高 · 建议先复习对应知识点再重新作答"}];
+
+  function inputsOf(q){ return Array.prototype.slice.call(q.querySelectorAll('input')); }
+  function chosenOf(q){ return inputsOf(q).filter(function(i){return i.checked;}).map(function(i){return i.value;}); }
+
+  // 计分：单选答对得满分、答错/不答 0 分；
+  // 多选：有错选或不答 0 分；否则该题满分均摊到每个正确选项（6 分 / 3 项 = 2 分，6 分 / 2 项 = 3 分）
+  function scoreOf(q){
+    var type = q.getAttribute('data-type');
+    var answer = q.getAttribute('data-answer');
+    var chosen = chosenOf(q);
+    var max = parseInt(q.getAttribute('data-max'), 10);
+    if (type === 'single'){
+      return (chosen.length === 1 && chosen[0] === answer) ? max : 0;
+    }
+    if (chosen.length === 0) return 0;                       // 不答得 0 分
+    for (var i=0;i<chosen.length;i++){
+      if (answer.indexOf(chosen[i]) === -1) return 0;       // 有错选得 0 分
+    }
+    var per = max / answer.length;                          // 满分均摊到每个正确选项
+    return Math.min(max, Math.round(chosen.length * per * 100) / 100);
+  }
+
+  function updateProgress(){
+    var done = questions.filter(function(q){ return chosenOf(q).length > 0; }).length;
+    progress.textContent = done + ' / ' + questions.length;
+  }
+
+  function gradeFor(score){
+    for (var i=0;i<BANDS.length;i++){ if (score >= BANDS[i].min) return BANDS[i]; }
+    return BANDS[BANDS.length-1];
+  }
+
+  // ===== 逐题推送 =====
+  // 一次只在页面上呈现一道题；章节汇总标题在答题阶段隐藏，提交后恢复。
+  function showQuestion(i){
+    current = i;
+    questions.forEach(function(q, idx){ q.hidden = (idx !== i); });
+    sections.forEach(function(s){ s.hidden = true; });
+    startBtn.hidden = true;
+    prevBtn.hidden = (i === 0);                         // 第 1 题无「上一题」
+    nextBtn.hidden = (i >= questions.length - 1);       // 最后一题无「下一题」
+    submitBtn.hidden = (i !== questions.length - 1);    // 「提交答案」只在最后一题出现
+    resetBtn.hidden = true;
+    var type = questions[i].getAttribute('data-type') === 'multi' ? '多项选择题' : '单项选择题';
+    navInfo.textContent = '第 ' + (i + 1) + ' / ' + questions.length + ' 题 · ' + type;
+    updateProgress();
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  function startQuiz(){ showQuestion(0); }
+  function nextQuestion(){ if (current >= 0 && (questions.length - 1) > current) showQuestion(current + 1); }
+  function prevQuestion(){ if (current > 0) showQuestion(current - 1); }
+
+  function submit(){
+    var total = 0;
+    questions.forEach(function(q){
+      var got = scoreOf(q);
+      total += got;
+      var answer = q.getAttribute('data-answer');
+      var max = parseInt(q.getAttribute('data-max'), 10);
+      var chosen = chosenOf(q);
+
+      // 逐题得分标签
+      var tag = q.querySelector('.q-got');
+      tag.textContent = '本题得 ' + got + ' / ' + max + ' 分';
+      tag.className = 'q-got ' + (got === max ? 'full' : (got > 0 ? 'part' : 'zero'));
+      tag.hidden = false;
+
+      // 选项判定着色：正确选项绿色，误选选项红色
+      q.querySelectorAll('.opt').forEach(function(opt){
+        var v = opt.querySelector('input').value;
+        if (answer.indexOf(v) !== -1) opt.classList.add('is-correct');
+        if (chosen.indexOf(v) !== -1 && answer.indexOf(v) === -1) opt.classList.add('is-wrong');
+        opt.classList.add('locked');
+      });
+      inputsOf(q).forEach(function(i){ i.disabled = true; });
+
+      // 显示答案与解析
+      q.querySelector('.sol').hidden = false;
+    });
+
+    // 总分与等级（显示在试卷标题下方）
+    var band = gradeFor(total);
+    scoreNum.textContent = total;
+    gradeBadge.textContent = band.g;
+    gradeBadge.className = 'grade-badge g-' + band.g;
+    gradeDesc.textContent = band.desc + '（得分率 ' + Math.round(total/TOTAL*100) + '%）';
+    resultBox.hidden = false;
+    gradeScale.hidden = false;   // 等级划分：提交后才显示
+    noticeBox.hidden = false;    // 答题说明：提交后才显示
+
+    // 提交后展开全部试题，便于逐题对照答案与解析复盘
+    questions.forEach(function(q){ q.hidden = false; });
+    sections.forEach(function(s){ s.hidden = false; });
+    startBtn.hidden = true;
+    prevBtn.hidden = true;
+    nextBtn.hidden = true;
+    submitBtn.hidden = true;
+    resetBtn.hidden = false;
+    navInfo.textContent = '已提交 · 全部试题与解析已展开';
+    progress.textContent = questions.length + ' / ' + questions.length;
+    resultBox.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+
+  function reset(){
+    questions.forEach(function(q){
+      inputsOf(q).forEach(function(i){ i.checked = false; i.disabled = false; });
+      q.querySelectorAll('.opt').forEach(function(opt){
+        opt.classList.remove('is-correct','is-wrong','locked');
+      });
+      q.querySelector('.sol').hidden = true;
+      var tag = q.querySelector('.q-got');
+      tag.hidden = true; tag.textContent = ''; tag.className = 'q-got';
+    });
+    // 回到「未开始」状态：隐藏全部试题，仅显示「开始答题」
+    questions.forEach(function(q){ q.hidden = true; });
+    sections.forEach(function(s){ s.hidden = true; });
+    current = -1;
+    resultBox.hidden = true;
+    gradeScale.hidden = true;
+    noticeBox.hidden = true;
+    startBtn.hidden = false;
+    prevBtn.hidden = true;
+    nextBtn.hidden = true;
+    submitBtn.hidden = true;
+    resetBtn.hidden = true;
+    navInfo.textContent = '点击「开始答题」逐题作答（共 ' + questions.length + ' 题）';
+    updateProgress();
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  // 页面加载时强制清空所有勾选，保证默认不勾选（含浏览器刷新恢复表单的情况）
+  function clearAll(){
+    inputsOf(form).forEach(function(i){ i.checked = false; i.disabled = false; });
+  }
+  clearAll();
+  if (typeof form.reset === 'function') form.reset();
+  clearAll();
+  // 初始态：隐藏全部试题与成绩相关区域，仅显示「开始答题」（含浏览器刷新恢复状态的情况）
+  questions.forEach(function(q){ q.hidden = true; });
+  sections.forEach(function(s){ s.hidden = true; });
+  resultBox.hidden = true;
+  gradeScale.hidden = true;
+  noticeBox.hidden = true;
+  startBtn.hidden = false;
+  prevBtn.hidden = true;
+  nextBtn.hidden = true;
+  submitBtn.hidden = true;
+  resetBtn.hidden = true;
+  navInfo.textContent = '点击「开始答题」逐题作答（共 ' + questions.length + ' 题）';
+  updateProgress();
+
+  form.addEventListener('change', updateProgress);
+  startBtn.addEventListener('click', startQuiz);
+  prevBtn.addEventListener('click', prevQuestion);
+  nextBtn.addEventListener('click', nextQuestion);
+  submitBtn.addEventListener('click', submit);
+  resetBtn.addEventListener('click', reset);
+})();
+</script>
+</body>
+</html>

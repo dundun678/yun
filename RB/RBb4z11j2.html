@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>11.2 平面的基本事实与推论 · 选择题逐题练习（在线练习）</title>
+<style>
+:root{
+  --bg:#f1f6fc; --card:#ffffff; --ink:#1e2a38; --muted:#6b7c90; --line:#e2ebf5;
+  --blue:#2563eb; --blue-d:#1d4ed8; --blue-l:#eaf2ff;
+  --teal:#0d9488; --teal-l:#e7f7f4;
+  --yellow:#e8a317; --yellow-l:#fff5dc;
+  --green:#15803d; --green-l:#edfaf0; --green-b:#b7e4c4;
+  --red:#c0392b; --red-l:#fdf0ee; --red-b:#f3c3bb;
+}
+*{box-sizing:border-box}
+[hidden]{display:none !important}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Microsoft YaHei","PingFang SC","Segoe UI","Cambria Math",sans-serif;
+  font-size:16px; line-height:1.85; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:920px; margin:0 auto; padding:26px 18px 70px}
+sub,sup{font-size:.72em; line-height:0}
+.paper,.notice,.q,.submit-bar{
+  background:var(--card); border:1px solid var(--line); border-radius:14px;
+  box-shadow:0 3px 16px rgba(31,64,110,.055);
+}
+.paper{padding:28px 30px 24px; margin-bottom:16px; border-top:4px solid var(--blue)}
+.kicker{
+  display:inline-block; font-size:12.5px; letter-spacing:.5px; color:var(--teal);
+  background:var(--teal-l); border-radius:20px; padding:3px 13px; margin-bottom:12px; font-weight:600;
+}
+h1{font-size:27px; line-height:1.4; margin:0 0 6px; letter-spacing:.5px; color:#16283f}
+.subtitle{color:var(--muted); font-size:14.5px; margin:0 0 18px}
+
+/* 成绩面板：位于标题下方，提交后显示 */
+.result{
+  display:flex; align-items:center; gap:28px; flex-wrap:wrap;
+  background:linear-gradient(105deg,#eef5ff 0%,#f7fbff 60%,#e9f8f4 100%);
+  border:1px solid #cfe1fa; border-radius:12px; padding:18px 24px; margin:4px 0 18px;
+  animation:pop .45s ease-out;
+}
+@keyframes pop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.result-label{font-size:13px; color:var(--muted); letter-spacing:1px; margin-bottom:2px}
+.result-score{font-size:38px; font-weight:800; color:var(--blue-d); line-height:1.15}
+.result-score small{font-size:17px; font-weight:600; margin-left:3px}
+.result-score .slash{font-size:15px; font-weight:500; color:var(--muted); margin-left:8px}
+.result-right{border-left:1px dashed #bcd3ee; padding-left:28px; min-width:170px}
+.grade-badge{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:52px; height:52px; border-radius:14px; font-size:30px; font-weight:800;
+  color:#fff; background:var(--blue); box-shadow:0 4px 12px rgba(37,99,235,.25);
+}
+.grade-badge.g-A{background:#15803d} .grade-badge.g-B{background:#2563eb}
+.grade-badge.g-C{background:#0d9488} .grade-badge.g-D{background:#e8a317}
+.grade-badge.g-E{background:#c0392b}
+.grade-desc{font-size:13.5px; color:var(--muted); margin-top:6px}
+
+.meta{display:flex; gap:9px; flex-wrap:wrap; margin-bottom:14px}
+.pill{font-size:13px; padding:3px 12px; border-radius:20px; font-weight:600}
+.pill.blue{background:var(--blue-l); color:var(--blue-d)}
+.pill.teal{background:var(--teal-l); color:var(--teal)}
+.pill.yellow{background:var(--yellow-l); color:#a9700a}
+.grade-scale{
+  border-top:1px dashed var(--line); padding-top:12px; font-size:13px; color:var(--muted);
+  display:flex; gap:8px 14px; flex-wrap:wrap; align-items:center;
+}
+.gs-title{font-weight:600; color:#4a5b70}
+.grade-scale .b{padding:1px 9px; border-radius:6px; background:#f3f7fc; border:1px solid var(--line); font-weight:500; color:#41546b}
+.grade-scale b.g{display:inline-block; min-width:18px; text-align:center; color:var(--blue-d)}
+
+.notice{padding:15px 20px; font-size:14.5px; color:#41546b; margin-bottom:22px; background:#fbfdff}
+.notice b{color:var(--blue-d)}
+
+.section-title{
+  font-size:17px; font-weight:700; color:#1c3352; margin:26px 4px 13px;
+  padding-left:12px; border-left:4px solid var(--teal);
+}
+.section-title span{font-size:13.5px; font-weight:500; color:var(--muted); margin-left:8px}
+
+.q{padding:22px 26px 20px; margin-bottom:16px; scroll-margin-top:20px}
+.q-head{display:flex; align-items:center; gap:10px; margin-bottom:12px; flex-wrap:wrap}
+.qno{
+  display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px;
+  border-radius:9px; background:var(--blue); color:#fff; font-weight:700; font-size:15px; flex:none;
+}
+.q-type{font-size:13px; color:var(--teal); background:var(--teal-l); border-radius:6px; padding:2px 9px; font-weight:600}
+.q-pts{font-size:13px; color:#a9700a; background:var(--yellow-l); border-radius:20px; padding:2px 11px; font-weight:600}
+.q-got{margin-left:auto; font-size:13.5px; font-weight:700; padding:2px 12px; border-radius:20px}
+.q-got.full{color:var(--green); background:var(--green-l); border:1px solid var(--green-b)}
+.q-got.part{color:#a9700a; background:var(--yellow-l); border:1px solid #f0dca8}
+.q-got.zero{color:var(--red); background:var(--red-l); border:1px solid var(--red-b)}
+.q-stem{font-size:16.2px; line-height:2; margin-bottom:14px; text-align:justify}
+.q-stem .blank{display:inline-block; min-width:52px; border-bottom:1px solid #8fa4bb; margin:0 4px}
+
+/* 选项紧凑排布：4 列（一行四选项）/ 2 列（两行）/ 1 列（逐行）
+   列数由 build_html.py 依据该题选项文本长度自动判定，也可在 JSON 中用 option_cols 覆盖 */
+.opts{display:grid; gap:9px; grid-template-columns:1fr}
+.opts.cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.opts.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.opts.cols-1{grid-template-columns:1fr}
+.opts.cols-4 .opt{padding:9px 10px; gap:8px}
+.opt{
+  display:flex; align-items:flex-start; gap:11px; padding:10px 14px;
+  border:1px solid var(--line); border-radius:10px; background:#fcfdff;
+  cursor:pointer; transition:background .15s,border-color .15s,transform .1s;
+}
+.opt:hover{background:var(--blue-l); border-color:#bcd4f7}
+.opt input{width:17px; height:17px; margin-top:6px; flex:none; accent-color:var(--blue); cursor:pointer}
+.ol{font-weight:700; color:var(--blue-d); flex:none; min-width:20px}
+.ot{flex:1; min-width:0; line-height:1.9; overflow-wrap:anywhere}
+.opt.is-correct{background:var(--green-l); border-color:var(--green-b)}
+.opt.is-correct .ol{color:var(--green)}
+.opt.is-wrong{background:var(--red-l); border-color:var(--red-b)}
+.opt.is-wrong .ol{color:var(--red)}
+.opt.locked{cursor:default}
+.opt.locked:hover{background:inherit; border-color:var(--line)}
+.opt.locked.is-correct:hover{background:var(--green-l); border-color:var(--green-b)}
+.opt.locked.is-wrong:hover{background:var(--red-l); border-color:var(--red-b)}
+
+.sol{
+  margin-top:16px; border:1px solid #cfe9d6; border-left:4px solid var(--green);
+  border-radius:10px; background:#f7fdf9; padding:16px 20px 14px;
+  animation:fadein .4s ease-out;
+}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.sol-answer{font-size:16px; font-weight:700; color:var(--green); margin-bottom:10px}
+.sol-answer b{font-size:19px; letter-spacing:2px}
+.sol-title{font-size:15px; font-weight:700; color:#1c3352; margin:12px 0 6px}
+.sol-body{font-size:14.7px; line-height:1.95; color:#34465c}
+.sol-body p{margin:6px 0}
+.sol-meta{font-size:13.2px; color:var(--muted); background:#f0f6fb; border-radius:8px; padding:7px 12px}
+.sol-sub{font-weight:700; color:var(--blue-d)}
+.judge{padding-left:2px}
+.jl{font-weight:700; color:#1c3352; margin-right:4px}
+.tip{color:#8a5a06; background:var(--yellow-l); border-radius:8px; padding:7px 12px}
+
+.submit-bar{padding:18px 24px; display:flex; align-items:center; gap:16px; flex-wrap:wrap; position:relative}
+button{
+  font-family:inherit; font-size:16px; font-weight:700; border-radius:10px;
+  padding:11px 34px; cursor:pointer; border:1px solid transparent; transition:all .15s;
+}
+#startBtn,#submitBtn{background:var(--blue); color:#fff; box-shadow:0 4px 12px rgba(37,99,235,.22)}
+#startBtn:hover,#submitBtn:hover{background:var(--blue-d); transform:translateY(-1px)}
+#prevBtn,#nextBtn,#resetBtn{background:#fff; color:var(--blue-d); border-color:#bcd4f7}
+#prevBtn:hover,#nextBtn:hover,#resetBtn:hover{background:var(--blue-l)}
+.bar-info{font-size:13.5px; color:var(--muted); margin-left:auto; text-align:right}
+.bar-info b{color:var(--blue-d)}
+.foot{text-align:center; color:#8b9bb0; font-size:12.5px; margin-top:22px}
+@media (max-width:620px){
+  .wrap{padding:14px 10px 50px} .paper{padding:20px 18px} h1{font-size:22px}
+  .q{padding:18px 16px} .result{gap:16px; padding:15px 18px}
+  .result-right{border-left:0; padding-left:0; border-top:1px dashed #bcd3ee; padding-top:12px; width:100%}
+  .bar-info{margin-left:0; text-align:left; width:100%}
+  /* 窄屏自动降列，避免 4 列过挤 */
+  .opts.cols-4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .opts.cols-2{grid-template-columns:1fr}
+  button{padding:11px 22px}
+}
+@media print{
+  body{background:#fff} .submit-bar{display:none} .paper,.notice,.q{box-shadow:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===== 试卷标题区 ===== -->
+  <header class="paper">
+    <div class="kicker">人教B版 · 必修第四册 · 第十一章 立体几何初步 · 周测卷</div>
+    <h1>11.2 平面的基本事实与推论 · 选择题逐题练习</h1>
+    <p class="subtitle">检测范围：本节全部小节（1 个小节 / 6 条知识点） ｜ 仅保留原卷的单项选择题与多项选择题及答案、解析</p>
+
+    <!-- 得分与等级：提交后显示在标题下方 -->
+    <div class="result" id="result" hidden>
+      <div class="result-left">
+        <div class="result-label">本次测试得分</div>
+        <div class="result-score"><span id="scoreNum">0</span><small>分</small><span class="slash">/ 满分 26 分</span></div>
+      </div>
+      <div class="result-right">
+        <div class="result-label">等级评定</div>
+        <div class="grade-badge" id="gradeBadge">A</div>
+        <div class="grade-desc" id="gradeDesc"></div>
+      </div>
+    </div>
+
+    <div class="meta">
+      <span class="pill blue">满分 26 分</span>
+      <span class="pill teal">单项选择题 5 题 × 4 分 = 20 分</span>
+      <span class="pill teal">多项选择题 1 题 × 6 分 = 6 分</span>
+      <span class="pill yellow">建议用时 14 分钟</span>
+    </div>
+    <!-- 等级划分：答题中隐藏，提交答案后随成绩一起显示 -->
+    <div class="grade-scale" id="gradeScale" hidden>
+      <span class="gs-title">等级划分（26 分等分为 5 档，每档 5.2 分）</span>
+      <span class="b"><b class="g">A</b> 20.8 ~ 26</span>
+      <span class="b"><b class="g">B</b> 15.6 ~ 20.8</span>
+      <span class="b"><b class="g">C</b> 10.4 ~ 15.6</span>
+      <span class="b"><b class="g">D</b> 5.2 ~ 10.4</span>
+      <span class="b"><b class="g">E</b> 0 ~ 5.2</span>
+    </div>
+  </header>
+
+  <!-- 答题说明：答题中隐藏，提交答案后显示 -->
+  <div class="notice" id="notice" hidden>
+    <b>答题说明：</b>单项选择题每题 4 分，答对得 4 分，答错或不答得 0 分；多项选择题每题 6 分，按正确选项个数均摊（3 个正确选项时每选对 1 个得 2 分，2 个正确选项时每选对 1 个得 3 分），但只要选错任意选项或不作答，该题即得 0 分。所有选项默认不勾选。作答完成后点击下方「提交答案」，系统将自动评分，并在每道题下方完整显示答案与解析。
+  </div>
+
+  <form id="quiz" autocomplete="off">
+        <div class="section-title" hidden>一、单项选择题<span>共 5 小题，共 20 分；每题只有一个选项符合题目要求</span></div>
+    <article class="q" data-type="single" data-answer="B" data-max="4.0" hidden>
+      <div class="q-head"><span class="qno">1</span><span class="q-type">单项选择题</span><span class="q-pts">4 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">下列关于平面基本事实及其推论的说法正确的是<span class="blank"></span></div>
+      <div class="opts cols-1">
+        <label class="opt"><input type="radio" name="q1" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot">经过空间任意三点，有且只有一个平面</span></label>
+        <label class="opt"><input type="radio" name="q1" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot">经过一条直线和这条直线外的一个点，有且只有一个平面</span></label>
+        <label class="opt"><input type="radio" name="q1" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot">经过两条平行直线，有且只有两个平面</span></label>
+        <label class="opt"><input type="radio" name="q1" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot">若两个不重合的平面有三个公共点，则这两个平面一定重合</span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>B</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">单项选择题 · 4 分 ｜ 人教B版 · 必修第四册 · 11.2 平面的基本事实与推论</p>
+          <p><b>思路：</b>逐项核对基本事实 1、2、3 与三个推论的条件，特别注意「不共线」「相交」「平行」「直线外」这些限制词。</p>
+          <p class="sol-sub">逐选项判定：</p>
+          <p class="judge"><span class="jl">A．</span>错：基本事实 1 要求三点不共线；若三点共线，则经过它们的平面有无穷多个。</p>
+          <p class="judge"><span class="jl">B．</span>对：这正是推论 1——经过一条直线和这条直线外的一点，有且只有一个平面。</p>
+          <p class="judge"><span class="jl">C．</span>错：由推论 3，经过两条平行直线有且只有<b>一个</b>平面。</p>
+          <p class="judge"><span class="jl">D．</span>错：若这三个公共点共线，两个平面可以相交于这条直线而不重合；只有三个公共点不共线时，两平面才重合。</p>
+          <p class="tip"><b>易错点：</b>把基本事实 1 中的「不共线」漏掉，误判 A；对 D 只想到「三点定面」而忽略三点共线的情形。</p>
+        </div>
+      </div>
+    </article>
+    <article class="q" data-type="single" data-answer="D" data-max="4.0" hidden>
+      <div class="q-head"><span class="qno">2</span><span class="q-type">单项选择题</span><span class="q-pts">4 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">空间四点中任意三点都不共线，则由这四点最多可以确定的平面个数为<span class="blank"></span></div>
+      <div class="opts cols-4">
+        <label class="opt"><input type="radio" name="q2" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot">1</span></label>
+        <label class="opt"><input type="radio" name="q2" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot">2</span></label>
+        <label class="opt"><input type="radio" name="q2" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot">3</span></label>
+        <label class="opt"><input type="radio" name="q2" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot">4</span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>D</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">单项选择题 · 4 分 ｜ 人教B版 · 必修第四册 · 11.2 平面的基本事实与推论</p>
+          <p><b>思路：</b>四点中任取三点都能确定一个平面，用组合计数并说明「最多」在四点不共面时取到。</p>
+          <p><b>解答：</b>任意三点不共线，故每一组三点都确定唯一平面（基本事实 1）。从 4 个点中任取 3 个，共有 4 组，故最多确定 4 个平面。</p>
+          <p>当四点不共面时，这 4 个平面互不相同，确实得到 4 个平面；当四点共面时只确定 1 个平面。故最多为 4 个。</p>
+          <p></p>
+          <p class="tip"><b>易错点：</b>误用「<i>n</i> 个点最多确定 C<sub><i>n</i></sub><sup>3</sup> 个平面」时忘记检验这些平面是否重合，或漏算某些三点组合。</p>
+        </div>
+      </div>
+    </article>
+    <article class="q" data-type="single" data-answer="B" data-max="4.0" hidden>
+      <div class="q-head"><span class="qno">3</span><span class="q-type">单项选择题</span><span class="q-pts">4 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">下列位置关系的符号表示正确的是<span class="blank"></span></div>
+      <div class="opts cols-2">
+        <label class="opt"><input type="radio" name="q3" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot">点 <i>A</i> 在平面 α 内：<i>A</i>⊂α</span></label>
+        <label class="opt"><input type="radio" name="q3" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot">直线 <i>l</i> 与平面 α 相交于点 <i>A</i>：<i>l</i>∩α=<i>A</i></span></label>
+        <label class="opt"><input type="radio" name="q3" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot">平面 α 与平面 β 相交于直线 <i>l</i>：α∩β∈<i>l</i></span></label>
+        <label class="opt"><input type="radio" name="q3" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot">点 <i>A</i> 不在直线 <i>l</i> 上：<i>A</i>⊄<i>l</i></span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>B</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">单项选择题 · 4 分 ｜ 人教B版 · 必修第四册 · 11.2 平面的基本事实与推论</p>
+          <p><b>思路：</b>分清「点与直线（平面）」用属于符号 ∈,∉，「直线与平面」用包含符号 ⊂，两平面相交写成「交线 = 直线」。</p>
+          <p class="sol-sub">逐选项判定：</p>
+          <p class="judge"><span class="jl">A．</span>错：点与平面之间用属于关系，应写作 <i>A</i>∈α。</p>
+          <p class="judge"><span class="jl">B．</span>对：直线 <i>l</i> 与平面 α 只有一个公共点 <i>A</i> 时，记作 <i>l</i>∩α=<i>A</i>。</p>
+          <p class="judge"><span class="jl">C．</span>错：两平面的交集是一条直线，应写作 α∩β=<i>l</i>；「∈」不能连接两个平面与一条直线。</p>
+          <p class="judge"><span class="jl">D．</span>错：点与直线的位置关系用属于符号，应写作 <i>A</i>∉<i>l</i>。</p>
+          <p class="tip"><b>易错点：</b>把 <i>l</i>⊂α（直线在平面内）与 <i>l</i>∩α=<i>A</i>（直线与平面相交）混用；把 α∩β=<i>l</i> 写成 α∩β∈<i>l</i>。</p>
+        </div>
+      </div>
+    </article>
+    <article class="q" data-type="single" data-answer="C" data-max="4.0" hidden>
+      <div class="q-head"><span class="qno">4</span><span class="q-type">单项选择题</span><span class="q-pts">4 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">三个平面两两相交，则它们的交线条数为<span class="blank"></span></div>
+      <div class="opts cols-4">
+        <label class="opt"><input type="radio" name="q4" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot">只有 1 条</span></label>
+        <label class="opt"><input type="radio" name="q4" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot">只有 3 条</span></label>
+        <label class="opt"><input type="radio" name="q4" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot">1 条或 3 条</span></label>
+        <label class="opt"><input type="radio" name="q4" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot">2 条或 3 条</span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>C</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">单项选择题 · 4 分 ｜ 人教B版 · 必修第四册 · 11.2 平面的基本事实与推论</p>
+          <p><b>思路：</b>设三个平面为 α,β,γ，先由基本事实 3 写出三条交线，再讨论「两条交线重合」与「两两不重合」两种情形。</p>
+          <p><b>解答：</b>设 α∩β=<i>l</i><sub>1</sub>，β∩γ=<i>l</i><sub>2</sub>，γ∩α=<i>l</i><sub>3</sub>。</p>
+          <p>若 <i>l</i><sub>1</sub> 与 <i>l</i><sub>2</sub> 重合，设这条直线为 <i>l</i>，则 <i>l</i>⊂α 且 <i>l</i>⊂γ，故 <i>l</i>=γ∩α=<i>l</i><sub>3</sub>，此时三条交线重合为一条直线（如三个平面都经过同一条直线），交线只有 1 条。</p>
+          <p>若 <i>l</i><sub>1</sub> 与 <i>l</i><sub>2</sub> 不重合，则 <i>l</i><sub>1</sub>,<i>l</i><sub>2</sub> 是两条不同的直线，<i>l</i><sub>3</sub> 与它们都不重合，交线有 3 条（三线共点或三线互相平行两种情形都可能）。</p>
+          <p>故交线条数为 1 条或 3 条，不可能是 2 条。</p>
+          <p></p>
+          <p class="tip"><b>易错点：</b>只想到「三棱柱三个侧面交于三条平行线」而漏掉「三个平面共一条交线」的情形；误认为可以恰好有 2 条交线。</p>
+        </div>
+      </div>
+    </article>
+    <article class="q" data-type="single" data-answer="C" data-max="4.0" hidden>
+      <div class="q-head"><span class="qno">5</span><span class="q-type">单项选择题</span><span class="q-pts">4 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">已知平面 α 与平面 β 相交于直线 <i>l</i>，点 <i>A</i>,<i>B</i>∈α，点 <i>C</i>,<i>D</i>∈β，且直线 <i>AB</i> 与直线 <i>CD</i> 相交于点 <i>P</i>，则<span class="blank"></span></div>
+      <div class="opts cols-2">
+        <label class="opt"><input type="radio" name="q5" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot">点 <i>P</i> 在平面 α 内，但不在平面 β 内</span></label>
+        <label class="opt"><input type="radio" name="q5" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot">点 <i>P</i> 在平面 β 内，但不在平面 α 内</span></label>
+        <label class="opt"><input type="radio" name="q5" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot">点 <i>P</i> 一定在直线 <i>l</i> 上</span></label>
+        <label class="opt"><input type="radio" name="q5" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot">点 <i>P</i> 可能在直线 <i>l</i> 外</span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>C</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">单项选择题 · 4 分 ｜ 人教B版 · 必修第四册 · 11.2 平面的基本事实与推论</p>
+          <p><b>思路：</b>把「<i>P</i> 在 <i>AB</i> 上」翻译成「<i>P</i> 在平面 α 内」，把「<i>P</i> 在 <i>CD</i> 上」翻译成「<i>P</i> 在平面 β 内」，再用基本事实 3。</p>
+          <p><b>解答：</b>因为 <i>A</i>,<i>B</i>∈α，由基本事实 2 得直线 <i>AB</i>⊂α，又 <i>P</i>∈<i>AB</i>，故 <i>P</i>∈α。</p>
+          <p>同理 <i>C</i>,<i>D</i>∈β 得 <i>CD</i>⊂β，由 <i>P</i>∈<i>CD</i> 得 <i>P</i>∈β。</p>
+          <p>于是 <i>P</i> 是平面 α 与平面 β 的公共点，而 α∩β=<i>l</i>，由基本事实 3 知两平面的公共点都在交线 <i>l</i> 上，故 <i>P</i>∈<i>l</i>。</p>
+          <p></p>
+          <p class="tip"><b>易错点：</b>只由 <i>P</i>∈<i>AB</i>⊂α 得出 <i>P</i>∈α 就停止推理，漏掉「<i>P</i> 也在 β 内」这一步，从而无法确定 <i>P</i> 在交线上。</p>
+        </div>
+      </div>
+    </article>
+    <div class="section-title" hidden>二、多项选择题<span>共 1 小题，共 6 分；有多个选项符合题目要求</span></div>
+    <article class="q" data-type="multi" data-answer="ABD" data-max="6.0" hidden>
+      <div class="q-head"><span class="qno">6</span><span class="q-type">多项选择题</span><span class="q-pts">6 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">下列结论正确的是<span class="blank"></span></div>
+      <div class="opts cols-1">
+        <label class="opt"><input type="checkbox" name="q6" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot">若一条直线上有两个点在一个平面内，则这条直线上所有的点都在这个平面内</span></label>
+        <label class="opt"><input type="checkbox" name="q6" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot">若两个平面有一个公共点，则它们有且只有一条过该点的公共直线</span></label>
+        <label class="opt"><input type="checkbox" name="q6" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot">三条直线两两相交，则这三条直线一定共面</span></label>
+        <label class="opt"><input type="checkbox" name="q6" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot">若四点不共面，则其中任意三点都不共线</span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>ABD</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">多项选择题 · 6 分 ｜ 人教B版 · 必修第四册 · 11.2 平面的基本事实与推论</p>
+          <p><b>思路：</b>A、B 对照基本事实 2、3 的原文；C 用三棱锥的三条侧棱作反例；D 用「三点共线则四点共面」作反证。</p>
+          <p class="sol-sub">逐选项判定：</p>
+          <p class="judge"><span class="jl">A．</span>对：这正是基本事实 2。</p>
+          <p class="judge"><span class="jl">B．</span>对：这正是基本事实 3。</p>
+          <p class="judge"><span class="jl">C．</span>错：反例——三棱锥 <i>P</i>−<i>ABC</i> 的三条侧棱 <i>PA</i>,<i>PB</i>,<i>PC</i> 两两相交于点 <i>P</i>，但它们不共面，故「两两相交的三条直线必共面」不成立。</p>
+          <p class="judge"><span class="jl">D．</span>对：若四点中有三点共线，则由「一条直线和直线外一点确定一个平面」（推论 1）知这四点共面，与四点不共面矛盾，故任意三点都不共线。</p>
+          <p class="tip"><b>易错点：</b>C 项只想到「两两相交且不共点的三条直线共面」（构成三角形）而忽略三线共点的情形；D 项不会用反证法。</p>
+        </div>
+      </div>
+    </article>
+  </form>
+
+  <!-- ===== 逐题导航 / 提交区 ===== -->
+  <div class="submit-bar">
+    <button type="button" id="startBtn">开始答题</button>
+    <button type="button" id="prevBtn" hidden>上一题</button>
+    <button type="button" id="nextBtn" hidden>下一题</button>
+    <button type="button" id="submitBtn" hidden>提交答案</button>
+    <button type="button" id="resetBtn" hidden>重新作答</button>
+    <div class="bar-info"><span id="navInfo">点击「开始答题」逐题作答</span>　·　已作答 <b id="progress">0 / 6</b> 题　·　未作答的题目按 0 分计</div>
+  </div>
+
+  <div class="foot">依据《11.2 平面的基本事实与推论.md》选择题部分改编 · 满分 26 分</div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var TOTAL = 26;          // 满分（由 build_html.py 注入）
+  var questions = Array.prototype.slice.call(document.querySelectorAll('.q'));
+  var form = document.getElementById('quiz');
+  var startBtn = document.getElementById('startBtn');
+  var prevBtn = document.getElementById('prevBtn');
+  var nextBtn = document.getElementById('nextBtn');
+  var submitBtn = document.getElementById('submitBtn');
+  var resetBtn = document.getElementById('resetBtn');
+  var navInfo = document.getElementById('navInfo');
+  var sections = Array.prototype.slice.call(form.querySelectorAll('.section-title'));
+  var current = -1;               // -1 = 尚未开始答题
+  var progress = document.getElementById('progress');
+  var resultBox = document.getElementById('result');
+  var gradeScale = document.getElementById('gradeScale');
+  var noticeBox = document.getElementById('notice');
+  var scoreNum = document.getElementById('scoreNum');
+  var gradeBadge = document.getElementById('gradeBadge');
+  var gradeDesc = document.getElementById('gradeDesc');
+
+  // 5 等分等级（BANDS 由 build_html.py 注入）
+  var BANDS = [{"g": "A", "min": 20.8, "desc": "优秀 · 概念清晰，运算与转化掌握扎实"}, {"g": "B", "min": 15.6, "desc": "良好 · 主干知识扎实，个别细节待巩固"}, {"g": "C", "min": 10.4, "desc": "中等 · 基本思路具备，易错点仍需复盘"}, {"g": "D", "min": 5.2, "desc": "及格 · 建议逐题对照解析重做错题"}, {"g": "E", "min": 0.0, "desc": "待提高 · 建议先复习对应知识点再重新作答"}];
+
+  function inputsOf(q){ return Array.prototype.slice.call(q.querySelectorAll('input')); }
+  function chosenOf(q){ return inputsOf(q).filter(function(i){return i.checked;}).map(function(i){return i.value;}); }
+
+  // 计分：单选答对得满分、答错/不答 0 分；
+  // 多选：有错选或不答 0 分；否则该题满分均摊到每个正确选项（6 分 / 3 项 = 2 分，6 分 / 2 项 = 3 分）
+  function scoreOf(q){
+    var type = q.getAttribute('data-type');
+    var answer = q.getAttribute('data-answer');
+    var chosen = chosenOf(q);
+    var max = parseInt(q.getAttribute('data-max'), 10);
+    if (type === 'single'){
+      return (chosen.length === 1 && chosen[0] === answer) ? max : 0;
+    }
+    if (chosen.length === 0) return 0;                       // 不答得 0 分
+    for (var i=0;i<chosen.length;i++){
+      if (answer.indexOf(chosen[i]) === -1) return 0;       // 有错选得 0 分
+    }
+    var per = max / answer.length;                          // 满分均摊到每个正确选项
+    return Math.min(max, Math.round(chosen.length * per * 100) / 100);
+  }
+
+  function updateProgress(){
+    var done = questions.filter(function(q){ return chosenOf(q).length > 0; }).length;
+    progress.textContent = done + ' / ' + questions.length;
+  }
+
+  function gradeFor(score){
+    for (var i=0;i<BANDS.length;i++){ if (score >= BANDS[i].min) return BANDS[i]; }
+    return BANDS[BANDS.length-1];
+  }
+
+  // ===== 逐题推送 =====
+  // 一次只在页面上呈现一道题；章节汇总标题在答题阶段隐藏，提交后恢复。
+  function showQuestion(i){
+    current = i;
+    questions.forEach(function(q, idx){ q.hidden = (idx !== i); });
+    sections.forEach(function(s){ s.hidden = true; });
+    startBtn.hidden = true;
+    prevBtn.hidden = (i === 0);                         // 第 1 题无「上一题」
+    nextBtn.hidden = (i >= questions.length - 1);       // 最后一题无「下一题」
+    submitBtn.hidden = (i !== questions.length - 1);    // 「提交答案」只在最后一题出现
+    resetBtn.hidden = true;
+    var type = questions[i].getAttribute('data-type') === 'multi' ? '多项选择题' : '单项选择题';
+    navInfo.textContent = '第 ' + (i + 1) + ' / ' + questions.length + ' 题 · ' + type;
+    updateProgress();
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  function startQuiz(){ showQuestion(0); }
+  function nextQuestion(){ if (current >= 0 && (questions.length - 1) > current) showQuestion(current + 1); }
+  function prevQuestion(){ if (current > 0) showQuestion(current - 1); }
+
+  function submit(){
+    var total = 0;
+    questions.forEach(function(q){
+      var got = scoreOf(q);
+      total += got;
+      var answer = q.getAttribute('data-answer');
+      var max = parseInt(q.getAttribute('data-max'), 10);
+      var chosen = chosenOf(q);
+
+      // 逐题得分标签
+      var tag = q.querySelector('.q-got');
+      tag.textContent = '本题得 ' + got + ' / ' + max + ' 分';
+      tag.className = 'q-got ' + (got === max ? 'full' : (got > 0 ? 'part' : 'zero'));
+      tag.hidden = false;
+
+      // 选项判定着色：正确选项绿色，误选选项红色
+      q.querySelectorAll('.opt').forEach(function(opt){
+        var v = opt.querySelector('input').value;
+        if (answer.indexOf(v) !== -1) opt.classList.add('is-correct');
+        if (chosen.indexOf(v) !== -1 && answer.indexOf(v) === -1) opt.classList.add('is-wrong');
+        opt.classList.add('locked');
+      });
+      inputsOf(q).forEach(function(i){ i.disabled = true; });
+
+      // 显示答案与解析
+      q.querySelector('.sol').hidden = false;
+    });
+
+    // 总分与等级（显示在试卷标题下方）
+    var band = gradeFor(total);
+    scoreNum.textContent = total;
+    gradeBadge.textContent = band.g;
+    gradeBadge.className = 'grade-badge g-' + band.g;
+    gradeDesc.textContent = band.desc + '（得分率 ' + Math.round(total/TOTAL*100) + '%）';
+    resultBox.hidden = false;
+    gradeScale.hidden = false;   // 等级划分：提交后才显示
+    noticeBox.hidden = false;    // 答题说明：提交后才显示
+
+    // 提交后展开全部试题，便于逐题对照答案与解析复盘
+    questions.forEach(function(q){ q.hidden = false; });
+    sections.forEach(function(s){ s.hidden = false; });
+    startBtn.hidden = true;
+    prevBtn.hidden = true;
+    nextBtn.hidden = true;
+    submitBtn.hidden = true;
+    resetBtn.hidden = false;
+    navInfo.textContent = '已提交 · 全部试题与解析已展开';
+    progress.textContent = questions.length + ' / ' + questions.length;
+    resultBox.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+
+  function reset(){
+    questions.forEach(function(q){
+      inputsOf(q).forEach(function(i){ i.checked = false; i.disabled = false; });
+      q.querySelectorAll('.opt').forEach(function(opt){
+        opt.classList.remove('is-correct','is-wrong','locked');
+      });
+      q.querySelector('.sol').hidden = true;
+      var tag = q.querySelector('.q-got');
+      tag.hidden = true; tag.textContent = ''; tag.className = 'q-got';
+    });
+    // 回到「未开始」状态：隐藏全部试题，仅显示「开始答题」
+    questions.forEach(function(q){ q.hidden = true; });
+    sections.forEach(function(s){ s.hidden = true; });
+    current = -1;
+    resultBox.hidden = true;
+    gradeScale.hidden = true;
+    noticeBox.hidden = true;
+    startBtn.hidden = false;
+    prevBtn.hidden = true;
+    nextBtn.hidden = true;
+    submitBtn.hidden = true;
+    resetBtn.hidden = true;
+    navInfo.textContent = '点击「开始答题」逐题作答（共 ' + questions.length + ' 题）';
+    updateProgress();
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  // 页面加载时强制清空所有勾选，保证默认不勾选（含浏览器刷新恢复表单的情况）
+  function clearAll(){
+    inputsOf(form).forEach(function(i){ i.checked = false; i.disabled = false; });
+  }
+  clearAll();
+  if (typeof form.reset === 'function') form.reset();
+  clearAll();
+  // 初始态：隐藏全部试题与成绩相关区域，仅显示「开始答题」（含浏览器刷新恢复状态的情况）
+  questions.forEach(function(q){ q.hidden = true; });
+  sections.forEach(function(s){ s.hidden = true; });
+  resultBox.hidden = true;
+  gradeScale.hidden = true;
+  noticeBox.hidden = true;
+  startBtn.hidden = false;
+  prevBtn.hidden = true;
+  nextBtn.hidden = true;
+  submitBtn.hidden = true;
+  resetBtn.hidden = true;
+  navInfo.textContent = '点击「开始答题」逐题作答（共 ' + questions.length + ' 题）';
+  updateProgress();
+
+  form.addEventListener('change', updateProgress);
+  startBtn.addEventListener('click', startQuiz);
+  prevBtn.addEventListener('click', prevQuestion);
+  nextBtn.addEventListener('click', nextQuestion);
+  submitBtn.addEventListener('click', submit);
+  resetBtn.addEventListener('click', reset);
+})();
+</script>
+</body>
+</html>

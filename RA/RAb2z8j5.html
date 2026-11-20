@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>8.5 空间直线、平面的平行 · 选择题逐题练习（在线练习）</title>
+<style>
+:root{
+  --bg:#f1f6fc; --card:#ffffff; --ink:#1e2a38; --muted:#6b7c90; --line:#e2ebf5;
+  --blue:#2563eb; --blue-d:#1d4ed8; --blue-l:#eaf2ff;
+  --teal:#0d9488; --teal-l:#e7f7f4;
+  --yellow:#e8a317; --yellow-l:#fff5dc;
+  --green:#15803d; --green-l:#edfaf0; --green-b:#b7e4c4;
+  --red:#c0392b; --red-l:#fdf0ee; --red-b:#f3c3bb;
+}
+*{box-sizing:border-box}
+[hidden]{display:none !important}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Microsoft YaHei","PingFang SC","Segoe UI","Cambria Math",sans-serif;
+  font-size:16px; line-height:1.85; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:920px; margin:0 auto; padding:26px 18px 70px}
+sub,sup{font-size:.72em; line-height:0}
+.paper,.notice,.q,.submit-bar{
+  background:var(--card); border:1px solid var(--line); border-radius:14px;
+  box-shadow:0 3px 16px rgba(31,64,110,.055);
+}
+.paper{padding:28px 30px 24px; margin-bottom:16px; border-top:4px solid var(--blue)}
+.kicker{
+  display:inline-block; font-size:12.5px; letter-spacing:.5px; color:var(--teal);
+  background:var(--teal-l); border-radius:20px; padding:3px 13px; margin-bottom:12px; font-weight:600;
+}
+h1{font-size:27px; line-height:1.4; margin:0 0 6px; letter-spacing:.5px; color:#16283f}
+.subtitle{color:var(--muted); font-size:14.5px; margin:0 0 18px}
+
+/* 成绩面板：位于标题下方，提交后显示 */
+.result{
+  display:flex; align-items:center; gap:28px; flex-wrap:wrap;
+  background:linear-gradient(105deg,#eef5ff 0%,#f7fbff 60%,#e9f8f4 100%);
+  border:1px solid #cfe1fa; border-radius:12px; padding:18px 24px; margin:4px 0 18px;
+  animation:pop .45s ease-out;
+}
+@keyframes pop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.result-label{font-size:13px; color:var(--muted); letter-spacing:1px; margin-bottom:2px}
+.result-score{font-size:38px; font-weight:800; color:var(--blue-d); line-height:1.15}
+.result-score small{font-size:17px; font-weight:600; margin-left:3px}
+.result-score .slash{font-size:15px; font-weight:500; color:var(--muted); margin-left:8px}
+.result-right{border-left:1px dashed #bcd3ee; padding-left:28px; min-width:170px}
+.grade-badge{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:52px; height:52px; border-radius:14px; font-size:30px; font-weight:800;
+  color:#fff; background:var(--blue); box-shadow:0 4px 12px rgba(37,99,235,.25);
+}
+.grade-badge.g-A{background:#15803d} .grade-badge.g-B{background:#2563eb}
+.grade-badge.g-C{background:#0d9488} .grade-badge.g-D{background:#e8a317}
+.grade-badge.g-E{background:#c0392b}
+.grade-desc{font-size:13.5px; color:var(--muted); margin-top:6px}
+
+.meta{display:flex; gap:9px; flex-wrap:wrap; margin-bottom:14px}
+.pill{font-size:13px; padding:3px 12px; border-radius:20px; font-weight:600}
+.pill.blue{background:var(--blue-l); color:var(--blue-d)}
+.pill.teal{background:var(--teal-l); color:var(--teal)}
+.pill.yellow{background:var(--yellow-l); color:#a9700a}
+.grade-scale{
+  border-top:1px dashed var(--line); padding-top:12px; font-size:13px; color:var(--muted);
+  display:flex; gap:8px 14px; flex-wrap:wrap; align-items:center;
+}
+.gs-title{font-weight:600; color:#4a5b70}
+.grade-scale .b{padding:1px 9px; border-radius:6px; background:#f3f7fc; border:1px solid var(--line); font-weight:500; color:#41546b}
+.grade-scale b.g{display:inline-block; min-width:18px; text-align:center; color:var(--blue-d)}
+
+.notice{padding:15px 20px; font-size:14.5px; color:#41546b; margin-bottom:22px; background:#fbfdff}
+.notice b{color:var(--blue-d)}
+
+.section-title{
+  font-size:17px; font-weight:700; color:#1c3352; margin:26px 4px 13px;
+  padding-left:12px; border-left:4px solid var(--teal);
+}
+.section-title span{font-size:13.5px; font-weight:500; color:var(--muted); margin-left:8px}
+
+.q{padding:22px 26px 20px; margin-bottom:16px; scroll-margin-top:20px}
+.q-head{display:flex; align-items:center; gap:10px; margin-bottom:12px; flex-wrap:wrap}
+.qno{
+  display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px;
+  border-radius:9px; background:var(--blue); color:#fff; font-weight:700; font-size:15px; flex:none;
+}
+.q-type{font-size:13px; color:var(--teal); background:var(--teal-l); border-radius:6px; padding:2px 9px; font-weight:600}
+.q-pts{font-size:13px; color:#a9700a; background:var(--yellow-l); border-radius:20px; padding:2px 11px; font-weight:600}
+.q-got{margin-left:auto; font-size:13.5px; font-weight:700; padding:2px 12px; border-radius:20px}
+.q-got.full{color:var(--green); background:var(--green-l); border:1px solid var(--green-b)}
+.q-got.part{color:#a9700a; background:var(--yellow-l); border:1px solid #f0dca8}
+.q-got.zero{color:var(--red); background:var(--red-l); border:1px solid var(--red-b)}
+.q-stem{font-size:16.2px; line-height:2; margin-bottom:14px; text-align:justify}
+.q-stem .blank{display:inline-block; min-width:52px; border-bottom:1px solid #8fa4bb; margin:0 4px}
+
+/* 选项紧凑排布：4 列（一行四选项）/ 2 列（两行）/ 1 列（逐行）
+   列数由 build_html.py 依据该题选项文本长度自动判定，也可在 JSON 中用 option_cols 覆盖 */
+.opts{display:grid; gap:9px; grid-template-columns:1fr}
+.opts.cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.opts.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.opts.cols-1{grid-template-columns:1fr}
+.opts.cols-4 .opt{padding:9px 10px; gap:8px}
+.opt{
+  display:flex; align-items:flex-start; gap:11px; padding:10px 14px;
+  border:1px solid var(--line); border-radius:10px; background:#fcfdff;
+  cursor:pointer; transition:background .15s,border-color .15s,transform .1s;
+}
+.opt:hover{background:var(--blue-l); border-color:#bcd4f7}
+.opt input{width:17px; height:17px; margin-top:6px; flex:none; accent-color:var(--blue); cursor:pointer}
+.ol{font-weight:700; color:var(--blue-d); flex:none; min-width:20px}
+.ot{flex:1; min-width:0; line-height:1.9; overflow-wrap:anywhere}
+.opt.is-correct{background:var(--green-l); border-color:var(--green-b)}
+.opt.is-correct .ol{color:var(--green)}
+.opt.is-wrong{background:var(--red-l); border-color:var(--red-b)}
+.opt.is-wrong .ol{color:var(--red)}
+.opt.locked{cursor:default}
+.opt.locked:hover{background:inherit; border-color:var(--line)}
+.opt.locked.is-correct:hover{background:var(--green-l); border-color:var(--green-b)}
+.opt.locked.is-wrong:hover{background:var(--red-l); border-color:var(--red-b)}
+
+.sol{
+  margin-top:16px; border:1px solid #cfe9d6; border-left:4px solid var(--green);
+  border-radius:10px; background:#f7fdf9; padding:16px 20px 14px;
+  animation:fadein .4s ease-out;
+}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.sol-answer{font-size:16px; font-weight:700; color:var(--green); margin-bottom:10px}
+.sol-answer b{font-size:19px; letter-spacing:2px}
+.sol-title{font-size:15px; font-weight:700; color:#1c3352; margin:12px 0 6px}
+.sol-body{font-size:14.7px; line-height:1.95; color:#34465c}
+.sol-body p{margin:6px 0}
+.sol-meta{font-size:13.2px; color:var(--muted); background:#f0f6fb; border-radius:8px; padding:7px 12px}
+.sol-sub{font-weight:700; color:var(--blue-d)}
+.judge{padding-left:2px}
+.jl{font-weight:700; color:#1c3352; margin-right:4px}
+.tip{color:#8a5a06; background:var(--yellow-l); border-radius:8px; padding:7px 12px}
+
+.submit-bar{padding:18px 24px; display:flex; align-items:center; gap:16px; flex-wrap:wrap; position:relative}
+button{
+  font-family:inherit; font-size:16px; font-weight:700; border-radius:10px;
+  padding:11px 34px; cursor:pointer; border:1px solid transparent; transition:all .15s;
+}
+#startBtn,#submitBtn{background:var(--blue); color:#fff; box-shadow:0 4px 12px rgba(37,99,235,.22)}
+#startBtn:hover,#submitBtn:hover{background:var(--blue-d); transform:translateY(-1px)}
+#prevBtn,#nextBtn,#resetBtn{background:#fff; color:var(--blue-d); border-color:#bcd4f7}
+#prevBtn:hover,#nextBtn:hover,#resetBtn:hover{background:var(--blue-l)}
+.bar-info{font-size:13.5px; color:var(--muted); margin-left:auto; text-align:right}
+.bar-info b{color:var(--blue-d)}
+.foot{text-align:center; color:#8b9bb0; font-size:12.5px; margin-top:22px}
+@media (max-width:620px){
+  .wrap{padding:14px 10px 50px} .paper{padding:20px 18px} h1{font-size:22px}
+  .q{padding:18px 16px} .result{gap:16px; padding:15px 18px}
+  .result-right{border-left:0; padding-left:0; border-top:1px dashed #bcd3ee; padding-top:12px; width:100%}
+  .bar-info{margin-left:0; text-align:left; width:100%}
+  /* 窄屏自动降列，避免 4 列过挤 */
+  .opts.cols-4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .opts.cols-2{grid-template-columns:1fr}
+  button{padding:11px 22px}
+}
+@media print{
+  body{background:#fff} .submit-bar{display:none} .paper,.notice,.q{box-shadow:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===== 试卷标题区 ===== -->
+  <header class="paper">
+    <div class="kicker">人教A版 · 必修第二册 · 第八章 立体几何初步 · 周测卷</div>
+    <h1>8.5 空间直线、平面的平行 · 选择题逐题练习</h1>
+    <p class="subtitle">检测范围：本节全部小节（3 个小节 / 17 条知识点） ｜ 仅保留原卷的单项选择题与多项选择题及答案、解析</p>
+
+    <!-- 得分与等级：提交后显示在标题下方 -->
+    <div class="result" id="result" hidden>
+      <div class="result-left">
+        <div class="result-label">本次测试得分</div>
+        <div class="result-score"><span id="scoreNum">0</span><small>分</small><span class="slash">/ 满分 26 分</span></div>
+      </div>
+      <div class="result-right">
+        <div class="result-label">等级评定</div>
+        <div class="grade-badge" id="gradeBadge">A</div>
+        <div class="grade-desc" id="gradeDesc"></div>
+      </div>
+    </div>
+
+    <div class="meta">
+      <span class="pill blue">满分 26 分</span>
+      <span class="pill teal">单项选择题 5 题 × 4 分 = 20 分</span>
+      <span class="pill teal">多项选择题 1 题 × 6 分 = 6 分</span>
+      <span class="pill yellow">建议用时 14 分钟</span>
+    </div>
+    <!-- 等级划分：答题中隐藏，提交答案后随成绩一起显示 -->
+    <div class="grade-scale" id="gradeScale" hidden>
+      <span class="gs-title">等级划分（26 分等分为 5 档，每档 5.2 分）</span>
+      <span class="b"><b class="g">A</b> 20.8 ~ 26</span>
+      <span class="b"><b class="g">B</b> 15.6 ~ 20.8</span>
+      <span class="b"><b class="g">C</b> 10.4 ~ 15.6</span>
+      <span class="b"><b class="g">D</b> 5.2 ~ 10.4</span>
+      <span class="b"><b class="g">E</b> 0 ~ 5.2</span>
+    </div>
+  </header>
+
+  <!-- 答题说明：答题中隐藏，提交答案后显示 -->
+  <div class="notice" id="notice" hidden>
+    <b>答题说明：</b>单项选择题每题 4 分，答对得 4 分，答错或不答得 0 分；多项选择题每题 6 分，按正确选项个数均摊（3 个正确选项时每选对 1 个得 2 分，2 个正确选项时每选对 1 个得 3 分），但只要选错任意选项或不作答，该题即得 0 分。所有选项默认不勾选。作答完成后点击下方「提交答案」，系统将自动评分，并在每道题下方完整显示答案与解析。
+  </div>
+
+  <form id="quiz" autocomplete="off">
+        <div class="section-title" hidden>一、单项选择题<span>共 5 小题，共 20 分；每题只有一个选项符合题目要求</span></div>
+    <article class="q" data-type="single" data-answer="B" data-max="4.0" hidden>
+      <div class="q-head"><span class="qno">1</span><span class="q-type">单项选择题</span><span class="q-pts">4 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">已知平面 α∥ 平面 β，平面 γ 分别与 α、β 相交于直线 <i>a</i>、<i>b</i>。要证明 <i>a</i>∥<i>b</i>，下列思路中正确的是<span class="blank"></span></div>
+      <div class="opts cols-1">
+        <label class="opt"><input type="radio" name="q1" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot">因为 <i>a</i>⊂α，<i>b</i>⊂β，且 α∥β，所以 <i>a</i>∥<i>b</i></span></label>
+        <label class="opt"><input type="radio" name="q1" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot">先由 <i>a</i>、<i>b</i> 都在平面 γ 内得两直线共面，再由 <i>a</i>⊂α、<i>b</i>⊂β、α∥β 得两直线没有公共点，最后由「同一平面内不相交的两条直线平行」得证</span></label>
+        <label class="opt"><input type="radio" name="q1" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot">先用线面平行的判定定理证明 <i>a</i>∥β，再用线面平行的性质定理得 <i>a</i>∥<i>b</i></span></label>
+        <label class="opt"><input type="radio" name="q1" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot">用等角定理，证明 <i>a</i>、<i>b</i> 与平面 γ 内同一条直线所成的角相等</span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>B</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">单项选择题 · 4 分 ｜ 人教A版 · 必修第二册 · 8.5 空间直线、平面的平行</p>
+          <p><b>思路：</b>面面平行的性质定理「两平行平面被第三个平面所截，交线平行」不能只靠「分别在两平行平面内」推出，必须补上「共面」与「无公共点」两个环节，这就是该定理的证明思路。</p>
+          <p class="sol-sub">逐选项判定：</p>
+          <p class="judge"><span class="jl">A．</span>错，<i>a</i>、<i>b</i> 分别在两个平行平面内时可能异面，如正方体中上、下底面上互不平行的两条棱。</p>
+          <p class="judge"><span class="jl">B．</span>正确，<i>a</i>、<i>b</i> 都含于平面 γ，故共面，又 <i>a</i>⊂α、<i>b</i>⊂β 且 α∩β=∅，故 <i>a</i>∩<i>b</i>=∅，同一平面内不相交的两直线平行，得 <i>a</i>∥<i>b</i>。</p>
+          <p class="judge"><span class="jl">C．</span>错，证 <i>a</i>∥β 时仍要判定 <i>a</i> 与 β 无公共点，而 <i>a</i>∥<i>b</i> 正是要证的结论，构成循环。</p>
+          <p class="judge"><span class="jl">D．</span>错，等角定理用于比较两个角的大小，与两直线平行无关。</p>
+          <p class="tip"><b>易错点：</b>把「分别在两个平行平面内」当作「平行」的充分条件，忽视异面这一情形。</p>
+        </div>
+      </div>
+    </article>
+    <article class="q" data-type="single" data-answer="B" data-max="4.0" hidden>
+      <div class="q-head"><span class="qno">2</span><span class="q-type">单项选择题</span><span class="q-pts">4 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">已知平面 α∥β，<i>A</i>、<i>C</i>∈α，<i>B</i>、<i>D</i>∈β，且 <i>AB</i>∥<i>CD</i>。若 <i>AB</i>=2<i>x</i>+3，<i>CD</i>=4<i>x</i>−5，则 <i>AB</i> 的长为<span class="blank"></span></div>
+      <div class="opts cols-4">
+        <label class="opt"><input type="radio" name="q2" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot">4</span></label>
+        <label class="opt"><input type="radio" name="q2" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot">11</span></label>
+        <label class="opt"><input type="radio" name="q2" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot">5</span></label>
+        <label class="opt"><input type="radio" name="q2" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot">无法确定</span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>B</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">单项选择题 · 4 分 ｜ 人教A版 · 必修第二册 · 8.5 空间直线、平面的平行</p>
+          <p><b>思路：</b><i>AB</i>∥<i>CD</i> 说明 <i>A</i>、<i>B</i>、<i>C</i>、<i>D</i> 共面，该平面截两平行平面所得交线 <i>AC</i>、<i>BD</i> 平行，于是四边形 <i>ABDC</i> 是平行四边形，用「夹在两平行平面间的平行线段相等」列方程。</p>
+          <p><b>解答：</b>由 <i>AB</i>∥<i>CD</i> 知 <i>A</i>、<i>B</i>、<i>C</i>、<i>D</i> 共面，记该平面为 θ，则 θ∩α=<i>AC</i>，θ∩β=<i>BD</i>，由 α∥β 得 <i>AC</i>∥<i>BD</i>，四边形 <i>ABDC</i> 中 <i>AB</i>∥<i>CD</i> 且 <i>AC</i>∥<i>BD</i>，故为平行四边形，得 <i>AB</i>=<i>CD</i>，即 2<i>x</i>+3=4<i>x</i>−5，解得 <i>x</i>=4，故 <i>AB</i>=11</p>
+          <p class="sol-sub">逐选项判定：</p>
+          <p class="judge"><span class="jl">A．</span>4 是 <i>x</i> 的值而非线段长。</p>
+          <p class="judge"><span class="jl">C．</span>5 由移项失误得 <i>x</i>=1 算出。</p>
+          <p class="judge"><span class="jl">D．</span>错，因为推论已保证 <i>AB</i>=<i>CD</i>，线段长可以确定。</p>
+          <p class="tip"><b>易错点：</b>解出 <i>x</i>=4 后直接把 4 当作所求线段长（选 A），或移项失误得 <i>x</i>=1 从而算出 <i>AB</i>=5（选 C）；也有的误以为 <i>AB</i>、<i>CD</i> 只是「分别在两平面内」因而长度可以不等，错选 D。</p>
+        </div>
+      </div>
+    </article>
+    <article class="q" data-type="single" data-answer="A" data-max="4.0" hidden>
+      <div class="q-head"><span class="qno">3</span><span class="q-type">单项选择题</span><span class="q-pts">4 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">在三棱柱 <i>ABC</i>−<i>A</i><sub>1</sub><i>B</i><sub>1</sub><i>C</i><sub>1</sub> 中，<i>D</i>、<i>E</i> 分别是 <i>AB</i>、<i>AC</i> 的中点。下列推理正确的是<span class="blank"></span></div>
+      <div class="opts cols-1">
+        <label class="opt"><input type="radio" name="q3" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot">由 <i>DE</i>∥<i>BC</i>，<i>BC</i>⊂ 平面 <i>BCC</i><sub>1</sub><i>B</i><sub>1</sub>，<i>DE</i>⊄ 平面 <i>BCC</i><sub>1</sub><i>B</i><sub>1</sub>，得 <i>DE</i>∥ 平面 <i>BCC</i><sub>1</sub><i>B</i><sub>1</sub></span></label>
+        <label class="opt"><input type="radio" name="q3" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot">只需 <i>DE</i>∥<i>BC</i> 且 <i>BC</i>⊂ 平面 <i>BCC</i><sub>1</sub><i>B</i><sub>1</sub>，不必判断 <i>DE</i> 与平面 <i>BCC</i><sub>1</sub><i>B</i><sub>1</sub> 的位置关系</span></label>
+        <label class="opt"><input type="radio" name="q3" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot">由 <i>DE</i>∥<i>BC</i> 得 <i>DE</i>∥ 平面 <i>ABC</i>，这正是线面平行判定定理的应用</span></label>
+        <label class="opt"><input type="radio" name="q3" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot">由 <i>DE</i>∥<i>BC</i>，<i>BC</i>∥<i>B</i><sub>1</sub><i>C</i><sub>1</sub> 得 <i>DE</i>∥<i>B</i><sub>1</sub><i>C</i><sub>1</sub>，这是线面平行判定定理的直接应用</span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>A</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">单项选择题 · 4 分 ｜ 人教A版 · 必修第二册 · 8.5 空间直线、平面的平行</p>
+          <p><b>思路：</b>线面平行判定定理的三个条件缺一不可，且「线线平行 ⇒ 线面平行」与「线线平行 ⇒ 线线平行（基本事实4）」是两种不同的转化，须分清。</p>
+          <p class="sol-sub">逐选项判定：</p>
+          <p class="judge"><span class="jl">A．</span>正确，三个条件齐备：<i>DE</i>∥<i>BC</i>（中位线）、<i>BC</i>⊂ 平面 <i>BCC</i><sub>1</sub><i>B</i><sub>1</sub>、<i>DE</i>⊄ 平面 <i>BCC</i><sub>1</sub><i>B</i><sub>1</sub>，故 <i>DE</i>∥ 平面 <i>BCC</i><sub>1</sub><i>B</i><sub>1</sub>。</p>
+          <p class="judge"><span class="jl">B．</span>错，若 <i>DE</i> 在平面 <i>BCC</i><sub>1</sub><i>B</i><sub>1</sub> 内，即使 <i>DE</i>∥<i>BC</i> 也不能称 <i>DE</i> 与该平面平行，缺的正是「<i>DE</i>⊄」这一条。</p>
+          <p class="judge"><span class="jl">C．</span>错，<i>D</i>、<i>E</i> 在平面 <i>ABC</i> 内，故 <i>DE</i>⊂ 平面 <i>ABC</i>，与平面相交而不平行，判定定理对「线在面内」失效。</p>
+          <p class="judge"><span class="jl">D．</span>错，由 <i>DE</i>∥<i>BC</i>、<i>BC</i>∥<i>B</i><sub>1</sub><i>C</i><sub>1</sub> 得 <i>DE</i>∥<i>B</i><sub>1</sub><i>C</i><sub>1</sub> 用的是基本事实4（平行的传递性），不是判定定理。</p>
+          <p class="tip"><b>易错点：</b>用判定定理时漏写「已知直线不在平面内」；把基本事实4 与线面平行判定定理混为一谈。</p>
+        </div>
+      </div>
+    </article>
+    <article class="q" data-type="single" data-answer="C" data-max="4.0" hidden>
+      <div class="q-head"><span class="qno">4</span><span class="q-type">单项选择题</span><span class="q-pts">4 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">关于空间中的等角定理，下列说法正确的是<span class="blank"></span></div>
+      <div class="opts cols-1">
+        <label class="opt"><input type="radio" name="q4" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot">若一个角的两边与另一个角的两边分别平行，则这两个角相等</span></label>
+        <label class="opt"><input type="radio" name="q4" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot">若 ∠<i>BAC</i> 与 ∠<i>B</i>′<i>A</i>′<i>C</i>′ 的两边分别平行，且 ∠<i>BAC</i>=70<sup>°</sup>，则 ∠<i>B</i>′<i>A</i>′<i>C</i>′=110<sup>°</sup></span></label>
+        <label class="opt"><input type="radio" name="q4" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot">证明该定理的关键是在两角的两边上分别截取相等的线段，构造平行四边形把两角移到同一个三角形中，再用全等三角形得对应角相等；两角相等还是互补，取决于两组边的方向是否同向对应</span></label>
+        <label class="opt"><input type="radio" name="q4" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot">若两个角的两边分别平行，则这两个角的和一定是 180<sup>°</sup></span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>C</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">单项选择题 · 4 分 ｜ 人教A版 · 必修第二册 · 8.5 空间直线、平面的平行</p>
+          <p><b>思路：</b>等角定理的结论是「相等或互补」，只给「分别平行」不能确定是哪一种；其证明思路是截取等长线段构造平行四边形，把空间两角纳入同一个三角形再用全等比较。</p>
+          <p class="sol-sub">逐选项判定：</p>
+          <p class="judge"><span class="jl">A．</span>错，两角可能互补，如正方体中 ∠<i>DAB</i> 与 ∠<i>D</i><sub>1</sub><i>A</i><sub>1</sub><i>B</i><sub>1</sub> 的两边分别平行但方向对应相反。</p>
+          <p class="judge"><span class="jl">B．</span>错，70<sup>°</sup> 与 110<sup>°</sup> 都可能，题目条件不足以排除相等的情形。</p>
+          <p class="judge"><span class="jl">C．</span>正确，在两角两边上分别截取 <i>AD</i>=<i>A</i>′<i>D</i>′、<i>AE</i>=<i>A</i>′<i>E</i>′，由 <i>AD</i>∥<i>A</i>′<i>D</i>′、<i>AD</i>=<i>A</i>′<i>D</i>′ 得四边形 <i>ADD</i>′<i>A</i>′ 是平行四边形，故 <i>DD</i>′∥<i>AA</i>′ 且 <i>DD</i>′=<i>AA</i>′，同理 <i>EE</i>′∥<i>AA</i>′、<i>EE</i>′=<i>AA</i>′，于是 <i>DD</i>′∥<i>EE</i>′、<i>DD</i>′=<i>EE</i>′，四边形 <i>DD</i>′<i>E</i>′<i>E</i> 为平行四边形，得 <i>DE</i>=<i>D</i>′<i>E</i>′，从而 △<i>ADE</i>≅△<i>A</i>′<i>D</i>′<i>E</i>′，∠<i>DAE</i>=∠<i>D</i>′<i>A</i>′<i>E</i>′，若有一组边方向相反，则对应角互补。</p>
+          <p class="judge"><span class="jl">D．</span>错，两角和为 180<sup>°</sup> 只是互补这一种情形，方向对应相同时两角相等。</p>
+          <p class="tip"><b>易错点：</b>把「相等或互补」压缩成「相等」；误认为只要两边分别平行就必互补。</p>
+        </div>
+      </div>
+    </article>
+    <article class="q" data-type="single" data-answer="C" data-max="4.0" hidden>
+      <div class="q-head"><span class="qno">5</span><span class="q-type">单项选择题</span><span class="q-pts">4 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">在正方体 <i>ABCD</i>−<i>A</i><sub>1</sub><i>B</i><sub>1</sub><i>C</i><sub>1</sub><i>D</i><sub>1</sub> 中，<i>E</i>、<i>F</i> 分别是棱 <i>AB</i>、<i>AD</i> 的中点，<i>G</i>、<i>H</i> 分别是棱 <i>B</i><sub>1</sub><i>C</i><sub>1</sub>、<i>C</i><sub>1</sub><i>D</i><sub>1</sub> 的中点。给出四个结论：① <i>EF</i>∥<i>GH</i>；② <i>EF</i>∥ 平面 <i>BDD</i><sub>1</sub><i>B</i><sub>1</sub>；③ <i>GH</i>∥ 平面 <i>BDD</i><sub>1</sub><i>B</i><sub>1</sub>；④ 平面 <i>EFHG</i>∥ 平面 <i>BDD</i><sub>1</sub><i>B</i><sub>1</sub>。其中正确的个数是<span class="blank"></span></div>
+      <div class="opts cols-4">
+        <label class="opt"><input type="radio" name="q5" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot">1</span></label>
+        <label class="opt"><input type="radio" name="q5" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot">2</span></label>
+        <label class="opt"><input type="radio" name="q5" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot">3</span></label>
+        <label class="opt"><input type="radio" name="q5" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot">4</span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>C</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">单项选择题 · 4 分 ｜ 人教A版 · 必修第二册 · 8.5 空间直线、平面的平行</p>
+          <p><b>思路：</b>先用中位线得 <i>EF</i>∥<i>BD</i>、<i>GH</i>∥<i>B</i><sub>1</sub><i>D</i><sub>1</sub>，再用 <i>BD</i>∥<i>B</i><sub>1</sub><i>D</i><sub>1</sub> 与基本事实4 得 <i>EF</i>∥<i>GH</i>；线面平行用判定定理，面面平行则要求一个平面内两条相交直线都平行于另一平面。</p>
+          <p><b>解答：</b>① 正确，<i>EF</i> 是 △<i>ABD</i> 的中位线，故 <i>EF</i>∥<i>BD</i>；<i>GH</i> 是 △<i>C</i><sub>1</sub><i>B</i><sub>1</sub><i>D</i><sub>1</sub> 的中位线，故 <i>GH</i>∥<i>B</i><sub>1</sub><i>D</i><sub>1</sub>；又 <i>BD</i>∥<i>B</i><sub>1</sub><i>D</i><sub>1</sub>，由基本事实4 得 <i>EF</i>∥<i>GH</i>。② 正确，<i>BD</i>⊂ 平面 <i>BDD</i><sub>1</sub><i>B</i><sub>1</sub>，<i>EF</i>⊄ 平面 <i>BDD</i><sub>1</sub><i>B</i><sub>1</sub>，结合 <i>EF</i>∥<i>BD</i> 得 <i>EF</i>∥ 平面 <i>BDD</i><sub>1</sub><i>B</i><sub>1</sub>。③ 正确，同理 <i>B</i><sub>1</sub><i>D</i><sub>1</sub>⊂ 平面 <i>BDD</i><sub>1</sub><i>B</i><sub>1</sub>，<i>GH</i>⊄ 平面 <i>BDD</i><sub>1</sub><i>B</i><sub>1</sub>，故 <i>GH</i>∥ 平面 <i>BDD</i><sub>1</sub><i>B</i><sub>1</sub>。④ 错误，平面 <i>EFHG</i> 内还有直线 <i>FH</i>，而 <i>FH</i> 与平面 <i>BDD</i><sub>1</sub><i>B</i><sub>1</sub> 不平行（<i>F</i>、<i>H</i> 分别在底面、顶面上，<i>FH</i> 与该平面相交），两条相交直线未同时平行于该平面，不能得面面平行。正确的有 3 个，</p>
+          <p class="tip"><b>易错点：</b>由「两条平行线都平行于同一平面」就断言两平面平行，忽视还需另一条相交直线也平行于该平面。</p>
+        </div>
+      </div>
+    </article>
+    <div class="section-title" hidden>二、多项选择题<span>共 1 小题，共 6 分；有多个选项符合题目要求</span></div>
+    <article class="q" data-type="multi" data-answer="ABD" data-max="6.0" hidden>
+      <div class="q-head"><span class="qno">6</span><span class="q-type">多项选择题</span><span class="q-pts">6 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">设 α、β、γ 是三个不同的平面，<i>a</i>、<i>b</i> 是两条不同的直线，下列说法正确的是<span class="blank"></span></div>
+      <div class="opts cols-1">
+        <label class="opt"><input type="checkbox" name="q6" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot">若一个平面内的两条相交直线都平行于另一个平面，则这两个平面平行</span></label>
+        <label class="opt"><input type="checkbox" name="q6" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot">若两个平面平行，则其中一个平面内的任意一条直线都平行于另一个平面</span></label>
+        <label class="opt"><input type="checkbox" name="q6" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot">若一条直线平行于一个平面，则这条直线平行于该平面内的所有直线</span></label>
+        <label class="opt"><input type="checkbox" name="q6" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot">若 α∥β，β∥γ，则 α∥γ</span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>ABD</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">多项选择题 · 6 分 ｜ 人教A版 · 必修第二册 · 8.5 空间直线、平面的平行</p>
+          <p><b>思路：</b>A 是面面平行的判定定理；B 是面面平行的性质（线在面内则线平行于另一平面）；C 混淆了「平行于平面」与「平行于平面内每条直线」；D 是平行平面的传递性。</p>
+          <p class="sol-sub">逐选项判定：</p>
+          <p class="judge"><span class="jl">A．</span>正确，两条相交直线确定一个平面内的「方向」，它们都平行于另一平面即可推出两平面无公共点。</p>
+          <p class="judge"><span class="jl">B．</span>正确，设 <i>a</i>⊂α，α∥β，则 <i>a</i> 与 β 无公共点，故 <i>a</i>∥β。</p>
+          <p class="judge"><span class="jl">C．</span>错误，反例：正方体中 <i>AB</i>∥ 平面 <i>A</i><sub>1</sub><i>B</i><sub>1</sub><i>C</i><sub>1</sub><i>D</i><sub>1</sub>，而平面 <i>A</i><sub>1</sub><i>B</i><sub>1</sub><i>C</i><sub>1</sub><i>D</i><sub>1</sub> 内的 <i>A</i><sub>1</sub><i>C</i><sub>1</sub> 与 <i>AB</i> 异面，<i>AB</i> 并不平行于该平面内的所有直线。</p>
+          <p class="judge"><span class="jl">D．</span>正确，α 与 γ 无公共点（若有公共点，该点同时在 β 内，与 α∥β 或 β∥γ 矛盾）。</p>
+          <p class="tip"><b>易错点：</b>漏选 B，误以为「线在面内」与「线面平行」互斥；错选 C，把线面平行误读为与该平面内所有直线都平行。</p>
+        </div>
+      </div>
+    </article>
+  </form>
+
+  <!-- ===== 逐题导航 / 提交区 ===== -->
+  <div class="submit-bar">
+    <button type="button" id="startBtn">开始答题</button>
+    <button type="button" id="prevBtn" hidden>上一题</button>
+    <button type="button" id="nextBtn" hidden>下一题</button>
+    <button type="button" id="submitBtn" hidden>提交答案</button>
+    <button type="button" id="resetBtn" hidden>重新作答</button>
+    <div class="bar-info"><span id="navInfo">点击「开始答题」逐题作答</span>　·　已作答 <b id="progress">0 / 6</b> 题　·　未作答的题目按 0 分计</div>
+  </div>
+
+  <div class="foot">依据《8.5 空间直线、平面的平行.md》选择题部分改编 · 满分 26 分</div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var TOTAL = 26;          // 满分（由 build_html.py 注入）
+  var questions = Array.prototype.slice.call(document.querySelectorAll('.q'));
+  var form = document.getElementById('quiz');
+  var startBtn = document.getElementById('startBtn');
+  var prevBtn = document.getElementById('prevBtn');
+  var nextBtn = document.getElementById('nextBtn');
+  var submitBtn = document.getElementById('submitBtn');
+  var resetBtn = document.getElementById('resetBtn');
+  var navInfo = document.getElementById('navInfo');
+  var sections = Array.prototype.slice.call(form.querySelectorAll('.section-title'));
+  var current = -1;               // -1 = 尚未开始答题
+  var progress = document.getElementById('progress');
+  var resultBox = document.getElementById('result');
+  var gradeScale = document.getElementById('gradeScale');
+  var noticeBox = document.getElementById('notice');
+  var scoreNum = document.getElementById('scoreNum');
+  var gradeBadge = document.getElementById('gradeBadge');
+  var gradeDesc = document.getElementById('gradeDesc');
+
+  // 5 等分等级（BANDS 由 build_html.py 注入）
+  var BANDS = [{"g": "A", "min": 20.8, "desc": "优秀 · 概念清晰，运算与转化掌握扎实"}, {"g": "B", "min": 15.6, "desc": "良好 · 主干知识扎实，个别细节待巩固"}, {"g": "C", "min": 10.4, "desc": "中等 · 基本思路具备，易错点仍需复盘"}, {"g": "D", "min": 5.2, "desc": "及格 · 建议逐题对照解析重做错题"}, {"g": "E", "min": 0.0, "desc": "待提高 · 建议先复习对应知识点再重新作答"}];
+
+  function inputsOf(q){ return Array.prototype.slice.call(q.querySelectorAll('input')); }
+  function chosenOf(q){ return inputsOf(q).filter(function(i){return i.checked;}).map(function(i){return i.value;}); }
+
+  // 计分：单选答对得满分、答错/不答 0 分；
+  // 多选：有错选或不答 0 分；否则该题满分均摊到每个正确选项（6 分 / 3 项 = 2 分，6 分 / 2 项 = 3 分）
+  function scoreOf(q){
+    var type = q.getAttribute('data-type');
+    var answer = q.getAttribute('data-answer');
+    var chosen = chosenOf(q);
+    var max = parseInt(q.getAttribute('data-max'), 10);
+    if (type === 'single'){
+      return (chosen.length === 1 && chosen[0] === answer) ? max : 0;
+    }
+    if (chosen.length === 0) return 0;                       // 不答得 0 分
+    for (var i=0;i<chosen.length;i++){
+      if (answer.indexOf(chosen[i]) === -1) return 0;       // 有错选得 0 分
+    }
+    var per = max / answer.length;                          // 满分均摊到每个正确选项
+    return Math.min(max, Math.round(chosen.length * per * 100) / 100);
+  }
+
+  function updateProgress(){
+    var done = questions.filter(function(q){ return chosenOf(q).length > 0; }).length;
+    progress.textContent = done + ' / ' + questions.length;
+  }
+
+  function gradeFor(score){
+    for (var i=0;i<BANDS.length;i++){ if (score >= BANDS[i].min) return BANDS[i]; }
+    return BANDS[BANDS.length-1];
+  }
+
+  // ===== 逐题推送 =====
+  // 一次只在页面上呈现一道题；章节汇总标题在答题阶段隐藏，提交后恢复。
+  function showQuestion(i){
+    current = i;
+    questions.forEach(function(q, idx){ q.hidden = (idx !== i); });
+    sections.forEach(function(s){ s.hidden = true; });
+    startBtn.hidden = true;
+    prevBtn.hidden = (i === 0);                         // 第 1 题无「上一题」
+    nextBtn.hidden = (i >= questions.length - 1);       // 最后一题无「下一题」
+    submitBtn.hidden = (i !== questions.length - 1);    // 「提交答案」只在最后一题出现
+    resetBtn.hidden = true;
+    var type = questions[i].getAttribute('data-type') === 'multi' ? '多项选择题' : '单项选择题';
+    navInfo.textContent = '第 ' + (i + 1) + ' / ' + questions.length + ' 题 · ' + type;
+    updateProgress();
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  function startQuiz(){ showQuestion(0); }
+  function nextQuestion(){ if (current >= 0 && (questions.length - 1) > current) showQuestion(current + 1); }
+  function prevQuestion(){ if (current > 0) showQuestion(current - 1); }
+
+  function submit(){
+    var total = 0;
+    questions.forEach(function(q){
+      var got = scoreOf(q);
+      total += got;
+      var answer = q.getAttribute('data-answer');
+      var max = parseInt(q.getAttribute('data-max'), 10);
+      var chosen = chosenOf(q);
+
+      // 逐题得分标签
+      var tag = q.querySelector('.q-got');
+      tag.textContent = '本题得 ' + got + ' / ' + max + ' 分';
+      tag.className = 'q-got ' + (got === max ? 'full' : (got > 0 ? 'part' : 'zero'));
+      tag.hidden = false;
+
+      // 选项判定着色：正确选项绿色，误选选项红色
+      q.querySelectorAll('.opt').forEach(function(opt){
+        var v = opt.querySelector('input').value;
+        if (answer.indexOf(v) !== -1) opt.classList.add('is-correct');
+        if (chosen.indexOf(v) !== -1 && answer.indexOf(v) === -1) opt.classList.add('is-wrong');
+        opt.classList.add('locked');
+      });
+      inputsOf(q).forEach(function(i){ i.disabled = true; });
+
+      // 显示答案与解析
+      q.querySelector('.sol').hidden = false;
+    });
+
+    // 总分与等级（显示在试卷标题下方）
+    var band = gradeFor(total);
+    scoreNum.textContent = total;
+    gradeBadge.textContent = band.g;
+    gradeBadge.className = 'grade-badge g-' + band.g;
+    gradeDesc.textContent = band.desc + '（得分率 ' + Math.round(total/TOTAL*100) + '%）';
+    resultBox.hidden = false;
+    gradeScale.hidden = false;   // 等级划分：提交后才显示
+    noticeBox.hidden = false;    // 答题说明：提交后才显示
+
+    // 提交后展开全部试题，便于逐题对照答案与解析复盘
+    questions.forEach(function(q){ q.hidden = false; });
+    sections.forEach(function(s){ s.hidden = false; });
+    startBtn.hidden = true;
+    prevBtn.hidden = true;
+    nextBtn.hidden = true;
+    submitBtn.hidden = true;
+    resetBtn.hidden = false;
+    navInfo.textContent = '已提交 · 全部试题与解析已展开';
+    progress.textContent = questions.length + ' / ' + questions.length;
+    resultBox.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+
+  function reset(){
+    questions.forEach(function(q){
+      inputsOf(q).forEach(function(i){ i.checked = false; i.disabled = false; });
+      q.querySelectorAll('.opt').forEach(function(opt){
+        opt.classList.remove('is-correct','is-wrong','locked');
+      });
+      q.querySelector('.sol').hidden = true;
+      var tag = q.querySelector('.q-got');
+      tag.hidden = true; tag.textContent = ''; tag.className = 'q-got';
+    });
+    // 回到「未开始」状态：隐藏全部试题，仅显示「开始答题」
+    questions.forEach(function(q){ q.hidden = true; });
+    sections.forEach(function(s){ s.hidden = true; });
+    current = -1;
+    resultBox.hidden = true;
+    gradeScale.hidden = true;
+    noticeBox.hidden = true;
+    startBtn.hidden = false;
+    prevBtn.hidden = true;
+    nextBtn.hidden = true;
+    submitBtn.hidden = true;
+    resetBtn.hidden = true;
+    navInfo.textContent = '点击「开始答题」逐题作答（共 ' + questions.length + ' 题）';
+    updateProgress();
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  // 页面加载时强制清空所有勾选，保证默认不勾选（含浏览器刷新恢复表单的情况）
+  function clearAll(){
+    inputsOf(form).forEach(function(i){ i.checked = false; i.disabled = false; });
+  }
+  clearAll();
+  if (typeof form.reset === 'function') form.reset();
+  clearAll();
+  // 初始态：隐藏全部试题与成绩相关区域，仅显示「开始答题」（含浏览器刷新恢复状态的情况）
+  questions.forEach(function(q){ q.hidden = true; });
+  sections.forEach(function(s){ s.hidden = true; });
+  resultBox.hidden = true;
+  gradeScale.hidden = true;
+  noticeBox.hidden = true;
+  startBtn.hidden = false;
+  prevBtn.hidden = true;
+  nextBtn.hidden = true;
+  submitBtn.hidden = true;
+  resetBtn.hidden = true;
+  navInfo.textContent = '点击「开始答题」逐题作答（共 ' + questions.length + ' 题）';
+  updateProgress();
+
+  form.addEventListener('change', updateProgress);
+  startBtn.addEventListener('click', startQuiz);
+  prevBtn.addEventListener('click', prevQuestion);
+  nextBtn.addEventListener('click', nextQuestion);
+  submitBtn.addEventListener('click', submit);
+  resetBtn.addEventListener('click', reset);
+})();
+</script>
+</body>
+</html>

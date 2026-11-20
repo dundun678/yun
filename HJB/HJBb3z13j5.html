@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>13.5 统计估计 · 选择题逐题练习（在线练习）</title>
+<style>
+:root{
+  --bg:#f1f6fc; --card:#ffffff; --ink:#1e2a38; --muted:#6b7c90; --line:#e2ebf5;
+  --blue:#2563eb; --blue-d:#1d4ed8; --blue-l:#eaf2ff;
+  --teal:#0d9488; --teal-l:#e7f7f4;
+  --yellow:#e8a317; --yellow-l:#fff5dc;
+  --green:#15803d; --green-l:#edfaf0; --green-b:#b7e4c4;
+  --red:#c0392b; --red-l:#fdf0ee; --red-b:#f3c3bb;
+}
+*{box-sizing:border-box}
+[hidden]{display:none !important}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Microsoft YaHei","PingFang SC","Segoe UI","Cambria Math",sans-serif;
+  font-size:16px; line-height:1.85; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:920px; margin:0 auto; padding:26px 18px 70px}
+sub,sup{font-size:.72em; line-height:0}
+.paper,.notice,.q,.submit-bar{
+  background:var(--card); border:1px solid var(--line); border-radius:14px;
+  box-shadow:0 3px 16px rgba(31,64,110,.055);
+}
+.paper{padding:28px 30px 24px; margin-bottom:16px; border-top:4px solid var(--blue)}
+.kicker{
+  display:inline-block; font-size:12.5px; letter-spacing:.5px; color:var(--teal);
+  background:var(--teal-l); border-radius:20px; padding:3px 13px; margin-bottom:12px; font-weight:600;
+}
+h1{font-size:27px; line-height:1.4; margin:0 0 6px; letter-spacing:.5px; color:#16283f}
+.subtitle{color:var(--muted); font-size:14.5px; margin:0 0 18px}
+
+/* 成绩面板：位于标题下方，提交后显示 */
+.result{
+  display:flex; align-items:center; gap:28px; flex-wrap:wrap;
+  background:linear-gradient(105deg,#eef5ff 0%,#f7fbff 60%,#e9f8f4 100%);
+  border:1px solid #cfe1fa; border-radius:12px; padding:18px 24px; margin:4px 0 18px;
+  animation:pop .45s ease-out;
+}
+@keyframes pop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.result-label{font-size:13px; color:var(--muted); letter-spacing:1px; margin-bottom:2px}
+.result-score{font-size:38px; font-weight:800; color:var(--blue-d); line-height:1.15}
+.result-score small{font-size:17px; font-weight:600; margin-left:3px}
+.result-score .slash{font-size:15px; font-weight:500; color:var(--muted); margin-left:8px}
+.result-right{border-left:1px dashed #bcd3ee; padding-left:28px; min-width:170px}
+.grade-badge{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:52px; height:52px; border-radius:14px; font-size:30px; font-weight:800;
+  color:#fff; background:var(--blue); box-shadow:0 4px 12px rgba(37,99,235,.25);
+}
+.grade-badge.g-A{background:#15803d} .grade-badge.g-B{background:#2563eb}
+.grade-badge.g-C{background:#0d9488} .grade-badge.g-D{background:#e8a317}
+.grade-badge.g-E{background:#c0392b}
+.grade-desc{font-size:13.5px; color:var(--muted); margin-top:6px}
+
+.meta{display:flex; gap:9px; flex-wrap:wrap; margin-bottom:14px}
+.pill{font-size:13px; padding:3px 12px; border-radius:20px; font-weight:600}
+.pill.blue{background:var(--blue-l); color:var(--blue-d)}
+.pill.teal{background:var(--teal-l); color:var(--teal)}
+.pill.yellow{background:var(--yellow-l); color:#a9700a}
+.grade-scale{
+  border-top:1px dashed var(--line); padding-top:12px; font-size:13px; color:var(--muted);
+  display:flex; gap:8px 14px; flex-wrap:wrap; align-items:center;
+}
+.gs-title{font-weight:600; color:#4a5b70}
+.grade-scale .b{padding:1px 9px; border-radius:6px; background:#f3f7fc; border:1px solid var(--line); font-weight:500; color:#41546b}
+.grade-scale b.g{display:inline-block; min-width:18px; text-align:center; color:var(--blue-d)}
+
+.notice{padding:15px 20px; font-size:14.5px; color:#41546b; margin-bottom:22px; background:#fbfdff}
+.notice b{color:var(--blue-d)}
+
+.section-title{
+  font-size:17px; font-weight:700; color:#1c3352; margin:26px 4px 13px;
+  padding-left:12px; border-left:4px solid var(--teal);
+}
+.section-title span{font-size:13.5px; font-weight:500; color:var(--muted); margin-left:8px}
+
+.q{padding:22px 26px 20px; margin-bottom:16px; scroll-margin-top:20px}
+.q-head{display:flex; align-items:center; gap:10px; margin-bottom:12px; flex-wrap:wrap}
+.qno{
+  display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px;
+  border-radius:9px; background:var(--blue); color:#fff; font-weight:700; font-size:15px; flex:none;
+}
+.q-type{font-size:13px; color:var(--teal); background:var(--teal-l); border-radius:6px; padding:2px 9px; font-weight:600}
+.q-pts{font-size:13px; color:#a9700a; background:var(--yellow-l); border-radius:20px; padding:2px 11px; font-weight:600}
+.q-got{margin-left:auto; font-size:13.5px; font-weight:700; padding:2px 12px; border-radius:20px}
+.q-got.full{color:var(--green); background:var(--green-l); border:1px solid var(--green-b)}
+.q-got.part{color:#a9700a; background:var(--yellow-l); border:1px solid #f0dca8}
+.q-got.zero{color:var(--red); background:var(--red-l); border:1px solid var(--red-b)}
+.q-stem{font-size:16.2px; line-height:2; margin-bottom:14px; text-align:justify}
+.q-stem .blank{display:inline-block; min-width:52px; border-bottom:1px solid #8fa4bb; margin:0 4px}
+
+/* 选项紧凑排布：4 列（一行四选项）/ 2 列（两行）/ 1 列（逐行）
+   列数由 build_html.py 依据该题选项文本长度自动判定，也可在 JSON 中用 option_cols 覆盖 */
+.opts{display:grid; gap:9px; grid-template-columns:1fr}
+.opts.cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.opts.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.opts.cols-1{grid-template-columns:1fr}
+.opts.cols-4 .opt{padding:9px 10px; gap:8px}
+.opt{
+  display:flex; align-items:flex-start; gap:11px; padding:10px 14px;
+  border:1px solid var(--line); border-radius:10px; background:#fcfdff;
+  cursor:pointer; transition:background .15s,border-color .15s,transform .1s;
+}
+.opt:hover{background:var(--blue-l); border-color:#bcd4f7}
+.opt input{width:17px; height:17px; margin-top:6px; flex:none; accent-color:var(--blue); cursor:pointer}
+.ol{font-weight:700; color:var(--blue-d); flex:none; min-width:20px}
+.ot{flex:1; min-width:0; line-height:1.9; overflow-wrap:anywhere}
+.opt.is-correct{background:var(--green-l); border-color:var(--green-b)}
+.opt.is-correct .ol{color:var(--green)}
+.opt.is-wrong{background:var(--red-l); border-color:var(--red-b)}
+.opt.is-wrong .ol{color:var(--red)}
+.opt.locked{cursor:default}
+.opt.locked:hover{background:inherit; border-color:var(--line)}
+.opt.locked.is-correct:hover{background:var(--green-l); border-color:var(--green-b)}
+.opt.locked.is-wrong:hover{background:var(--red-l); border-color:var(--red-b)}
+
+.sol{
+  margin-top:16px; border:1px solid #cfe9d6; border-left:4px solid var(--green);
+  border-radius:10px; background:#f7fdf9; padding:16px 20px 14px;
+  animation:fadein .4s ease-out;
+}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.sol-answer{font-size:16px; font-weight:700; color:var(--green); margin-bottom:10px}
+.sol-answer b{font-size:19px; letter-spacing:2px}
+.sol-title{font-size:15px; font-weight:700; color:#1c3352; margin:12px 0 6px}
+.sol-body{font-size:14.7px; line-height:1.95; color:#34465c}
+.sol-body p{margin:6px 0}
+.sol-meta{font-size:13.2px; color:var(--muted); background:#f0f6fb; border-radius:8px; padding:7px 12px}
+.sol-sub{font-weight:700; color:var(--blue-d)}
+.judge{padding-left:2px}
+.jl{font-weight:700; color:#1c3352; margin-right:4px}
+.tip{color:#8a5a06; background:var(--yellow-l); border-radius:8px; padding:7px 12px}
+
+.submit-bar{padding:18px 24px; display:flex; align-items:center; gap:16px; flex-wrap:wrap; position:relative}
+button{
+  font-family:inherit; font-size:16px; font-weight:700; border-radius:10px;
+  padding:11px 34px; cursor:pointer; border:1px solid transparent; transition:all .15s;
+}
+#startBtn,#submitBtn{background:var(--blue); color:#fff; box-shadow:0 4px 12px rgba(37,99,235,.22)}
+#startBtn:hover,#submitBtn:hover{background:var(--blue-d); transform:translateY(-1px)}
+#prevBtn,#nextBtn,#resetBtn{background:#fff; color:var(--blue-d); border-color:#bcd4f7}
+#prevBtn:hover,#nextBtn:hover,#resetBtn:hover{background:var(--blue-l)}
+.bar-info{font-size:13.5px; color:var(--muted); margin-left:auto; text-align:right}
+.bar-info b{color:var(--blue-d)}
+.foot{text-align:center; color:#8b9bb0; font-size:12.5px; margin-top:22px}
+@media (max-width:620px){
+  .wrap{padding:14px 10px 50px} .paper{padding:20px 18px} h1{font-size:22px}
+  .q{padding:18px 16px} .result{gap:16px; padding:15px 18px}
+  .result-right{border-left:0; padding-left:0; border-top:1px dashed #bcd3ee; padding-top:12px; width:100%}
+  .bar-info{margin-left:0; text-align:left; width:100%}
+  /* 窄屏自动降列，避免 4 列过挤 */
+  .opts.cols-4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .opts.cols-2{grid-template-columns:1fr}
+  button{padding:11px 22px}
+}
+@media print{
+  body{background:#fff} .submit-bar{display:none} .paper,.notice,.q{box-shadow:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===== 试卷标题区 ===== -->
+  <header class="paper">
+    <div class="kicker">沪教版 · 必修第三册 · 第13章 统计 · 周测卷</div>
+    <h1>13.5 统计估计 · 选择题逐题练习</h1>
+    <p class="subtitle">检测范围：本节全部小节（3 个小节 / 58 条知识点） ｜ 仅保留原卷的单项选择题与多项选择题及答案、解析</p>
+
+    <!-- 得分与等级：提交后显示在标题下方 -->
+    <div class="result" id="result" hidden>
+      <div class="result-left">
+        <div class="result-label">本次测试得分</div>
+        <div class="result-score"><span id="scoreNum">0</span><small>分</small><span class="slash">/ 满分 26 分</span></div>
+      </div>
+      <div class="result-right">
+        <div class="result-label">等级评定</div>
+        <div class="grade-badge" id="gradeBadge">A</div>
+        <div class="grade-desc" id="gradeDesc"></div>
+      </div>
+    </div>
+
+    <div class="meta">
+      <span class="pill blue">满分 26 分</span>
+      <span class="pill teal">单项选择题 5 题 × 4 分 = 20 分</span>
+      <span class="pill teal">多项选择题 1 题 × 6 分 = 6 分</span>
+      <span class="pill yellow">建议用时 14 分钟</span>
+    </div>
+    <!-- 等级划分：答题中隐藏，提交答案后随成绩一起显示 -->
+    <div class="grade-scale" id="gradeScale" hidden>
+      <span class="gs-title">等级划分（26 分等分为 5 档，每档 5.2 分）</span>
+      <span class="b"><b class="g">A</b> 20.8 ~ 26</span>
+      <span class="b"><b class="g">B</b> 15.6 ~ 20.8</span>
+      <span class="b"><b class="g">C</b> 10.4 ~ 15.6</span>
+      <span class="b"><b class="g">D</b> 5.2 ~ 10.4</span>
+      <span class="b"><b class="g">E</b> 0 ~ 5.2</span>
+    </div>
+  </header>
+
+  <!-- 答题说明：答题中隐藏，提交答案后显示 -->
+  <div class="notice" id="notice" hidden>
+    <b>答题说明：</b>单项选择题每题 4 分，答对得 4 分，答错或不答得 0 分；多项选择题每题 6 分，按正确选项个数均摊（3 个正确选项时每选对 1 个得 2 分，2 个正确选项时每选对 1 个得 3 分），但只要选错任意选项或不作答，该题即得 0 分。所有选项默认不勾选。作答完成后点击下方「提交答案」，系统将自动评分，并在每道题下方完整显示答案与解析。
+  </div>
+
+  <form id="quiz" autocomplete="off">
+        <div class="section-title" hidden>一、单项选择题<span>共 5 小题，共 20 分；每题只有一个选项符合题目要求</span></div>
+    <article class="q" data-type="single" data-answer="A" data-max="4.0" hidden>
+      <div class="q-head"><span class="qno">1</span><span class="q-type">单项选择题</span><span class="q-pts">4 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">下列关于统计估计的说法中，正确的是<span class="blank"></span></div>
+      <div class="opts cols-1">
+        <label class="opt"><input type="radio" name="q1" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot">某研究团队并未逐一检测全国所有成人的血压，而是根据约 45 万名随机调查成人的血压数据推断全国情况，这就是统计估计；总体中不同范围或类型的个体所占的比例称为总体的分布（population distribution）</span></label>
+        <label class="opt"><input type="radio" name="q1" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot">只要样本容量不断增大，无论抽样方式如何，样本中各组数据的频率都会稳定于一个相应的概率</span></label>
+        <label class="opt"><input type="radio" name="q1" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot">用样本估计总体分布的步骤是：先绘制频率分布直方图，再随机抽样获取数据；如样本中 [1.80,1.90) 组的频率为 0.21，则可精确断定总体中该区间内的比例恰为 21%</span></label>
+        <label class="opt"><input type="radio" name="q1" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot">2018 年某医学期刊刊出的"我国约 2.45 亿成人可能患高血压"的结论，来自对全国所有成人的逐一普查</span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>A</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">单项选择题 · 4 分 ｜ 沪教版 · 必修第三册 · 13.5 统计估计</p>
+          <p><b>思路：</b>围绕统计估计的含义、总体的分布、估计原理、步骤与教材背景逐项辨析。</p>
+          <p class="sol-sub">逐选项判定：</p>
+          <p class="judge"><span class="jl">A．</span>正确：当总体的信息难以或无法获得时，可采取科学的抽样方法获取具有代表性的样本，利用样本信息估计总体的分布规律；总体的分布即总体中不同范围或类型的个体所占的比例。</p>
+          <p class="judge"><span class="jl">B．</span>错误：估计原理要求样本是随机抽取的，依据大数定律频率才稳定于相应概率，"抽样方式随意"不成立。</p>
+          <p class="judge"><span class="jl">C．</span>错误：步骤应为①随机抽样获取样本数据、②求极差并定组距组数制作频率分布表、③绘制频率分布直方图、④以各组频率作为总体在相应区间取值的概率作出估计，题中顺序颠倒；且 0.21 只是估计值，不能"精确断定"。（教材热量摄入示例：100 名女大学生样本中 [1.80,1.90) 频数 21、频率 0.21，据此估计约 21% 的该校女大学生每日摄取热量在该区间内。）</p>
+          <p class="judge"><span class="jl">D．</span>错误：该结论来自对约 45 万名随机调查成人的抽样推断，而非逐一普查。</p>
+          <p class="tip"><b>易错点：</b>"样本频率稳定于总体概率"的前提是随机抽样且样本有代表性；估计得到的是近似值而非精确值。</p>
+        </div>
+      </div>
+    </article>
+    <article class="q" data-type="single" data-answer="A" data-max="4.0" hidden>
+      <div class="q-head"><span class="qno">2</span><span class="q-type">单项选择题</span><span class="q-pts">4 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">某校从本校女生中随机抽取 200 名，统计其每日摄取热量并绘制频率分布直方图，其中 [1.80,1.90) 所对应的矩形面积最大，整幅直方图大致对称。下列叙述正确的是<span class="blank"></span></div>
+      <div class="opts cols-1">
+        <label class="opt"><input type="radio" name="q2" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot">矩形面积最大说明数据在 [1.80,1.90) 内最集中，可推测该校女生每日摄取热量集中在该区间附近，特别多或特别少的都较少</span></label>
+        <label class="opt"><input type="radio" name="q2" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot">该直方图就是总体的分布密度曲线（population density curve），且组距取得越大，直方图越能精细反映分布</span></label>
+        <label class="opt"><input type="radio" name="q2" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot">重新抽取一个同容量的样本，各区间内数据的频率将与原样本完全相同</span></label>
+        <label class="opt"><input type="radio" name="q2" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot">只要样本量足够大，抽样方式可以随意选择，估计依然可靠</span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>A</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">单项选择题 · 4 分 ｜ 沪教版 · 必修第三册 · 13.5 统计估计</p>
+          <p><b>思路：</b>由直方图的读图估计、密度曲线概念、样本变异性与估计前提逐项判断。</p>
+          <p class="sol-sub">逐选项判定：</p>
+          <p class="judge"><span class="jl">A．</span>正确：矩形面积最大者对应最集中的区间，结合整幅图大致对称，可推测该校女生每日摄取热量集中在 [1.80,1.90) 附近，特别多或特别少的都较少。</p>
+          <p class="judge"><span class="jl">B．</span>错误：密度曲线客观存在但往往无法精确得到，只能通过样本的频率分布折线图进行估计；且组距取得足够小才能精细反映分布，组距过大分布被"压平"、看不出峰值。</p>
+          <p class="judge"><span class="jl">C．</span>错误：样本具有变异性，重新抽取一个同容量样本，各区间内的频率会有所不同；但样本量较大时频率会稳定于总体概率，不会有太大变动。</p>
+          <p class="judge"><span class="jl">D．</span>错误：估计的前提是样本随机抽取且具有代表性，样本容量越大耗费越多，应根据实际情况选择适当容量的样本。</p>
+          <p class="tip"><b>易错点：</b>直方图（折线图）是对密度曲线的估计，样本容量越接近总体容量，贴近程度越高，但"就是密度曲线"的说法错误。</p>
+        </div>
+      </div>
+    </article>
+    <article class="q" data-type="single" data-answer="A" data-max="4.0" hidden>
+      <div class="q-head"><span class="qno">3</span><span class="q-type">单项选择题</span><span class="q-pts">4 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">甲同学记录了自己 20 次 100 米短跑的成绩，其中低于 14 s 的有 15 次；乙同学抽取了某年中 5 周（共 35 天）的每日客流量，其中超过 200 人次的有 20 天。下列说法正确的是<span class="blank"></span></div>
+      <div class="opts cols-1">
+        <label class="opt"><input type="radio" name="q3" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot">用 <span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">15</span><span style="display:block;padding:0 .26em">20</span></span>=0.75 估计甲比赛时用时低于 14 s 的可能性约为 0.75，这是"用样本频率估计总体概率"</span></label>
+        <label class="opt"><input type="radio" name="q3" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot">由乙的数据可精确计算出全年客流量超过 200 人次的天数为 <span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">20</span><span style="display:block;padding:0 .26em">35</span></span>×365≈209 天</span></label>
+        <label class="opt"><input type="radio" name="q3" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot">用组中值代替区间内各值进行计算是精确的，且区间越宽，偏差越小</span></label>
+        <label class="opt"><input type="radio" name="q3" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot">频率分布就是总体分布，二者没有区别</span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>A</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">单项选择题 · 4 分 ｜ 沪教版 · 必修第三册 · 13.5 统计估计</p>
+          <p><b>思路：</b>区分"估计"与"精确计算"、频率分布与总体分布，并检查组中值近似的偏差方向。</p>
+          <p class="sol-sub">逐选项判定：</p>
+          <p class="judge"><span class="jl">A．</span>正确：以"用时低于 14 s"的频率 <span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">15</span><span style="display:block;padding:0 .26em">20</span></span>=0.75 作为比赛时相应概率的估计，属于用样本频率估计总体概率。</p>
+          <p class="judge"><span class="jl">B．</span>错误：<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">20</span><span style="display:block;padding:0 .26em">35</span></span>×365≈209 天只是估计值（比例 × 全年天数），不能说"精确计算"。</p>
+          <p class="judge"><span class="jl">C．</span>错误：用组中值代替区间内各值只是近似，区间越宽，近似的偏差越大。</p>
+          <p class="judge"><span class="jl">D．</span>错误：频率分布是样本的频率，随样本变化；总体分布是总体的比例，客观确定但未知，二者不同，估计的可靠性取决于样本量与样本的代表性。</p>
+          <p class="tip"><b>易错点：</b>估计的两个层次——以频率估计比例（概率）、以"比例 × 总体容量"估计数量——都不能表述为精确结果。</p>
+        </div>
+      </div>
+    </article>
+    <article class="q" data-type="single" data-answer="C" data-max="4.0" hidden>
+      <div class="q-head"><span class="qno">4</span><span class="q-type">单项选择题</span><span class="q-pts">4 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">20 名学生一周跑步累计公里数的分组数据如下表，各区间的中点值分别为 8, 13, 18, 23, 28, 33, 38，对应频数为 2, 3, 4, 5, 3, 2, 1。下列说法正确的是 8：频数 2；13：频数 3；18：频数 4；23：频数 5；28：频数 3；33：频数 2；38：频数 1。<span class="blank"></span></div>
+      <div class="opts cols-1">
+        <label class="opt"><input type="radio" name="q4" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot">某公司 15 名员工年薪的样本平均数为 8.7 万元，说明每位员工的年薪都在 8.7 万元附近；方差 <i>s</i><sup>2</sup> 的单位与观测数据的单位一致，故描述离散程度时常用方差</span></label>
+        <label class="opt"><input type="radio" name="q4" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot">样本平均数为 24.5 km；极差对极端数据不敏感，是稳定的离散程度度量</span></label>
+        <label class="opt"><input type="radio" name="q4" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot">样本平均数为 21.5 km；又从 100 棵果树中随机抽取 12 棵，测得平均产量 26 kg，则可预估全园产量约为 2600 kg</span></label>
+        <label class="opt"><input type="radio" name="q4" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot">标准差 <i>s</i>=√(<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em"><i>n</i></span></span>∑<sub><i>i</i>=1</sub><sup><i>n</i></sup>(<i>x</i><sub><i>i</i></sub>−<i>x̄</i>)<sup>2</sup>) 与方差都可衡量数据的波动大小，但标准差的单位是观测数据单位的平方</span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>C</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">单项选择题 · 4 分 ｜ 沪教版 · 必修第三册 · 13.5 统计估计</p>
+          <p><b>思路：</b>先按加权（中点值）形式算平均数，再对极差、方差、标准差及产量预估逐项辨析。</p>
+          <p class="sol-sub">逐选项判定：</p>
+          <p class="judge"><span class="jl">A．</span>错误：平均数受极端值影响，不能说明每位员工年薪都在 8.7 万元附近；方差 <i>s</i><sup>2</sup>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em"><i>n</i></span></span>∑<sub><i>i</i>=1</sub><sup><i>n</i></sup>(<i>x</i><sub><i>i</i></sub>−<i>x̄</i>)<sup>2</sup> 的单位是观测数据单位的平方，标准差的单位才与观测数据一致，故常用标准差描述离散程度。</p>
+          <p class="judge"><span class="jl">B．</span>错误：平均数应为 21.5 km；且极差虽计算简便，但对极端数据很敏感、不稳定。</p>
+          <p class="judge"><span class="jl">C．</span>正确：<i>x̄</i>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">8×2+13×3+18×4+23×5+28×3+33×2+38×1</span><span style="display:block;padding:0 .26em">20</span></span>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">430</span><span style="display:block;padding:0 .26em">20</span></span>=21.5（km）；产量预估：100×26=2600（kg）。</p>
+          <p class="judge"><span class="jl">D．</span>错误：标准差 <i>s</i>=√(<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em"><i>n</i></span></span>∑<sub><i>i</i>=1</sub><sup><i>n</i></sup>(<i>x</i><sub><i>i</i></sub>−<i>x̄</i>)<sup>2</sup>) 与方差都可衡量波动大小，但标准差的单位与观测数据单位一致，"单位是平方"的是方差。</p>
+          <p class="tip"><b>易错点：</b>分组数据无原始值时用区间中点值赋值再加权，得到的是近似平均数；极差"简便但不稳定"。</p>
+        </div>
+      </div>
+    </article>
+    <article class="q" data-type="single" data-answer="C" data-max="4.0" hidden>
+      <div class="q-head"><span class="qno">5</span><span class="q-type">单项选择题</span><span class="q-pts">4 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">甲、乙两名运动员各射击 20 次，平均环数都是 9.3，样本标准差分别为 <i>s</i><sub>甲</sub>≈1.2、<i>s</i><sub>乙</sub>≈0.8。某班男生 30 人身高样本平均数为 172.5 cm，女生 20 人身高样本平均数为 160.5 cm。下列说法正确的是<span class="blank"></span></div>
+      <div class="opts cols-1">
+        <label class="opt"><input type="radio" name="q5" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot">甲、乙平均环数相同，故两人成绩一样好，任选一人参赛均可；且 <i>s</i><sub>甲</sub>&gt;<i>s</i><sub>乙</sub> 说明甲的成绩更稳定</span></label>
+        <label class="opt"><input type="radio" name="q5" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot">中位数利用了每个数据的信息，受极端值影响较大；众数可能不止一个</span></label>
+        <label class="opt"><input type="radio" name="q5" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot">标准差是样本数据到平均数的一种平均距离，区间 [<i>x̄</i>−2<i>s</i>, <i>x̄</i>+2<i>s</i>] 包含大多数样本数据；男生与女生身高合并后的样本平均数为 167.7 cm</span></label>
+        <label class="opt"><input type="radio" name="q5" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot">全班身高数据的合并方差等于男生方差与女生方差按人数的加权平均</span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>C</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">单项选择题 · 4 分 ｜ 沪教版 · 必修第三册 · 13.5 统计估计</p>
+          <p><b>思路：</b>由标准差比较稳定性，由加权平均计算合并平均数，并辨析合并方差的构成。</p>
+          <p class="sol-sub">逐选项判定：</p>
+          <p class="judge"><span class="jl">A．</span>错误：平均环数相同说明水平相当，但 <i>s</i><sub>甲</sub>&gt;<i>s</i><sub>乙</sub> 说明甲的成绩更离散、乙的成绩较稳定，应选拔乙参赛。</p>
+          <p class="judge"><span class="jl">B．</span>错误：利用每个数据的信息、受极端值影响较大的是平均数；中位数只由位置决定、稳健性好；"众数可能不止一个"本身正确，但前半句错误导致整项不成立。</p>
+          <p class="judge"><span class="jl">C．</span>正确：标准差是样本数据到平均数的一种平均距离，由统计理论 [<i>x̄</i>−2<i>s</i>, <i>x̄</i>+2<i>s</i>] 包含大多数样本数据；合并平均数 <i>z̄</i><sub>总</sub>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">30×172.5+20×160.5</span><span style="display:block;padding:0 .26em">50</span></span>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">8385</span><span style="display:block;padding:0 .26em">50</span></span>=167.7（cm）。</p>
+          <p class="judge"><span class="jl">D．</span>错误：合并方差应为 <span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">66</span></span>{<i>n</i><sub>1</sub><i>s</i><sub>1</sub><sup>2</sup>+<i>n</i><sub>1</sub>(<i>x̄</i><sub>1</sub>−<i>z̄</i><sub>总</sub>)<sup>2</sup>+<i>n</i><sub>2</sub><i>s</i><sub>2</sub><sup>2</sup>+<i>n</i><sub>2</sub>(<i>x̄</i><sub>2</sub>−<i>z̄</i><sub>总</sub>)<sup>2</sup>} 型的加权平均，除组内方差外还须加上各组均值与总均值偏差的平方项，简单加权平均是错的。</p>
+          <p class="tip"><b>易错点：</b>两组数据合并平均数必须按人数加权，不能取两数算术平均；合并方差不是方差的简单加权。</p>
+        </div>
+      </div>
+    </article>
+    <div class="section-title" hidden>二、多项选择题<span>共 1 小题，共 6 分；有多个选项符合题目要求</span></div>
+    <article class="q" data-type="multi" data-answer="AB" data-max="6.0" hidden>
+      <div class="q-head"><span class="qno">6</span><span class="q-type">多项选择题</span><span class="q-pts">6 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">已知 8 个数据：3, 7, 4, 9, 5, 11, 6, 15（样本容量 <i>n</i>=8）。计算第 <i>k</i> 百分位数时，先将数据从小到大排序，再计算指数 <i>i</i>=<i>n</i>×<i>k</i>%：若 <i>i</i> 是整数，则第 <i>k</i> 百分位数是第 <i>i</i> 项与第 <i>i</i>+1 项数据的平均值；若 <i>i</i> 不是整数，则将 <i>i</i> 向上取整，所得位置对应的数即为第 <i>k</i> 百分位数。下列结论正确的是<span class="blank"></span></div>
+      <div class="opts cols-1">
+        <label class="opt"><input type="checkbox" name="q6" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot">排序后第 3 项为 5；计算百分位数前必须先排序</span></label>
+        <label class="opt"><input type="checkbox" name="q6" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot"><i>P</i>25：<i>i</i>=2 为整数，<i>P</i>25=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">4+5</span><span style="display:block;padding:0 .26em">2</span></span>=4.5</span></label>
+        <label class="opt"><input type="checkbox" name="q6" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot"><i>P</i>90：<i>i</i>=7.2 不是整数，<i>P</i>90 为第 7 项与第 8 项的平均值 13</span></label>
+        <label class="opt"><input type="checkbox" name="q6" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot"><i>P</i>50=6.5 恰为中间两个数据的平均，与中位数的定义一致；<i>P</i>50=6.5 表示有 50% 的数据恰好等于 6.5</span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>AB</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">多项选择题 · 6 分 ｜ 沪教版 · 必修第三册 · 13.5 统计估计</p>
+          <p><b>思路：</b>排序后按 <i>i</i>=<i>n</i>×<i>k</i>% 逐个计算，重点区分"<i>i</i> 为整数取平均"与"<i>i</i> 非整数向上取整"。</p>
+          <p><b>解答：</b>排序为 3, 4, 5, 6, 7, 9, 11, 15。</p>
+          <p class="sol-sub">逐选项判定：</p>
+          <p class="judge"><span class="jl">A．</span>正确：排序后第 3 项为 5；百分位数依赖数据次序，计算前必须先排序。</p>
+          <p class="judge"><span class="jl">B．</span>正确：<i>i</i>=8×25%=2 为整数，<i>P</i>25=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor"><i>a</i><sub>2</sub>+<i>a</i><sub>3</sub></span><span style="display:block;padding:0 .26em">2</span></span>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">4+5</span><span style="display:block;padding:0 .26em">2</span></span>=4.5。</p>
+          <p class="judge"><span class="jl">C．</span>错误：<i>i</i>=8×90%=7.2 不是整数，应向上取整为 8，<i>P</i>90=<i>a</i><sub>8</sub>=15，而非第 7、8 项平均 13。</p>
+          <p class="judge"><span class="jl">D．</span>错误：前半句正确——<i>i</i>=4 为整数，<i>P</i>50=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">6+7</span><span style="display:block;padding:0 .26em">2</span></span>=6.5，恰为中间两数平均，与中位数定义一致；后半句错误——百分位数是位置指标，<i>P</i>50=6.5 表示约 50% 的数据不超过 6.5，而不是"50% 的数据恰好等于 6.5"。</p>
+          <p class="tip"><b>易错点：</b>两种情形的处理混用是本节最常见的错误；百分位数（percentile）不是百分比（percent），它是数据排列中某位置对应的值。</p>
+        </div>
+      </div>
+    </article>
+  </form>
+
+  <!-- ===== 逐题导航 / 提交区 ===== -->
+  <div class="submit-bar">
+    <button type="button" id="startBtn">开始答题</button>
+    <button type="button" id="prevBtn" hidden>上一题</button>
+    <button type="button" id="nextBtn" hidden>下一题</button>
+    <button type="button" id="submitBtn" hidden>提交答案</button>
+    <button type="button" id="resetBtn" hidden>重新作答</button>
+    <div class="bar-info"><span id="navInfo">点击「开始答题」逐题作答</span>　·　已作答 <b id="progress">0 / 6</b> 题　·　未作答的题目按 0 分计</div>
+  </div>
+
+  <div class="foot">依据《必修三 13.5 统计估计.md》选择题部分改编 · 满分 26 分</div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var TOTAL = 26;          // 满分（由 build_html.py 注入）
+  var questions = Array.prototype.slice.call(document.querySelectorAll('.q'));
+  var form = document.getElementById('quiz');
+  var startBtn = document.getElementById('startBtn');
+  var prevBtn = document.getElementById('prevBtn');
+  var nextBtn = document.getElementById('nextBtn');
+  var submitBtn = document.getElementById('submitBtn');
+  var resetBtn = document.getElementById('resetBtn');
+  var navInfo = document.getElementById('navInfo');
+  var sections = Array.prototype.slice.call(form.querySelectorAll('.section-title'));
+  var current = -1;               // -1 = 尚未开始答题
+  var progress = document.getElementById('progress');
+  var resultBox = document.getElementById('result');
+  var gradeScale = document.getElementById('gradeScale');
+  var noticeBox = document.getElementById('notice');
+  var scoreNum = document.getElementById('scoreNum');
+  var gradeBadge = document.getElementById('gradeBadge');
+  var gradeDesc = document.getElementById('gradeDesc');
+
+  // 5 等分等级（BANDS 由 build_html.py 注入）
+  var BANDS = [{"g": "A", "min": 20.8, "desc": "优秀 · 概念清晰，运算与转化掌握扎实"}, {"g": "B", "min": 15.6, "desc": "良好 · 主干知识扎实，个别细节待巩固"}, {"g": "C", "min": 10.4, "desc": "中等 · 基本思路具备，易错点仍需复盘"}, {"g": "D", "min": 5.2, "desc": "及格 · 建议逐题对照解析重做错题"}, {"g": "E", "min": 0.0, "desc": "待提高 · 建议先复习对应知识点再重新作答"}];
+
+  function inputsOf(q){ return Array.prototype.slice.call(q.querySelectorAll('input')); }
+  function chosenOf(q){ return inputsOf(q).filter(function(i){return i.checked;}).map(function(i){return i.value;}); }
+
+  // 计分：单选答对得满分、答错/不答 0 分；
+  // 多选：有错选或不答 0 分；否则该题满分均摊到每个正确选项（6 分 / 3 项 = 2 分，6 分 / 2 项 = 3 分）
+  function scoreOf(q){
+    var type = q.getAttribute('data-type');
+    var answer = q.getAttribute('data-answer');
+    var chosen = chosenOf(q);
+    var max = parseInt(q.getAttribute('data-max'), 10);
+    if (type === 'single'){
+      return (chosen.length === 1 && chosen[0] === answer) ? max : 0;
+    }
+    if (chosen.length === 0) return 0;                       // 不答得 0 分
+    for (var i=0;i<chosen.length;i++){
+      if (answer.indexOf(chosen[i]) === -1) return 0;       // 有错选得 0 分
+    }
+    var per = max / answer.length;                          // 满分均摊到每个正确选项
+    return Math.min(max, Math.round(chosen.length * per * 100) / 100);
+  }
+
+  function updateProgress(){
+    var done = questions.filter(function(q){ return chosenOf(q).length > 0; }).length;
+    progress.textContent = done + ' / ' + questions.length;
+  }
+
+  function gradeFor(score){
+    for (var i=0;i<BANDS.length;i++){ if (score >= BANDS[i].min) return BANDS[i]; }
+    return BANDS[BANDS.length-1];
+  }
+
+  // ===== 逐题推送 =====
+  // 一次只在页面上呈现一道题；章节汇总标题在答题阶段隐藏，提交后恢复。
+  function showQuestion(i){
+    current = i;
+    questions.forEach(function(q, idx){ q.hidden = (idx !== i); });
+    sections.forEach(function(s){ s.hidden = true; });
+    startBtn.hidden = true;
+    prevBtn.hidden = (i === 0);                         // 第 1 题无「上一题」
+    nextBtn.hidden = (i >= questions.length - 1);       // 最后一题无「下一题」
+    submitBtn.hidden = (i !== questions.length - 1);    // 「提交答案」只在最后一题出现
+    resetBtn.hidden = true;
+    var type = questions[i].getAttribute('data-type') === 'multi' ? '多项选择题' : '单项选择题';
+    navInfo.textContent = '第 ' + (i + 1) + ' / ' + questions.length + ' 题 · ' + type;
+    updateProgress();
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  function startQuiz(){ showQuestion(0); }
+  function nextQuestion(){ if (current >= 0 && (questions.length - 1) > current) showQuestion(current + 1); }
+  function prevQuestion(){ if (current > 0) showQuestion(current - 1); }
+
+  function submit(){
+    var total = 0;
+    questions.forEach(function(q){
+      var got = scoreOf(q);
+      total += got;
+      var answer = q.getAttribute('data-answer');
+      var max = parseInt(q.getAttribute('data-max'), 10);
+      var chosen = chosenOf(q);
+
+      // 逐题得分标签
+      var tag = q.querySelector('.q-got');
+      tag.textContent = '本题得 ' + got + ' / ' + max + ' 分';
+      tag.className = 'q-got ' + (got === max ? 'full' : (got > 0 ? 'part' : 'zero'));
+      tag.hidden = false;
+
+      // 选项判定着色：正确选项绿色，误选选项红色
+      q.querySelectorAll('.opt').forEach(function(opt){
+        var v = opt.querySelector('input').value;
+        if (answer.indexOf(v) !== -1) opt.classList.add('is-correct');
+        if (chosen.indexOf(v) !== -1 && answer.indexOf(v) === -1) opt.classList.add('is-wrong');
+        opt.classList.add('locked');
+      });
+      inputsOf(q).forEach(function(i){ i.disabled = true; });
+
+      // 显示答案与解析
+      q.querySelector('.sol').hidden = false;
+    });
+
+    // 总分与等级（显示在试卷标题下方）
+    var band = gradeFor(total);
+    scoreNum.textContent = total;
+    gradeBadge.textContent = band.g;
+    gradeBadge.className = 'grade-badge g-' + band.g;
+    gradeDesc.textContent = band.desc + '（得分率 ' + Math.round(total/TOTAL*100) + '%）';
+    resultBox.hidden = false;
+    gradeScale.hidden = false;   // 等级划分：提交后才显示
+    noticeBox.hidden = false;    // 答题说明：提交后才显示
+
+    // 提交后展开全部试题，便于逐题对照答案与解析复盘
+    questions.forEach(function(q){ q.hidden = false; });
+    sections.forEach(function(s){ s.hidden = false; });
+    startBtn.hidden = true;
+    prevBtn.hidden = true;
+    nextBtn.hidden = true;
+    submitBtn.hidden = true;
+    resetBtn.hidden = false;
+    navInfo.textContent = '已提交 · 全部试题与解析已展开';
+    progress.textContent = questions.length + ' / ' + questions.length;
+    resultBox.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+
+  function reset(){
+    questions.forEach(function(q){
+      inputsOf(q).forEach(function(i){ i.checked = false; i.disabled = false; });
+      q.querySelectorAll('.opt').forEach(function(opt){
+        opt.classList.remove('is-correct','is-wrong','locked');
+      });
+      q.querySelector('.sol').hidden = true;
+      var tag = q.querySelector('.q-got');
+      tag.hidden = true; tag.textContent = ''; tag.className = 'q-got';
+    });
+    // 回到「未开始」状态：隐藏全部试题，仅显示「开始答题」
+    questions.forEach(function(q){ q.hidden = true; });
+    sections.forEach(function(s){ s.hidden = true; });
+    current = -1;
+    resultBox.hidden = true;
+    gradeScale.hidden = true;
+    noticeBox.hidden = true;
+    startBtn.hidden = false;
+    prevBtn.hidden = true;
+    nextBtn.hidden = true;
+    submitBtn.hidden = true;
+    resetBtn.hidden = true;
+    navInfo.textContent = '点击「开始答题」逐题作答（共 ' + questions.length + ' 题）';
+    updateProgress();
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  // 页面加载时强制清空所有勾选，保证默认不勾选（含浏览器刷新恢复表单的情况）
+  function clearAll(){
+    inputsOf(form).forEach(function(i){ i.checked = false; i.disabled = false; });
+  }
+  clearAll();
+  if (typeof form.reset === 'function') form.reset();
+  clearAll();
+  // 初始态：隐藏全部试题与成绩相关区域，仅显示「开始答题」（含浏览器刷新恢复状态的情况）
+  questions.forEach(function(q){ q.hidden = true; });
+  sections.forEach(function(s){ s.hidden = true; });
+  resultBox.hidden = true;
+  gradeScale.hidden = true;
+  noticeBox.hidden = true;
+  startBtn.hidden = false;
+  prevBtn.hidden = true;
+  nextBtn.hidden = true;
+  submitBtn.hidden = true;
+  resetBtn.hidden = true;
+  navInfo.textContent = '点击「开始答题」逐题作答（共 ' + questions.length + ' 题）';
+  updateProgress();
+
+  form.addEventListener('change', updateProgress);
+  startBtn.addEventListener('click', startQuiz);
+  prevBtn.addEventListener('click', prevQuestion);
+  nextBtn.addEventListener('click', nextQuestion);
+  submitBtn.addEventListener('click', submit);
+  resetBtn.addEventListener('click', reset);
+})();
+</script>
+</body>
+</html>

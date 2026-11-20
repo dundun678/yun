@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3.2 函数的基本性质 · 选择题逐题练习（在线练习）</title>
+<style>
+:root{
+  --bg:#f1f6fc; --card:#ffffff; --ink:#1e2a38; --muted:#6b7c90; --line:#e2ebf5;
+  --blue:#2563eb; --blue-d:#1d4ed8; --blue-l:#eaf2ff;
+  --teal:#0d9488; --teal-l:#e7f7f4;
+  --yellow:#e8a317; --yellow-l:#fff5dc;
+  --green:#15803d; --green-l:#edfaf0; --green-b:#b7e4c4;
+  --red:#c0392b; --red-l:#fdf0ee; --red-b:#f3c3bb;
+}
+*{box-sizing:border-box}
+[hidden]{display:none !important}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Microsoft YaHei","PingFang SC","Segoe UI","Cambria Math",sans-serif;
+  font-size:16px; line-height:1.85; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:920px; margin:0 auto; padding:26px 18px 70px}
+sub,sup{font-size:.72em; line-height:0}
+.paper,.notice,.q,.submit-bar{
+  background:var(--card); border:1px solid var(--line); border-radius:14px;
+  box-shadow:0 3px 16px rgba(31,64,110,.055);
+}
+.paper{padding:28px 30px 24px; margin-bottom:16px; border-top:4px solid var(--blue)}
+.kicker{
+  display:inline-block; font-size:12.5px; letter-spacing:.5px; color:var(--teal);
+  background:var(--teal-l); border-radius:20px; padding:3px 13px; margin-bottom:12px; font-weight:600;
+}
+h1{font-size:27px; line-height:1.4; margin:0 0 6px; letter-spacing:.5px; color:#16283f}
+.subtitle{color:var(--muted); font-size:14.5px; margin:0 0 18px}
+
+/* 成绩面板：位于标题下方，提交后显示 */
+.result{
+  display:flex; align-items:center; gap:28px; flex-wrap:wrap;
+  background:linear-gradient(105deg,#eef5ff 0%,#f7fbff 60%,#e9f8f4 100%);
+  border:1px solid #cfe1fa; border-radius:12px; padding:18px 24px; margin:4px 0 18px;
+  animation:pop .45s ease-out;
+}
+@keyframes pop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.result-label{font-size:13px; color:var(--muted); letter-spacing:1px; margin-bottom:2px}
+.result-score{font-size:38px; font-weight:800; color:var(--blue-d); line-height:1.15}
+.result-score small{font-size:17px; font-weight:600; margin-left:3px}
+.result-score .slash{font-size:15px; font-weight:500; color:var(--muted); margin-left:8px}
+.result-right{border-left:1px dashed #bcd3ee; padding-left:28px; min-width:170px}
+.grade-badge{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:52px; height:52px; border-radius:14px; font-size:30px; font-weight:800;
+  color:#fff; background:var(--blue); box-shadow:0 4px 12px rgba(37,99,235,.25);
+}
+.grade-badge.g-A{background:#15803d} .grade-badge.g-B{background:#2563eb}
+.grade-badge.g-C{background:#0d9488} .grade-badge.g-D{background:#e8a317}
+.grade-badge.g-E{background:#c0392b}
+.grade-desc{font-size:13.5px; color:var(--muted); margin-top:6px}
+
+.meta{display:flex; gap:9px; flex-wrap:wrap; margin-bottom:14px}
+.pill{font-size:13px; padding:3px 12px; border-radius:20px; font-weight:600}
+.pill.blue{background:var(--blue-l); color:var(--blue-d)}
+.pill.teal{background:var(--teal-l); color:var(--teal)}
+.pill.yellow{background:var(--yellow-l); color:#a9700a}
+.grade-scale{
+  border-top:1px dashed var(--line); padding-top:12px; font-size:13px; color:var(--muted);
+  display:flex; gap:8px 14px; flex-wrap:wrap; align-items:center;
+}
+.gs-title{font-weight:600; color:#4a5b70}
+.grade-scale .b{padding:1px 9px; border-radius:6px; background:#f3f7fc; border:1px solid var(--line); font-weight:500; color:#41546b}
+.grade-scale b.g{display:inline-block; min-width:18px; text-align:center; color:var(--blue-d)}
+
+.notice{padding:15px 20px; font-size:14.5px; color:#41546b; margin-bottom:22px; background:#fbfdff}
+.notice b{color:var(--blue-d)}
+
+.section-title{
+  font-size:17px; font-weight:700; color:#1c3352; margin:26px 4px 13px;
+  padding-left:12px; border-left:4px solid var(--teal);
+}
+.section-title span{font-size:13.5px; font-weight:500; color:var(--muted); margin-left:8px}
+
+.q{padding:22px 26px 20px; margin-bottom:16px; scroll-margin-top:20px}
+.q-head{display:flex; align-items:center; gap:10px; margin-bottom:12px; flex-wrap:wrap}
+.qno{
+  display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px;
+  border-radius:9px; background:var(--blue); color:#fff; font-weight:700; font-size:15px; flex:none;
+}
+.q-type{font-size:13px; color:var(--teal); background:var(--teal-l); border-radius:6px; padding:2px 9px; font-weight:600}
+.q-pts{font-size:13px; color:#a9700a; background:var(--yellow-l); border-radius:20px; padding:2px 11px; font-weight:600}
+.q-got{margin-left:auto; font-size:13.5px; font-weight:700; padding:2px 12px; border-radius:20px}
+.q-got.full{color:var(--green); background:var(--green-l); border:1px solid var(--green-b)}
+.q-got.part{color:#a9700a; background:var(--yellow-l); border:1px solid #f0dca8}
+.q-got.zero{color:var(--red); background:var(--red-l); border:1px solid var(--red-b)}
+.q-stem{font-size:16.2px; line-height:2; margin-bottom:14px; text-align:justify}
+.q-stem .blank{display:inline-block; min-width:52px; border-bottom:1px solid #8fa4bb; margin:0 4px}
+
+/* 选项紧凑排布：4 列（一行四选项）/ 2 列（两行）/ 1 列（逐行）
+   列数由 build_html.py 依据该题选项文本长度自动判定，也可在 JSON 中用 option_cols 覆盖 */
+.opts{display:grid; gap:9px; grid-template-columns:1fr}
+.opts.cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.opts.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.opts.cols-1{grid-template-columns:1fr}
+.opts.cols-4 .opt{padding:9px 10px; gap:8px}
+.opt{
+  display:flex; align-items:flex-start; gap:11px; padding:10px 14px;
+  border:1px solid var(--line); border-radius:10px; background:#fcfdff;
+  cursor:pointer; transition:background .15s,border-color .15s,transform .1s;
+}
+.opt:hover{background:var(--blue-l); border-color:#bcd4f7}
+.opt input{width:17px; height:17px; margin-top:6px; flex:none; accent-color:var(--blue); cursor:pointer}
+.ol{font-weight:700; color:var(--blue-d); flex:none; min-width:20px}
+.ot{flex:1; min-width:0; line-height:1.9; overflow-wrap:anywhere}
+.opt.is-correct{background:var(--green-l); border-color:var(--green-b)}
+.opt.is-correct .ol{color:var(--green)}
+.opt.is-wrong{background:var(--red-l); border-color:var(--red-b)}
+.opt.is-wrong .ol{color:var(--red)}
+.opt.locked{cursor:default}
+.opt.locked:hover{background:inherit; border-color:var(--line)}
+.opt.locked.is-correct:hover{background:var(--green-l); border-color:var(--green-b)}
+.opt.locked.is-wrong:hover{background:var(--red-l); border-color:var(--red-b)}
+
+.sol{
+  margin-top:16px; border:1px solid #cfe9d6; border-left:4px solid var(--green);
+  border-radius:10px; background:#f7fdf9; padding:16px 20px 14px;
+  animation:fadein .4s ease-out;
+}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.sol-answer{font-size:16px; font-weight:700; color:var(--green); margin-bottom:10px}
+.sol-answer b{font-size:19px; letter-spacing:2px}
+.sol-title{font-size:15px; font-weight:700; color:#1c3352; margin:12px 0 6px}
+.sol-body{font-size:14.7px; line-height:1.95; color:#34465c}
+.sol-body p{margin:6px 0}
+.sol-meta{font-size:13.2px; color:var(--muted); background:#f0f6fb; border-radius:8px; padding:7px 12px}
+.sol-sub{font-weight:700; color:var(--blue-d)}
+.judge{padding-left:2px}
+.jl{font-weight:700; color:#1c3352; margin-right:4px}
+.tip{color:#8a5a06; background:var(--yellow-l); border-radius:8px; padding:7px 12px}
+
+.submit-bar{padding:18px 24px; display:flex; align-items:center; gap:16px; flex-wrap:wrap; position:relative}
+button{
+  font-family:inherit; font-size:16px; font-weight:700; border-radius:10px;
+  padding:11px 34px; cursor:pointer; border:1px solid transparent; transition:all .15s;
+}
+#startBtn,#submitBtn{background:var(--blue); color:#fff; box-shadow:0 4px 12px rgba(37,99,235,.22)}
+#startBtn:hover,#submitBtn:hover{background:var(--blue-d); transform:translateY(-1px)}
+#prevBtn,#nextBtn,#resetBtn{background:#fff; color:var(--blue-d); border-color:#bcd4f7}
+#prevBtn:hover,#nextBtn:hover,#resetBtn:hover{background:var(--blue-l)}
+.bar-info{font-size:13.5px; color:var(--muted); margin-left:auto; text-align:right}
+.bar-info b{color:var(--blue-d)}
+.foot{text-align:center; color:#8b9bb0; font-size:12.5px; margin-top:22px}
+@media (max-width:620px){
+  .wrap{padding:14px 10px 50px} .paper{padding:20px 18px} h1{font-size:22px}
+  .q{padding:18px 16px} .result{gap:16px; padding:15px 18px}
+  .result-right{border-left:0; padding-left:0; border-top:1px dashed #bcd3ee; padding-top:12px; width:100%}
+  .bar-info{margin-left:0; text-align:left; width:100%}
+  /* 窄屏自动降列，避免 4 列过挤 */
+  .opts.cols-4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .opts.cols-2{grid-template-columns:1fr}
+  button{padding:11px 22px}
+}
+@media print{
+  body{background:#fff} .submit-bar{display:none} .paper,.notice,.q{box-shadow:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===== 试卷标题区 ===== -->
+  <header class="paper">
+    <div class="kicker">人教A版 · 必修第一册 · 第三章 函数的概念与性质 · 周测卷</div>
+    <h1>3.2 函数的基本性质 · 选择题逐题练习</h1>
+    <p class="subtitle">检测范围：本节全部小节（3 个小节 / 24 条知识点） ｜ 仅保留原卷的单项选择题与多项选择题及答案、解析</p>
+
+    <!-- 得分与等级：提交后显示在标题下方 -->
+    <div class="result" id="result" hidden>
+      <div class="result-left">
+        <div class="result-label">本次测试得分</div>
+        <div class="result-score"><span id="scoreNum">0</span><small>分</small><span class="slash">/ 满分 26 分</span></div>
+      </div>
+      <div class="result-right">
+        <div class="result-label">等级评定</div>
+        <div class="grade-badge" id="gradeBadge">A</div>
+        <div class="grade-desc" id="gradeDesc"></div>
+      </div>
+    </div>
+
+    <div class="meta">
+      <span class="pill blue">满分 26 分</span>
+      <span class="pill teal">单项选择题 5 题 × 4 分 = 20 分</span>
+      <span class="pill teal">多项选择题 1 题 × 6 分 = 6 分</span>
+      <span class="pill yellow">建议用时 14 分钟</span>
+    </div>
+    <!-- 等级划分：答题中隐藏，提交答案后随成绩一起显示 -->
+    <div class="grade-scale" id="gradeScale" hidden>
+      <span class="gs-title">等级划分（26 分等分为 5 档，每档 5.2 分）</span>
+      <span class="b"><b class="g">A</b> 20.8 ~ 26</span>
+      <span class="b"><b class="g">B</b> 15.6 ~ 20.8</span>
+      <span class="b"><b class="g">C</b> 10.4 ~ 15.6</span>
+      <span class="b"><b class="g">D</b> 5.2 ~ 10.4</span>
+      <span class="b"><b class="g">E</b> 0 ~ 5.2</span>
+    </div>
+  </header>
+
+  <!-- 答题说明：答题中隐藏，提交答案后显示 -->
+  <div class="notice" id="notice" hidden>
+    <b>答题说明：</b>单项选择题每题 4 分，答对得 4 分，答错或不答得 0 分；多项选择题每题 6 分，按正确选项个数均摊（3 个正确选项时每选对 1 个得 2 分，2 个正确选项时每选对 1 个得 3 分），但只要选错任意选项或不作答，该题即得 0 分。所有选项默认不勾选。作答完成后点击下方「提交答案」，系统将自动评分，并在每道题下方完整显示答案与解析。
+  </div>
+
+  <form id="quiz" autocomplete="off">
+        <div class="section-title" hidden>一、单项选择题<span>共 5 小题，共 20 分；每题只有一个选项符合题目要求</span></div>
+    <article class="q" data-type="single" data-answer="A" data-max="4.0" hidden>
+      <div class="q-head"><span class="qno">1</span><span class="q-type">单项选择题</span><span class="q-pts">4 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">教材把「函数值随自变量的增大而增大」的性质称为单调递增，英文记为 monotonically increasing；把它写成符号语言或图象语言，就是本节的「关系·转化」。下列关于单调性术语与转化的说法中，正确的是<span class="blank"></span></div>
+      <div class="opts cols-1">
+        <label class="opt"><input type="radio" name="q1" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot">「单调递增」的英文是 monotonically increasing，其符号刻画为：对区间 <i>I</i> 内任意 <i>x</i><sub>1</sub>&lt;<i>x</i><sub>2</sub>，都有 <i>f</i>(<i>x</i><sub>1</sub>)&lt;<i>f</i>(<i>x</i><sub>2</sub>)</span></label>
+        <label class="opt"><input type="radio" name="q1" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot">「单调递减」的英文是 increasing function，对应的图象从左到右上升</span></label>
+        <label class="opt"><input type="radio" name="q1" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot">「增函数」的英文是 decreasing function，其图象一定存在最低点</span></label>
+        <label class="opt"><input type="radio" name="q1" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot">「单调区间」的英文是 maximum value，指函数取得最大值的那一段区间</span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>A</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">单项选择题 · 4 分 ｜ 人教A版 · 必修第一册 · 3.2 函数的基本性质</p>
+          <p><b>思路：</b>单调性的中英术语要一一对应；「关系·转化」指文字语言（<i>y</i> 随 <i>x</i> 增大而增大）、符号语言（∀<i>x</i><sub>1</sub>&lt;<i>x</i><sub>2</sub>，<i>f</i>(<i>x</i><sub>1</sub>)&lt;<i>f</i>(<i>x</i><sub>2</sub>)）、图象语言（从左到右上升）三者可以互通。</p>
+          <p class="sol-sub">逐选项判定：</p>
+          <p class="judge"><span class="jl">A．</span>正确：monotonically increasing 正是「单调递增」，其符号刻画为对区间 <i>I</i> 内任意 <i>x</i><sub>1</sub>&lt;<i>x</i><sub>2</sub> 都有 <i>f</i>(<i>x</i><sub>1</sub>)&lt;<i>f</i>(<i>x</i><sub>2</sub>)，与「图象从左到右上升」等价。</p>
+          <p class="judge"><span class="jl">B．</span>错误：「单调递减」的英文是 monotonically decreasing（decreasing function），图象从左到右下降，increasing function 是「增函数」，恰好记反。</p>
+          <p class="judge"><span class="jl">C．</span>错误：「增函数」的英文是 increasing function，decreasing function 是「减函数」，且增函数未必有最低点（如 <i>y</i>=<i>x</i> 在 <b>R</b> 上递增却无最低点），「有最低点」混淆了最小值。</p>
+          <p class="judge"><span class="jl">D．</span>错误：「单调区间」的英文是 monotonic interval，maximum value 是「最大值」，选项把两个术语对调。</p>
+          <p class="tip"><b>易错点：</b>把 increasing 与 decreasing 和「增 / 减」记反；把「单调区间」当作「取最大值的区间」，混淆单调性与最值两类术语。</p>
+        </div>
+      </div>
+    </article>
+    <article class="q" data-type="single" data-answer="C" data-max="4.0" hidden>
+      <div class="q-head"><span class="qno">2</span><span class="q-type">单项选择题</span><span class="q-pts">4 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">设四个函数的定义域均为 <b>R</b>：<i>p</i>(<i>x</i>)=<i>x</i><sup>2</sup>+3，<i>q</i>(<i>x</i>)=<i>x</i><sup>3</sup>+<i>x</i>，<i>r</i>(<i>x</i>)=<i>x</i><sup>2</sup>+<i>x</i>，<i>s</i>(<i>x</i>)=5。按偶函数定义 <i>f</i>(−<i>x</i>)=<i>f</i>(<i>x</i>) 与奇函数定义 <i>f</i>(−<i>x</i>)=−<i>f</i>(<i>x</i>) 逐一判断，下列结论正确的是<span class="blank"></span></div>
+      <div class="opts cols-1">
+        <label class="opt"><input type="radio" name="q2" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot"><i>p</i>(<i>x</i>) 是奇函数，<i>q</i>(<i>x</i>) 是偶函数</span></label>
+        <label class="opt"><input type="radio" name="q2" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot"><i>p</i>(<i>x</i>) 与 <i>r</i>(<i>x</i>) 都是偶函数</span></label>
+        <label class="opt"><input type="radio" name="q2" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot"><i>q</i>(<i>x</i>)=<i>x</i><sup>3</sup>+<i>x</i> 是奇函数，<i>s</i>(<i>x</i>)=5 是偶函数</span></label>
+        <label class="opt"><input type="radio" name="q2" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot"><i>r</i>(<i>x</i>)=<i>x</i><sup>2</sup>+<i>x</i> 是奇函数，<i>s</i>(<i>x</i>)=5 既不是奇函数也不是偶函数</span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>C</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">单项选择题 · 4 分 ｜ 人教A版 · 必修第一册 · 3.2 函数的基本性质</p>
+          <p><b>思路：</b>把 <i>x</i> 换成 −<i>x</i> 化简，再与 <i>f</i>(<i>x</i>)、−<i>f</i>(<i>x</i>) 比对，分别套用偶函数定义 <i>f</i>(−<i>x</i>)=<i>f</i>(<i>x</i>) 与奇函数定义 <i>f</i>(−<i>x</i>)=−<i>f</i>(<i>x</i>)。</p>
+          <p><b>解答：</b><i>p</i>(−<i>x</i>)=(−<i>x</i>)<sup>2</sup>+3=<i>x</i><sup>2</sup>+3=<i>p</i>(<i>x</i>)，故 <i>p</i> 是偶函数，<i>q</i>(−<i>x</i>)=(−<i>x</i>)<sup>3</sup>+(−<i>x</i>)=−<i>x</i><sup>3</sup>−<i>x</i>=−<i>q</i>(<i>x</i>)，故 <i>q</i> 是奇函数，<i>r</i>(−<i>x</i>)=<i>x</i><sup>2</sup>−<i>x</i>，既不等于 <i>r</i>(<i>x</i>)=<i>x</i><sup>2</sup>+<i>x</i>，也不等于 −<i>r</i>(<i>x</i>)=−<i>x</i><sup>2</sup>−<i>x</i>，故 <i>r</i> 非奇非偶，<i>s</i>(−<i>x</i>)=5=<i>s</i>(<i>x</i>)，故常数函数 <i>s</i> 是偶函数，A 把 <i>p</i>、<i>q</i> 的奇偶性恰好说反</p>
+          <p class="sol-sub">逐选项判定：</p>
+          <p class="judge"><span class="jl">B．</span><i>r</i> 不是偶函数。</p>
+          <p class="judge"><span class="jl">C．</span><i>q</i> 是奇函数、<i>s</i> 是偶函数，两句都对。</p>
+          <p class="judge"><span class="jl">D．</span><i>r</i> 非奇非偶、<i>s</i> 是偶函数，两句都错。</p>
+          <p class="tip"><b>易错点：</b>把常数函数 <i>f</i>(<i>x</i>)=5 误判为「非奇非偶」；或由 <i>r</i>(<i>x</i>) 含 <i>x</i><sup>2</sup> 项就断定它是偶函数，漏掉一次项 <i>x</i> 破坏了对称性。</p>
+        </div>
+      </div>
+    </article>
+    <article class="q" data-type="single" data-answer="B" data-max="4.0" hidden>
+      <div class="q-head"><span class="qno">3</span><span class="q-type">单项选择题</span><span class="q-pts">4 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">判断函数奇偶性的第一步是先看定义域是否关于原点对称；奇偶性是函数在定义域上的整体性质。下列函数中，是偶函数的是<span class="blank"></span></div>
+      <div class="opts cols-2">
+        <label class="opt"><input type="radio" name="q3" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot"><i>f</i>(<i>x</i>)=<i>x</i><sup>2</sup>，<i>x</i>∈[−1,2]</span></label>
+        <label class="opt"><input type="radio" name="q3" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot"><i>f</i>(<i>x</i>)=<i>x</i><sup>2</sup>，<i>x</i>∈[−2,2]</span></label>
+        <label class="opt"><input type="radio" name="q3" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot"><i>f</i>(<i>x</i>)=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor"><i>x</i><sup>2</sup></span><span style="display:block;padding:0 .26em"><i>x</i>−1</span></span></span></label>
+        <label class="opt"><input type="radio" name="q3" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot"><i>f</i>(<i>x</i>)=<i>x</i><sup>2</sup>，<i>x</i>∈(0,3)</span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>B</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">单项选择题 · 4 分 ｜ 人教A版 · 必修第一册 · 3.2 函数的基本性质</p>
+          <p><b>思路：</b>判断步骤第一步是先看定义域是否关于原点对称；「重要提醒」强调奇偶性是定义域上的整体性质。定义域不对称时，即使解析式满足 <i>f</i>(−<i>x</i>)=<i>f</i>(<i>x</i>) 也不能判为偶函数。</p>
+          <p><b>解答：</b>A 的定义域 [−1,2]：取 <i>x</i>=2，其相反数 −2∉[−1,2]，定义域不关于原点对称，故非偶函数。B 的定义域 [−2,2] 关于原点对称，且 <i>f</i>(−<i>x</i>)=(−<i>x</i>)<sup>2</sup>=<i>x</i><sup>2</sup>=<i>f</i>(<i>x</i>)，是偶函数。C 的定义域为 {<i>x</i>∣<i>x</i>≠1}：取 <i>x</i>=−1 时 −<i>x</i>=1 不在定义域内，不对称，故非偶函数。D 的定义域 (0,3) 不含负数，不对称，非偶函数。</p>
+          <p class="tip"><b>易错点：</b>只验 <i>f</i>(−<i>x</i>)=<i>f</i>(<i>x</i>) 就选 A，跳过「先看定义域」这一步；或认为「解析式是 <i>x</i><sup>2</sup> 就一定是偶函数」。</p>
+        </div>
+      </div>
+    </article>
+    <article class="q" data-type="single" data-answer="B" data-max="4.0" hidden>
+      <div class="q-head"><span class="qno">4</span><span class="q-type">单项选择题</span><span class="q-pts">4 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">定义在 <b>R</b> 上的函数 <i>f</i>(<i>x</i>) 满足 <i>g</i>(<i>x</i>)=<i>f</i>(<i>x</i>+1)−2 是奇函数，这等价于 <i>f</i>(<i>x</i>) 的图象关于点 <i>P</i>(1,2) 成中心对称；当 <i>x</i>≥1 时 <i>f</i>(<i>x</i>)=<i>x</i><sup>2</sup>−2<i>x</i>+3。借助对称性由 <i>x</i>≥1 一侧推知另一侧，则 <i>f</i>(0)+<i>f</i>(−1)=<span class="blank"></span></div>
+      <div class="opts cols-4">
+        <label class="opt"><input type="radio" name="q4" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot">−3</span></label>
+        <label class="opt"><input type="radio" name="q4" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot">−1</span></label>
+        <label class="opt"><input type="radio" name="q4" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot">1</span></label>
+        <label class="opt"><input type="radio" name="q4" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot">9</span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>B</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">单项选择题 · 4 分 ｜ 人教A版 · 必修第一册 · 3.2 函数的基本性质</p>
+          <p><b>思路：</b>由「拓展（对称中心的推广）」，<i>g</i>(<i>x</i>)=<i>f</i>(<i>x</i>+1)−2 为奇函数等价于 <i>f</i>(<i>x</i>) 的图象关于点 <i>P</i>(1,2) 中心对称，即 <i>f</i>(1+<i>t</i>)+<i>f</i>(1−<i>t</i>)=4；再由「应用（简化研究）」，<i>x</i>&lt;1 一侧的函数值可由 <i>x</i>&gt;1 一侧的已知解析式经对称性推出。</p>
+          <p><b>解答：</b>由 <i>g</i>(−<i>t</i>)=−<i>g</i>(<i>t</i>) 得 <i>f</i>(1−<i>t</i>)−2=−(<i>f</i>(1+<i>t</i>)−2)，即 <i>f</i>(1+<i>t</i>)+<i>f</i>(1−<i>t</i>)=4。取 <i>t</i>=1：<i>f</i>(2)+<i>f</i>(0)=4，而 <i>f</i>(2)=4−4+3=3，故 <i>f</i>(0)=1；取 <i>t</i>=2：<i>f</i>(3)+<i>f</i>(−1)=4，而 <i>f</i>(3)=9−6+3=6，故 <i>f</i>(−1)=−2。于是 <i>f</i>(0)+<i>f</i>(−1)=1+(−2)=−1，选 B。逐项：A(−3) 把所求误算成 <i>f</i>(−1)−<i>f</i>(0)=−3，把「和」当作「差」且次序颠倒；C(1) 误用 <i>f</i>(1+<i>t</i>)−<i>f</i>(1−<i>t</i>)=4，得 <i>f</i>(0)=−1、<i>f</i>(−1)=2，和为 1；D(9) 把 <i>x</i>=0,−1 直接代入只在 <i>x</i>≥1 成立的解析式（得 3+6=9），或误把中心对称当成轴对称 <i>f</i>(1+<i>t</i>)=<i>f</i>(1−<i>t</i>)（同样得 9）。</p>
+          <p class="tip"><b>易错点：</b>把 <i>g</i>(<i>x</i>)=<i>f</i>(<i>x</i>+1)−2 为奇函数误写成轴对称 <i>f</i>(1+<i>t</i>)=<i>f</i>(1−<i>t</i>)，或把 2<i>b</i>=4 记成 2；把只在半侧成立的解析式不加辨别地代入另一侧。</p>
+        </div>
+      </div>
+    </article>
+    <article class="q" data-type="single" data-answer="B" data-max="4.0" hidden>
+      <div class="q-head"><span class="qno">5</span><span class="q-type">单项选择题</span><span class="q-pts">4 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">教材把满足 <i>f</i>(−<i>x</i>)=<i>f</i>(<i>x</i>) 的函数称为 even function（偶函数），把满足 <i>f</i>(−<i>x</i>)=−<i>f</i>(<i>x</i>) 的称为 odd function（奇函数）；单调性是局部性质、奇偶性是整体性质，二者结合可缩小研究范围。已知 <i>f</i>(<i>x</i>) 是定义在 <b>R</b> 上的偶函数，且在 [0,+∞) 上单调递减，记 <i>a</i>=<i>f</i>(−<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">3</span><span style="display:block;padding:0 .26em">2</span></span>)，<i>b</i>=<i>f</i>(2)，<i>c</i>=<i>f</i>(−1)，则<span class="blank"></span></div>
+      <div class="opts cols-4">
+        <label class="opt"><input type="radio" name="q5" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot"><i>a</i>&lt;<i>b</i>&lt;<i>c</i></span></label>
+        <label class="opt"><input type="radio" name="q5" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot"><i>b</i>&lt;<i>a</i>&lt;<i>c</i></span></label>
+        <label class="opt"><input type="radio" name="q5" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot"><i>c</i>&lt;<i>a</i>&lt;<i>b</i></span></label>
+        <label class="opt"><input type="radio" name="q5" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot"><i>b</i>&lt;<i>c</i>&lt;<i>a</i></span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>B</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">单项选择题 · 4 分 ｜ 人教A版 · 必修第一册 · 3.2 函数的基本性质</p>
+          <p><b>思路：</b>偶函数满足 <i>f</i>(−<i>x</i>)=<i>f</i>(<i>x</i>)，可把负数自变量化到 [0,+∞) 上；奇偶性是整体性质、单调性是局部性质，二者结合后只需在已知单调性的那一半区间比较。</p>
+          <p><b>解答：</b>由偶函数，<i>a</i>=<i>f</i>(−<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">3</span><span style="display:block;padding:0 .26em">2</span></span>)=<i>f</i>(<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">3</span><span style="display:block;padding:0 .26em">2</span></span>)，<i>c</i>=<i>f</i>(−1)=<i>f</i>(1)，<i>b</i>=<i>f</i>(2)。在 [0,+∞) 上 <i>f</i> 单调递减，且 1&lt;<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">3</span><span style="display:block;padding:0 .26em">2</span></span>&lt;2，故 <i>f</i>(1)&gt;<i>f</i>(<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">3</span><span style="display:block;padding:0 .26em">2</span></span>)&gt;<i>f</i>(2)，即 <i>c</i>&gt;<i>a</i>&gt;<i>b</i>，写成 <i>b</i>&lt;<i>a</i>&lt;<i>c</i>，选 B。逐项：A(<i>a</i>&lt;<i>b</i>&lt;<i>c</i>) 把「递减」当成「递增」；C(<i>c</i>&lt;<i>a</i>&lt;<i>b</i>) 完全倒序；D(<i>b</i>&lt;<i>c</i>&lt;<i>a</i>) 把 <i>a</i> 与 <i>c</i> 的大小颠倒，根源是在负半轴上直接用 −<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">3</span><span style="display:block;padding:0 .26em">2</span></span>&lt;−1 并按「递减」下结论，未先化到正半轴。</p>
+          <p class="tip"><b>易错点：</b>忘了先用 <i>f</i>(−<i>x</i>)=<i>f</i>(<i>x</i>) 把负数自变量化到已知单调性的区间；或误记「偶函数在关于原点对称的两个区间上单调性相同」（实际相反，本题正半轴递减则负半轴递增）。</p>
+        </div>
+      </div>
+    </article>
+    <div class="section-title" hidden>二、多项选择题<span>共 1 小题，共 6 分；有多个选项符合题目要求</span></div>
+    <article class="q" data-type="multi" data-answer="ABC" data-max="6.0" hidden>
+      <div class="q-head"><span class="qno">6</span><span class="q-type">多项选择题</span><span class="q-pts">6 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">设 <i>f</i>(<i>x</i>)=<i>x</i><sup>2</sup>−4<i>x</i>+5，<i>x</i>∈[1,4]。下列关于单调性与最大值的说法中，正确的是<span class="blank"></span></div>
+      <div class="opts cols-1">
+        <label class="opt"><input type="checkbox" name="q6" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot">按定义法证明 <i>f</i> 在 [2,4] 上单调递增，步骤为「取值—作差—变形—定号—结论」；其中 <i>f</i>(<i>x</i><sub>1</sub>)−<i>f</i>(<i>x</i><sub>2</sub>)=(<i>x</i><sub>1</sub>−<i>x</i><sub>2</sub>)(<i>x</i><sub>1</sub>+<i>x</i><sub>2</sub>−4)，当 2≤<i>x</i><sub>1</sub>&lt;<i>x</i><sub>2</sub>≤4 时该式小于 0，故 <i>f</i>(<i>x</i><sub>1</sub>)&lt;<i>f</i>(<i>x</i><sub>2</sub>)</span></label>
+        <label class="opt"><input type="checkbox" name="q6" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot">用增量形式可等价刻画：记 Δ<i>x</i>=<i>x</i><sub>1</sub>−<i>x</i><sub>2</sub>，Δ<i>y</i>=<i>f</i>(<i>x</i><sub>1</sub>)−<i>f</i>(<i>x</i><sub>2</sub>)，则 <i>f</i> 在区间 <i>I</i> 上单调递增的充要条件是「对 <i>I</i> 内任意 <i>x</i><sub>1</sub>≠<i>x</i><sub>2</sub>，都有 <span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">Δ<i>y</i></span><span style="display:block;padding:0 .26em">Δ<i>x</i></span></span>&gt;0」</span></label>
+        <label class="opt"><input type="checkbox" name="q6" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot">按最大值的定义，<i>M</i> 是 <i>f</i> 在 [1,4] 上的最大值，必须同时满足「∀<i>x</i>∈[1,4]，<i>f</i>(<i>x</i>)≤<i>M</i>」与「∃<i>x</i><sub>0</sub>∈[1,4] 使 <i>f</i>(<i>x</i><sub>0</sub>)=<i>M</i>」，二者缺一不可；据此 <i>f</i> 在 [1,4] 上的最大值为 5（在 <i>x</i><sub>0</sub>=4 处取得）</span></label>
+        <label class="opt"><input type="checkbox" name="q6" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot">只要 ∀<i>x</i>∈[1,4] 都有 <i>f</i>(<i>x</i>)≤6，就能断定 6 是 <i>f</i> 在 [1,4] 上的最大值</span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>ABC</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">多项选择题 · 6 分 ｜ 人教A版 · 必修第一册 · 3.2 函数的基本性质</p>
+          <p><b>思路：</b>A 考定义法五步与作差定号，B 考增量形式的等价刻画，C、D 考最大值定义中「所有值不超过 <i>M</i>」与「确有某点取到 <i>M</i>」两个条件缺一不可。</p>
+          <p class="sol-sub">逐选项判定：</p>
+          <p class="judge"><span class="jl">A．</span>正确，<i>f</i>(<i>x</i><sub>1</sub>)−<i>f</i>(<i>x</i><sub>2</sub>)=(<i>x</i><sub>1</sub><sup>2</sup>−<i>x</i><sub>2</sub><sup>2</sup>)−4(<i>x</i><sub>1</sub>−<i>x</i><sub>2</sub>)=(<i>x</i><sub>1</sub>−<i>x</i><sub>2</sub>)(<i>x</i><sub>1</sub>+<i>x</i><sub>2</sub>−4)，当 2≤<i>x</i><sub>1</sub>&lt;<i>x</i><sub>2</sub>≤4 时 <i>x</i><sub>1</sub>−<i>x</i><sub>2</sub>&lt;0、<i>x</i><sub>1</sub>+<i>x</i><sub>2</sub>−4&gt;0，故差 &lt;0，即 <i>f</i>(<i>x</i><sub>1</sub>)&lt;<i>f</i>(<i>x</i><sub>2</sub>)，五步完整、定号正确。</p>
+          <p class="judge"><span class="jl">B．</span>正确：这正是教材给出的增量形式等价刻画，Δ<i>x</i> 与 Δ<i>y</i> 同号（比值为正）等价于函数值随自变量同向变化。</p>
+          <p class="judge"><span class="jl">C．</span>正确：最大值定义要求「所有函数值不超过 <i>M</i>」且「确有某点取到 <i>M</i>」，<i>f</i>(<i>x</i>)=(<i>x</i>−2)<sup>2</sup>+1 在 [1,4] 上离对称轴 <i>x</i>=2 最远的是 <i>x</i>=4，故 <i>f</i>(4)=5 为最大值（用 Python 在 [1,4] 上密集取值复核得最大值 5、最小值 1）。</p>
+          <p class="judge"><span class="jl">D．</span>错误：取 <i>M</i>=6，∀<i>x</i>∈[1,4] 有 <i>f</i>(<i>x</i>)≤5&lt;6 成立，但不存在 <i>x</i><sub>0</sub> 使 <i>f</i>(<i>x</i><sub>0</sub>)=6，故 6 只是上界而非最大值，反例说明「所有值不超过」这一条不能单独推出最大值。</p>
+          <p class="tip"><b>易错点：</b>把「∀<i>x</i>，<i>f</i>(<i>x</i>)≤<i>M</i>」当成最大值的全部条件，漏掉「存在 <i>x</i><sub>0</sub> 取到」；或把增量形式中 Δ<i>x</i>、Δ<i>y</i> 取成相反方向后误判比值符号。</p>
+        </div>
+      </div>
+    </article>
+  </form>
+
+  <!-- ===== 逐题导航 / 提交区 ===== -->
+  <div class="submit-bar">
+    <button type="button" id="startBtn">开始答题</button>
+    <button type="button" id="prevBtn" hidden>上一题</button>
+    <button type="button" id="nextBtn" hidden>下一题</button>
+    <button type="button" id="submitBtn" hidden>提交答案</button>
+    <button type="button" id="resetBtn" hidden>重新作答</button>
+    <div class="bar-info"><span id="navInfo">点击「开始答题」逐题作答</span>　·　已作答 <b id="progress">0 / 6</b> 题　·　未作答的题目按 0 分计</div>
+  </div>
+
+  <div class="foot">依据《3.2 函数的基本性质.md》选择题部分改编 · 满分 26 分</div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var TOTAL = 26;          // 满分（由 build_html.py 注入）
+  var questions = Array.prototype.slice.call(document.querySelectorAll('.q'));
+  var form = document.getElementById('quiz');
+  var startBtn = document.getElementById('startBtn');
+  var prevBtn = document.getElementById('prevBtn');
+  var nextBtn = document.getElementById('nextBtn');
+  var submitBtn = document.getElementById('submitBtn');
+  var resetBtn = document.getElementById('resetBtn');
+  var navInfo = document.getElementById('navInfo');
+  var sections = Array.prototype.slice.call(form.querySelectorAll('.section-title'));
+  var current = -1;               // -1 = 尚未开始答题
+  var progress = document.getElementById('progress');
+  var resultBox = document.getElementById('result');
+  var gradeScale = document.getElementById('gradeScale');
+  var noticeBox = document.getElementById('notice');
+  var scoreNum = document.getElementById('scoreNum');
+  var gradeBadge = document.getElementById('gradeBadge');
+  var gradeDesc = document.getElementById('gradeDesc');
+
+  // 5 等分等级（BANDS 由 build_html.py 注入）
+  var BANDS = [{"g": "A", "min": 20.8, "desc": "优秀 · 概念清晰，运算与转化掌握扎实"}, {"g": "B", "min": 15.6, "desc": "良好 · 主干知识扎实，个别细节待巩固"}, {"g": "C", "min": 10.4, "desc": "中等 · 基本思路具备，易错点仍需复盘"}, {"g": "D", "min": 5.2, "desc": "及格 · 建议逐题对照解析重做错题"}, {"g": "E", "min": 0.0, "desc": "待提高 · 建议先复习对应知识点再重新作答"}];
+
+  function inputsOf(q){ return Array.prototype.slice.call(q.querySelectorAll('input')); }
+  function chosenOf(q){ return inputsOf(q).filter(function(i){return i.checked;}).map(function(i){return i.value;}); }
+
+  // 计分：单选答对得满分、答错/不答 0 分；
+  // 多选：有错选或不答 0 分；否则该题满分均摊到每个正确选项（6 分 / 3 项 = 2 分，6 分 / 2 项 = 3 分）
+  function scoreOf(q){
+    var type = q.getAttribute('data-type');
+    var answer = q.getAttribute('data-answer');
+    var chosen = chosenOf(q);
+    var max = parseInt(q.getAttribute('data-max'), 10);
+    if (type === 'single'){
+      return (chosen.length === 1 && chosen[0] === answer) ? max : 0;
+    }
+    if (chosen.length === 0) return 0;                       // 不答得 0 分
+    for (var i=0;i<chosen.length;i++){
+      if (answer.indexOf(chosen[i]) === -1) return 0;       // 有错选得 0 分
+    }
+    var per = max / answer.length;                          // 满分均摊到每个正确选项
+    return Math.min(max, Math.round(chosen.length * per * 100) / 100);
+  }
+
+  function updateProgress(){
+    var done = questions.filter(function(q){ return chosenOf(q).length > 0; }).length;
+    progress.textContent = done + ' / ' + questions.length;
+  }
+
+  function gradeFor(score){
+    for (var i=0;i<BANDS.length;i++){ if (score >= BANDS[i].min) return BANDS[i]; }
+    return BANDS[BANDS.length-1];
+  }
+
+  // ===== 逐题推送 =====
+  // 一次只在页面上呈现一道题；章节汇总标题在答题阶段隐藏，提交后恢复。
+  function showQuestion(i){
+    current = i;
+    questions.forEach(function(q, idx){ q.hidden = (idx !== i); });
+    sections.forEach(function(s){ s.hidden = true; });
+    startBtn.hidden = true;
+    prevBtn.hidden = (i === 0);                         // 第 1 题无「上一题」
+    nextBtn.hidden = (i >= questions.length - 1);       // 最后一题无「下一题」
+    submitBtn.hidden = (i !== questions.length - 1);    // 「提交答案」只在最后一题出现
+    resetBtn.hidden = true;
+    var type = questions[i].getAttribute('data-type') === 'multi' ? '多项选择题' : '单项选择题';
+    navInfo.textContent = '第 ' + (i + 1) + ' / ' + questions.length + ' 题 · ' + type;
+    updateProgress();
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  function startQuiz(){ showQuestion(0); }
+  function nextQuestion(){ if (current >= 0 && (questions.length - 1) > current) showQuestion(current + 1); }
+  function prevQuestion(){ if (current > 0) showQuestion(current - 1); }
+
+  function submit(){
+    var total = 0;
+    questions.forEach(function(q){
+      var got = scoreOf(q);
+      total += got;
+      var answer = q.getAttribute('data-answer');
+      var max = parseInt(q.getAttribute('data-max'), 10);
+      var chosen = chosenOf(q);
+
+      // 逐题得分标签
+      var tag = q.querySelector('.q-got');
+      tag.textContent = '本题得 ' + got + ' / ' + max + ' 分';
+      tag.className = 'q-got ' + (got === max ? 'full' : (got > 0 ? 'part' : 'zero'));
+      tag.hidden = false;
+
+      // 选项判定着色：正确选项绿色，误选选项红色
+      q.querySelectorAll('.opt').forEach(function(opt){
+        var v = opt.querySelector('input').value;
+        if (answer.indexOf(v) !== -1) opt.classList.add('is-correct');
+        if (chosen.indexOf(v) !== -1 && answer.indexOf(v) === -1) opt.classList.add('is-wrong');
+        opt.classList.add('locked');
+      });
+      inputsOf(q).forEach(function(i){ i.disabled = true; });
+
+      // 显示答案与解析
+      q.querySelector('.sol').hidden = false;
+    });
+
+    // 总分与等级（显示在试卷标题下方）
+    var band = gradeFor(total);
+    scoreNum.textContent = total;
+    gradeBadge.textContent = band.g;
+    gradeBadge.className = 'grade-badge g-' + band.g;
+    gradeDesc.textContent = band.desc + '（得分率 ' + Math.round(total/TOTAL*100) + '%）';
+    resultBox.hidden = false;
+    gradeScale.hidden = false;   // 等级划分：提交后才显示
+    noticeBox.hidden = false;    // 答题说明：提交后才显示
+
+    // 提交后展开全部试题，便于逐题对照答案与解析复盘
+    questions.forEach(function(q){ q.hidden = false; });
+    sections.forEach(function(s){ s.hidden = false; });
+    startBtn.hidden = true;
+    prevBtn.hidden = true;
+    nextBtn.hidden = true;
+    submitBtn.hidden = true;
+    resetBtn.hidden = false;
+    navInfo.textContent = '已提交 · 全部试题与解析已展开';
+    progress.textContent = questions.length + ' / ' + questions.length;
+    resultBox.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+
+  function reset(){
+    questions.forEach(function(q){
+      inputsOf(q).forEach(function(i){ i.checked = false; i.disabled = false; });
+      q.querySelectorAll('.opt').forEach(function(opt){
+        opt.classList.remove('is-correct','is-wrong','locked');
+      });
+      q.querySelector('.sol').hidden = true;
+      var tag = q.querySelector('.q-got');
+      tag.hidden = true; tag.textContent = ''; tag.className = 'q-got';
+    });
+    // 回到「未开始」状态：隐藏全部试题，仅显示「开始答题」
+    questions.forEach(function(q){ q.hidden = true; });
+    sections.forEach(function(s){ s.hidden = true; });
+    current = -1;
+    resultBox.hidden = true;
+    gradeScale.hidden = true;
+    noticeBox.hidden = true;
+    startBtn.hidden = false;
+    prevBtn.hidden = true;
+    nextBtn.hidden = true;
+    submitBtn.hidden = true;
+    resetBtn.hidden = true;
+    navInfo.textContent = '点击「开始答题」逐题作答（共 ' + questions.length + ' 题）';
+    updateProgress();
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  // 页面加载时强制清空所有勾选，保证默认不勾选（含浏览器刷新恢复表单的情况）
+  function clearAll(){
+    inputsOf(form).forEach(function(i){ i.checked = false; i.disabled = false; });
+  }
+  clearAll();
+  if (typeof form.reset === 'function') form.reset();
+  clearAll();
+  // 初始态：隐藏全部试题与成绩相关区域，仅显示「开始答题」（含浏览器刷新恢复状态的情况）
+  questions.forEach(function(q){ q.hidden = true; });
+  sections.forEach(function(s){ s.hidden = true; });
+  resultBox.hidden = true;
+  gradeScale.hidden = true;
+  noticeBox.hidden = true;
+  startBtn.hidden = false;
+  prevBtn.hidden = true;
+  nextBtn.hidden = true;
+  submitBtn.hidden = true;
+  resetBtn.hidden = true;
+  navInfo.textContent = '点击「开始答题」逐题作答（共 ' + questions.length + ' 题）';
+  updateProgress();
+
+  form.addEventListener('change', updateProgress);
+  startBtn.addEventListener('click', startQuiz);
+  prevBtn.addEventListener('click', prevQuestion);
+  nextBtn.addEventListener('click', nextQuestion);
+  submitBtn.addEventListener('click', submit);
+  resetBtn.addEventListener('click', reset);
+})();
+</script>
+</body>
+</html>

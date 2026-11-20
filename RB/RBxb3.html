@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人教B版 数学 选择性必修第三册 知识点总结</title>
+<style>
+:root{
+  --bg:#f3f7fc; --panel:#ffffff; --ink:#1d2b3b; --muted:#6b7d91;
+  --line:#e3ebf5; --blue:#2563eb; --blue-soft:#eaf2ff; --teal:#0e9384;
+  --shadow:0 2px 10px rgba(31,64,110,.06);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB","Segoe UI",sans-serif;
+  font-size:15px;line-height:1.75;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.97);
+  border-bottom:1px solid var(--line);box-shadow:0 2px 12px rgba(31,64,110,.06);
+  padding:12px 22px 10px;backdrop-filter:blur(6px)}
+.topbar-inner{max-width:1440px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
+.brand{min-width:280px;flex:1}
+.brand h1{margin:0;font-size:19px;letter-spacing:.2px;color:#12325b}
+.brand .sub{margin:2px 0 0;font-size:12.5px;color:var(--muted)}
+.stats{display:flex;gap:6px;flex-wrap:wrap}
+.stat{background:var(--blue-soft);color:#1d4ed8;border-radius:20px;padding:3px 11px;font-size:12.5px;white-space:nowrap}
+.stat b{font-size:13px}
+.tools{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.searchbox{display:flex;align-items:center;gap:6px;border:1px solid var(--line);
+  background:#f8fbff;border-radius:9px;padding:0 10px;height:36px}
+.searchbox .sicon{color:var(--muted);font-size:17px;line-height:1}
+#q{border:0;background:transparent;outline:none;width:190px;font-size:14px;color:var(--ink)}
+#searchInfo{font-size:12px;color:var(--teal);white-space:nowrap;min-width:0}
+select,button{height:36px;border:1px solid var(--line);background:#fff;color:#27435f;
+  border-radius:9px;padding:0 12px;font-size:13.5px;cursor:pointer;font-family:inherit}
+select:hover,button:hover{border-color:#9fc0f5;background:#f6faff}
+.layout{max-width:1440px;margin:18px auto;padding:0 22px 40px;
+  display:grid;grid-template-columns:252px minmax(0,1fr);gap:20px;align-items:start}
+.toc{position:sticky;top:118px;max-height:calc(100vh - 138px);overflow:auto;
+  background:var(--panel);border:1px solid var(--line);border-radius:14px;
+  box-shadow:var(--shadow);padding:14px 12px}
+.toc h2{margin:2px 8px 10px;font-size:13px;color:var(--muted);font-weight:600;letter-spacing:1px}
+.toc a{display:block;text-decoration:none;color:#40566e;font-size:13px;line-height:1.5;
+  padding:5px 8px;border-radius:7px;border-left:2px solid transparent;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.toc a:hover{background:#f2f7ff;color:var(--blue)}
+.toc a.toc1{font-weight:700;color:#173b68;margin-top:8px;border-left-color:#9dc0f5;background:#f2f7ff}
+.toc a.toc2{padding-left:18px}
+.toc a.toc3{padding-left:32px;font-size:12.5px;color:#6b7d91}
+main{min-width:0}
+.booting main{opacity:0}
+main{transition:opacity .25s ease}
+.bootnote{max-width:1440px;margin:60px auto;text-align:center;color:var(--muted);font-size:14px}
+.node[hidden]{display:none!important}
+details.node{margin:0}
+summary.head{list-style:none;cursor:pointer;display:flex;align-items:center;gap:9px;user-select:none;position:relative}
+summary.head::-webkit-details-marker{display:none}
+summary.head:focus-visible{outline:2px solid #93b8f7;outline-offset:2px}
+.twisty{flex:none;width:14px;text-align:center;color:#7d94ad;font-size:13px;transition:transform .15s ease}
+.twisty::before{content:"\25B8"}
+details[open] > summary .twisty{transform:rotate(90deg)}
+.lvtag,.kcat,.virtual{flex:none;font-size:11.5px;line-height:1.5;border-radius:6px;padding:2px 8px;white-space:nowrap}
+.t1{background:#2563eb;color:#fff}
+.t2{background:#dff3f0;color:#0b7669}
+.t3{background:#eef2f7;color:#52677f}
+.virtual{background:#fff4dd;color:#a16207}
+.meta{margin-left:auto;flex:none;font-size:12px;color:#8496a8;white-space:nowrap}
+.htext{min-width:0;overflow-wrap:anywhere}
+.children{margin:8px 0 8px 18px;padding-left:16px;border-left:2px solid var(--line)}
+.l1{border-left-color:#cddff8}
+.l2{border-left-color:#cfeae6}
+.l3{border-left-color:#e6edf6}
+details.lv1{display:block;background:var(--panel);border:1px solid var(--line);
+  border-radius:14px;box-shadow:var(--shadow);margin:0 0 16px;padding:12px 14px}
+details.lv1 > summary.head{font-size:17px;font-weight:700;color:#12325b;padding:2px 2px 8px;border-bottom:1px solid var(--line)}
+details.lv2{background:#fbfdff;border:1px solid #e8f0fa;border-radius:11px;margin:8px 0;padding:4px 10px}
+details.lv2 > summary.head{font-size:15.5px;font-weight:650;color:#1b4b80;padding:5px 2px}
+details.lv3{margin:7px 0;padding:2px 0}
+details.lv3 > summary.head{font-size:14.5px;color:#3c5875;padding:5px 10px;border-radius:8px;background:#f5f9fe}
+details.lv3 > summary.head:hover{background:#eaf3ff}
+details.kp{margin:6px 0 6px 4px;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+details.kp[open]{border-color:#cbdcf7;box-shadow:0 1px 6px rgba(37,99,235,.07)}
+details.kp > summary.kp-head{padding:8px 12px;font-size:14px}
+details.kp > summary.kp-head:hover{background:#f7fbff}
+details.kp .htext{font-weight:600;color:#26415e}
+.kcat{font-weight:600}
+.cat-def{background:#e8f1ff;color:#1d4ed8}
+.cat-prop{background:#f1ebff;color:#6d28d9}
+.cat-method{background:#e6f7ef;color:#047857}
+.cat-term{background:#e2f6f5;color:#0f766e}
+.cat-extra{background:#fff2df;color:#b45309}
+.cat-example{background:#ffeaea;color:#b91c1c}
+.cat-symbol{background:#eef2f7;color:#475569}
+.cat-key{background:#eef4ff;color:#2563eb}
+.kpbody{padding:2px 16px 12px 30px;border-top:1px dashed #e8eef7;color:#2b3d52}
+.kptext{margin:10px 0 0}
+.kptext strong{color:#12325b}
+.kptext em{color:#3c5875}
+.muted{color:var(--muted)}
+.sublist{margin:8px 0 0;padding-left:20px}
+.sublist li{margin:3px 0}
+code{background:#f1f5f9;border-radius:4px;padding:1px 5px;font-size:.9em;
+  font-family:Consolas,"Cascadia Code",monospace;color:#b13a5b}
+mark.hl{background:#ffe58a;color:#5c3b00;border-radius:2px;padding:0 1px}
+mjx-container[jax="SVG"]{max-width:100%;overflow-x:auto;overflow-y:hidden;vertical-align:middle}
+mjx-container[jax="SVG"] svg{vertical-align:middle}
+footer{max-width:1440px;margin:0 auto;padding:0 22px 36px;color:#8496a8;font-size:12.5px;line-height:1.8}
+footer .note{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+@media (max-width:960px){
+  .layout{grid-template-columns:1fr}.toc{display:none}
+  .topbar{position:static}.brand{min-width:100%}#q{width:150px}
+}
+@media print{
+  .topbar,.toc,.bootnote,.practice-link{display:none!important}
+  .layout{display:block;margin:0;padding:0;max-width:none}
+  main{opacity:1!important}
+  details.node > .children,details.kp > .kpbody{display:block!important}
+  details:not([open]) > *:not(summary){display:block!important}
+  details.lv1,details.lv2,details.kp{box-shadow:none;break-inside:avoid}
+  .kpbody{break-inside:avoid}
+  @page{margin:14mm}
+}
+
+/* 在线通关练入口：正文各节标题下方，不属于目录导航 */
+.practice-link{display:inline-flex;align-items:center;gap:5px;margin:8px 0 2px;
+  padding:4px 15px;border-radius:20px;background:#0e9384;color:#fff;
+  font-size:12.5px;font-weight:600;text-decoration:none;
+  box-shadow:0 1px 5px rgba(14,147,132,.22);transition:background .15s ease}
+.practice-link:hover{background:#0b7c70;color:#fff}
+.practice-link:focus-visible{outline:2px solid #0b7c70;outline-offset:2px}
+</style>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']], processEscapes: false },
+  svg: { fontCache: 'local' },
+  options: {
+    enableMenu: false,
+    skipHtmlTags: ['script','noscript','style','textarea','pre','code','option']
+  },
+  startup: { typeset: true }
+};
+</script>
+<script src="./mathjax.js" onerror="window.__mjLocalMissing=true"></script>
+<script>if(window.__mjLocalMissing){document.write('<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.1/es5/tex-svg.js" onerror="window.__mjCDN1Failed=true"><\/script>');}</script>
+<script>if(window.__mjCDN1Failed){document.write('<script src="https://unpkg.com/mathjax@3.2.1/es5/tex-svg.js"><\/script>');}</script>
+</head>
+<body class="booting">
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <h1>人教B版 数学 选择性必修第三册 知识点总结</h1>
+      <p class="sub">章 → 节 → 小节 → 知识点 · 四级折叠 · 公式本地渲染</p>
+    </div>
+    <div class="stats"><span class="stat"><b>2</b> 章</span><span class="stat"><b>9</b> 节</span><span class="stat"><b>16</b> 小节</span><span class="stat"><b>64</b> 知识点</span></div>
+    <div class="tools">
+      <div class="searchbox"><span class="sicon">&#9906;</span>
+        <input id="q" type="search" placeholder="搜索知识点 / 术语 / 公式" autocomplete="off">
+        <span id="searchInfo"></span>
+      </div>
+      <select id="level" title="展开层级"><option value="collapse">全部折叠</option>
+        <option value="chapter">展开到章</option>
+        <option value="section" selected>展开到节</option>
+        <option value="subsection">展开到小节</option>
+        <option value="all">全部展开</option></select>
+      <button id="printBtn" title="展开全部后打印 / 另存为 PDF">打印</button>
+    </div>
+  </div>
+</header>
+<div class="bootnote" id="bootNote">正在排版数学公式…</div>
+<div class="layout">
+  <aside class="toc"><h2>目录导航</h2><nav id="tocTree"></nav></aside>
+  <main><details class="node lv1" id="n-1" data-toc="第五章 数列" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t1">章</span><span class="htext">第五章 数列</span><span class="meta">5 节 · 8 小节 · 34 知识点</span></summary><div class="children l1"><details class="node lv2" id="n-1-1" data-toc="5.1 数列基础" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t2">节</span><span class="htext">5.1 数列基础</span><span class="meta">2 小节 · 11 知识点</span></summary><a class="practice-link" href="RBxb3z5j1.html" target="_blank" rel="noopener" title="打开 5.1 数列基础 对应的逐题在线练习">在线通关练</a><div class="children l2"><details class="node lv3" id="n-1-1-1" data-toc="5.1.1 数列的概念" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t3">小节</span><span class="htext">5.1.1 数列的概念</span><span class="meta">6 条知识点</span></summary><div class="children l3"><details class="node kp" data-search="数列（Sequence） 按一定次序排列的一列数称为数列；数列中的每一个数都称为这个数列的项，各项依次称为第 1 项（或首项）、第 2 项……；各项对应的序号 $n\in\mathbf{N}_{+}$。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">数列（Sequence）</span></summary><div class="kpbody"><p class="kptext">按一定次序排列的一列数称为数列；数列中的每一个数都称为这个数列的<strong>项</strong>，各项依次称为第 1 项（或首项）、第 2 项……；各项对应的序号 $n\in\mathbf{N}_{+}$。</p></div></details><details class="node kp" data-search="项数 / 有穷与无穷数列 组成数列的数的个数称为项数；项数有限的称为有穷数列，项数无限的称为无穷数列，有穷数列的最后一项称为末项。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">项数 / 有穷与无穷数列</span></summary><div class="kpbody"><p class="kptext">组成数列的数的个数称为项数；项数有限的称为<strong>有穷数列</strong>，项数无限的称为<strong>无穷数列</strong>，有穷数列的最后一项称为<strong>末项</strong>。</p></div></details><details class="node kp" data-search="通项（General Term） 数列第 $n$ 项记为 $a_n$，整个数列简记为 $\{a_n\}$，通项公式指能用 $a_n=f(n)$ 表示的关系式（$f(n)$ 为只含 $n$ 的表达式）。例如数列 $1,\frac12,\frac13,\dots$ 的通项为 $a_n=\frac1n$；数列 $-1,1,-1,\dots$ 的通项为 $b_n=(-1)^n$。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">通项（General Term）</span></summary><div class="kpbody"><p class="kptext">数列第 $n$ 项记为 $a_n$，整个数列简记为 $\{a_n\}$，通项公式指能用 $a_n=f(n)$ 表示的关系式（$f(n)$ 为只含 $n$ 的表达式）。例如数列 $1,\frac12,\frac13,\dots$ 的通项为 $a_n=\frac1n$；数列 $-1,1,-1,\dots$ 的通项为 $b_n=(-1)^n$。</p></div></details><details class="node kp" data-search="数列与函数的关系 数列 $\{a_n\}$ 可看成定义域为正整数集子集（或 $\mathbf{N}_{+}$）的函数，通项公式即相应解析式，可用平面直角坐标系中横坐标为正整数的点表示。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-prop">性质</span><span class="htext">数列与函数的关系</span></summary><div class="kpbody"><p class="kptext">数列 $\{a_n\}$ 可看成定义域为正整数集子集（或 $\mathbf{N}_{+}$）的函数，通项公式即相应解析式，可用平面直角坐标系中横坐标为正整数的点表示。</p></div></details><details class="node kp" data-search="递增 / 递减 / 常数数列（Increasing / Decreasing / Constant sequence） 从第 2 项起每一项都大于前一项的称为递增数列；都小于前一项的称为递减数列；各项都相等的称为常数数列（常数列）。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">递增 / 递减 / 常数数列（Increasing / Decreasing / Constant sequence）</span></summary><div class="kpbody"><p class="kptext">从第 2 项起每一项都大于前一项的称为<strong>递增数列</strong>；都小于前一项的称为<strong>递减数列</strong>；各项都相等的称为<strong>常数数列（常数列）</strong>。</p></div></details><details class="node kp" data-search="例 通项 $a_n=2n-1$ 给出奇数列 $1,3,5,7,\dots$（递增数列）；通项 $a_n=\frac{n-1}{n}=1-\frac1n$ 给出递增数列。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-example">例</span><span class="htext">例</span></summary><div class="kpbody"><p class="kptext">通项 $a_n=2n-1$ 给出奇数列 $1,3,5,7,\dots$（递增数列）；通项 $a_n=\frac{n-1}{n}=1-\frac1n$ 给出递增数列。</p></div></details></div></details><details class="node lv3" id="n-1-1-2" data-toc="5.1.2 数列中的递推" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t3">小节</span><span class="htext">5.1.2 数列中的递推</span><span class="meta">5 条知识点</span></summary><div class="children l3"><details class="node kp" data-search="递推关系 / 递推公式（Recurrence Relation） 已知数列的首项（或前几项），且相邻项（或两项以上）之间的关系能用一个公式表示，则称该公式为数列的递推关系（递推公式）。例如 $a_1=1,\ a_{n+1}-a_n=n+1$ 可完全确定数列。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-prop">性质</span><span class="htext">递推关系 / 递推公式（Recurrence Relation）</span></summary><div class="kpbody"><p class="kptext">已知数列的首项（或前几项），且相邻项（或两项以上）之间的关系能用一个公式表示，则称该公式为数列的<strong>递推关系</strong>（递推公式）。例如 $a_1=1,\ a_{n+1}-a_n=n+1$ 可完全确定数列。</p></div></details><details class="node kp" data-search="斐波那契数列（Fibonacci Sequence） 兔子繁殖问题导出的 $F_1=F_2=1,\ F_n=F_{n-1}+F_{n-2}\ (n\ge 3)$，即 $1,1,2,3,5,8,\dots$；其通项公式为 $$F_n=\frac{1}{\sqrt5}\left[\left(\frac{1+\sqrt5}{2}\right)^n-\left(\frac{1-\sqrt5}{2}\right)^n\right]$$ 其中 $\frac{\sqrt5-1}{2}\approx0.618$ 为黄金分割比，故斐波那契数列也称黄金数列。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">斐波那契数列（Fibonacci Sequence）</span></summary><div class="kpbody"><p class="kptext">兔子繁殖问题导出的 $F_1=F_2=1,\ F_n=F_{n-1}+F_{n-2}\ (n\ge 3)$，即 $1,1,2,3,5,8,\dots$；其通项公式为 $$F_n=\frac{1}{\sqrt5}\left[\left(\frac{1+\sqrt5}{2}\right)^n-\left(\frac{1-\sqrt5}{2}\right)^n\right]$$ 其中 $\frac{\sqrt5-1}{2}\approx0.618$ 为黄金分割比，故斐波那契数列也称<strong>黄金数列</strong>。</p></div></details><details class="node kp" data-search="前 $n$ 项和（Sum of First $n$ Terms） 给定数列 $\{a_n\}$，称 $$S_n=a_1+a_2+\cdots+a_n$$ 为数列 $\{a_n\}$ 的前 $n$ 项和。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">前 $n$ 项和（Sum of First $n$ Terms）</span></summary><div class="kpbody"><p class="kptext">给定数列 $\{a_n\}$，称 $$S_n=a_1+a_2+\cdots+a_n$$ 为数列 $\{a_n\}$ 的前 $n$ 项和。</p></div></details><details class="node kp" data-search="通项与前 $n$ 项和的关系  $$a_n=\begin{cases}S_1, &amp; n=1,\\ S_n-S_{n-1}, &amp; n\ge 2.\end{cases}$$"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-prop">性质</span><span class="htext">通项与前 $n$ 项和的关系</span></summary><div class="kpbody"><p class="kptext"> $$a_n=\begin{cases}S_1, &amp; n=1,\\ S_n-S_{n-1}, &amp; n\ge 2.\end{cases}$$</p></div></details><details class="node kp" data-search="例 若 $S_n=2n+1$，则 $a_1=3$，且 $a_n=2\ (n\ge2)$；若 $S_n=n^2$，则 $a_n=2n-1$（对所有 $n$ 成立）。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-example">例</span><span class="htext">例</span></summary><div class="kpbody"><p class="kptext">若 $S_n=2n+1$，则 $a_1=3$，且 $a_n=2\ (n\ge2)$；若 $S_n=n^2$，则 $a_n=2n-1$（对所有 $n$ 成立）。</p></div></details></div></details></div></details><details class="node lv2" id="n-1-2" data-toc="5.2 等差数列" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t2">节</span><span class="htext">5.2 等差数列</span><span class="meta">2 小节 · 8 知识点</span></summary><a class="practice-link" href="RBxb3z5j2.html" target="_blank" rel="noopener" title="打开 5.2 等差数列 对应的逐题在线练习">在线通关练</a><div class="children l2"><details class="node lv3" id="n-1-2-1" data-toc="5.2.1 等差数列" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t3">小节</span><span class="htext">5.2.1 等差数列</span><span class="meta">5 条知识点</span></summary><div class="children l3"><details class="node kp" data-search="定义（Arithmetic Sequence） 若数列 $\{a_n\}$ 从第 2 项起，每一项与前一项之差都等于同一个常数 $d$，即 $$a_{n+1}-a_n=d$$ 恒成立，则称 $\{a_n\}$ 为等差数列，$d$ 称为公差（common difference）。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-def">定义</span><span class="htext">定义（Arithmetic Sequence）</span></summary><div class="kpbody"><p class="kptext">若数列 $\{a_n\}$ 从第 2 项起，每一项与前一项之差都等于同一个常数 $d$，即 $$a_{n+1}-a_n=d$$ 恒成立，则称 $\{a_n\}$ 为**等差数列**，$d$ 称为<strong>公差（common difference）</strong>。</p></div></details><details class="node kp" data-search="通项公式  $$a_n=a_1+(n-1)d$$ 等价地 $a_n=nd+(a_1-d)$；$\{a_n\}$ 是等差数列的充要条件是 $a_n=kn+b$（$k,b$ 为常数）。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">通项公式</span></summary><div class="kpbody"><p class="kptext"> $$a_n=a_1+(n-1)d$$ 等价地 $a_n=nd+(a_1-d)$；$\{a_n\}$ 是等差数列的充要条件是 $a_n=kn+b$（$k,b$ 为常数）。</p></div></details><details class="node kp" data-search="函数视角 公差 $d=0$ 时为常数列；$d&gt;0$ 时递增，$d&lt;0$ 时递减；用点表示时所有点共线。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">函数视角</span></summary><div class="kpbody"><p class="kptext">公差 $d=0$ 时为常数列；$d&gt;0$ 时递增，$d&lt;0$ 时递减；用点表示时所有点共线。</p></div></details><details class="node kp" data-search="等差中项（Arithmetic Mean） 若 $x,A,y$ 成等差数列，则 $A$ 为 $x$ 与 $y$ 的等差中项，且 $$A=\frac{x+y}{2}$$"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">等差中项（Arithmetic Mean）</span></summary><div class="kpbody"><p class="kptext">若 $x,A,y$ 成等差数列，则 $A$ 为 $x$ 与 $y$ 的<strong>等差中项</strong>，且 $$A=\frac{x+y}{2}$$</p></div></details><details class="node kp" data-search="性质 若 $\{a_n\}$ 为等差数列，且正整数 $s,t,p,q$ 满足 $s+t=p+q$，则 $$a_s+a_t=a_p+a_q$$ 特别地 $2s=p+q\Rightarrow 2a_s=a_p+a_q$。反之，若数列中每一项都是其前后项的等差中项，则该数列为等差数列。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-prop">性质</span><span class="htext">性质</span></summary><div class="kpbody"><p class="kptext">若 $\{a_n\}$ 为等差数列，且正整数 $s,t,p,q$ 满足 $s+t=p+q$，则 $$a_s+a_t=a_p+a_q$$ 特别地 $2s=p+q\Rightarrow 2a_s=a_p+a_q$。反之，若数列中每一项都是其前后项的等差中项，则该数列为等差数列。</p></div></details></div></details><details class="node lv3" id="n-1-2-2" data-toc="5.2.2 等差数列的前 $n$ 项和" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t3">小节</span><span class="htext">5.2.2 等差数列的前 $n$ 项和</span><span class="meta">3 条知识点</span></summary><div class="children l3"><details class="node kp" data-search="求和公式（Arithmetic Series）  $$S_n=\frac{n(a_1+a_n)}{2}=na_1+\frac{n(n-1)d}{2}$$ 推导采用倒序相加法（基于 $a_1+a_n=a_2+a_{n-1}=\cdots$）。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">求和公式（Arithmetic Series）</span></summary><div class="kpbody"><p class="kptext"> $$S_n=\frac{n(a_1+a_n)}{2}=na_1+\frac{n(n-1)d}{2}$$ 推导采用倒序相加法（基于 $a_1+a_n=a_2+a_{n-1}=\cdots$）。</p></div></details><details class="node kp" data-search="与前 $n$ 项和的关系 当 $d\neq 0$ 时 $S_n$ 是关于 $n$ 的二次函数（无常数项）；可由 $S_n$ 求通项 $a_n=S_n-S_{n-1}\ (n\ge2)$，并判断数列是否为等差数列。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-prop">性质</span><span class="htext">与前 $n$ 项和的关系</span></summary><div class="kpbody"><p class="kptext">当 $d\neq 0$ 时 $S_n$ 是关于 $n$ 的二次函数（无常数项）；可由 $S_n$ 求通项 $a_n=S_n-S_{n-1}\ (n\ge2)$，并判断数列是否为等差数列。</p></div></details><details class="node kp" data-search="例 首项 $a_1$、公差 $d=2$、且 $a_{20}=29$ 的等差数列，$S_{20}=200$；等差数列 $5,12,19,\dots,208$ 共 30 项，各项之和 $S_{30}=\frac{30(5+208)}{2}=3195$。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-example">例</span><span class="htext">例</span></summary><div class="kpbody"><p class="kptext">首项 $a_1$、公差 $d=2$、且 $a_{20}=29$ 的等差数列，$S_{20}=200$；等差数列 $5,12,19,\dots,208$ 共 30 项，各项之和 $S_{30}=\frac{30(5+208)}{2}=3195$。</p></div></details></div></details></div></details><details class="node lv2" id="n-1-3" data-toc="5.3 等比数列" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t2">节</span><span class="htext">5.3 等比数列</span><span class="meta">2 小节 · 8 知识点</span></summary><a class="practice-link" href="RBxb3z5j3.html" target="_blank" rel="noopener" title="打开 5.3 等比数列 对应的逐题在线练习">在线通关练</a><div class="children l2"><details class="node lv3" id="n-1-3-1" data-toc="5.3.1 等比数列" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t3">小节</span><span class="htext">5.3.1 等比数列</span><span class="meta">5 条知识点</span></summary><div class="children l3"><details class="node kp" data-search="定义（Geometric Sequence） 若数列 $\{a_n\}$ 从第 2 项起，每一项与前一项之比都等于同一个常数 $q$，即 $$\frac{a_{n+1}}{a_n}=q$$ 恒成立，则称 $\{a_n\}$ 为等比数列，$q$ 称为公比（common ratio）。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-def">定义</span><span class="htext">定义（Geometric Sequence）</span></summary><div class="kpbody"><p class="kptext">若数列 $\{a_n\}$ 从第 2 项起，每一项与前一项之比都等于同一个常数 $q$，即 $$\frac{a_{n+1}}{a_n}=q$$ 恒成立，则称 $\{a_n\}$ 为**等比数列**，$q$ 称为<strong>公比（common ratio）</strong>。</p></div></details><details class="node kp" data-search="通项公式  $$a_n=a_1q^{\,n-1}$$ $\{a_n\}$ 是等比数列的充要条件是 $a_n=kq^n$（$k,q\neq0$ 为常数）。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">通项公式</span></summary><div class="kpbody"><p class="kptext"> $$a_n=a_1q^{\,n-1}$$ $\{a_n\}$ 是等比数列的充要条件是 $a_n=kq^n$（$k,q\neq0$ 为常数）。</p></div></details><details class="node kp" data-search="函数视角 $q=1$ 时为常数列；$q\neq1$ 时 $a_n=\frac{a_1}{q}\cdot q^n$，增减性同时与 $a_1,q$ 有关；等比数列中奇数项符号相同、偶数项符号相同。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">函数视角</span></summary><div class="kpbody"><p class="kptext">$q=1$ 时为常数列；$q\neq1$ 时 $a_n=\frac{a_1}{q}\cdot q^n$，增减性同时与 $a_1,q$ 有关；等比数列中奇数项符号相同、偶数项符号相同。</p></div></details><details class="node kp" data-search="等比中项（Geometric Mean） 若 $x,G,y$ 成等比数列，则 $G$ 为 $x$ 与 $y$ 的等比中项，且 $$G=\pm\sqrt{xy}$$ 充要条件为 $G^2=xy$（需各项非零）。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">等比中项（Geometric Mean）</span></summary><div class="kpbody"><p class="kptext">若 $x,G,y$ 成等比数列，则 $G$ 为 $x$ 与 $y$ 的<strong>等比中项</strong>，且 $$G=\pm\sqrt{xy}$$ 充要条件为 $G^2=xy$（需各项非零）。</p></div></details><details class="node kp" data-search="性质 若 $\{a_n\}$ 为等比数列，且正整数 $s,t,p,q$ 满足 $s+t=p+q$，则 $$a_sa_t=a_pa_q$$ 特别地 $2s=p+q\Rightarrow a_s^2=a_pa_q$。反之，若数列中每一项都是其前后项的等比中项，则该数列为等比数列。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-prop">性质</span><span class="htext">性质</span></summary><div class="kpbody"><p class="kptext">若 $\{a_n\}$ 为等比数列，且正整数 $s,t,p,q$ 满足 $s+t=p+q$，则 $$a_sa_t=a_pa_q$$ 特别地 $2s=p+q\Rightarrow a_s^2=a_pa_q$。反之，若数列中每一项都是其前后项的等比中项，则该数列为等比数列。</p></div></details></div></details><details class="node lv3" id="n-1-3-2" data-toc="5.3.2 等比数列的前 $n$ 项和" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t3">小节</span><span class="htext">5.3.2 等比数列的前 $n$ 项和</span><span class="meta">3 条知识点</span></summary><div class="children l3"><details class="node kp" data-search="求和公式（Geometric Series）  $$S_n=\begin{cases}na_1, &amp; q=1,\\[4pt] \dfrac{a_1(1-q^n)}{1-q}=\dfrac{a_1-a_nq}{1-q}, &amp; q\neq1.\end{cases}$$ 推导采用错位相减法（乘 $q$ 后相减）。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">求和公式（Geometric Series）</span></summary><div class="kpbody"><p class="kptext"> $$S_n=\begin{cases}na_1, &amp; q=1,\\[4pt] \dfrac{a_1(1-q^n)}{1-q}=\dfrac{a_1-a_nq}{1-q}, &amp; q\neq1.\end{cases}$$ 推导采用错位相减法（乘 $q$ 后相减）。</p></div></details><details class="node kp" data-search="例 等比数列 $1,3,9,\dots$ 前 20 项和 $S_{20}=\frac{3^{20}-1}{2}\approx1.7\times10^9$；若 $a_3=3,\ a_{10}=-384$，得 $q=-2,\ a_1=\frac34$，从而 $S_{10}=-\frac{1023}{4}$。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-example">例</span><span class="htext">例</span></summary><div class="kpbody"><p class="kptext">等比数列 $1,3,9,\dots$ 前 20 项和 $S_{20}=\frac{3^{20}-1}{2}\approx1.7\times10^9$；若 $a_3=3,\ a_{10}=-384$，得 $q=-2,\ a_1=\frac34$，从而 $S_{10}=-\frac{1023}{4}$。</p></div></details><details class="node kp" data-search="应用 银行复利（如 $1000\times1.03^n$）、国际象棋麦粒问题（$1+2+\cdots+2^{63}=2^{64}-1\approx7.38\times10^{11}$ 吨）等。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">应用</span></summary><div class="kpbody"><p class="kptext">银行复利（如 $1000\times1.03^n$）、国际象棋麦粒问题（$1+2+\cdots+2^{63}=2^{64}-1\approx7.38\times10^{11}$ 吨）等。</p></div></details></div></details></div></details><details class="node lv2" id="n-1-4" data-toc="5.4 数列的应用" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t2">节</span><span class="htext">5.4 数列的应用</span><span class="meta">1 小节 · 4 知识点</span></summary><a class="practice-link" href="RBxb3z5j4.html" target="_blank" rel="noopener" title="打开 5.4 数列的应用 对应的逐题在线练习">在线通关练</a><div class="children l2"><details class="node lv3" id="n-1-4-1" data-toc="本节知识点" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t3">小节</span><span class="htext">本节知识点</span><span class="virtual">节内直列</span><span class="meta">4 条知识点</span></summary><div class="children l3"><details class="node kp" data-search="等额本金还款法（Equal Principal） 将本金平均分配到每一期偿还，第 $n$ 期还款额（设贷款本金 $A_0$、还款期数 $m$、每期利率 $r$）为 $$a_n=\frac{A_0}{m}+\left[A_0-\frac{A_0}{m}(n-1)\right]r$$ 各期还款额构成递减的等差数列。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">等额本金还款法（Equal Principal）</span></summary><div class="kpbody"><p class="kptext">将本金平均分配到每一期偿还，第 $n$ 期还款额（设贷款本金 $A_0$、还款期数 $m$、每期利率 $r$）为 $$a_n=\frac{A_0}{m}+\left[A_0-\frac{A_0}{m}(n-1)\right]r$$ 各期还款额构成<strong>递减的等差数列</strong>。</p></div></details><details class="node kp" data-search="等额本息还款法（Equal Installment） 每期还款额相等（$a_1=a_2=\cdots=a_m$）。利用现值（present value）与未来值（future value）概念：现值 $A_0$ 与 $n$ 年后未来值 $A$ 满足 $A_0(1+r)^n=A$，即 $A_0=\frac{A}{(1+r)^n}$；每期还款 $x$ 的现值之和为 $A_0$，解得 $$x=\frac{A_0r(1+r)^m}{(1+r)^m-1}$$"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">等额本息还款法（Equal Installment）</span></summary><div class="kpbody"><p class="kptext">每期还款额相等（$a_1=a_2=\cdots=a_m$）。利用<strong>现值（present value）</strong>与<strong>未来值（future value）</strong>概念：现值 $A_0$ 与 $n$ 年后未来值 $A$ 满足 $A_0(1+r)^n=A$，即 $A_0=\frac{A}{(1+r)^n}$；每期还款 $x$ 的现值之和为 $A_0$，解得 $$x=\frac{A_0r(1+r)^m}{(1+r)^m-1}$$</p></div></details><details class="node kp" data-search="政府支出&quot;乘数&quot;效应 消费额构成等比数列，国内消费总额可用等比数列求和估计（如初始 300 亿、每轮消费比例 75%，30 轮后约 1200 亿，乘数约为 4）。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">政府支出"乘数"效应</span></summary><div class="kpbody"><p class="kptext">消费额构成等比数列，国内消费总额可用等比数列求和估计（如初始 300 亿、每轮消费比例 75%，30 轮后约 1200 亿，乘数约为 4）。</p></div></details><details class="node kp" data-search="递推模型应用 如药物体内积累、企业资金增长（令 $a_{n+1}=\frac54a_n-200$，证 $\{a_n-800\}$ 为等比数列求通项）；《九章算术》&quot;耗子穿墙&quot;等。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">递推模型应用</span></summary><div class="kpbody"><p class="kptext">如药物体内积累、企业资金增长（令 $a_{n+1}=\frac54a_n-200$，证 $\{a_n-800\}$ 为等比数列求通项）；《九章算术》"耗子穿墙"等。</p></div></details></div></details></div></details><details class="node lv2" id="n-1-5" data-toc="5.5 数学归纳法" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t2">节</span><span class="htext">5.5 数学归纳法</span><span class="meta">1 小节 · 3 知识点</span></summary><a class="practice-link" href="RBxb3z5j5.html" target="_blank" rel="noopener" title="打开 5.5 数学归纳法 对应的逐题在线练习">在线通关练</a><div class="children l2"><details class="node lv3" id="n-1-5-1" data-toc="本节知识点" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t3">小节</span><span class="htext">本节知识点</span><span class="virtual">节内直列</span><span class="meta">3 条知识点</span></summary><div class="children l3"><details class="node kp" data-search="数学归纳法（Mathematical Induction） 证明与自然数有关的命题，需满足： 则命题对所有 $n\ge n_0$ 的自然数都成立。（可类比多米诺骨牌） (i) 奠基：当 $n=n_0$ 时命题成立； (ii) 递推：假设 $n=k\ (k\ge n_0)$ 时命题成立，能推出 $n=k+1$ 时命题也成立。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">数学归纳法（Mathematical Induction）</span></summary><div class="kpbody"><p class="kptext">证明与自然数有关的命题，需满足： 则命题对所有 $n\ge n_0$ 的自然数都成立。（可类比多米诺骨牌）</p><ul class="sublist"><li><strong>(i) 奠基</strong>：当 $n=n_0$ 时命题成立；</li><li><strong>(ii) 递推</strong>：假设 $n=k\ (k\ge n_0)$ 时命题成立，能推出 $n=k+1$ 时命题也成立。</li></ul></div></details><details class="node kp" data-search="要点 (i) 与 (ii) 缺一不可——只证递推而无奠基，证明无效。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">要点</span></summary><div class="kpbody"><p class="kptext">(i) 与 (ii) <strong>缺一不可</strong>——只证递推而无奠基，证明无效。</p></div></details><details class="node kp" data-search="应用举例  平方和公式：$1^2+2^2+\cdots+n^2=\frac{n(n+1)(2n+1)}{6}$； 平面 $n$ 个圆最多分平面为 $n^2-n+2$ 个区域（$n=1$ 时为 $2$）； 不等式 $2^n&gt;n^2$ 对 $n\ge5$ 成立； 伯努利不等式 $(1+x)^n\ge1+nx$（$x&gt;-1$）等。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">应用举例</span></summary><div class="kpbody"><ul class="sublist"><li>平方和公式：$1^2+2^2+\cdots+n^2=\frac{n(n+1)(2n+1)}{6}$；</li><li>平面 $n$ 个圆最多分平面为 $n^2-n+2$ 个区域（$n=1$ 时为 $2$）；</li><li>不等式 $2^n&gt;n^2$ 对 $n\ge5$ 成立；</li><li>伯努利不等式 $(1+x)^n\ge1+nx$（$x&gt;-1$）等。</li></ul></div></details></div></details></div></details></div></details>
+<details class="node lv1" id="n-2" data-toc="第六章 导数及其应用" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t1">章</span><span class="htext">第六章 导数及其应用</span><span class="meta">4 节 · 8 小节 · 30 知识点</span></summary><div class="children l1"><details class="node lv2" id="n-2-1" data-toc="6.1 导数" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t2">节</span><span class="htext">6.1 导数</span><span class="meta">4 小节 · 16 知识点</span></summary><a class="practice-link" href="RBxb3z6j1.html" target="_blank" rel="noopener" title="打开 6.1 导数 对应的逐题在线练习">在线通关练</a><div class="children l2"><details class="node lv3" id="n-2-1-1" data-toc="6.1.1 函数的平均变化率" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t3">小节</span><span class="htext">6.1.1 函数的平均变化率</span><span class="meta">4 条知识点</span></summary><div class="children l3"><details class="node kp" data-search="改变量（Increment） 对函数 $y=f(x)$，设 $x_1,x_2\in D,\ x_1\neq x_2$，称 $\Delta x=x_2-x_1$ 为自变量的改变量，$\Delta y=y_2-y_1=f(x_2)-f(x_1)$ 为因变量的改变量。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">改变量（Increment）</span></summary><div class="kpbody"><p class="kptext">对函数 $y=f(x)$，设 $x_1,x_2\in D,\ x_1\neq x_2$，称 $\Delta x=x_2-x_1$ 为自变量的改变量，$\Delta y=y_2-y_1=f(x_2)-f(x_1)$ 为因变量的改变量。</p></div></details><details class="node kp" data-search="平均变化率（Average Rate of Change）  $$\frac{\Delta y}{\Delta x}=\frac{f(x_2)-f(x_1)}{x_2-x_1}=\frac{f(x_1+\Delta x)-f(x_1)}{\Delta x}$$ 表示在区间上自变量每增加 1 个单位、因变量平均增加的单位数；几何意义是区间端点连线（割线）的斜率。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">平均变化率（Average Rate of Change）</span></summary><div class="kpbody"><p class="kptext"> $$\frac{\Delta y}{\Delta x}=\frac{f(x_2)-f(x_1)}{x_2-x_1}=\frac{f(x_1+\Delta x)-f(x_1)}{\Delta x}$$ 表示在区间上自变量每增加 1 个单位、因变量平均增加的单位数；几何意义是区间端点连线（<strong>割线</strong>）的斜率。</p></div></details><details class="node kp" data-search="&quot;以直代曲&quot; 用区间上的直线段近似代替曲线段来估计函数值（如用药代曲估计 $t=4$ 时血药浓度）。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">"以直代曲"</span></summary><div class="kpbody"><p class="kptext">用区间上的直线段近似代替曲线段来估计函数值（如用药代曲估计 $t=4$ 时血药浓度）。</p></div></details><details class="node kp" data-search="平均速度（Average Velocity） 位移 $x=h(t)$ 在 $[t_1,t_2]$ 内的平均速度 $\frac{h(t_2)-h(t_1)}{t_2-t_1}$ 即位移函数在该区间的平均变化率。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">平均速度（Average Velocity）</span></summary><div class="kpbody"><p class="kptext">位移 $x=h(t)$ 在 $[t_1,t_2]$ 内的平均速度 $\frac{h(t_2)-h(t_1)}{t_2-t_1}$ 即位移函数在该区间的<strong>平均变化率</strong>。</p></div></details></div></details><details class="node lv3" id="n-2-1-2" data-toc="6.1.2 导数及其几何意义" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t3">小节</span><span class="htext">6.1.2 导数及其几何意义</span><span class="meta">5 条知识点</span></summary><div class="children l3"><details class="node kp" data-search="瞬时变化率与导数（Derivative） 若当 $\Delta x\to0$ 时平均变化率趋于常数 $k$，则称 $k$ 为 $f(x)$ 在 $x=x_0$ 处的瞬时变化率，并称 $f(x)$ 在 $x_0$ 处可导，导数记为 $$f&#x27;(x_0)=\lim_{\Delta x\to0}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}$$ 也写作 $\lim\limits_{\Delta x\to0}\frac{\Delta f}{\Delta x}=k$。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">瞬时变化率与导数（Derivative）</span></summary><div class="kpbody"><p class="kptext">若当 $\Delta x\to0$ 时平均变化率趋于常数 $k$，则称 $k$ 为 $f(x)$ 在 $x=x_0$ 处的<strong>瞬时变化率</strong>，并称 $f(x)$ 在 $x_0$ 处<strong>可导</strong>，导数记为 $$f'(x_0)=\lim_{\Delta x\to0}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}$$ 也写作 $\lim\limits_{\Delta x\to0}\frac{\Delta f}{\Delta x}=k$。</p></div></details><details class="node kp" data-search="近似公式 当 $\Delta x$ 很小时，$f(x_0+\Delta x)\approx f(x_0)+f&#x27;(x_0)\Delta x$，即 $\Delta y\approx f&#x27;(x_0)\Delta x$（本质也是以直代曲）。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">近似公式</span></summary><div class="kpbody"><p class="kptext">当 $\Delta x$ 很小时，$f(x_0+\Delta x)\approx f(x_0)+f'(x_0)\Delta x$，即 $\Delta y\approx f'(x_0)\Delta x$（本质也是以直代曲）。</p></div></details><details class="node kp" data-search="几何意义（切线斜率） 导数 $f&#x27;(x_0)$ 是曲线 $y=f(x)$ 在点 $(x_0,f(x_0))$ 处切线的斜率；切线方程（点斜式）为 $$y-f(x_0)=f&#x27;(x_0)(x-x_0)$$"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-prop">性质</span><span class="htext">几何意义（切线斜率）</span></summary><div class="kpbody"><p class="kptext">导数 $f'(x_0)$ 是曲线 $y=f(x)$ 在点 $(x_0,f(x_0))$ 处<strong>切线</strong>的斜率；切线方程（点斜式）为 $$y-f(x_0)=f'(x_0)(x-x_0)$$</p></div></details><details class="node kp" data-search="切线定义 曲线 $S$ 上定点 $P_0$ 附近动点 $P$ 无限接近 $P_0$ 时，割线 $PP_0$ 无限接近的直线 $l$ 称为曲线在 $P_0$ 处的切线。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-def">定义</span><span class="htext">切线定义</span></summary><div class="kpbody"><p class="kptext">曲线 $S$ 上定点 $P_0$ 附近动点 $P$ 无限接近 $P_0$ 时，割线 $PP_0$ 无限接近的直线 $l$ 称为曲线在 $P_0$ 处的<strong>切线</strong>。</p></div></details><details class="node kp" data-search="例 若总成本 $C=Q^2$，则边际成本 $MC(Q_0)=f&#x27;(Q_0)$；$MC(300)=600$，表示此时多生产 1 件成本约增 600。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-example">例</span><span class="htext">例</span></summary><div class="kpbody"><p class="kptext">若总成本 $C=Q^2$，则边际成本 $MC(Q_0)=f'(Q_0)$；$MC(300)=600$，表示此时多生产 1 件成本约增 600。</p></div></details></div></details><details class="node lv3" id="n-2-1-3" data-toc="6.1.3 基本初等函数的导数" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t3">小节</span><span class="htext">6.1.3 基本初等函数的导数</span><span class="meta">2 条知识点</span></summary><div class="children l3"><details class="node kp" data-search="导函数（Derived Function） 若 $f(x)$ 在定义域内每一点可导，则 $f&#x27;(x)$ 本身是一个函数，记为 $f&#x27;(x)$（或 $y&#x27;,\ y_x&#x27;$）；求某点导数只需将 $x_0$ 代入导函数。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">导函数（Derived Function）</span></summary><div class="kpbody"><p class="kptext">若 $f(x)$ 在定义域内每一点可导，则 $f'(x)$ 本身是一个函数，记为 $f'(x)$（或 $y',\ y_x'$）；求某点导数只需将 $x_0$ 代入导函数。</p></div></details><details class="node kp" data-search="常用导数公式表（Differentiation Formulas）  $$\begin{aligned} C&#x27;&amp;=0,\\ (x^a)&#x27;&amp;=ax^{a-1}\quad(a\neq0,\ a\in\mathbb{R}),\\ (a^x)&#x27;&amp;=a^x\ln a\quad(a&gt;0,\ a\neq1),\\ (\log_a x)&#x27;&amp;=\frac{1}{x\ln a},\\ (\sin x)&#x27;&amp;=\cos x,\\ (\cos x)&#x27;&amp;=-\sin x. \end{aligned}$$ 推得 $(e^x)&#x27;=e^x$，$(\ln x)&#x27;=\frac1x$；幂函数特例 $x&#x27; =1,\ (x^2)&#x27;=2x,\ (x^3)&#x27;=3x^2,\ \left(\frac1x\right)&#x27;=-\frac1{x^2},\ (\sqrt x)&#x27;=\frac{1}{2\sqrt x}$。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">常用导数公式表（Differentiation Formulas）</span></summary><div class="kpbody"><p class="kptext"> $$\begin{aligned} C'&amp;=0,\\ (x^a)'&amp;=ax^{a-1}\quad(a\neq0,\ a\in\mathbb{R}),\\ (a^x)'&amp;=a^x\ln a\quad(a&gt;0,\ a\neq1),\\ (\log_a x)'&amp;=\frac{1}{x\ln a},\\ (\sin x)'&amp;=\cos x,\\ (\cos x)'&amp;=-\sin x. \end{aligned}$$ 推得 $(e^x)'=e^x$，$(\ln x)'=\frac1x$；幂函数特例 $x' =1,\ (x^2)'=2x,\ (x^3)'=3x^2,\ \left(\frac1x\right)'=-\frac1{x^2},\ (\sqrt x)'=\frac{1}{2\sqrt x}$。</p></div></details></div></details><details class="node lv3" id="n-2-1-4" data-toc="6.1.4 求导法则及其应用" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t3">小节</span><span class="htext">6.1.4 求导法则及其应用</span><span class="meta">5 条知识点</span></summary><div class="children l3"><details class="node kp" data-search="和差法则 $[f(x)\pm g(x)]&#x27;=f&#x27;(x)\pm g&#x27;(x)$，可推广到有限个。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-prop">性质</span><span class="htext">和差法则</span></summary><div class="kpbody"><p class="kptext">$[f(x)\pm g(x)]'=f'(x)\pm g'(x)$，可推广到有限个。</p></div></details><details class="node kp" data-search="积法则（Product Rule）  $$[f(x)g(x)]&#x27;=f&#x27;(x)g(x)+f(x)g&#x27;(x)$$ 特别地 $[Cf(x)]&#x27;=Cf&#x27;(x)$（常数可外提）。注意一般 $[fg]&#x27;\neq f&#x27;g&#x27;$。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-prop">性质</span><span class="htext">积法则（Product Rule）</span></summary><div class="kpbody"><p class="kptext"> $$[f(x)g(x)]'=f'(x)g(x)+f(x)g'(x)$$ 特别地 $[Cf(x)]'=Cf'(x)$（常数可外提）。注意一般 $[fg]'\neq f'g'$。</p></div></details><details class="node kp" data-search="商法则（Quotient Rule） 当 $g(x)\neq0$ 时 $$\left[\frac{f(x)}{g(x)}\right]&#x27;=\frac{f&#x27;(x)g(x)-f(x)g&#x27;(x)}{g^2(x)}$$ 特别地 $\left[\frac1{g(x)}\right]&#x27;=-\frac{g&#x27;(x)}{g^2(x)}$。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-prop">性质</span><span class="htext">商法则（Quotient Rule）</span></summary><div class="kpbody"><p class="kptext">当 $g(x)\neq0$ 时 $$\left[\frac{f(x)}{g(x)}\right]'=\frac{f'(x)g(x)-f(x)g'(x)}{g^2(x)}$$ 特别地 $\left[\frac1{g(x)}\right]'=-\frac{g'(x)}{g^2(x)}$。</p></div></details><details class="node kp" data-search="复合函数求导（Chain Rule） 若 $y=f(u),\ u=g(x)$ 复合为 $y=f(g(x))$，则 $$y&#x27;_x=y&#x27;_u\cdot u&#x27;_x\quad\text{即}\quad [f(g(x))]&#x27;=f&#x27;(g(x))\cdot g&#x27;(x)$$ 例如 $(\tan x)&#x27;=\left(\frac{\sin x}{\cos x}\right)&#x27;=\frac{1}{\cos^2 x}$；$y=\sqrt{2x-1}$ 的导数为 $\frac{1}{\sqrt{2x-1}}$；$y=\sin\!\left(2x+\frac{\pi}{3}\right)$ 的导数为 $2\cos\!\left(2x+\frac{\pi}{3}\right)$。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">复合函数求导（Chain Rule）</span></summary><div class="kpbody"><p class="kptext">若 $y=f(u),\ u=g(x)$ 复合为 $y=f(g(x))$，则 $$y'_x=y'_u\cdot u'_x\quad\text{即}\quad [f(g(x))]'=f'(g(x))\cdot g'(x)$$ 例如 $(\tan x)'=\left(\frac{\sin x}{\cos x}\right)'=\frac{1}{\cos^2 x}$；$y=\sqrt{2x-1}$ 的导数为 $\frac{1}{\sqrt{2x-1}}$；$y=\sin\!\left(2x+\frac{\pi}{3}\right)$ 的导数为 $2\cos\!\left(2x+\frac{\pi}{3}\right)$。</p></div></details><details class="node kp" data-search="求切线关键在找切点 ；信息技术（如 GeoGebra）可辅助求导并绘图。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">求切线关键在找切点</span></summary><div class="kpbody"><p class="kptext">；信息技术（如 GeoGebra）可辅助求导并绘图。</p></div></details></div></details></div></details><details class="node lv2" id="n-2-2" data-toc="6.2 利用导数研究函数的性质" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t2">节</span><span class="htext">6.2 利用导数研究函数的性质</span><span class="meta">2 小节 · 8 知识点</span></summary><a class="practice-link" href="RBxb3z6j2.html" target="_blank" rel="noopener" title="打开 6.2 利用导数研究函数的性质 对应的逐题在线练习">在线通关练</a><div class="children l2"><details class="node lv3" id="n-2-2-1" data-toc="6.2.1 导数与函数的单调性" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t3">小节</span><span class="htext">6.2.1 导数与函数的单调性</span><span class="meta">3 条知识点</span></summary><div class="children l3"><details class="node kp" data-search="单调性判定 在区间 $(a,b)$ 内，若 $f&#x27;(x)&gt;0$ 则 $f(x)$ 为增函数；若 $f&#x27;(x)&lt;0$ 则 $f(x)$ 为减函数。（$f&#x27;(x)\ge0$ 时仍单调递增，但需结合驻点分析。）"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-method">方法</span><span class="htext">单调性判定</span></summary><div class="kpbody"><p class="kptext">在区间 $(a,b)$ 内，若 $f'(x)&gt;0$ 则 $f(x)$ 为<strong>增函数</strong>；若 $f'(x)&lt;0$ 则 $f(x)$ 为<strong>减函数</strong>。（$f'(x)\ge0$ 时仍单调递增，但需结合驻点分析。）</p></div></details><details class="node kp" data-search="方法 求导 → 解 $f&#x27;(x)&gt;0$ 与 $f&#x27;(x)&lt;0$ → 确定单调区间。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-method">方法</span><span class="htext">方法</span></summary><div class="kpbody"><p class="kptext">求导 → 解 $f'(x)&gt;0$ 与 $f'(x)&lt;0$ → 确定单调区间。</p></div></details><details class="node kp" data-search="例 $y=x^2-2x+4$ 的导数 $y&#x27;=2x-2$，在 $(-\infty,1]$ 递减、$[1,+\infty)$ 递增；$f(x)=xe^x$ 的导数 $f&#x27;(x)=(x+1)e^x$，在 $(-\infty,-1]$ 递减、$[-1,+\infty)$ 递增。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-example">例</span><span class="htext">例</span></summary><div class="kpbody"><p class="kptext">$y=x^2-2x+4$ 的导数 $y'=2x-2$，在 $(-\infty,1]$ 递减、$[1,+\infty)$ 递增；$f(x)=xe^x$ 的导数 $f'(x)=(x+1)e^x$，在 $(-\infty,-1]$ 递减、$[-1,+\infty)$ 递增。</p></div></details></div></details><details class="node lv3" id="n-2-2-2" data-toc="6.2.2 导数与函数的极值、最值" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t3">小节</span><span class="htext">6.2.2 导数与函数的极值、最值</span><span class="meta">5 条知识点</span></summary><div class="children l3"><details class="node kp" data-search="极值（Extremum） 若 $x_0$ 附近都有 $f(x)&lt;f(x_0)$（或 $f(x)&gt;f(x_0)$），则 $x_0$ 为极大值点（或极小值点），对应函数值称极大值（或极小值）；极大/极小值点统称极值点。极大值不一定大于极小值。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">极值（Extremum）</span></summary><div class="kpbody"><p class="kptext">若 $x_0$ 附近都有 $f(x)&lt;f(x_0)$（或 $f(x)&gt;f(x_0)$），则 $x_0$ 为<strong>极大值点</strong>（或<strong>极小值点</strong>），对应函数值称极大值（或极小值）；极大/极小值点统称<strong>极值点</strong>。极大值不一定大于极小值。</p></div></details><details class="node kp" data-search="可导函数极值必要条件 若 $x_0$ 是可导函数的极值点，则必有 $f&#x27;(x_0)=0$（驻点）；但 $f&#x27;(x_0)=0$ 只是极值的必要不充分条件（如 $f(x)=x^3$ 在 $x=0$ 处 $f&#x27;(0)=0$ 却非极值点）。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">可导函数极值必要条件</span></summary><div class="kpbody"><p class="kptext">若 $x_0$ 是可导函数的极值点，则必有 $f'(x_0)=0$（驻点）；但 $f'(x_0)=0$ 只是极值的<strong>必要不充分条件</strong>（如 $f(x)=x^3$ 在 $x=0$ 处 $f'(0)=0$ 却非极值点）。</p></div></details><details class="node kp" data-search="极值判定 若 $f&#x27;(x)$ 在 $x_0$ 左正右负则 $x_0$ 为极大值点；左负右正则 $x_0$ 为极小值点；左右同号则非极值点。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-method">方法</span><span class="htext">极值判定</span></summary><div class="kpbody"><p class="kptext">若 $f'(x)$ 在 $x_0$ 左正右负则 $x_0$ 为极大值点；左负右正则 $x_0$ 为极小值点；左右同号则非极值点。</p></div></details><details class="node kp" data-search="最值（Maximum / Minimum） 闭区间 $[a,b]$ 上可导函数的最值点必为区间端点 $a,b$ 或极值点；求最值可在求出极值的基础上比较端点值。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">最值（Maximum / Minimum）</span></summary><div class="kpbody"><p class="kptext">闭区间 $[a,b]$ 上可导函数的最值点必为区间端点 $a,b$ 或极值点；求最值可在求出极值的基础上比较端点值。</p></div></details><details class="node kp" data-search="例 $f(x)=\frac13x^3-4x+4$ 的导数 $f&#x27;(x)=x^2-4=(x+2)(x-2)$，极大值 $f(-2)=9\frac13$、极小值 $f(2)=-1\frac13$。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-example">例</span><span class="htext">例</span></summary><div class="kpbody"><p class="kptext">$f(x)=\frac13x^3-4x+4$ 的导数 $f'(x)=x^2-4=(x+2)(x-2)$，极大值 $f(-2)=9\frac13$、极小值 $f(2)=-1\frac13$。</p></div></details></div></details></div></details><details class="node lv2" id="n-2-3" data-toc="6.3 利用导数解决实际问题" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t2">节</span><span class="htext">6.3 利用导数解决实际问题</span><span class="meta">1 小节 · 3 知识点</span></summary><a class="practice-link" href="RBxb3z6j3.html" target="_blank" rel="noopener" title="打开 6.3 利用导数解决实际问题 对应的逐题在线练习">在线通关练</a><div class="children l2"><details class="node lv3" id="n-2-3-1" data-toc="本节知识点" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t3">小节</span><span class="htext">本节知识点</span><span class="virtual">节内直列</span><span class="meta">3 条知识点</span></summary><div class="children l3"><details class="node kp" data-search="最优化问题（Optimization） 生活中&quot;花费最少、用料最省、成本最小&quot;等问题，通过建立目标函数并求导求最值来解决。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">最优化问题（Optimization）</span></summary><div class="kpbody"><p class="kptext">生活中"花费最少、用料最省、成本最小"等问题，通过建立目标函数并求导求最值来解决。</p></div></details><details class="node kp" data-search="建模步骤 设变量 → 建立目标函数并注明定义域 → 求导找驻点 → 判断单调性/极值 → 结合实际验证最值。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-method">方法</span><span class="htext">建模步骤</span></summary><div class="kpbody"><p class="kptext">设变量 → 建立目标函数并注明定义域 → 求导找驻点 → 判断单调性/极值 → 结合实际验证最值。</p></div></details><details class="node kp" data-search="例题类型  输油管铺设（水下/陆地混合成本最低）：目标函数 $y=50\sqrt{1.2^2+x^2}+30(1.6-x)$，得最少花费 96 万元； 海陆联运时间最短：令运输时间 $T(x)$ 最小； 无盖长方体容器最大容积：容积 $V=(1.2-2x)^2x\ (0&lt;x&lt;0.6)$，边长 $x=0.2\ \mathrm{m}$ 时最大； 退烧药降温最大、手机平均成本最低等； 拓展：由费马原理（光走最短时间路径）用导数推导光的折射定律 $\frac{\sin\theta_1}{c_1}=\frac{\sin\theta_2}{c_2}$。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-example">例</span><span class="htext">例题类型</span></summary><div class="kpbody"><ul class="sublist"><li>输油管铺设（水下/陆地混合成本最低）：目标函数 $y=50\sqrt{1.2^2+x^2}+30(1.6-x)$，得最少花费 96 万元；</li><li>海陆联运时间最短：令运输时间 $T(x)$ 最小；</li><li>无盖长方体容器最大容积：容积 $V=(1.2-2x)^2x\ (0&lt;x&lt;0.6)$，边长 $x=0.2\ \mathrm{m}$ 时最大；</li><li>退烧药降温最大、手机平均成本最低等；</li><li>拓展：由费马原理（光走最短时间路径）用导数推导<strong>光的折射定律</strong> $\frac{\sin\theta_1}{c_1}=\frac{\sin\theta_2}{c_2}$。</li></ul></div></details></div></details></div></details><details class="node lv2" id="n-2-4" data-toc="6.4 数学建模活动：描述体重与脉搏率的关系" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t2">节</span><span class="htext">6.4 数学建模活动：描述体重与脉搏率的关系</span><span class="meta">1 小节 · 3 知识点</span></summary><a class="practice-link" href="RBxb3z6j4.html" target="_blank" rel="noopener" title="打开 6.4 数学建模活动：描述体重与脉搏率的关系 对应的逐题在线练习">在线通关练</a><div class="children l2"><details class="node lv3" id="n-2-4-1" data-toc="本节知识点" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t3">小节</span><span class="htext">本节知识点</span><span class="virtual">节内直列</span><span class="meta">3 条知识点</span></summary><div class="children l3"><details class="node kp" data-search="活动目标 运用导数与建模思想，结合生物学假设（恒温动物维持体温耗能、表面积与体积关系、心脏血流量与体重关系等），建立脉搏率 $f$ 与体重 $W$ 的关系式，并用动物数据（鼠、兔、马等）验证。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">活动目标</span></summary><div class="kpbody"><p class="kptext">运用导数与建模思想，结合生物学假设（恒温动物维持体温耗能、表面积与体积关系、心脏血流量与体重关系等），建立脉搏率 $f$ 与体重 $W$ 的关系式，并用动物数据（鼠、兔、马等）验证。</p></div></details><details class="node kp" data-search="核心假设链 表面积 $S$ 关于体积 $V$ 的导数可类比正方体/球得到；能量 $E$ 关于表面积 $S$、关于心脏血流量 $Q$ 的导数均为常数；心脏大小、体重分别与动物&quot;大小&quot;/体积成正比。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">核心假设链</span></summary><div class="kpbody"><p class="kptext">表面积 $S$ 关于体积 $V$ 的导数可类比正方体/球得到；能量 $E$ 关于表面积 $S$、关于心脏血流量 $Q$ 的导数均为常数；心脏大小、体重分别与动物"大小"/体积成正比。</p></div></details><details class="node kp" data-search="方法提示 可参考必修第二册&quot;生长规律的描述&quot;与选择性必修第二册&quot;一元线性回归模型&quot;进行参数求解与数据验证。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-method">方法</span><span class="htext">方法提示</span></summary><div class="kpbody"><p class="kptext">可参考必修第二册"生长规律的描述"与选择性必修第二册"一元线性回归模型"进行参数求解与数据验证。</p></div></details></div></details></div></details></div></details></main>
+</div>
+<footer><div class="note">
+  <b>来源说明：</b>本文件依据《人教B版 数学 选择性必修第三册》教材正文整理，按"章 → 节 → 小节"三级结构归纳各知识点。 涵盖 **第五章 数列**、**第六章 导数及其应用** 两章。保留关键术语的中英文对照与 LaTeX 数学符号；公式与结论以教材推导为准，未编造内容；源书 OCR 产生的孤立数字占位符已按教材推导上下文还原为正确数学结果。 本页在其下把每条知识点独立为第四级折叠节点，未改动原文内容与数学符号；
+  章／节／小节／知识点右侧数字为各自包含的下一级条目数。数学公式由同目录共享的 mathjax.js（MathJax 3.2.1）以 SVG 渲染，
+  HTML 本体不内嵌公式引擎，24 个页面共用这一份引擎；把 HTML 与 mathjax.js 放在一起即可断网离线查看，单独转发某个 HTML 时会自动改从网络 CDN 加载。
+</div></footer>
+<script>
+(function(){
+  var main = document.querySelector('main');
+  var q = document.getElementById('q');
+  var info = document.getElementById('searchInfo');
+  var levelSel = document.getElementById('level');
+  var levels = {
+    collapse:  [],
+    chapter:   ['lv1'],
+    section:   ['lv1','lv2'],
+    subsection:['lv1','lv2','lv3'],
+    all:       ['lv1','lv2','lv3','kp']
+  };
+  function nodes(){ return Array.prototype.slice.call(main.querySelectorAll('details.node')); }
+  function applyLevel(name){
+    var want = levels[name] || levels.section;
+    nodes().forEach(function(d){
+      d.open = want.some(function(c){ return d.classList.contains(c); });
+    });
+  }
+  function openParents(el){
+    var p = el.parentElement;
+    while(p){
+      if(p.tagName === 'DETAILS') p.open = true;
+      p = p.parentElement;
+    }
+  }
+  function clearMarks(root){
+    Array.prototype.slice.call(root.querySelectorAll('mark.hl')).forEach(function(m){
+      m.replaceWith(document.createTextNode(m.textContent));
+    });
+    root.normalize();
+  }
+  function highlight(root, term){
+    var low = term.toLowerCase();
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        if(!n.nodeValue || n.nodeValue.toLowerCase().indexOf(low) === -1) return NodeFilter.FILTER_REJECT;
+        var p = n.parentElement;
+        if(!p || p.closest('mjx-container, script, style, mark')) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var list = [];
+    while(walker.nextNode()) list.push(walker.currentNode);
+    list.forEach(function(n){
+      var text = n.nodeValue, frag = document.createDocumentFragment(), i = 0, idx;
+      while((idx = text.toLowerCase().indexOf(low, i)) !== -1){
+        frag.appendChild(document.createTextNode(text.slice(i, idx)));
+        var mk = document.createElement('mark');
+        mk.className = 'hl';
+        mk.textContent = text.slice(idx, idx + term.length);
+        frag.appendChild(mk);
+        i = idx + term.length;
+      }
+      frag.appendChild(document.createTextNode(text.slice(i)));
+      n.replaceWith(frag);
+    });
+  }
+  function applySearch(term){
+    clearMarks(main);
+    var kps = Array.prototype.slice.call(main.querySelectorAll('details.kp'));
+    var parents = Array.prototype.slice.call(main.querySelectorAll('details.lv1,details.lv2,details.lv3'));
+    if(!term){
+      kps.forEach(function(k){ k.hidden = false; k.classList.remove('hit'); });
+      parents.forEach(function(p){ p.hidden = false; });
+      applyLevel(levelSel.value);
+      info.textContent = '';
+      return;
+    }
+    var hits = 0;
+    kps.forEach(function(k){
+      var hit = (k.dataset.search || '').toLowerCase().indexOf(term) !== -1;
+      k.hidden = !hit;
+      k.open = hit;
+      if(hit){ hits++; highlight(k, q.value.trim()); }
+    });
+    ['lv3','lv2','lv1'].forEach(function(cls){
+      Array.prototype.slice.call(main.querySelectorAll('details.' + cls)).forEach(function(p){
+        var any = Array.prototype.slice.call(p.querySelectorAll('details.kp')).some(function(k){ return !k.hidden; });
+        p.hidden = !any;
+        if(any) p.open = true;
+      });
+    });
+    info.textContent = hits ? ('命中 ' + hits + ' 条') : '无匹配';
+  }
+  var timer = null;
+  q.addEventListener('input', function(){
+    clearTimeout(timer);
+    timer = setTimeout(function(){ applySearch(q.value.trim().toLowerCase()); }, 140);
+  });
+  q.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ q.value = ''; applySearch(''); q.blur(); }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === '/' && document.activeElement !== q){ e.preventDefault(); q.focus(); }
+  });
+  levelSel.addEventListener('change', function(){
+    if(q.value.trim()){ q.value = ''; }
+    applyLevel(levelSel.value);
+    info.textContent = '';
+    clearMarks(main);
+    Array.prototype.slice.call(main.querySelectorAll('[hidden]')).forEach(function(el){ el.hidden = false; });
+  });
+  document.getElementById('printBtn').addEventListener('click', function(){
+    var saved = nodes().map(function(d){ return d.open; });
+    nodes().forEach(function(d){ d.open = true; });
+    var restore = function(){ nodes().forEach(function(d,i){ d.open = saved[i]; }); };
+    if(window.onafterprint !== undefined){ window.addEventListener('afterprint', restore, {once:true}); }
+    window.print();
+    setTimeout(restore, 1200);
+  });
+  var toc = document.getElementById('tocTree');
+  ['lv1','lv2','lv3'].forEach(function(cls, i){
+    Array.prototype.slice.call(main.querySelectorAll('details.' + cls)).forEach(function(d){
+      var a = document.createElement('a');
+      a.href = '#' + d.id;
+      a.className = 'toc' + (i + 1);
+      a.textContent = d.dataset.toc || d.querySelector('.htext').textContent;
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        if(q.value.trim()){ q.value = ''; applySearch(''); }
+        openParents(d);
+        d.open = true;
+        d.hidden = false;
+        d.scrollIntoView({behavior:'smooth', block:'start'});
+      });
+      toc.appendChild(a);
+    });
+  });
+  // 先在全部展开状态下完成 MathJax 排版（隐藏容器内 SVG 尺寸会算错），再折叠到默认层级。
+  var booted = false;
+  function ready(){
+    if(booted) return;
+    booted = true;
+    applyLevel(levelSel.value);
+    document.body.classList.remove('booting');
+    var note = document.getElementById('bootNote');
+    if(note) note.remove();
+  }
+  function boot(){
+    if(window.MathJax && MathJax.startup && MathJax.startup.promise){
+      MathJax.startup.promise.then(ready, ready);
+    }else{
+      setTimeout(ready, 400);
+    }
+  }
+  setTimeout(ready, 9000);
+  if(document.readyState === 'complete') boot();
+  else window.addEventListener('load', boot);
+})();
+</script>
+</body>
+</html>

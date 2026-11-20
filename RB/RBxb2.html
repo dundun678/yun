@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人教B版 数学 选择性必修第二册 知识点总结</title>
+<style>
+:root{
+  --bg:#f3f7fc; --panel:#ffffff; --ink:#1d2b3b; --muted:#6b7d91;
+  --line:#e3ebf5; --blue:#2563eb; --blue-soft:#eaf2ff; --teal:#0e9384;
+  --shadow:0 2px 10px rgba(31,64,110,.06);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB","Segoe UI",sans-serif;
+  font-size:15px;line-height:1.75;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.97);
+  border-bottom:1px solid var(--line);box-shadow:0 2px 12px rgba(31,64,110,.06);
+  padding:12px 22px 10px;backdrop-filter:blur(6px)}
+.topbar-inner{max-width:1440px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
+.brand{min-width:280px;flex:1}
+.brand h1{margin:0;font-size:19px;letter-spacing:.2px;color:#12325b}
+.brand .sub{margin:2px 0 0;font-size:12.5px;color:var(--muted)}
+.stats{display:flex;gap:6px;flex-wrap:wrap}
+.stat{background:var(--blue-soft);color:#1d4ed8;border-radius:20px;padding:3px 11px;font-size:12.5px;white-space:nowrap}
+.stat b{font-size:13px}
+.tools{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.searchbox{display:flex;align-items:center;gap:6px;border:1px solid var(--line);
+  background:#f8fbff;border-radius:9px;padding:0 10px;height:36px}
+.searchbox .sicon{color:var(--muted);font-size:17px;line-height:1}
+#q{border:0;background:transparent;outline:none;width:190px;font-size:14px;color:var(--ink)}
+#searchInfo{font-size:12px;color:var(--teal);white-space:nowrap;min-width:0}
+select,button{height:36px;border:1px solid var(--line);background:#fff;color:#27435f;
+  border-radius:9px;padding:0 12px;font-size:13.5px;cursor:pointer;font-family:inherit}
+select:hover,button:hover{border-color:#9fc0f5;background:#f6faff}
+.layout{max-width:1440px;margin:18px auto;padding:0 22px 40px;
+  display:grid;grid-template-columns:252px minmax(0,1fr);gap:20px;align-items:start}
+.toc{position:sticky;top:118px;max-height:calc(100vh - 138px);overflow:auto;
+  background:var(--panel);border:1px solid var(--line);border-radius:14px;
+  box-shadow:var(--shadow);padding:14px 12px}
+.toc h2{margin:2px 8px 10px;font-size:13px;color:var(--muted);font-weight:600;letter-spacing:1px}
+.toc a{display:block;text-decoration:none;color:#40566e;font-size:13px;line-height:1.5;
+  padding:5px 8px;border-radius:7px;border-left:2px solid transparent;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.toc a:hover{background:#f2f7ff;color:var(--blue)}
+.toc a.toc1{font-weight:700;color:#173b68;margin-top:8px;border-left-color:#9dc0f5;background:#f2f7ff}
+.toc a.toc2{padding-left:18px}
+.toc a.toc3{padding-left:32px;font-size:12.5px;color:#6b7d91}
+main{min-width:0}
+.booting main{opacity:0}
+main{transition:opacity .25s ease}
+.bootnote{max-width:1440px;margin:60px auto;text-align:center;color:var(--muted);font-size:14px}
+.node[hidden]{display:none!important}
+details.node{margin:0}
+summary.head{list-style:none;cursor:pointer;display:flex;align-items:center;gap:9px;user-select:none;position:relative}
+summary.head::-webkit-details-marker{display:none}
+summary.head:focus-visible{outline:2px solid #93b8f7;outline-offset:2px}
+.twisty{flex:none;width:14px;text-align:center;color:#7d94ad;font-size:13px;transition:transform .15s ease}
+.twisty::before{content:"\25B8"}
+details[open] > summary .twisty{transform:rotate(90deg)}
+.lvtag,.kcat,.virtual{flex:none;font-size:11.5px;line-height:1.5;border-radius:6px;padding:2px 8px;white-space:nowrap}
+.t1{background:#2563eb;color:#fff}
+.t2{background:#dff3f0;color:#0b7669}
+.t3{background:#eef2f7;color:#52677f}
+.virtual{background:#fff4dd;color:#a16207}
+.meta{margin-left:auto;flex:none;font-size:12px;color:#8496a8;white-space:nowrap}
+.htext{min-width:0;overflow-wrap:anywhere}
+.children{margin:8px 0 8px 18px;padding-left:16px;border-left:2px solid var(--line)}
+.l1{border-left-color:#cddff8}
+.l2{border-left-color:#cfeae6}
+.l3{border-left-color:#e6edf6}
+details.lv1{display:block;background:var(--panel);border:1px solid var(--line);
+  border-radius:14px;box-shadow:var(--shadow);margin:0 0 16px;padding:12px 14px}
+details.lv1 > summary.head{font-size:17px;font-weight:700;color:#12325b;padding:2px 2px 8px;border-bottom:1px solid var(--line)}
+details.lv2{background:#fbfdff;border:1px solid #e8f0fa;border-radius:11px;margin:8px 0;padding:4px 10px}
+details.lv2 > summary.head{font-size:15.5px;font-weight:650;color:#1b4b80;padding:5px 2px}
+details.lv3{margin:7px 0;padding:2px 0}
+details.lv3 > summary.head{font-size:14.5px;color:#3c5875;padding:5px 10px;border-radius:8px;background:#f5f9fe}
+details.lv3 > summary.head:hover{background:#eaf3ff}
+details.kp{margin:6px 0 6px 4px;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+details.kp[open]{border-color:#cbdcf7;box-shadow:0 1px 6px rgba(37,99,235,.07)}
+details.kp > summary.kp-head{padding:8px 12px;font-size:14px}
+details.kp > summary.kp-head:hover{background:#f7fbff}
+details.kp .htext{font-weight:600;color:#26415e}
+.kcat{font-weight:600}
+.cat-def{background:#e8f1ff;color:#1d4ed8}
+.cat-prop{background:#f1ebff;color:#6d28d9}
+.cat-method{background:#e6f7ef;color:#047857}
+.cat-term{background:#e2f6f5;color:#0f766e}
+.cat-extra{background:#fff2df;color:#b45309}
+.cat-example{background:#ffeaea;color:#b91c1c}
+.cat-symbol{background:#eef2f7;color:#475569}
+.cat-key{background:#eef4ff;color:#2563eb}
+.kpbody{padding:2px 16px 12px 30px;border-top:1px dashed #e8eef7;color:#2b3d52}
+.kptext{margin:10px 0 0}
+.kptext strong{color:#12325b}
+.kptext em{color:#3c5875}
+.muted{color:var(--muted)}
+.sublist{margin:8px 0 0;padding-left:20px}
+.sublist li{margin:3px 0}
+code{background:#f1f5f9;border-radius:4px;padding:1px 5px;font-size:.9em;
+  font-family:Consolas,"Cascadia Code",monospace;color:#b13a5b}
+mark.hl{background:#ffe58a;color:#5c3b00;border-radius:2px;padding:0 1px}
+mjx-container[jax="SVG"]{max-width:100%;overflow-x:auto;overflow-y:hidden;vertical-align:middle}
+mjx-container[jax="SVG"] svg{vertical-align:middle}
+footer{max-width:1440px;margin:0 auto;padding:0 22px 36px;color:#8496a8;font-size:12.5px;line-height:1.8}
+footer .note{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+@media (max-width:960px){
+  .layout{grid-template-columns:1fr}.toc{display:none}
+  .topbar{position:static}.brand{min-width:100%}#q{width:150px}
+}
+@media print{
+  .topbar,.toc,.bootnote,.practice-link{display:none!important}
+  .layout{display:block;margin:0;padding:0;max-width:none}
+  main{opacity:1!important}
+  details.node > .children,details.kp > .kpbody{display:block!important}
+  details:not([open]) > *:not(summary){display:block!important}
+  details.lv1,details.lv2,details.kp{box-shadow:none;break-inside:avoid}
+  .kpbody{break-inside:avoid}
+  @page{margin:14mm}
+}
+
+/* 在线通关练入口：正文各节标题下方，不属于目录导航 */
+.practice-link{display:inline-flex;align-items:center;gap:5px;margin:8px 0 2px;
+  padding:4px 15px;border-radius:20px;background:#0e9384;color:#fff;
+  font-size:12.5px;font-weight:600;text-decoration:none;
+  box-shadow:0 1px 5px rgba(14,147,132,.22);transition:background .15s ease}
+.practice-link:hover{background:#0b7c70;color:#fff}
+.practice-link:focus-visible{outline:2px solid #0b7c70;outline-offset:2px}
+</style>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']], processEscapes: false },
+  svg: { fontCache: 'local' },
+  options: {
+    enableMenu: false,
+    skipHtmlTags: ['script','noscript','style','textarea','pre','code','option']
+  },
+  startup: { typeset: true }
+};
+</script>
+<script src="./mathjax.js" onerror="window.__mjLocalMissing=true"></script>
+<script>if(window.__mjLocalMissing){document.write('<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.1/es5/tex-svg.js" onerror="window.__mjCDN1Failed=true"><\/script>');}</script>
+<script>if(window.__mjCDN1Failed){document.write('<script src="https://unpkg.com/mathjax@3.2.1/es5/tex-svg.js"><\/script>');}</script>
+</head>
+<body class="booting">
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <h1>人教B版 数学 选择性必修第二册 知识点总结</h1>
+      <p class="sub">章 → 节 → 小节 → 知识点 · 四级折叠 · 公式本地渲染</p>
+    </div>
+    <div class="stats"><span class="stat"><b>2</b> 章</span><span class="stat"><b>7</b> 节</span><span class="stat"><b>16</b> 小节</span><span class="stat"><b>76</b> 知识点</span></div>
+    <div class="tools">
+      <div class="searchbox"><span class="sicon">&#9906;</span>
+        <input id="q" type="search" placeholder="搜索知识点 / 术语 / 公式" autocomplete="off">
+        <span id="searchInfo"></span>
+      </div>
+      <select id="level" title="展开层级"><option value="collapse">全部折叠</option>
+        <option value="chapter">展开到章</option>
+        <option value="section" selected>展开到节</option>
+        <option value="subsection">展开到小节</option>
+        <option value="all">全部展开</option></select>
+      <button id="printBtn" title="展开全部后打印 / 另存为 PDF">打印</button>
+    </div>
+  </div>
+</header>
+<div class="bootnote" id="bootNote">正在排版数学公式…</div>
+<div class="layout">
+  <aside class="toc"><h2>目录导航</h2><nav id="tocTree"></nav></aside>
+  <main><details class="node lv1" id="n-1" data-toc="第三章 计数原理" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t1">章</span><span class="htext">第三章 计数原理</span><span class="meta">3 节 · 5 小节 · 25 知识点</span></summary><div class="children l1"><details class="node lv2" id="n-1-1" data-toc="3.1 排列与组合" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t2">节</span><span class="htext">3.1 排列与组合</span><span class="meta">3 小节 · 16 知识点</span></summary><a class="practice-link" href="RBxb2z3j1.html" target="_blank" rel="noopener" title="打开 3.1 排列与组合 对应的逐题在线练习">在线通关练</a><div class="children l2"><details class="node lv3" id="n-1-1-1" data-toc="3.1.1 基本计数原理" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t3">小节</span><span class="htext">3.1.1 基本计数原理</span><span class="meta">4 条知识点</span></summary><div class="children l3"><details class="node kp" data-search="分类加法计数原理（加法原理 / Addition Principle） 完成一件事有若干类互不交叉的方案；若第 $i$ 类有 $m_i$ 种方法，则完成这件事共有 $$N = m_1 + m_2 + \cdots + m_n = \sum_{i=1}^{n} m_i$$ 种不同方法。各类方案之间为&quot;或&quot;的关系。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-prop">性质</span><span class="htext">分类加法计数原理（加法原理 / Addition Principle）</span></summary><div class="kpbody"><p class="kptext">完成一件事有若干类<strong>互不交叉</strong>的方案；若第 $i$ 类有 $m_i$ 种方法，则完成这件事共有 $$N = m_1 + m_2 + \cdots + m_n = \sum_{i=1}^{n} m_i$$ 种不同方法。各类方案之间为"<strong>或</strong>"的关系。</p></div></details><details class="node kp" data-search="分步乘法计数原理（乘法原理 / Multiplication Principle） 完成一件事需依次经过 $n$ 个连续步骤；若第 $i$ 步有 $m_i$ 种方法，则完成这件事共有 $$N = m_1 \cdot m_2 \cdots m_n = \prod_{i=1}^{n} m_i$$ 种不同方法。各步骤之间为&quot;且&quot;的关系。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">分步乘法计数原理（乘法原理 / Multiplication Principle）</span></summary><div class="kpbody"><p class="kptext">完成一件事需依次经过 $n$ 个<strong>连续步骤</strong>；若第 $i$ 步有 $m_i$ 种方法，则完成这件事共有 $$N = m_1 \cdot m_2 \cdots m_n = \prod_{i=1}^{n} m_i$$ 种不同方法。各步骤之间为"<strong>且</strong>"的关系。</p></div></details><details class="node kp" data-search="两类原理的区别与联系 分类看&quot;类&quot;之间是并列独立（用加法）；分步看&quot;步&quot;之间是先后相继（用乘法）。复杂问题常需&quot;先分类、再分步&quot;综合使用。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">两类原理的区别与联系</span></summary><div class="kpbody"><p class="kptext">分类看"类"之间是并列独立（用加法）；分步看"步"之间是先后相继（用乘法）。复杂问题常需"先分类、再分步"综合使用。</p></div></details><details class="node kp" data-search="例 从 4 类书中选 1 本（第 1 类 4 种、第 2 类 3 种、第 3 类 2 种、第 4 类 3 种），共 $4+3+2+3=12$ 种选法。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-example">例</span><span class="htext">例</span></summary><div class="kpbody"><p class="kptext">从 4 类书中选 1 本（第 1 类 4 种、第 2 类 3 种、第 3 类 2 种、第 4 类 3 种），共 $4+3+2+3=12$ 种选法。</p></div></details></div></details><details class="node lv3" id="n-1-1-2" data-toc="3.1.2 排列与排列数" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t3">小节</span><span class="htext">3.1.2 排列与排列数</span><span class="meta">6 条知识点</span></summary><div class="children l3"><details class="node kp" data-search="排列（Permutation） 从 $n$ 个不同元素中取出 $m\ (m\le n)$ 个元素，按照一定顺序排成一列，叫做从 $n$ 个不同元素中取出 $m$ 个元素的一个排列。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">排列（Permutation）</span></summary><div class="kpbody"><p class="kptext">从 $n$ 个<strong>不同</strong>元素中取出 $m\ (m\le n)$ 个元素，<strong>按照一定顺序</strong>排成一列，叫做从 $n$ 个不同元素中取出 $m$ 个元素的一个排列。</p></div></details><details class="node kp" data-search="排列数（Number of permutations） 从 $n$ 个不同元素中取出 $m\ (m\le n)$ 个元素的所有排列的个数，记作 $\mathrm{A}_n^m$（或 $\mathrm{P}_n^m$）。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">排列数（Number of permutations）</span></summary><div class="kpbody"><p class="kptext">从 $n$ 个不同元素中取出 $m\ (m\le n)$ 个元素的所有排列的个数，记作 $\mathrm{A}_n^m$（或 $\mathrm{P}_n^m$）。</p></div></details><details class="node kp" data-search="排列数公式  $$\mathrm{A}_n^m = n(n-1)(n-2)\cdots(n-m+1) = \frac{n!}{(n-m)!}$$"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">排列数公式</span></summary><div class="kpbody"><p class="kptext"> $$\mathrm{A}_n^m = n(n-1)(n-2)\cdots(n-m+1) = \frac{n!}{(n-m)!}$$</p></div></details><details class="node kp" data-search="全排列 把 $n$ 个不同元素全部取出的排列，个数为 $\mathrm{A}_n^n = n! = n(n-1)\cdots 2\cdot 1$。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">全排列</span></summary><div class="kpbody"><p class="kptext">把 $n$ 个不同元素全部取出的排列，个数为 $\mathrm{A}_n^n = n! = n(n-1)\cdots 2\cdot 1$。</p></div></details><details class="node kp" data-search="规定 $0! = 1$，且 $\mathrm{A}_n^0 = 1$。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">规定</span></summary><div class="kpbody"><p class="kptext">$0! = 1$，且 $\mathrm{A}_n^0 = 1$。</p></div></details><details class="node kp" data-search="例 $\mathrm{A}_4^4 = 4! = 24 = 4\times 3\times 2\times 1$；$4\times 3 + 2\times 3 = 12 + 6 = 18$（分步选排示例）。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-example">例</span><span class="htext">例</span></summary><div class="kpbody"><p class="kptext">$\mathrm{A}_4^4 = 4! = 24 = 4\times 3\times 2\times 1$；$4\times 3 + 2\times 3 = 12 + 6 = 18$（分步选排示例）。</p></div></details></div></details><details class="node lv3" id="n-1-1-3" data-toc="3.1.3 组合与组合数" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t3">小节</span><span class="htext">3.1.3 组合与组合数</span><span class="meta">6 条知识点</span></summary><div class="children l3"><details class="node kp" data-search="组合（Combination） 从 $n$ 个不同元素中取出 $m\ (m\le n)$ 个元素并成一组（不计顺序），叫做从 $n$ 个不同元素中取出 $m$ 个元素的一个组合。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">组合（Combination）</span></summary><div class="kpbody"><p class="kptext">从 $n$ 个<strong>不同</strong>元素中取出 $m\ (m\le n)$ 个元素<strong>并成一组</strong>（不计顺序），叫做从 $n$ 个不同元素中取出 $m$ 个元素的一个组合。</p></div></details><details class="node kp" data-search="组合数（Number of combinations） 所有这样组合的个数，记作 $\mathrm{C}_n^m$（或 $\binom{n}{m}$）。 $$\mathrm{C}_n^m = \frac{\mathrm{A}_n^m}{\mathrm{A}_m^m} = \frac{n!}{m!\,(n-m)!}$$"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">组合数（Number of combinations）</span></summary><div class="kpbody"><p class="kptext">所有这样组合的个数，记作 $\mathrm{C}_n^m$（或 $\binom{n}{m}$）。 $$\mathrm{C}_n^m = \frac{\mathrm{A}_n^m}{\mathrm{A}_m^m} = \frac{n!}{m!\,(n-m)!}$$</p></div></details><details class="node kp" data-search="特殊值 $\mathrm{C}_n^0 = 1,\ \mathrm{C}_n^1 = n,\ \mathrm{C}_n^n = 1$；例如 $\mathrm{C}_5^2 = \mathrm{C}_5^3 = 10$。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">特殊值</span></summary><div class="kpbody"><p class="kptext">$\mathrm{C}_n^0 = 1,\ \mathrm{C}_n^1 = n,\ \mathrm{C}_n^n = 1$；例如 $\mathrm{C}_5^2 = \mathrm{C}_5^3 = 10$。</p></div></details><details class="node kp" data-search="组合数的性质  对称性：$\mathrm{C}_n^m = \mathrm{C}_n^{n-m}$； 递推关系（杨辉三角性质）：$\mathrm{C}_n^{m+1} + \mathrm{C}_n^m = \mathrm{C}_{n+1}^{m+1}$。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-prop">性质</span><span class="htext">组合数的性质</span></summary><div class="kpbody"><ul class="sublist"><li>对称性：$\mathrm{C}_n^m = \mathrm{C}_n^{n-m}$；</li><li>递推关系（杨辉三角性质）：$\mathrm{C}_n^{m+1} + \mathrm{C}_n^m = \mathrm{C}_{n+1}^{m+1}$。</li></ul></div></details><details class="node kp" data-search="排列与组合的关系 排列数 = 组合数 × 取出元素的全排列，即 $\mathrm{A}_n^m = \mathrm{C}_n^m \cdot \mathrm{A}_m^m$。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-prop">性质</span><span class="htext">排列与组合的关系</span></summary><div class="kpbody"><p class="kptext">排列数 = 组合数 × 取出元素的全排列，即 $\mathrm{A}_n^m = \mathrm{C}_n^m \cdot \mathrm{A}_m^m$。</p></div></details><details class="node kp" data-search="隔板法 将 $n$ 个相同元素分成 $m$ 组（每组至少 1 个），方法数为 $\mathrm{C}_{n-1}^{m-1}$；若允许有空组，可转化为&quot;先各加 1 个再分组&quot;。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">隔板法</span></summary><div class="kpbody"><p class="kptext">将 $n$ 个相同元素分成 $m$ 组（每组至少 1 个），方法数为 $\mathrm{C}_{n-1}^{m-1}$；若允许有空组，可转化为"先各加 1 个再分组"。</p></div></details></div></details></div></details><details class="node lv2" id="n-1-2" data-toc="3.2 数学探究活动：生日悖论" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t2">节</span><span class="htext">3.2 数学探究活动：生日悖论</span><span class="meta">1 小节 · 3 知识点</span></summary><a class="practice-link" href="RBxb2z3j2.html" target="_blank" rel="noopener" title="打开 3.2 数学探究活动：生日悖论 对应的逐题在线练习">在线通关练</a><div class="children l2"><details class="node lv3" id="n-1-2-1" data-toc="本节知识点" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t3">小节</span><span class="htext">本节知识点</span><span class="virtual">节内直列</span><span class="meta">3 条知识点</span></summary><div class="children l3"><details class="node kp" data-search="问题背景（生日悖论 / Birthday Paradox） 在一个群体中，至少两个人生日相同的概率随人数增加迅速上升，远快于直觉预期。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">问题背景（生日悖论 / Birthday Paradox）</span></summary><div class="kpbody"><p class="kptext">在一个群体中，至少两个人生日相同的概率随人数增加迅速上升，远快于直觉预期。</p></div></details><details class="node kp" data-search="模型与计算 假设一年 365 天、生日均匀分布且相互独立。$n$ 个人生日全不相同的概率为 $$\frac{\mathrm{A}_{365}^n}{365^n} = \frac{365\cdot 364\cdots(365-n+1)}{365^n}$$ 则至少两人生日相同的概率为 $$P = 1 - \frac{\mathrm{A}_{365}^n}{365^n}$$"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">模型与计算</span></summary><div class="kpbody"><p class="kptext">假设一年 365 天、生日均匀分布且相互独立。$n$ 个人生日<strong>全不相同</strong>的概率为 $$\frac{\mathrm{A}_{365}^n}{365^n} = \frac{365\cdot 364\cdots(365-n+1)}{365^n}$$ 则**至少两人生日相同**的概率为 $$P = 1 - \frac{\mathrm{A}_{365}^n}{365^n}$$</p></div></details><details class="node kp" data-search="结论举例 当 $n=23$ 时该概率已超过 $50\%$；当 $n=50$ 时已接近 $97\%$。体现了古典概型中排列组合计数的反直觉特征。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-prop">性质</span><span class="htext">结论举例</span></summary><div class="kpbody"><p class="kptext">当 $n=23$ 时该概率已超过 $50\%$；当 $n=50$ 时已接近 $97\%$。体现了古典概型中排列组合计数的反直觉特征。</p></div></details></div></details></div></details><details class="node lv2" id="n-1-3" data-toc="3.3 二项式定理与杨辉三角" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t2">节</span><span class="htext">3.3 二项式定理与杨辉三角</span><span class="meta">1 小节 · 6 知识点</span></summary><a class="practice-link" href="RBxb2z3j3.html" target="_blank" rel="noopener" title="打开 3.3 二项式定理与杨辉三角 对应的逐题在线练习">在线通关练</a><div class="children l2"><details class="node lv3" id="n-1-3-1" data-toc="本节知识点" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t3">小节</span><span class="htext">本节知识点</span><span class="virtual">节内直列</span><span class="meta">6 条知识点</span></summary><div class="children l3"><details class="node kp" data-search="二项式定理（Binomial Theorem） 对任意 $n\in\mathbb{N}^$， $$(a+b)^n = \sum_{k=0}^{n} \mathrm{C}_n^k\, a^{\,n-k} b^{\,k} = \mathrm{C}_n^0 a^n + \mathrm{C}_n^1 a^{n-1}b + \cdots + \mathrm{C}_n^n b^n$$"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-prop">性质</span><span class="htext">二项式定理（Binomial Theorem）</span></summary><div class="kpbody"><p class="kptext">对任意 $n\in\mathbb{N}^*$， $$(a+b)^n = \sum_{k=0}^{n} \mathrm{C}_n^k\, a^{\,n-k} b^{\,k} = \mathrm{C}_n^0 a^n + \mathrm{C}_n^1 a^{n-1}b + \cdots + \mathrm{C}_n^n b^n$$</p></div></details><details class="node kp" data-search="通项公式 $T_{k+1} = \mathrm{C}_n^k\, a^{\,n-k} b^{\,k}$（$k=0,1,\dots,n$），即第 $k+1$ 项。 例：$(a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$（注意三项 $a^2b,\ ab^2,\ b^3$ 均不遗漏）。 例：求 $(1-2x)^6$ 中含 $x^3$ 的项，得 $T_4 = \mathrm{C}_6^3\cdot 1^3\cdot(-2x)^3 = -84x^3$。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">通项公式</span></summary><div class="kpbody"><p class="kptext">$T_{k+1} = \mathrm{C}_n^k\, a^{\,n-k} b^{\,k}$（$k=0,1,\dots,n$），即第 $k+1$ 项。</p><ul class="sublist"><li>例：$(a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$（注意三项 $a^2b,\ ab^2,\ b^3$ 均不遗漏）。</li><li>例：求 $(1-2x)^6$ 中含 $x^3$ 的项，得 $T_4 = \mathrm{C}_6^3\cdot 1^3\cdot(-2x)^3 = -84x^3$。</li></ul></div></details><details class="node kp" data-search="二项式系数 展开式中 $\mathrm{C}_n^k$ 称为第 $k+1$ 项的二项式系数。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">二项式系数</span></summary><div class="kpbody"><p class="kptext">展开式中 $\mathrm{C}_n^k$ 称为第 $k+1$ 项的二项式系数。</p></div></details><details class="node kp" data-search="二项式系数的性质  和：$\sum_{k=0}^{n}\mathrm{C}_n^k = 2^n$（令 $a=b=1$）； 奇偶项和相等：$\mathrm{C}_n^0+\mathrm{C}_n^2+\cdots = \mathrm{C}_n^1+\mathrm{C}_n^3+\cdots = 2^{n-1}$（$n\ge 1$）； 增减性与最大值：当 $k &lt; \frac{n-1}{2}$ 时二项式系数递增，之后递减；中间项最大； 对称性：$\mathrm{C}_n^k = \mathrm{C}_n^{n-k}$。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-prop">性质</span><span class="htext">二项式系数的性质</span></summary><div class="kpbody"><ul class="sublist"><li>和：$\sum_{k=0}^{n}\mathrm{C}_n^k = 2^n$（令 $a=b=1$）；</li><li>奇偶项和相等：$\mathrm{C}_n^0+\mathrm{C}_n^2+\cdots = \mathrm{C}_n^1+\mathrm{C}_n^3+\cdots = 2^{n-1}$（$n\ge 1$）；</li><li>增减性与最大值：当 $k &lt; \frac{n-1}{2}$ 时二项式系数递增，之后递减；中间项最大；</li><li>对称性：$\mathrm{C}_n^k = \mathrm{C}_n^{n-k}$。</li></ul></div></details><details class="node kp" data-search="杨辉三角（贾宪三角 / 帕斯卡三角形 / Pascal&#x27;s triangle） 第 $n$ 行（$n$ 从 0 计）依次给出 $(a+b)^n$ 的各项二项式系数，满足 $\mathrm{C}_n^k + \mathrm{C}_n^{k+1} = \mathrm{C}_{n+1}^{k+1}$。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">杨辉三角（贾宪三角 / 帕斯卡三角形 / Pascal's triangle）</span></summary><div class="kpbody"><p class="kptext">第 $n$ 行（$n$ 从 0 计）依次给出 $(a+b)^n$ 的各项二项式系数，满足 $\mathrm{C}_n^k + \mathrm{C}_n^{k+1} = \mathrm{C}_{n+1}^{k+1}$。</p></div></details><details class="node kp" data-search="应用举例  $$(1+x)^n \ge 1 + nx$$ 等号当且仅当 $x=0$ 或 $n=1$ 时成立。 证明 $99^{98}-1$ 被 $100$ 整除：$(99)^{98}=(100-1)^{98}$ 展开后除首项 $1$ 外各项均含因子 $100$，故 $(100-1)^{98}-1$ 能被 $100$ 整除。 伯努利不等式（Bernoulli&#x27;s inequality）：当 $x &gt; -1,\ n\in\mathbb{N}^$ 时，"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">应用举例</span></summary><div class="kpbody"><p class="kptext"> $$(1+x)^n \ge 1 + nx$$ 等号当且仅当 $x=0$ 或 $n=1$ 时成立。</p><ul class="sublist"><li>证明 $99^{98}-1$ 被 $100$ 整除：$(99)^{98}=(100-1)^{98}$ 展开后除首项 $1$ 外各项均含因子 $100$，故 $(100-1)^{98}-1$ 能被 $100$ 整除。</li><li><strong>伯努利不等式（Bernoulli's inequality）</strong>：当 $x &gt; -1,\ n\in\mathbb{N}^*$ 时，</li></ul></div></details></div></details></div></details></div></details>
+<details class="node lv1" id="n-2" data-toc="第四章 概率与统计" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t1">章</span><span class="htext">第四章 概率与统计</span><span class="meta">4 节 · 11 小节 · 51 知识点</span></summary><div class="children l1"><details class="node lv2" id="n-2-1" data-toc="4.1 条件概率与事件的独立性" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t2">节</span><span class="htext">4.1 条件概率与事件的独立性</span><span class="meta">3 小节 · 11 知识点</span></summary><a class="practice-link" href="RBxb2z4j1.html" target="_blank" rel="noopener" title="打开 4.1 条件概率与事件的独立性 对应的逐题在线练习">在线通关练</a><div class="children l2"><details class="node lv3" id="n-2-1-1" data-toc="4.1.1 条件概率" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t3">小节</span><span class="htext">4.1.1 条件概率</span><span class="meta">3 条知识点</span></summary><div class="children l3"><details class="node kp" data-search="条件概率（Conditional Probability） 在事件 $B$ 发生的条件下事件 $A$ 发生的概率，记作 $P(A\mid B)$。当 $P(B)&gt;0$ 时， $$P(A\mid B) = \frac{P(A\cap B)}{P(B)}$$ 对称地，$P(B\mid A) = \dfrac{P(A\cap B)}{P(A)}$（$P(A)&gt;0$）。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">条件概率（Conditional Probability）</span></summary><div class="kpbody"><p class="kptext">在事件 $B$ 发生的条件下事件 $A$ 发生的概率，记作 $P(A\mid B)$。当 $P(B)&gt;0$ 时， $$P(A\mid B) = \frac{P(A\cap B)}{P(B)}$$ 对称地，$P(B\mid A) = \dfrac{P(A\cap B)}{P(A)}$（$P(A)&gt;0$）。</p></div></details><details class="node kp" data-search="性质  $0\le P(A\mid B)\le 1$； 若 $A_1,A_2$ 互斥，则 $P(A_1\cup A_2\mid B)=P(A_1\mid B)+P(A_2\mid B)$； 当 $P(A\mid B)=P(A)$ 时，事件 $A$ 的发生不受 $B$ 影响（即独立，见 4.1.3）。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-prop">性质</span><span class="htext">性质</span></summary><div class="kpbody"><ul class="sublist"><li>$0\le P(A\mid B)\le 1$；</li><li>若 $A_1,A_2$ 互斥，则 $P(A_1\cup A_2\mid B)=P(A_1\mid B)+P(A_2\mid B)$；</li><li>当 $P(A\mid B)=P(A)$ 时，事件 $A$ 的发生不受 $B$ 影响（即独立，见 4.1.3）。</li></ul></div></details><details class="node kp" data-search="例 掷两颗骰子，已知&quot;点数和为 7&quot;的事件 $B$ 发生，求&quot;第一颗为 3&quot;的事件 $A$ 的概率：$P(A\cap B)=\frac{1}{36}$，$P(B)=\frac{6}{36}$，故 $P(A\mid B)=\frac{1}{6}$（教材类似例题中 $P(A\cap B)/P(B)=3/4$ 等按具体样本空间计算）。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-example">例</span><span class="htext">例</span></summary><div class="kpbody"><p class="kptext">掷两颗骰子，已知"点数和为 7"的事件 $B$ 发生，求"第一颗为 3"的事件 $A$ 的概率：$P(A\cap B)=\frac{1}{36}$，$P(B)=\frac{6}{36}$，故 $P(A\mid B)=\frac{1}{6}$（教材类似例题中 $P(A\cap B)/P(B)=3/4$ 等按具体样本空间计算）。</p></div></details></div></details><details class="node lv3" id="n-2-1-2" data-toc="4.1.2 乘法公式与全概率公式" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t3">小节</span><span class="htext">4.1.2 乘法公式与全概率公式</span><span class="meta">4 条知识点</span></summary><div class="children l3"><details class="node kp" data-search="乘法公式（Multiplication Rule）  $$P(A\cap B) = P(A)\,P(B\mid A) = P(B)\,P(A\mid B)$$ 可推广到多个事件：$P(A_1\cap A_2\cap\cdots\cap A_n)=P(A_1)P(A_2\mid A_1)\cdots P(A_n\mid A_1\cdots A_{n-1})$。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">乘法公式（Multiplication Rule）</span></summary><div class="kpbody"><p class="kptext"> $$P(A\cap B) = P(A)\,P(B\mid A) = P(B)\,P(A\mid B)$$ 可推广到多个事件：$P(A_1\cap A_2\cap\cdots\cap A_n)=P(A_1)P(A_2\mid A_1)\cdots P(A_n\mid A_1\cdots A_{n-1})$。</p></div></details><details class="node kp" data-search="样本空间的划分（分割） 若事件 $A_1,A_2,\dots,A_n$ 两两互斥且 $\bigcup_{i=1}^{n}A_i=\Omega$，则称它们构成样本空间的一个划分（完备事件组）。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">样本空间的划分（分割）</span></summary><div class="kpbody"><p class="kptext">若事件 $A_1,A_2,\dots,A_n$ 两两互斥且 $\bigcup_{i=1}^{n}A_i=\Omega$，则称它们构成样本空间的一个划分（完备事件组）。</p></div></details><details class="node kp" data-search="全概率公式（Law of Total Probability） 设 $A_1,\dots,A_n$ 构成样本空间划分且 $P(A_i)&gt;0$，则对任意事件 $B$， $$P(B) = \sum_{i=1}^{n} P(A_i)\,P(B\mid A_i)$$"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">全概率公式（Law of Total Probability）</span></summary><div class="kpbody"><p class="kptext">设 $A_1,\dots,A_n$ 构成样本空间划分且 $P(A_i)&gt;0$，则对任意事件 $B$， $$P(B) = \sum_{i=1}^{n} P(A_i)\,P(B\mid A_i)$$</p></div></details><details class="node kp" data-search="例 某产品由甲、乙两厂生产，已知各厂份额与合格率，则用全概率公式求总合格率。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-example">例</span><span class="htext">例</span></summary><div class="kpbody"><p class="kptext">某产品由甲、乙两厂生产，已知各厂份额与合格率，则用全概率公式求总合格率。</p></div></details></div></details><details class="node lv3" id="n-2-1-3" data-toc="4.1.3 贝叶斯公式与事件的独立性" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t3">小节</span><span class="htext">4.1.3 贝叶斯公式与事件的独立性</span><span class="meta">4 条知识点</span></summary><div class="children l3"><details class="node kp" data-search="贝叶斯公式（Bayes&#x27; Theorem） 沿用 4.1.2 的划分，当 $P(B)&gt;0$ 时， $$P(A_j\mid B) = \frac{P(A_j)\,P(B\mid A_j)}{\sum_{i=1}^{n} P(A_i)\,P(B\mid A_i)} \qquad (j=1,2,\dots,n)$$ 用于由&quot;结果&quot;反推&quot;原因&quot;的概率（逆概率）。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">贝叶斯公式（Bayes' Theorem）</span></summary><div class="kpbody"><p class="kptext">沿用 4.1.2 的划分，当 $P(B)&gt;0$ 时， $$P(A_j\mid B) = \frac{P(A_j)\,P(B\mid A_j)}{\sum_{i=1}^{n} P(A_i)\,P(B\mid A_i)} \qquad (j=1,2,\dots,n)$$ 用于由"结果"反推"原因"的概率（逆概率）。</p></div></details><details class="node kp" data-search="事件的独立性（Independence） 若 $P(A\cap B)=P(A)\,P(B)$，则称事件 $A$ 与 $B$ 相互独立。 等价刻画（当 $P(B)&gt;0$）：$P(A\mid B)=P(A)$；对称地当 $P(A)&gt;0$ 时 $P(B\mid A)=P(B)$。 若 $A,B$ 独立，则 $A$ 与 $\overline{B}$、$\overline{A}$ 与 $B$、$\overline{A}$ 与 $\overline{B}$ 也相互独立。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">事件的独立性（Independence）</span></summary><div class="kpbody"><p class="kptext">若 $P(A\cap B)=P(A)\,P(B)$，则称事件 $A$ 与 $B$ <strong>相互独立</strong>。</p><ul class="sublist"><li>等价刻画（当 $P(B)&gt;0$）：$P(A\mid B)=P(A)$；对称地当 $P(A)&gt;0$ 时 $P(B\mid A)=P(B)$。</li><li>若 $A,B$ 独立，则 $A$ 与 $\overline{B}$、$\overline{A}$ 与 $B$、$\overline{A}$ 与 $\overline{B}$ 也相互独立。</li></ul></div></details><details class="node kp" data-search="多个事件的独立性 三个事件 $A,B,C$ 相互独立需满足两两独立且 $P(A\cap B\cap C)=P(A)P(B)P(C)$。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">多个事件的独立性</span></summary><div class="kpbody"><p class="kptext">三个事件 $A,B,C$ 相互独立需满足两两独立且 $P(A\cap B\cap C)=P(A)P(B)P(C)$。</p></div></details><details class="node kp" data-search="例 已知某种疾病的检测灵敏度与患病率，用贝叶斯公式求检测呈阳性者真正患病的概率（教材例中 $P(A\mid B)\approx 86.4\%$ 等按具体数据计算）。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-example">例</span><span class="htext">例</span></summary><div class="kpbody"><p class="kptext">已知某种疾病的检测灵敏度与患病率，用贝叶斯公式求检测呈阳性者真正患病的概率（教材例中 $P(A\mid B)\approx 86.4\%$ 等按具体数据计算）。</p></div></details></div></details></div></details><details class="node lv2" id="n-2-2" data-toc="4.2 随机变量" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t2">节</span><span class="htext">4.2 随机变量</span><span class="meta">5 小节 · 25 知识点</span></summary><a class="practice-link" href="RBxb2z4j2.html" target="_blank" rel="noopener" title="打开 4.2 随机变量 对应的逐题在线练习">在线通关练</a><div class="children l2"><details class="node lv3" id="n-2-2-1" data-toc="4.2.1 随机变量及其分布列" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t3">小节</span><span class="htext">4.2.1 随机变量及其分布列</span><span class="meta">5 条知识点</span></summary><div class="children l3"><details class="node kp" data-search="随机变量（Random Variable） 将随机试验的每一个可能结果映射为一个实数，得到变量 $X$（或记作 $\xi$ 等）。分为离散型与连续型。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">随机变量（Random Variable）</span></summary><div class="kpbody"><p class="kptext">将随机试验的每一个可能结果映射为一个实数，得到变量 $X$（或记作 $\xi$ 等）。分为离散型与连续型。</p></div></details><details class="node kp" data-search="离散型随机变量 取值为有限个或可数无穷多个。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">离散型随机变量</span></summary><div class="kpbody"><p class="kptext">取值为有限个或可数无穷多个。</p></div></details><details class="node kp" data-search="分布列（Probability Distribution） 列出 $X$ 的所有可能取值 $x_1,x_2,\dots$ 及对应概率 $p_k=P(X=x_k)$： | $X$ | $x_1$ | $x_2$ | $\cdots$ | $x_k$ | $\cdots$ | |---|---|---|---|---|---| | $P$ | $p_1$ | $p_2$ | $\cdots$ | $p_k$ | $\cdots$ |"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">分布列（Probability Distribution）</span></summary><div class="kpbody"><p class="kptext">列出 $X$ 的所有可能取值 $x_1,x_2,\dots$ 及对应概率 $p_k=P(X=x_k)$： | $X$ | $x_1$ | $x_2$ | $\cdots$ | $x_k$ | $\cdots$ | |---|---|---|---|---|---| | $P$ | $p_1$ | $p_2$ | $\cdots$ | $p_k$ | $\cdots$ |</p></div></details><details class="node kp" data-search="分布列的性质  非负性：$p_k \ge 0$； 归一性：$\sum_{k} p_k = 1$。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-prop">性质</span><span class="htext">分布列的性质</span></summary><div class="kpbody"><ul class="sublist"><li>非负性：$p_k \ge 0$；</li><li>归一性：$\sum_{k} p_k = 1$。</li></ul></div></details><details class="node kp" data-search="例 掷一枚均匀骰子，$X$ 为点数，则 $P(X=k)=\frac16\ (k=1,\dots,6)$，且 $\sum_{k=1}^{6}p_k=1$。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-example">例</span><span class="htext">例</span></summary><div class="kpbody"><p class="kptext">掷一枚均匀骰子，$X$ 为点数，则 $P(X=k)=\frac16\ (k=1,\dots,6)$，且 $\sum_{k=1}^{6}p_k=1$。</p></div></details></div></details><details class="node lv3" id="n-2-2-2" data-toc="4.2.2 两点分布与二项分布" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t3">小节</span><span class="htext">4.2.2 两点分布与二项分布</span><span class="meta">5 条知识点</span></summary><div class="children l3"><details class="node kp" data-search="两点分布（伯努利分布 / Bernoulli Distribution） 随机变量只取 $0,1$ 两个值，成功概率为 $p$（$0&lt;p&lt;1$），即 $P(X=1)=p,\ P(X=0)=1-p$。是 $n=1$ 的二项分布特例。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">两点分布（伯努利分布 / Bernoulli Distribution）</span></summary><div class="kpbody"><p class="kptext">随机变量只取 $0,1$ 两个值，成功概率为 $p$（$0&lt;p&lt;1$），即 $P(X=1)=p,\ P(X=0)=1-p$。是 $n=1$ 的二项分布特例。</p></div></details><details class="node kp" data-search="伯努利试验（Bernoulli Trial） 只有两种对立结果（成功/失败）且每次试验成功概率不变的随机试验。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">伯努利试验（Bernoulli Trial）</span></summary><div class="kpbody"><p class="kptext">只有两种对立结果（成功/失败）且每次试验成功概率不变的随机试验。</p></div></details><details class="node kp" data-search="二项分布（Binomial Distribution） 在 $n$ 次独立重复伯努利试验中，成功次数 $X$ 服从二项分布，记作 $X\sim B(n,p)$，其概率分布为 $$P(X=k) = \mathrm{C}_n^k\, p^k (1-p)^{\,n-k},\qquad k=0,1,\dots,n$$"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">二项分布（Binomial Distribution）</span></summary><div class="kpbody"><p class="kptext">在 $n$ 次<strong>独立重复</strong>伯努利试验中，成功次数 $X$ 服从二项分布，记作 $X\sim B(n,p)$，其概率分布为 $$P(X=k) = \mathrm{C}_n^k\, p^k (1-p)^{\,n-k},\qquad k=0,1,\dots,n$$</p></div></details><details class="node kp" data-search="数字特征  期望（均值）$E(X) = np$； 方差 $D(X) = np(1-p)$。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">数字特征</span></summary><div class="kpbody"><ul class="sublist"><li>期望（均值）$E(X) = np$；</li><li>方差 $D(X) = np(1-p)$。</li></ul></div></details><details class="node kp" data-search="例 某射手的命中率 $p=0.8$，独立射击 3 次，命中次数 $X\sim B(3,0.8)$。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-example">例</span><span class="htext">例</span></summary><div class="kpbody"><p class="kptext">某射手的命中率 $p=0.8$，独立射击 3 次，命中次数 $X\sim B(3,0.8)$。</p></div></details></div></details><details class="node lv3" id="n-2-2-3" data-toc="4.2.3 超几何分布" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t3">小节</span><span class="htext">4.2.3 超几何分布</span><span class="meta">4 条知识点</span></summary><div class="children l3"><details class="node kp" data-search="超几何分布（Hypergeometric Distribution） 一批产品共 $N$ 件，其中含 $M$ 件次品；从中不放回抽取 $n$ 件，抽到的次品数 $X$ 服从超几何分布，记作 $X\sim H(N,n,M)$，其分布为 $$P(X=k) = \frac{\mathrm{C}_M^k\,\mathrm{C}_{N-M}^{\,n-k}}{\mathrm{C}_N^n}$$ 其中 $k$ 满足 $\max(0,n-N+M)\le k\le \min(n,M)$。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">超几何分布（Hypergeometric Distribution）</span></summary><div class="kpbody"><p class="kptext">一批产品共 $N$ 件，其中含 $M$ 件次品；从中<strong>不放回</strong>抽取 $n$ 件，抽到的次品数 $X$ 服从超几何分布，记作 $X\sim H(N,n,M)$，其分布为 $$P(X=k) = \frac{\mathrm{C}_M^k\,\mathrm{C}_{N-M}^{\,n-k}}{\mathrm{C}_N^n}$$ 其中 $k$ 满足 $\max(0,n-N+M)\le k\le \min(n,M)$。</p></div></details><details class="node kp" data-search="期望 $E(X)=\dfrac{nM}{N}$（即抽样比例乘以总体中&quot;次品&quot;数）。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">期望</span></summary><div class="kpbody"><p class="kptext">$E(X)=\dfrac{nM}{N}$（即抽样比例乘以总体中"次品"数）。</p></div></details><details class="node kp" data-search="与二项分布的关系 当 $N$ 很大、$n$ 相对很小时，不放回的超几何分布可近似为放回的二项分布 $B(n,\frac{M}{N})$。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-prop">性质</span><span class="htext">与二项分布的关系</span></summary><div class="kpbody"><p class="kptext">当 $N$ 很大、$n$ 相对很小时，不放回的超几何分布可近似为放回的二项分布 $B(n,\frac{M}{N})$。</p></div></details><details class="node kp" data-search="例 10 件产品中有 2 件次品，任取 3 件，次品数 $X\sim H(10,3,2)$。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-example">例</span><span class="htext">例</span></summary><div class="kpbody"><p class="kptext">10 件产品中有 2 件次品，任取 3 件，次品数 $X\sim H(10,3,2)$。</p></div></details></div></details><details class="node lv3" id="n-2-2-4" data-toc="4.2.4 随机变量的数字特征" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t3">小节</span><span class="htext">4.2.4 随机变量的数字特征</span><span class="meta">5 条知识点</span></summary><div class="children l3"><details class="node kp" data-search="均值 / 数学期望（Expected Value） 离散型随机变量 $$E(X) = \sum_{i} x_i\, p_i$$ （连续型为积分形式）。反映随机变量取值的&quot;平均水平&quot;。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">均值 / 数学期望（Expected Value）</span></summary><div class="kpbody"><p class="kptext">离散型随机变量 $$E(X) = \sum_{i} x_i\, p_i$$ （连续型为积分形式）。反映随机变量取值的"平均水平"。</p></div></details><details class="node kp" data-search="方差（Variance）  $$D(X) = \sum_{i} \bigl(x_i - E(X)\bigr)^2\, p_i = E\bigl(X^2\bigr) - \bigl(E(X)\bigr)^2$$ 反映随机变量取值相对于均值的离散程度。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">方差（Variance）</span></summary><div class="kpbody"><p class="kptext"> $$D(X) = \sum_{i} \bigl(x_i - E(X)\bigr)^2\, p_i = E\bigl(X^2\bigr) - \bigl(E(X)\bigr)^2$$ 反映随机变量取值相对于均值的离散程度。</p></div></details><details class="node kp" data-search="标准差（Standard Deviation） $\sigma(X)=\sqrt{D(X)}$。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">标准差（Standard Deviation）</span></summary><div class="kpbody"><p class="kptext">$\sigma(X)=\sqrt{D(X)}$。</p></div></details><details class="node kp" data-search="常用性质  $E(aX+b) = aE(X)+b$； $D(aX+b) = a^2 D(X)$； 若 $X,Y$ 相互独立，则 $E(X+Y)=E(X)+E(Y)$，$D(X+Y)=D(X)+D(Y)$。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-prop">性质</span><span class="htext">常用性质</span></summary><div class="kpbody"><ul class="sublist"><li>$E(aX+b) = aE(X)+b$；</li><li>$D(aX+b) = a^2 D(X)$；</li><li>若 $X,Y$ 相互独立，则 $E(X+Y)=E(X)+E(Y)$，$D(X+Y)=D(X)+D(Y)$。</li></ul></div></details><details class="node kp" data-search="例 两点分布 $X\sim B(1,p)$ 有 $E(X)=p,\ D(X)=p(1-p)$；二项分布 $B(n,p)$ 的方差 $D(X)=np(1-p)$（如 $D(B(100,0.5))=25$）。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-example">例</span><span class="htext">例</span></summary><div class="kpbody"><p class="kptext">两点分布 $X\sim B(1,p)$ 有 $E(X)=p,\ D(X)=p(1-p)$；二项分布 $B(n,p)$ 的方差 $D(X)=np(1-p)$（如 $D(B(100,0.5))=25$）。</p></div></details></div></details><details class="node lv3" id="n-2-2-5" data-toc="4.2.5 正态分布" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t3">小节</span><span class="htext">4.2.5 正态分布</span><span class="meta">6 条知识点</span></summary><div class="children l3"><details class="node kp" data-search="正态曲线（密度函数）  $$\varphi(x) = \frac{1}{\sigma\sqrt{2\pi}}\, e^{-\frac{(x-\mu)^2}{2\sigma^2}},\qquad \sigma&gt;0$$ 曲线呈钟形，关于 $x=\mu$ 对称，在 $x=\mu$ 处取最大值。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">正态曲线（密度函数）</span></summary><div class="kpbody"><p class="kptext"> $$\varphi(x) = \frac{1}{\sigma\sqrt{2\pi}}\, e^{-\frac{(x-\mu)^2}{2\sigma^2}},\qquad \sigma&gt;0$$ 曲线呈钟形，关于 $x=\mu$ 对称，在 $x=\mu$ 处取最大值。</p></div></details><details class="node kp" data-search="正态分布（Normal Distribution） 若随机变量 $X$ 的密度函数为上述 $\varphi(x)$，则称 $X$ 服从正态分布，记作 $$X \sim N(\mu,\sigma^2)$$ 其中 $\mu$ 为均值（位置参数），$\sigma$ 为标准差（形状参数）。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">正态分布（Normal Distribution）</span></summary><div class="kpbody"><p class="kptext">若随机变量 $X$ 的密度函数为上述 $\varphi(x)$，则称 $X$ 服从正态分布，记作 $$X \sim N(\mu,\sigma^2)$$ 其中 $\mu$ 为均值（位置参数），$\sigma$ 为标准差（形状参数）。</p></div></details><details class="node kp" data-search="$3\sigma$ 原则（经验法则）  $P(\mu-\sigma &lt; X &lt; \mu+\sigma) \approx 0.6827$； $P(\mu-2\sigma &lt; X &lt; \mu+2\sigma) \approx 0.9545$； $P(\mu-3\sigma &lt; X &lt; \mu+3\sigma) \approx 0.9973$。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-prop">性质</span><span class="htext">$3\sigma$ 原则（经验法则）</span></summary><div class="kpbody"><ul class="sublist"><li>$P(\mu-\sigma &lt; X &lt; \mu+\sigma) \approx 0.6827$；</li><li>$P(\mu-2\sigma &lt; X &lt; \mu+2\sigma) \approx 0.9545$；</li><li>$P(\mu-3\sigma &lt; X &lt; \mu+3\sigma) \approx 0.9973$。</li></ul></div></details><details class="node kp" data-search="标准正态分布（Standard Normal Distribution） $X\sim N(0,1)$，其分布函数记作 $$\Phi(a) = P(X\le a)$$ 一般正态可标准化：$Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$，从而 $P(X\le x)=\Phi\!\left(\dfrac{x-\mu}{\sigma}\right)$。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">标准正态分布（Standard Normal Distribution）</span></summary><div class="kpbody"><p class="kptext">$X\sim N(0,1)$，其分布函数记作 $$\Phi(a) = P(X\le a)$$ 一般正态可标准化：$Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$，从而 $P(X\le x)=\Phi\!\left(\dfrac{x-\mu}{\sigma}\right)$。</p></div></details><details class="node kp" data-search="对称性 $P(X\le\mu)=0.5$；曲线下总面积（概率）为 1。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">对称性</span></summary><div class="kpbody"><p class="kptext">$P(X\le\mu)=0.5$；曲线下总面积（概率）为 1。</p></div></details><details class="node kp" data-search="例 若 $X\sim N(170,10^2)$，则 $P(X\le 180)\approx 84.15\%$（标准化后查表）；许多自然与社会现象（身高、测量误差等）近似服从正态分布。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-example">例</span><span class="htext">例</span></summary><div class="kpbody"><p class="kptext">若 $X\sim N(170,10^2)$，则 $P(X\le 180)\approx 84.15\%$（标准化后查表）；许多自然与社会现象（身高、测量误差等）近似服从正态分布。</p></div></details></div></details></div></details><details class="node lv2" id="n-2-3" data-toc="4.3 统计模型" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t2">节</span><span class="htext">4.3 统计模型</span><span class="meta">2 小节 · 12 知识点</span></summary><a class="practice-link" href="RBxb2z4j3.html" target="_blank" rel="noopener" title="打开 4.3 统计模型 对应的逐题在线练习">在线通关练</a><div class="children l2"><details class="node lv3" id="n-2-3-1" data-toc="4.3.1 线性回归模型" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t3">小节</span><span class="htext">4.3.1 线性回归模型</span><span class="meta">7 条知识点</span></summary><div class="children l3"><details class="node kp" data-search="相关关系（Correlation） 两个变量之间存在的非确定性依存关系（区别于函数关系）。若近似呈直线趋势，称线性相关。 正相关（Positive correlation）：一个变量增大，另一个也倾向于增大； 负相关（Negative correlation）：一个变量增大，另一个倾向于减小。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-prop">性质</span><span class="htext">相关关系（Correlation）</span></summary><div class="kpbody"><p class="kptext">两个变量之间存在的<strong>非确定性</strong>依存关系（区别于函数关系）。若近似呈直线趋势，称<strong>线性相关</strong>。</p><ul class="sublist"><li><strong>正相关（Positive correlation）</strong>：一个变量增大，另一个也倾向于增大；</li><li><strong>负相关（Negative correlation）</strong>：一个变量增大，另一个倾向于减小。</li></ul></div></details><details class="node kp" data-search="散点图（Scatter plot） 在直角坐标中描出成对样本数据 $(x_i,y_i)$，直观判断相关方向与强弱。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">散点图（Scatter plot）</span></summary><div class="kpbody"><p class="kptext">在直角坐标中描出成对样本数据 $(x_i,y_i)$，直观判断相关方向与强弱。</p></div></details><details class="node kp" data-search="回归直线方程（最小二乘法 / Least Squares） 使残差平方和最小的直线 $$\hat{y} = \hat{b}x + \hat{a}$$ 其中 $$\hat{b} = \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^{n}(x_i-\bar{x})^2},\qquad \hat{a} = \bar{y} - \hat{b}\,\bar{x}$$ $\bar{x},\bar{y}$ 为样本均值。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">回归直线方程（最小二乘法 / Least Squares）</span></summary><div class="kpbody"><p class="kptext">使残差平方和最小的直线 $$\hat{y} = \hat{b}x + \hat{a}$$ 其中 $$\hat{b} = \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^{n}(x_i-\bar{x})^2},\qquad \hat{a} = \bar{y} - \hat{b}\,\bar{x}$$ $\bar{x},\bar{y}$ 为样本均值。</p></div></details><details class="node kp" data-search="回归直线必过样本中心点 $(\bar{x},\bar{y})$。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">回归直线必过样本中心点</span></summary><div class="kpbody"><p class="kptext">$(\bar{x},\bar{y})$。</p></div></details><details class="node kp" data-search="相关系数（Correlation Coefficient）  $$r = \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}{\sqrt{\sum_{i=1}^{n}(x_i-\bar{x})^2\,\sum_{i=1}^{n}(y_i-\bar{y})^2}}$$ 满足 $|r|\le 1$；$|r|$ 越接近 1，线性相关越强；$|r|$ 接近 0 时线性相关很弱或无线性相关。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-prop">性质</span><span class="htext">相关系数（Correlation Coefficient）</span></summary><div class="kpbody"><p class="kptext"> $$r = \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}{\sqrt{\sum_{i=1}^{n}(x_i-\bar{x})^2\,\sum_{i=1}^{n}(y_i-\bar{y})^2}}$$ 满足 $|r|\le 1$；$|r|$ 越接近 1，线性相关越强；$|r|$ 接近 0 时线性相关很弱或无线性相关。</p></div></details><details class="node kp" data-search="非线性回归 通过变量替换（如取对数、倒数、平方等）将非线性关系转化为线性回归再拟合，最后还原。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">非线性回归</span></summary><div class="kpbody"><p class="kptext">通过变量替换（如取对数、倒数、平方等）将非线性关系转化为线性回归再拟合，最后还原。</p></div></details><details class="node kp" data-search="列联表概率基础（与 4.3.2 衔接） 对事件 $A,B$，有 $P(B)=\dfrac{a+b}{n}$、$P(A\cap B)=\dfrac{a}{n}$ 等（见 4.3.2 列联表）。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">列联表概率基础（与 4.3.2 衔接）</span></summary><div class="kpbody"><p class="kptext">对事件 $A,B$，有 $P(B)=\dfrac{a+b}{n}$、$P(A\cap B)=\dfrac{a}{n}$ 等（见 4.3.2 列联表）。</p></div></details></div></details><details class="node lv3" id="n-2-3-2" data-toc="4.3.2 独立性检验" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t3">小节</span><span class="htext">4.3.2 独立性检验</span><span class="meta">5 条知识点</span></summary><div class="children l3"><details class="node kp" data-search="$2\times 2$ 列联表（Contingency Table） 对两个分类变量（如&quot;性别&quot;与&quot;是否选考某科&quot;）整理成如下交叉表： | | 类别 $B$ | 类别 $\overline{B}$ | 合计 | |---|---|---|---| | 类别 $A$ | $a$ | $b$ | $a+b$ | | 类别 $\overline{A}$ | $c$ | $d$ | $c+d$ | | 合计 | $a+c$ | $b+d$ | $n$ | 其中 $n=a+b+c+d$。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">$2\times 2$ 列联表（Contingency Table）</span></summary><div class="kpbody"><p class="kptext">对两个分类变量（如"性别"与"是否选考某科"）整理成如下交叉表： | | 类别 $B$ | 类别 $\overline{B}$ | 合计 | |---|---|---|---| | 类别 $A$ | $a$ | $b$ | $a+b$ | | 类别 $\overline{A}$ | $c$ | $d$ | $c+d$ | | 合计 | $a+c$ | $b+d$ | $n$ | 其中 $n=a+b+c+d$。</p></div></details><details class="node kp" data-search="独立性检验（卡方检验 / Chi-square Test of Independence） 构造统计量 $$\chi^2 = \frac{n(ad-bc)^2}{(a+b)(c+d)(a+c)(b+d)}$$"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">独立性检验（卡方检验 / Chi-square Test of Independence）</span></summary><div class="kpbody"><p class="kptext">构造统计量 $$\chi^2 = \frac{n(ad-bc)^2}{(a+b)(c+d)(a+c)(b+d)}$$</p></div></details><details class="node kp" data-search="判断规则 给定显著性水平 $\alpha$（如 $0.05,0.01$），查 $\chi^2$ 分布临界值表。若计算得到的 $\chi^2$ 大于对应临界值，则在相应置信水平下拒绝&quot;两变量独立&quot;的假设，认为两变量有关联；否则没有充分证据认为有关联。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">判断规则</span></summary><div class="kpbody"><p class="kptext">给定显著性水平 $\alpha$（如 $0.05,0.01$），查 $\chi^2$ 分布临界值表。若计算得到的 $\chi^2$ 大于对应临界值，则在相应置信水平下<strong>拒绝"两变量独立"的假设</strong>，认为两变量有关联；否则没有充分证据认为有关联。</p></div></details><details class="node kp" data-search="列联表概率解释 由表中频数与总数可得边际概率如 $P(B)=\frac{a+b}{n}$、$P(A\cap B)=\frac{a}{n}$ 等，与条件概率、独立性定义一致（若 $P(A\cap B)=P(A)P(B)$ 则独立）。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">列联表概率解释</span></summary><div class="kpbody"><p class="kptext">由表中频数与总数可得边际概率如 $P(B)=\frac{a+b}{n}$、$P(A\cap B)=\frac{a}{n}$ 等，与条件概率、独立性定义一致（若 $P(A\cap B)=P(A)P(B)$ 则独立）。</p></div></details><details class="node kp" data-search="例 教材考查&quot;高考选考科目的确定是否与性别有关&quot;，即构造 $2\times 2$ 列联表并计算 $\chi^2$ 进行独立性检验。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-example">例</span><span class="htext">例</span></summary><div class="kpbody"><p class="kptext">教材考查"高考选考科目的确定是否与性别有关"，即构造 $2\times 2$ 列联表并计算 $\chi^2$ 进行独立性检验。</p></div></details></div></details></div></details><details class="node lv2" id="n-2-4" data-toc="4.4 数学探究活动：了解高考选考科目的确定是否与性别有关" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t2">节</span><span class="htext">4.4 数学探究活动：了解高考选考科目的确定是否与性别有关</span><span class="meta">1 小节 · 3 知识点</span></summary><a class="practice-link" href="RBxb2z4j4.html" target="_blank" rel="noopener" title="打开 4.4 数学探究活动：了解高考选考科目的确定是否与性别有关 对应的逐题在线练习">在线通关练</a><div class="children l2"><details class="node lv3" id="n-2-4-1" data-toc="本节知识点" open><summary class="head"><span class="twisty" aria-hidden="true"></span><span class="lvtag t3">小节</span><span class="htext">本节知识点</span><span class="virtual">节内直列</span><span class="meta">3 条知识点</span></summary><div class="children l3"><details class="node kp" data-search="活动目标 运用第四章所学&quot;独立性检验&quot;方法，针对真实或模拟的调查数据，判断&quot;选考科目的确定&quot;与&quot;性别&quot;两个分类变量是否有关联。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-key">要点</span><span class="htext">活动目标</span></summary><div class="kpbody"><p class="kptext">运用第四章所学"独立性检验"方法，针对真实或模拟的调查数据，判断"选考科目的确定"与"性别"两个分类变量是否有关联。</p></div></details><details class="node kp" data-search="操作步骤  1. 收集样本数据，按&quot;性别 $\times$ 是否确定选考科目&quot;整理成 $2\times 2$ 列联表； 2. 计算卡方统计量 $\chi^2 = \dfrac{n(ad-bc)^2}{(a+b)(c+d)(a+c)(b+d)}$； 3. 与临界值比较，在给定显著性水平下得出结论。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-method">方法</span><span class="htext">操作步骤</span></summary><div class="kpbody"><p class="kptext"> 1. 收集样本数据，按"性别 $\times$ 是否确定选考科目"整理成 $2\times 2$ 列联表； 2. 计算卡方统计量 $\chi^2 = \dfrac{n(ad-bc)^2}{(a+b)(c+d)(a+c)(b+d)}$； 3. 与临界值比较，在给定显著性水平下得出结论。</p></div></details><details class="node kp" data-search="意义 体会统计推断&quot;用样本推断总体&quot;&quot;以概率证据支持结论&quot;的思想，理解独立性检验在实际决策中的应用与局限性（仅提供证据强度，不能证明因果）。"><summary class="head kp-head"><span class="twisty" aria-hidden="true"></span><span class="kcat cat-prop">性质</span><span class="htext">意义</span></summary><div class="kpbody"><p class="kptext">体会统计推断"用样本推断总体""以概率证据支持结论"的思想，理解独立性检验在实际决策中的应用与局限性（仅提供证据强度，不能证明因果）。</p></div></details></div></details></div></details></div></details></main>
+</div>
+<footer><div class="note">
+  <b>来源说明：</b>本文件依据《人教B版 数学 选择性必修第二册》教材正文整理，按"章 → 节 → 小节"三级结构归纳各知识点。 涵盖 **第三章 计数原理**、**第四章 概率与统计** 两章。保留关键术语的中英文对照与 LaTeX 数学符号；公式与结论以教材推导为准，未编造内容。 本页在其下把每条知识点独立为第四级折叠节点，未改动原文内容与数学符号；
+  章／节／小节／知识点右侧数字为各自包含的下一级条目数。数学公式由同目录共享的 mathjax.js（MathJax 3.2.1）以 SVG 渲染，
+  HTML 本体不内嵌公式引擎，24 个页面共用这一份引擎；把 HTML 与 mathjax.js 放在一起即可断网离线查看，单独转发某个 HTML 时会自动改从网络 CDN 加载。
+</div></footer>
+<script>
+(function(){
+  var main = document.querySelector('main');
+  var q = document.getElementById('q');
+  var info = document.getElementById('searchInfo');
+  var levelSel = document.getElementById('level');
+  var levels = {
+    collapse:  [],
+    chapter:   ['lv1'],
+    section:   ['lv1','lv2'],
+    subsection:['lv1','lv2','lv3'],
+    all:       ['lv1','lv2','lv3','kp']
+  };
+  function nodes(){ return Array.prototype.slice.call(main.querySelectorAll('details.node')); }
+  function applyLevel(name){
+    var want = levels[name] || levels.section;
+    nodes().forEach(function(d){
+      d.open = want.some(function(c){ return d.classList.contains(c); });
+    });
+  }
+  function openParents(el){
+    var p = el.parentElement;
+    while(p){
+      if(p.tagName === 'DETAILS') p.open = true;
+      p = p.parentElement;
+    }
+  }
+  function clearMarks(root){
+    Array.prototype.slice.call(root.querySelectorAll('mark.hl')).forEach(function(m){
+      m.replaceWith(document.createTextNode(m.textContent));
+    });
+    root.normalize();
+  }
+  function highlight(root, term){
+    var low = term.toLowerCase();
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        if(!n.nodeValue || n.nodeValue.toLowerCase().indexOf(low) === -1) return NodeFilter.FILTER_REJECT;
+        var p = n.parentElement;
+        if(!p || p.closest('mjx-container, script, style, mark')) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var list = [];
+    while(walker.nextNode()) list.push(walker.currentNode);
+    list.forEach(function(n){
+      var text = n.nodeValue, frag = document.createDocumentFragment(), i = 0, idx;
+      while((idx = text.toLowerCase().indexOf(low, i)) !== -1){
+        frag.appendChild(document.createTextNode(text.slice(i, idx)));
+        var mk = document.createElement('mark');
+        mk.className = 'hl';
+        mk.textContent = text.slice(idx, idx + term.length);
+        frag.appendChild(mk);
+        i = idx + term.length;
+      }
+      frag.appendChild(document.createTextNode(text.slice(i)));
+      n.replaceWith(frag);
+    });
+  }
+  function applySearch(term){
+    clearMarks(main);
+    var kps = Array.prototype.slice.call(main.querySelectorAll('details.kp'));
+    var parents = Array.prototype.slice.call(main.querySelectorAll('details.lv1,details.lv2,details.lv3'));
+    if(!term){
+      kps.forEach(function(k){ k.hidden = false; k.classList.remove('hit'); });
+      parents.forEach(function(p){ p.hidden = false; });
+      applyLevel(levelSel.value);
+      info.textContent = '';
+      return;
+    }
+    var hits = 0;
+    kps.forEach(function(k){
+      var hit = (k.dataset.search || '').toLowerCase().indexOf(term) !== -1;
+      k.hidden = !hit;
+      k.open = hit;
+      if(hit){ hits++; highlight(k, q.value.trim()); }
+    });
+    ['lv3','lv2','lv1'].forEach(function(cls){
+      Array.prototype.slice.call(main.querySelectorAll('details.' + cls)).forEach(function(p){
+        var any = Array.prototype.slice.call(p.querySelectorAll('details.kp')).some(function(k){ return !k.hidden; });
+        p.hidden = !any;
+        if(any) p.open = true;
+      });
+    });
+    info.textContent = hits ? ('命中 ' + hits + ' 条') : '无匹配';
+  }
+  var timer = null;
+  q.addEventListener('input', function(){
+    clearTimeout(timer);
+    timer = setTimeout(function(){ applySearch(q.value.trim().toLowerCase()); }, 140);
+  });
+  q.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ q.value = ''; applySearch(''); q.blur(); }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === '/' && document.activeElement !== q){ e.preventDefault(); q.focus(); }
+  });
+  levelSel.addEventListener('change', function(){
+    if(q.value.trim()){ q.value = ''; }
+    applyLevel(levelSel.value);
+    info.textContent = '';
+    clearMarks(main);
+    Array.prototype.slice.call(main.querySelectorAll('[hidden]')).forEach(function(el){ el.hidden = false; });
+  });
+  document.getElementById('printBtn').addEventListener('click', function(){
+    var saved = nodes().map(function(d){ return d.open; });
+    nodes().forEach(function(d){ d.open = true; });
+    var restore = function(){ nodes().forEach(function(d,i){ d.open = saved[i]; }); };
+    if(window.onafterprint !== undefined){ window.addEventListener('afterprint', restore, {once:true}); }
+    window.print();
+    setTimeout(restore, 1200);
+  });
+  var toc = document.getElementById('tocTree');
+  ['lv1','lv2','lv3'].forEach(function(cls, i){
+    Array.prototype.slice.call(main.querySelectorAll('details.' + cls)).forEach(function(d){
+      var a = document.createElement('a');
+      a.href = '#' + d.id;
+      a.className = 'toc' + (i + 1);
+      a.textContent = d.dataset.toc || d.querySelector('.htext').textContent;
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        if(q.value.trim()){ q.value = ''; applySearch(''); }
+        openParents(d);
+        d.open = true;
+        d.hidden = false;
+        d.scrollIntoView({behavior:'smooth', block:'start'});
+      });
+      toc.appendChild(a);
+    });
+  });
+  // 先在全部展开状态下完成 MathJax 排版（隐藏容器内 SVG 尺寸会算错），再折叠到默认层级。
+  var booted = false;
+  function ready(){
+    if(booted) return;
+    booted = true;
+    applyLevel(levelSel.value);
+    document.body.classList.remove('booting');
+    var note = document.getElementById('bootNote');
+    if(note) note.remove();
+  }
+  function boot(){
+    if(window.MathJax && MathJax.startup && MathJax.startup.promise){
+      MathJax.startup.promise.then(ready, ready);
+    }else{
+      setTimeout(ready, 400);
+    }
+  }
+  setTimeout(ready, 9000);
+  if(document.readyState === 'complete') boot();
+  else window.addEventListener('load', boot);
+})();
+</script>
+</body>
+</html>

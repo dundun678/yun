@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6.4 平面向量的应用 · 选择题逐题练习（在线练习）</title>
+<style>
+:root{
+  --bg:#f1f6fc; --card:#ffffff; --ink:#1e2a38; --muted:#6b7c90; --line:#e2ebf5;
+  --blue:#2563eb; --blue-d:#1d4ed8; --blue-l:#eaf2ff;
+  --teal:#0d9488; --teal-l:#e7f7f4;
+  --yellow:#e8a317; --yellow-l:#fff5dc;
+  --green:#15803d; --green-l:#edfaf0; --green-b:#b7e4c4;
+  --red:#c0392b; --red-l:#fdf0ee; --red-b:#f3c3bb;
+}
+*{box-sizing:border-box}
+[hidden]{display:none !important}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Microsoft YaHei","PingFang SC","Segoe UI","Cambria Math",sans-serif;
+  font-size:16px; line-height:1.85; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:920px; margin:0 auto; padding:26px 18px 70px}
+sub,sup{font-size:.72em; line-height:0}
+.paper,.notice,.q,.submit-bar{
+  background:var(--card); border:1px solid var(--line); border-radius:14px;
+  box-shadow:0 3px 16px rgba(31,64,110,.055);
+}
+.paper{padding:28px 30px 24px; margin-bottom:16px; border-top:4px solid var(--blue)}
+.kicker{
+  display:inline-block; font-size:12.5px; letter-spacing:.5px; color:var(--teal);
+  background:var(--teal-l); border-radius:20px; padding:3px 13px; margin-bottom:12px; font-weight:600;
+}
+h1{font-size:27px; line-height:1.4; margin:0 0 6px; letter-spacing:.5px; color:#16283f}
+.subtitle{color:var(--muted); font-size:14.5px; margin:0 0 18px}
+
+/* 成绩面板：位于标题下方，提交后显示 */
+.result{
+  display:flex; align-items:center; gap:28px; flex-wrap:wrap;
+  background:linear-gradient(105deg,#eef5ff 0%,#f7fbff 60%,#e9f8f4 100%);
+  border:1px solid #cfe1fa; border-radius:12px; padding:18px 24px; margin:4px 0 18px;
+  animation:pop .45s ease-out;
+}
+@keyframes pop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.result-label{font-size:13px; color:var(--muted); letter-spacing:1px; margin-bottom:2px}
+.result-score{font-size:38px; font-weight:800; color:var(--blue-d); line-height:1.15}
+.result-score small{font-size:17px; font-weight:600; margin-left:3px}
+.result-score .slash{font-size:15px; font-weight:500; color:var(--muted); margin-left:8px}
+.result-right{border-left:1px dashed #bcd3ee; padding-left:28px; min-width:170px}
+.grade-badge{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:52px; height:52px; border-radius:14px; font-size:30px; font-weight:800;
+  color:#fff; background:var(--blue); box-shadow:0 4px 12px rgba(37,99,235,.25);
+}
+.grade-badge.g-A{background:#15803d} .grade-badge.g-B{background:#2563eb}
+.grade-badge.g-C{background:#0d9488} .grade-badge.g-D{background:#e8a317}
+.grade-badge.g-E{background:#c0392b}
+.grade-desc{font-size:13.5px; color:var(--muted); margin-top:6px}
+
+.meta{display:flex; gap:9px; flex-wrap:wrap; margin-bottom:14px}
+.pill{font-size:13px; padding:3px 12px; border-radius:20px; font-weight:600}
+.pill.blue{background:var(--blue-l); color:var(--blue-d)}
+.pill.teal{background:var(--teal-l); color:var(--teal)}
+.pill.yellow{background:var(--yellow-l); color:#a9700a}
+.grade-scale{
+  border-top:1px dashed var(--line); padding-top:12px; font-size:13px; color:var(--muted);
+  display:flex; gap:8px 14px; flex-wrap:wrap; align-items:center;
+}
+.gs-title{font-weight:600; color:#4a5b70}
+.grade-scale .b{padding:1px 9px; border-radius:6px; background:#f3f7fc; border:1px solid var(--line); font-weight:500; color:#41546b}
+.grade-scale b.g{display:inline-block; min-width:18px; text-align:center; color:var(--blue-d)}
+
+.notice{padding:15px 20px; font-size:14.5px; color:#41546b; margin-bottom:22px; background:#fbfdff}
+.notice b{color:var(--blue-d)}
+
+.section-title{
+  font-size:17px; font-weight:700; color:#1c3352; margin:26px 4px 13px;
+  padding-left:12px; border-left:4px solid var(--teal);
+}
+.section-title span{font-size:13.5px; font-weight:500; color:var(--muted); margin-left:8px}
+
+.q{padding:22px 26px 20px; margin-bottom:16px; scroll-margin-top:20px}
+.q-head{display:flex; align-items:center; gap:10px; margin-bottom:12px; flex-wrap:wrap}
+.qno{
+  display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px;
+  border-radius:9px; background:var(--blue); color:#fff; font-weight:700; font-size:15px; flex:none;
+}
+.q-type{font-size:13px; color:var(--teal); background:var(--teal-l); border-radius:6px; padding:2px 9px; font-weight:600}
+.q-pts{font-size:13px; color:#a9700a; background:var(--yellow-l); border-radius:20px; padding:2px 11px; font-weight:600}
+.q-got{margin-left:auto; font-size:13.5px; font-weight:700; padding:2px 12px; border-radius:20px}
+.q-got.full{color:var(--green); background:var(--green-l); border:1px solid var(--green-b)}
+.q-got.part{color:#a9700a; background:var(--yellow-l); border:1px solid #f0dca8}
+.q-got.zero{color:var(--red); background:var(--red-l); border:1px solid var(--red-b)}
+.q-stem{font-size:16.2px; line-height:2; margin-bottom:14px; text-align:justify}
+.q-stem .blank{display:inline-block; min-width:52px; border-bottom:1px solid #8fa4bb; margin:0 4px}
+
+/* 选项紧凑排布：4 列（一行四选项）/ 2 列（两行）/ 1 列（逐行）
+   列数由 build_html.py 依据该题选项文本长度自动判定，也可在 JSON 中用 option_cols 覆盖 */
+.opts{display:grid; gap:9px; grid-template-columns:1fr}
+.opts.cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.opts.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.opts.cols-1{grid-template-columns:1fr}
+.opts.cols-4 .opt{padding:9px 10px; gap:8px}
+.opt{
+  display:flex; align-items:flex-start; gap:11px; padding:10px 14px;
+  border:1px solid var(--line); border-radius:10px; background:#fcfdff;
+  cursor:pointer; transition:background .15s,border-color .15s,transform .1s;
+}
+.opt:hover{background:var(--blue-l); border-color:#bcd4f7}
+.opt input{width:17px; height:17px; margin-top:6px; flex:none; accent-color:var(--blue); cursor:pointer}
+.ol{font-weight:700; color:var(--blue-d); flex:none; min-width:20px}
+.ot{flex:1; min-width:0; line-height:1.9; overflow-wrap:anywhere}
+.opt.is-correct{background:var(--green-l); border-color:var(--green-b)}
+.opt.is-correct .ol{color:var(--green)}
+.opt.is-wrong{background:var(--red-l); border-color:var(--red-b)}
+.opt.is-wrong .ol{color:var(--red)}
+.opt.locked{cursor:default}
+.opt.locked:hover{background:inherit; border-color:var(--line)}
+.opt.locked.is-correct:hover{background:var(--green-l); border-color:var(--green-b)}
+.opt.locked.is-wrong:hover{background:var(--red-l); border-color:var(--red-b)}
+
+.sol{
+  margin-top:16px; border:1px solid #cfe9d6; border-left:4px solid var(--green);
+  border-radius:10px; background:#f7fdf9; padding:16px 20px 14px;
+  animation:fadein .4s ease-out;
+}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.sol-answer{font-size:16px; font-weight:700; color:var(--green); margin-bottom:10px}
+.sol-answer b{font-size:19px; letter-spacing:2px}
+.sol-title{font-size:15px; font-weight:700; color:#1c3352; margin:12px 0 6px}
+.sol-body{font-size:14.7px; line-height:1.95; color:#34465c}
+.sol-body p{margin:6px 0}
+.sol-meta{font-size:13.2px; color:var(--muted); background:#f0f6fb; border-radius:8px; padding:7px 12px}
+.sol-sub{font-weight:700; color:var(--blue-d)}
+.judge{padding-left:2px}
+.jl{font-weight:700; color:#1c3352; margin-right:4px}
+.tip{color:#8a5a06; background:var(--yellow-l); border-radius:8px; padding:7px 12px}
+
+.submit-bar{padding:18px 24px; display:flex; align-items:center; gap:16px; flex-wrap:wrap; position:relative}
+button{
+  font-family:inherit; font-size:16px; font-weight:700; border-radius:10px;
+  padding:11px 34px; cursor:pointer; border:1px solid transparent; transition:all .15s;
+}
+#startBtn,#submitBtn{background:var(--blue); color:#fff; box-shadow:0 4px 12px rgba(37,99,235,.22)}
+#startBtn:hover,#submitBtn:hover{background:var(--blue-d); transform:translateY(-1px)}
+#prevBtn,#nextBtn,#resetBtn{background:#fff; color:var(--blue-d); border-color:#bcd4f7}
+#prevBtn:hover,#nextBtn:hover,#resetBtn:hover{background:var(--blue-l)}
+.bar-info{font-size:13.5px; color:var(--muted); margin-left:auto; text-align:right}
+.bar-info b{color:var(--blue-d)}
+.foot{text-align:center; color:#8b9bb0; font-size:12.5px; margin-top:22px}
+@media (max-width:620px){
+  .wrap{padding:14px 10px 50px} .paper{padding:20px 18px} h1{font-size:22px}
+  .q{padding:18px 16px} .result{gap:16px; padding:15px 18px}
+  .result-right{border-left:0; padding-left:0; border-top:1px dashed #bcd3ee; padding-top:12px; width:100%}
+  .bar-info{margin-left:0; text-align:left; width:100%}
+  /* 窄屏自动降列，避免 4 列过挤 */
+  .opts.cols-4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .opts.cols-2{grid-template-columns:1fr}
+  button{padding:11px 22px}
+}
+@media print{
+  body{background:#fff} .submit-bar{display:none} .paper,.notice,.q{box-shadow:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===== 试卷标题区 ===== -->
+  <header class="paper">
+    <div class="kicker">人教A版 · 必修第二册 · 第六章 平面向量及其应用 · 周测卷</div>
+    <h1>6.4 平面向量的应用 · 选择题逐题练习</h1>
+    <p class="subtitle">检测范围：本节全部小节（3 个小节 / 29 条知识点） ｜ 仅保留原卷的单项选择题与多项选择题及答案、解析</p>
+
+    <!-- 得分与等级：提交后显示在标题下方 -->
+    <div class="result" id="result" hidden>
+      <div class="result-left">
+        <div class="result-label">本次测试得分</div>
+        <div class="result-score"><span id="scoreNum">0</span><small>分</small><span class="slash">/ 满分 26 分</span></div>
+      </div>
+      <div class="result-right">
+        <div class="result-label">等级评定</div>
+        <div class="grade-badge" id="gradeBadge">A</div>
+        <div class="grade-desc" id="gradeDesc"></div>
+      </div>
+    </div>
+
+    <div class="meta">
+      <span class="pill blue">满分 26 分</span>
+      <span class="pill teal">单项选择题 5 题 × 4 分 = 20 分</span>
+      <span class="pill teal">多项选择题 1 题 × 6 分 = 6 分</span>
+      <span class="pill yellow">建议用时 14 分钟</span>
+    </div>
+    <!-- 等级划分：答题中隐藏，提交答案后随成绩一起显示 -->
+    <div class="grade-scale" id="gradeScale" hidden>
+      <span class="gs-title">等级划分（26 分等分为 5 档，每档 5.2 分）</span>
+      <span class="b"><b class="g">A</b> 20.8 ~ 26</span>
+      <span class="b"><b class="g">B</b> 15.6 ~ 20.8</span>
+      <span class="b"><b class="g">C</b> 10.4 ~ 15.6</span>
+      <span class="b"><b class="g">D</b> 5.2 ~ 10.4</span>
+      <span class="b"><b class="g">E</b> 0 ~ 5.2</span>
+    </div>
+  </header>
+
+  <!-- 答题说明：答题中隐藏，提交答案后显示 -->
+  <div class="notice" id="notice" hidden>
+    <b>答题说明：</b>单项选择题每题 4 分，答对得 4 分，答错或不答得 0 分；多项选择题每题 6 分，按正确选项个数均摊（3 个正确选项时每选对 1 个得 2 分，2 个正确选项时每选对 1 个得 3 分），但只要选错任意选项或不作答，该题即得 0 分。所有选项默认不勾选。作答完成后点击下方「提交答案」，系统将自动评分，并在每道题下方完整显示答案与解析。
+  </div>
+
+  <form id="quiz" autocomplete="off">
+        <div class="section-title" hidden>一、单项选择题<span>共 5 小题，共 20 分；每题只有一个选项符合题目要求</span></div>
+    <article class="q" data-type="single" data-answer="A" data-max="4.0" hidden>
+      <div class="q-head"><span class="qno">1</span><span class="q-type">单项选择题</span><span class="q-pts">4 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">测量中常用「方向角」刻画目标的方向，方向角是指从正北方向顺时针旋转到目标方向线所成的角。已知点 <i>B</i> 在点 <i>A</i> 的南偏东 25<sup>°</sup> 方向，则从 <i>A</i> 看点 <i>B</i> 的方向角、从 <i>B</i> 看点 <i>A</i> 的方向角依次为<span class="blank"></span></div>
+      <div class="opts cols-4">
+        <label class="opt"><input type="radio" name="q1" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot">155<sup>°</sup>，335<sup>°</sup></span></label>
+        <label class="opt"><input type="radio" name="q1" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot">25<sup>°</sup>，205<sup>°</sup></span></label>
+        <label class="opt"><input type="radio" name="q1" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot">155<sup>°</sup>，155<sup>°</sup></span></label>
+        <label class="opt"><input type="radio" name="q1" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot">205<sup>°</sup>，25<sup>°</sup></span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>A</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">单项选择题 · 4 分 ｜ 人教A版 · 必修第二册 · 6.4 平面向量的应用</p>
+          <p><b>思路：</b>先把「南偏东 25<sup>°</sup>」翻译成从正北顺时针的角：正南对应 180<sup>°</sup>，向东偏 25<sup>°</sup> 即 180<sup>°</sup>−25<sup>°</sup>=155<sup>°</sup>；再注意 <i>A</i> 看 <i>B</i> 与 <i>B</i> 看 <i>A</i> 是两条方向相反、共线的射线，方向角相差 180<sup>°</sup>。</p>
+          <p><b>解答：</b>逐项判定，<i>A</i> 看 <i>B</i>：155<sup>°</sup>，<i>B</i> 看 <i>A</i>：155<sup>°</sup>+180<sup>°</sup>=335<sup>°</sup>（即北偏西 25<sup>°</sup>）</p>
+          <p class="sol-sub">逐选项判定：</p>
+          <p class="judge"><span class="jl">A．</span>正确。</p>
+          <p class="judge"><span class="jl">B．</span>错，把「南偏东 25<sup>°</sup>」中的 25<sup>°</sup> 直接当成了方向角，且反向时未加 180<sup>°</sup> 而是加了 180<sup>°</sup> 又写错成 205<sup>°</sup>。</p>
+          <p class="judge"><span class="jl">C．</span>错，误认为互看的方向角相同，忽略了方向相反。</p>
+          <p class="judge"><span class="jl">D．</span>错，把「东偏」的方向算到 205<sup>°</sup>（那是南偏西 25<sup>°</sup>），两个角恰好把东西方向弄反。</p>
+          <p>测量角度、方法要点（6.4.3）。</p>
+          <p class="tip"><b>易错点：</b>方向角从正北顺时针量，南偏东要写成 180<sup>°</sup>−θ 而不是 90<sup>°</sup>+θ；忘记互看的两个方向角相差 180<sup>°</sup>。</p>
+        </div>
+      </div>
+    </article>
+    <article class="q" data-type="single" data-answer="A" data-max="4.0" hidden>
+      <div class="q-head"><span class="qno">2</span><span class="q-type">单项选择题</span><span class="q-pts">4 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">用向量方法证明三角形中位线定理：设 <i>D</i>,<i>E</i> 分别是 △<i>ABC</i> 的边 <i>AB</i>,<i>AC</i> 的中点，记 <i>A⃗B⃗</i>=<i>a⃗</i>，<i>A⃗C⃗</i>=<i>b⃗</i>。下列判断正确的是<span class="blank"></span></div>
+      <div class="opts cols-1">
+        <label class="opt"><input type="radio" name="q2" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot">向量法解决问题的「三步曲」是：先选取基底并把已知与目标都写成基底的线性组合，再用向量运算化简，最后把运算结果翻译成几何结论；本题 <i>D⃗E⃗</i>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">2</span></span><i>b⃗</i>−<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">2</span></span><i>a⃗</i>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">2</span></span><i>B⃗C⃗</i>，故 <i>DE</i>∥<i>BC</i> 且 <i>DE</i>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">2</span></span><i>BC</i></span></label>
+        <label class="opt"><input type="radio" name="q2" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot"><i>D⃗E⃗</i>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">2</span></span>(<i>a⃗</i>+<i>b⃗</i>)，故 <i>DE</i> 与 <i>BC</i> 不平行</span></label>
+        <label class="opt"><input type="radio" name="q2" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot">由 <i>D⃗E⃗</i>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">2</span></span><i>B⃗C⃗</i> 只能得到 <i>DE</i>∥<i>BC</i>，得不到长度关系</span></label>
+        <label class="opt"><input type="radio" name="q2" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot">用向量法解此题不必考虑 <i>a⃗</i>,<i>b⃗</i> 是否共线，因为任意向量都能作基底</span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>A</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">单项选择题 · 4 分 ｜ 人教A版 · 必修第二册 · 6.4 平面向量的应用</p>
+          <p><b>思路：</b>向量法解几何问题的可行性来自「平面向量基本定理」——只要选两个不共线向量作基底，平面内所有向量都能唯一表示，几何关系便转化为向量的线性运算；操作步骤即「三步曲」：选基底表示、运算化简、翻译结论。</p>
+          <p><b>解答：</b>逐项判定</p>
+          <p class="sol-sub">逐选项判定：</p>
+          <p class="judge"><span class="jl">A．</span>正确：<i>A⃗D⃗</i>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">2</span></span><i>a⃗</i>，<i>A⃗E⃗</i>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">2</span></span><i>b⃗</i>，故 <i>D⃗E⃗</i>=<i>A⃗E⃗</i>−<i>A⃗D⃗</i>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">2</span></span><i>b⃗</i>−<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">2</span></span><i>a⃗</i>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">2</span></span>(<i>b⃗</i>−<i>a⃗</i>)=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">2</span></span><i>B⃗C⃗</i>，由共线定理得平行，由模的关系得 <i>DE</i>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">2</span></span><i>BC</i>，三段恰好对应「三步曲」。</p>
+          <p class="judge"><span class="jl">B．</span>错，<i>D⃗E⃗</i> 是两向量之差的一半，不是和的一半，若写成和的一半，方向就指向了另一条线。</p>
+          <p class="judge"><span class="jl">C．</span>错，<i>D⃗E⃗</i>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">2</span></span><i>B⃗C⃗</i> 同时给出方向（系数为正，同向）与长度（模为一半）。</p>
+          <p class="judge"><span class="jl">D．</span>错，基底必须不共线，本题 <i>a⃗</i>,<i>b⃗</i> 是三角形两边，天然不共线，这一步正是可行性的前提，不能不检查。</p>
+          <p>可行性、「三步曲」、典型应用 1：三角形中位线定理（6.4.1）。</p>
+          <p class="tip"><b>易错点：</b>把 <i>D⃗E⃗</i> 写成 <span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">2</span></span>(<i>a⃗</i>+<i>b⃗</i>)（那是中位线之外的向量）；只由「系数是 <span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">2</span></span>」说长度关系却漏掉方向为同向。</p>
+        </div>
+      </div>
+    </article>
+    <article class="q" data-type="single" data-answer="A" data-max="4.0" hidden>
+      <div class="q-head"><span class="qno">3</span><span class="q-type">单项选择题</span><span class="q-pts">4 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">在平行四边形 <i>ABCD</i> 中，<i>A⃗B⃗</i>=<i>a⃗</i>，<i>A⃗D⃗</i>=<i>b⃗</i>。下列判断正确的是<span class="blank"></span></div>
+      <div class="opts cols-1">
+        <label class="opt"><input type="radio" name="q3" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot">|<i>a⃗</i>+<i>b⃗</i>|<sup>2</sup>+|<i>a⃗</i>−<i>b⃗</i>|<sup>2</sup>=2|<i>a⃗</i>|<sup>2</sup>+2|<i>b⃗</i>|<sup>2</sup>，即两条对角线的平方和等于四条边的平方和</span></label>
+        <label class="opt"><input type="radio" name="q3" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot">|<i>a⃗</i>+<i>b⃗</i>|<sup>2</sup>−|<i>a⃗</i>−<i>b⃗</i>|<sup>2</sup>=|<i>a⃗</i>|<sup>2</sup>+|<i>b⃗</i>|<sup>2</sup></span></label>
+        <label class="opt"><input type="radio" name="q3" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot">推导上述结论的关键工具是「对角线互相垂直」，与数量积无关</span></label>
+        <label class="opt"><input type="radio" name="q3" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot">向量法的优势在于必须先建立坐标系，把几何问题化为坐标运算</span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>A</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">单项选择题 · 4 分 ｜ 人教A版 · 必修第二册 · 6.4 平面向量的应用</p>
+          <p><b>思路：</b>常用工具是数量积与「模的平方等于向量的平方」：|<i>a⃗</i>±<i>b⃗</i>|<sup>2</sup>=|<i>a⃗</i>|<sup>2</sup>±2<i>a⃗</i>·<i>b⃗</i>+|<i>b⃗</i>|<sup>2</sup>，两式相加消去 <i>a⃗</i>·<i>b⃗</i>，即得对角线定理；向量法的优势是「算」代替「证」，用统一运算同时得到平行、垂直、长度三类结论，且不必建系。</p>
+          <p><b>解答：</b>逐项判定</p>
+          <p class="sol-sub">逐选项判定：</p>
+          <p class="judge"><span class="jl">A．</span>正确，两式相加得 2|<i>a⃗</i>|<sup>2</sup>+2|<i>b⃗</i>|<sup>2</sup>，而平行四边形的四条边正是两组 |<i>a⃗</i>| 与两组 |<i>b⃗</i>|。</p>
+          <p class="judge"><span class="jl">B．</span>错，两式相减得 4<i>a⃗</i>·<i>b⃗</i>，不是 |<i>a⃗</i>|<sup>2</sup>+|<i>b⃗</i>|<sup>2</sup>。</p>
+          <p class="judge"><span class="jl">C．</span>错，结论与对角线是否垂直毫无关系，推导只用到数量积的分配律与 |<i>v⃗</i>|<sup>2</sup>=<i>v⃗</i>·<i>v⃗</i>。</p>
+          <p class="judge"><span class="jl">D．</span>错，向量法的优势恰恰是不建系也能算，坐标法只是其中一个选择。</p>
+          <p>典型应用 2：平行四边形对角线定理、常用工具、向量法的优势（6.4.1）。</p>
+          <p class="tip"><b>易错点：</b>把「相加」与「相减」的结论互换；以为向量法必须先建坐标系。</p>
+        </div>
+      </div>
+    </article>
+    <article class="q" data-type="single" data-answer="B" data-max="4.0" hidden>
+      <div class="q-head"><span class="qno">4</span><span class="q-type">单项选择题</span><span class="q-pts">4 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">三个力 <i>F⃗</i><sub>1</sub>,<i>F⃗</i><sub>2</sub>,<i>F⃗</i><sub>3</sub> 作用于同一质点并使其保持平衡，已知 <i>F⃗</i><sub>1</sub>⊥<i>F⃗</i><sub>2</sub>，|<i>F⃗</i><sub>1</sub>|=6 N，|<i>F⃗</i><sub>2</sub>|=8 N。该质点在 <i>F⃗</i><sub>3</sub> 的方向上产生 |<i>s⃗</i>|=5 m 的位移。下列结论正确的是<span class="blank"></span></div>
+      <div class="opts cols-1">
+        <label class="opt"><input type="radio" name="q4" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot">|<i>F⃗</i><sub>3</sub>|=14 N，<i>F⃗</i><sub>3</sub> 做的功为 70 J</span></label>
+        <label class="opt"><input type="radio" name="q4" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot">|<i>F⃗</i><sub>3</sub>|=10 N，<i>F⃗</i><sub>3</sub> 做的功为 50 J；三力平衡时它们首尾相接构成封闭三角形，这个三角形的三条边就是三个力的大小，求 |<i>F⃗</i><sub>3</sub>| 就是解这个三角形</span></label>
+        <label class="opt"><input type="radio" name="q4" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot">|<i>F⃗</i><sub>3</sub>|=10 N，<i>F⃗</i><sub>3</sub> 做的功为 −50 J</span></label>
+        <label class="opt"><input type="radio" name="q4" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot"><i>F⃗</i><sub>3</sub> 与 <i>F⃗</i><sub>1</sub>+<i>F⃗</i><sub>2</sub> 同向，且 |<i>F⃗</i><sub>3</sub>|=|<i>F⃗</i><sub>1</sub>|+|<i>F⃗</i><sub>2</sub>|</span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>B</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">单项选择题 · 4 分 ｜ 人教A版 · 必修第二册 · 6.4 平面向量的应用</p>
+          <p><b>思路：</b>三力平衡即 <i>F⃗</i><sub>1</sub>+<i>F⃗</i><sub>2</sub>+<i>F⃗</i><sub>3</sub>=0⃗，故 <i>F⃗</i><sub>3</sub>=−(<i>F⃗</i><sub>1</sub>+<i>F⃗</i><sub>2</sub>)；又 <i>F⃗</i><sub>1</sub>⊥<i>F⃗</i><sub>2</sub>，由勾股定理型计算得 |<i>F⃗</i><sub>1</sub>+<i>F⃗</i><sub>2</sub>|=10；功 <i>W</i>=<i>F⃗</i><sub>3</sub>·<i>s⃗</i>=|<i>F⃗</i><sub>3</sub>||<i>s⃗</i>|cos 0<sup>°</sup>。</p>
+          <p><b>解答：</b>逐项判定</p>
+          <p class="sol-sub">逐选项判定：</p>
+          <p class="judge"><span class="jl">A．</span>错，|<i>F⃗</i><sub>3</sub>| 不是两力大小之和，只有同向时才相加。</p>
+          <p class="judge"><span class="jl">B．</span>正确，|<i>F⃗</i><sub>3</sub>|=|(<i>F⃗</i><sub>1</sub>+<i>F⃗</i><sub>2</sub>)|=√(6<sup>2</sup>+8<sup>2</sup>)=10 N，且位移沿 <i>F⃗</i><sub>3</sub> 方向，<i>W</i>=10×5×1=50 J，同时点明三力平衡的几何意义：把三个力首尾相接恰好闭合，得到以三力大小为边的三角形，求未知力就是解这个三角形（已知两边及夹角 90<sup>°</sup>）。</p>
+          <p class="judge"><span class="jl">C．</span>错，位移与 <i>F⃗</i><sub>3</sub> 同向，cos 0<sup>°</sup>=1，功为正。</p>
+          <p class="judge"><span class="jl">D．</span>错，<i>F⃗</i><sub>3</sub> 与 <i>F⃗</i><sub>1</sub>+<i>F⃗</i><sub>2</sub> 方向相反，大小也不等于 6+8。</p>
+          <p>功的计算、三力平衡、三角形的元素（6.4.2、6.4.3）。</p>
+          <p class="tip"><b>易错点：</b>把平衡误当成「三力同向」而直接把大小相加；算功时把 <i>F⃗</i><sub>3</sub> 与位移的夹角当成 180<sup>°</sup> 而漏负号。</p>
+        </div>
+      </div>
+    </article>
+    <article class="q" data-type="single" data-answer="A" data-max="4.0" hidden>
+      <div class="q-head"><span class="qno">5</span><span class="q-type">单项选择题</span><span class="q-pts">4 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">在 △<i>ABC</i> 中，<i>b</i>=5，<i>c</i>=8，<i>A</i>=60<sup>°</sup>。甲用余弦定理求得 <i>a</i>；乙说「这个结果也可以由 <i>B⃗C⃗</i>=<i>A⃗C⃗</i>−<i>A⃗B⃗</i> 两边平方得到，这就是余弦定理的向量证明」。下列判断正确的是<span class="blank"></span></div>
+      <div class="opts cols-1">
+        <label class="opt"><input type="radio" name="q5" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot"><i>a</i>=7，cos <i>C</i>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">7</span></span>，且乙的说法正确：平方展开时 <i>A⃗C⃗</i>·<i>A⃗B⃗</i>=<i>bc</i>cos <i>A</i></span></label>
+        <label class="opt"><input type="radio" name="q5" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot"><i>a</i>=7，cos <i>C</i>=−<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">7</span></span>，且乙的说法正确</span></label>
+        <label class="opt"><input type="radio" name="q5" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot"><i>a</i>=√129，cos <i>C</i>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">7</span></span>，且乙的说法错误</span></label>
+        <label class="opt"><input type="radio" name="q5" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot"><i>a</i>=7，cos <i>C</i>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">7</span></span>，但乙的说法错误，因为向量方法只能证明 <i>A</i> 为锐角的情形</span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>A</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">单项选择题 · 4 分 ｜ 人教A版 · 必修第二册 · 6.4 平面向量的应用</p>
+          <p><b>思路：</b>余弦定理的向量证明：<i>B⃗C⃗</i>=<i>A⃗C⃗</i>−<i>A⃗B⃗</i>，两边平方，交叉项为 −2<i>A⃗C⃗</i>·<i>A⃗B⃗</i>=−2<i>bc</i>cos <i>A</i>，即得 <i>a</i><sup>2</sup>=<i>b</i><sup>2</sup>+<i>c</i><sup>2</sup>−2<i>bc</i>cos <i>A</i>；推论 cos <i>C</i>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor"><i>a</i><sup>2</sup>+<i>b</i><sup>2</sup>−<i>c</i><sup>2</sup></span><span style="display:block;padding:0 .26em">2<i>ab</i></span></span> 用于已知三边求角。</p>
+          <p><b>解答：</b>逐项判定，先算 <i>a</i>：<i>a</i><sup>2</sup>=5<sup>2</sup>+8<sup>2</sup>−2×5×8×cos 60<sup>°</sup>=25+64−40=49，故 <i>a</i>=7，再算角：cos <i>C</i>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor"><i>a</i><sup>2</sup>+<i>b</i><sup>2</sup>−<i>c</i><sup>2</sup></span><span style="display:block;padding:0 .26em">2<i>ab</i></span></span>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">49+25−64</span><span style="display:block;padding:0 .26em">2×7×5</span></span>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">10</span><span style="display:block;padding:0 .26em">70</span></span>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">7</span></span></p>
+          <p class="sol-sub">逐选项判定：</p>
+          <p class="judge"><span class="jl">A．</span>正确，且乙的说法成立：向量平方展开时 <i>A⃗C⃗</i>·<i>A⃗B⃗</i>=|<i>A⃗C⃗</i>||<i>A⃗B⃗</i>|cos <i>A</i>=<i>bc</i>cos <i>A</i>，正是交叉项的来源。</p>
+          <p class="judge"><span class="jl">B．</span>错，cos <i>C</i> 为正（<i>C</i> 为锐角），符号不该为负。</p>
+          <p class="judge"><span class="jl">C．</span>错，<i>a</i><sup>2</sup>=89−40=49，把 −2<i>bc</i>cos <i>A</i> 算成了 +2<i>bc</i>cos <i>A</i> 才会得到 129。</p>
+          <p class="judge"><span class="jl">D．</span>错，向量证明对任意三角形都成立，与 <i>A</i> 是否为锐角无关。</p>
+          <p>定理内容、向量证明、推论（求角公式）（6.4.3）。</p>
+          <p class="tip"><b>易错点：</b>余弦定理中交叉项的符号，钝角时 cos <i>A</i>&lt;0 会使 <i>a</i><sup>2</sup> 变大，锐角时变小，切勿一律写成加号；求角时把分子写成 <i>a</i><sup>2</sup>−<i>b</i><sup>2</sup>−<i>c</i><sup>2</sup>。</p>
+        </div>
+      </div>
+    </article>
+    <div class="section-title" hidden>二、多项选择题<span>共 1 小题，共 6 分；有多个选项符合题目要求</span></div>
+    <article class="q" data-type="multi" data-answer="AC" data-max="6.0" hidden>
+      <div class="q-head"><span class="qno">6</span><span class="q-type">多项选择题</span><span class="q-pts">6 分</span><span class="q-got" hidden></span></div>
+      <div class="q-stem">在 △<i>ABC</i> 中，<i>a</i>=4，<i>b</i>=6。下列判断正确的是<span class="blank"></span></div>
+      <div class="opts cols-1">
+        <label class="opt"><input type="checkbox" name="q6" value="A" autocomplete="off"><span class="ol">A.</span><span class="ot">若 <i>A</i>=30<sup>°</sup>，则满足条件的三角形有两个</span></label>
+        <label class="opt"><input type="checkbox" name="q6" value="B" autocomplete="off"><span class="ol">B.</span><span class="ot">若 <i>A</i>=150<sup>°</sup>，则满足条件的三角形有两个</span></label>
+        <label class="opt"><input type="checkbox" name="q6" value="C" autocomplete="off"><span class="ol">C.</span><span class="ot">若 <i>C</i>=60<sup>°</sup>，则 △<i>ABC</i> 的面积为 6√3</span></label>
+        <label class="opt"><input type="checkbox" name="q6" value="D" autocomplete="off"><span class="ol">D.</span><span class="ot">若 <i>A</i>=30<sup>°</sup> 且有两解，则这两个三角形的面积相等，因为 <i>S</i>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">2</span></span><i>bc</i>sin <i>A</i> 中的 <i>b</i>,<i>c</i>,<i>A</i> 都已确定</span></label>
+      </div>
+      <div class="sol" hidden>
+        <div class="sol-answer">【答案】<b>AC</b></div>
+        <div class="sol-title">【解析】</div>
+        <div class="sol-body">
+          <p class="sol-meta">多项选择题 · 6 分 ｜ 人教A版 · 必修第二册 · 6.4 平面向量的应用</p>
+          <p><b>思路：</b>已知两边 <i>a</i>,<i>b</i> 与其中一边的对角 <i>A</i>，解的个数取决于 <i>b</i>sin <i>A</i> 与 <i>a</i> 的大小：<i>a</i>&lt;<i>b</i>sin <i>A</i> 无解，<i>a</i>=<i>b</i>sin <i>A</i> 一解，<i>b</i>sin <i>A</i>&lt;<i>a</i>&lt;<i>b</i> 两解，<i>a</i>≥<i>b</i> 一解；面积公式 <i>S</i>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">2</span></span><i>ab</i>sin <i>C</i>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">2</span></span><i>bc</i>sin <i>A</i>，用的是「两边夹一角」。</p>
+          <p><b>解答：</b>逐项判定</p>
+          <p class="sol-sub">逐选项判定：</p>
+          <p class="judge"><span class="jl">A．</span>正确，<i>b</i>sin <i>A</i>=6×<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">2</span></span>=3，而 3&lt;<i>a</i>=4&lt;<i>b</i>=6，故 <i>B</i> 有锐角、钝角两个取值，得两个三角形。</p>
+          <p class="judge"><span class="jl">B．</span>错，<i>A</i>=150<sup>°</sup> 为钝角，此时 <i>a</i> 必须大于 <i>b</i> 才有解，而 <i>a</i>=4&lt;<i>b</i>=6，无解。</p>
+          <p class="judge"><span class="jl">C．</span>正确，由 <i>S</i>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">2</span></span><i>ab</i>sin <i>C</i>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">2</span></span>×4×6×<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">√3</span><span style="display:block;padding:0 .26em">2</span></span>=6√3。</p>
+          <p class="judge"><span class="jl">D．</span>错，两解对应 <i>B</i> 互补的两个值，从而 <i>C</i>=180<sup>°</sup>−<i>A</i>−<i>B</i> 不同，sin <i>C</i> 不同，且 <i>S</i>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">2</span></span><i>bc</i>sin <i>A</i> 中的 <i>c</i> 并未确定，不能据此断言面积相等，实际两解面积之比为 sin <i>C</i><sub>1</sub>:sin <i>C</i><sub>2</sub> 而非 1:1。</p>
+          <p>解的个数问题、常用变形、面积公式（6.4.3）。</p>
+          <p class="tip"><b>易错点：</b>看到「已知两边一角」就默认一解；用 <i>S</i>=<span style="display:inline-block;vertical-align:middle;text-align:center;font-size:.94em;line-height:1.18;margin:0 .14em"><span style="display:block;padding:0 .26em;border-bottom:1.2px solid currentColor">1</span><span style="display:block;padding:0 .26em">2</span></span><i>bc</i>sin <i>A</i> 时误以为 <i>b</i>,<i>c</i>,<i>A</i> 都已知，实际 <i>c</i> 在两解情形下有两个值。</p>
+        </div>
+      </div>
+    </article>
+  </form>
+
+  <!-- ===== 逐题导航 / 提交区 ===== -->
+  <div class="submit-bar">
+    <button type="button" id="startBtn">开始答题</button>
+    <button type="button" id="prevBtn" hidden>上一题</button>
+    <button type="button" id="nextBtn" hidden>下一题</button>
+    <button type="button" id="submitBtn" hidden>提交答案</button>
+    <button type="button" id="resetBtn" hidden>重新作答</button>
+    <div class="bar-info"><span id="navInfo">点击「开始答题」逐题作答</span>　·　已作答 <b id="progress">0 / 6</b> 题　·　未作答的题目按 0 分计</div>
+  </div>
+
+  <div class="foot">依据《6.4 平面向量的应用.md》选择题部分改编 · 满分 26 分</div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var TOTAL = 26;          // 满分（由 build_html.py 注入）
+  var questions = Array.prototype.slice.call(document.querySelectorAll('.q'));
+  var form = document.getElementById('quiz');
+  var startBtn = document.getElementById('startBtn');
+  var prevBtn = document.getElementById('prevBtn');
+  var nextBtn = document.getElementById('nextBtn');
+  var submitBtn = document.getElementById('submitBtn');
+  var resetBtn = document.getElementById('resetBtn');
+  var navInfo = document.getElementById('navInfo');
+  var sections = Array.prototype.slice.call(form.querySelectorAll('.section-title'));
+  var current = -1;               // -1 = 尚未开始答题
+  var progress = document.getElementById('progress');
+  var resultBox = document.getElementById('result');
+  var gradeScale = document.getElementById('gradeScale');
+  var noticeBox = document.getElementById('notice');
+  var scoreNum = document.getElementById('scoreNum');
+  var gradeBadge = document.getElementById('gradeBadge');
+  var gradeDesc = document.getElementById('gradeDesc');
+
+  // 5 等分等级（BANDS 由 build_html.py 注入）
+  var BANDS = [{"g": "A", "min": 20.8, "desc": "优秀 · 概念清晰，运算与转化掌握扎实"}, {"g": "B", "min": 15.6, "desc": "良好 · 主干知识扎实，个别细节待巩固"}, {"g": "C", "min": 10.4, "desc": "中等 · 基本思路具备，易错点仍需复盘"}, {"g": "D", "min": 5.2, "desc": "及格 · 建议逐题对照解析重做错题"}, {"g": "E", "min": 0.0, "desc": "待提高 · 建议先复习对应知识点再重新作答"}];
+
+  function inputsOf(q){ return Array.prototype.slice.call(q.querySelectorAll('input')); }
+  function chosenOf(q){ return inputsOf(q).filter(function(i){return i.checked;}).map(function(i){return i.value;}); }
+
+  // 计分：单选答对得满分、答错/不答 0 分；
+  // 多选：有错选或不答 0 分；否则该题满分均摊到每个正确选项（6 分 / 3 项 = 2 分，6 分 / 2 项 = 3 分）
+  function scoreOf(q){
+    var type = q.getAttribute('data-type');
+    var answer = q.getAttribute('data-answer');
+    var chosen = chosenOf(q);
+    var max = parseInt(q.getAttribute('data-max'), 10);
+    if (type === 'single'){
+      return (chosen.length === 1 && chosen[0] === answer) ? max : 0;
+    }
+    if (chosen.length === 0) return 0;                       // 不答得 0 分
+    for (var i=0;i<chosen.length;i++){
+      if (answer.indexOf(chosen[i]) === -1) return 0;       // 有错选得 0 分
+    }
+    var per = max / answer.length;                          // 满分均摊到每个正确选项
+    return Math.min(max, Math.round(chosen.length * per * 100) / 100);
+  }
+
+  function updateProgress(){
+    var done = questions.filter(function(q){ return chosenOf(q).length > 0; }).length;
+    progress.textContent = done + ' / ' + questions.length;
+  }
+
+  function gradeFor(score){
+    for (var i=0;i<BANDS.length;i++){ if (score >= BANDS[i].min) return BANDS[i]; }
+    return BANDS[BANDS.length-1];
+  }
+
+  // ===== 逐题推送 =====
+  // 一次只在页面上呈现一道题；章节汇总标题在答题阶段隐藏，提交后恢复。
+  function showQuestion(i){
+    current = i;
+    questions.forEach(function(q, idx){ q.hidden = (idx !== i); });
+    sections.forEach(function(s){ s.hidden = true; });
+    startBtn.hidden = true;
+    prevBtn.hidden = (i === 0);                         // 第 1 题无「上一题」
+    nextBtn.hidden = (i >= questions.length - 1);       // 最后一题无「下一题」
+    submitBtn.hidden = (i !== questions.length - 1);    // 「提交答案」只在最后一题出现
+    resetBtn.hidden = true;
+    var type = questions[i].getAttribute('data-type') === 'multi' ? '多项选择题' : '单项选择题';
+    navInfo.textContent = '第 ' + (i + 1) + ' / ' + questions.length + ' 题 · ' + type;
+    updateProgress();
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  function startQuiz(){ showQuestion(0); }
+  function nextQuestion(){ if (current >= 0 && (questions.length - 1) > current) showQuestion(current + 1); }
+  function prevQuestion(){ if (current > 0) showQuestion(current - 1); }
+
+  function submit(){
+    var total = 0;
+    questions.forEach(function(q){
+      var got = scoreOf(q);
+      total += got;
+      var answer = q.getAttribute('data-answer');
+      var max = parseInt(q.getAttribute('data-max'), 10);
+      var chosen = chosenOf(q);
+
+      // 逐题得分标签
+      var tag = q.querySelector('.q-got');
+      tag.textContent = '本题得 ' + got + ' / ' + max + ' 分';
+      tag.className = 'q-got ' + (got === max ? 'full' : (got > 0 ? 'part' : 'zero'));
+      tag.hidden = false;
+
+      // 选项判定着色：正确选项绿色，误选选项红色
+      q.querySelectorAll('.opt').forEach(function(opt){
+        var v = opt.querySelector('input').value;
+        if (answer.indexOf(v) !== -1) opt.classList.add('is-correct');
+        if (chosen.indexOf(v) !== -1 && answer.indexOf(v) === -1) opt.classList.add('is-wrong');
+        opt.classList.add('locked');
+      });
+      inputsOf(q).forEach(function(i){ i.disabled = true; });
+
+      // 显示答案与解析
+      q.querySelector('.sol').hidden = false;
+    });
+
+    // 总分与等级（显示在试卷标题下方）
+    var band = gradeFor(total);
+    scoreNum.textContent = total;
+    gradeBadge.textContent = band.g;
+    gradeBadge.className = 'grade-badge g-' + band.g;
+    gradeDesc.textContent = band.desc + '（得分率 ' + Math.round(total/TOTAL*100) + '%）';
+    resultBox.hidden = false;
+    gradeScale.hidden = false;   // 等级划分：提交后才显示
+    noticeBox.hidden = false;    // 答题说明：提交后才显示
+
+    // 提交后展开全部试题，便于逐题对照答案与解析复盘
+    questions.forEach(function(q){ q.hidden = false; });
+    sections.forEach(function(s){ s.hidden = false; });
+    startBtn.hidden = true;
+    prevBtn.hidden = true;
+    nextBtn.hidden = true;
+    submitBtn.hidden = true;
+    resetBtn.hidden = false;
+    navInfo.textContent = '已提交 · 全部试题与解析已展开';
+    progress.textContent = questions.length + ' / ' + questions.length;
+    resultBox.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+
+  function reset(){
+    questions.forEach(function(q){
+      inputsOf(q).forEach(function(i){ i.checked = false; i.disabled = false; });
+      q.querySelectorAll('.opt').forEach(function(opt){
+        opt.classList.remove('is-correct','is-wrong','locked');
+      });
+      q.querySelector('.sol').hidden = true;
+      var tag = q.querySelector('.q-got');
+      tag.hidden = true; tag.textContent = ''; tag.className = 'q-got';
+    });
+    // 回到「未开始」状态：隐藏全部试题，仅显示「开始答题」
+    questions.forEach(function(q){ q.hidden = true; });
+    sections.forEach(function(s){ s.hidden = true; });
+    current = -1;
+    resultBox.hidden = true;
+    gradeScale.hidden = true;
+    noticeBox.hidden = true;
+    startBtn.hidden = false;
+    prevBtn.hidden = true;
+    nextBtn.hidden = true;
+    submitBtn.hidden = true;
+    resetBtn.hidden = true;
+    navInfo.textContent = '点击「开始答题」逐题作答（共 ' + questions.length + ' 题）';
+    updateProgress();
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  // 页面加载时强制清空所有勾选，保证默认不勾选（含浏览器刷新恢复表单的情况）
+  function clearAll(){
+    inputsOf(form).forEach(function(i){ i.checked = false; i.disabled = false; });
+  }
+  clearAll();
+  if (typeof form.reset === 'function') form.reset();
+  clearAll();
+  // 初始态：隐藏全部试题与成绩相关区域，仅显示「开始答题」（含浏览器刷新恢复状态的情况）
+  questions.forEach(function(q){ q.hidden = true; });
+  sections.forEach(function(s){ s.hidden = true; });
+  resultBox.hidden = true;
+  gradeScale.hidden = true;
+  noticeBox.hidden = true;
+  startBtn.hidden = false;
+  prevBtn.hidden = true;
+  nextBtn.hidden = true;
+  submitBtn.hidden = true;
+  resetBtn.hidden = true;
+  navInfo.textContent = '点击「开始答题」逐题作答（共 ' + questions.length + ' 题）';
+  updateProgress();
+
+  form.addEventListener('change', updateProgress);
+  startBtn.addEventListener('click', startQuiz);
+  prevBtn.addEventListener('click', prevQuestion);
+  nextBtn.addEventListener('click', nextQuestion);
+  submitBtn.addEventListener('click', submit);
+  resetBtn.addEventListener('click', reset);
+})();
+</script>
+</body>
+</html>
