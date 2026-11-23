@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="2024—2033 新高考数学全国卷压轴题全息研究报告：覆盖九省联考、2024—2033 全国Ⅰ卷与Ⅱ卷，第8、11、14、18、19题逐题深度解析。">
+<title>十年新高考数学压轴题全景研究 · 2024—2033 全国卷Ⅰ/Ⅱ</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{color:#333;font:14px/1.5 "PingFang SC","Microsoft YaHei",Arial,"Helvetica Neue",Helvetica,STHeiTi,sans-serif}
+  body{background:#c4e7fa;min-height:100vh;-webkit-font-smoothing:antialiased}
+  a{text-decoration:none;color:inherit}
+  .main-container{width:100%}
+
+  /* 顶部标题横幅 */
+  .topbar{background:linear-gradient(135deg,#0a7fd4 0%,#1497e5 60%,#1aa6f0 100%);color:#fff;position:relative;overflow:hidden}
+  .topbar:after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;background:radial-gradient(circle,rgba(255,255,255,.18),transparent 70%);border-radius:50%}
+  .topbar .wrap{padding:42px 40px 38px;position:relative;z-index:1}
+  .topbar .crumbs{font-size:13px;opacity:.85;margin-bottom:12px}
+  .topbar h1{font-size:32px;font-weight:700;letter-spacing:1px}
+  .topbar h1 span{color:#ffe98b}
+  .topbar .sub{font-size:16px;opacity:.92;margin-top:10px}
+  .topbar .stats{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
+  .topbar .stat{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);border-radius:20px;padding:6px 18px;font-size:13px}
+
+  .wrap{width:1200px;margin:0 auto}
+
+  /* 筛选栏 */
+  .filter-bar{background:#fff;border-radius:20px;box-sizing:border-box;padding:20px 30px;margin:24px auto 0;display:flex;align-items:center;gap:14px;flex-wrap:wrap;box-shadow:0 6px 22px rgba(20,151,229,.10)}
+  .filter-label{border-left:4px solid #1497e5;color:#0075b9;font-size:16px;font-weight:600;padding-left:14px;white-space:nowrap}
+  .topic-item{background:#d4efff;border-radius:77px;color:#0a3a5c;cursor:pointer;font-size:15px;height:42px;min-width:104px;padding:0 20px;display:inline-flex;align-items:center;justify-content:center;transition:all .2s ease;border:none;font-family:inherit}
+  .topic-item:hover{background:#c0e0ff}
+  .topic-item.active{background:linear-gradient(90deg,#11a7ff,#0076fd);color:#fff;font-weight:600}
+
+  /* 试卷面板 */
+  .papers-panel{background:#fff;border-radius:20px;box-sizing:border-box;margin:22px auto 0;overflow:hidden;padding:38px 40px 50px;position:relative;text-align:center;width:1200px;box-shadow:0 6px 22px rgba(20,151,229,.10)}
+  .papers-panel:before{background:linear-gradient(180deg,#fff9d7,#fffbe2 29.59%,#fff 94.79%);content:"";display:block;height:130px;left:0;position:absolute;top:0;width:100%;z-index:1}
+  .papers-panel .inner{position:relative;z-index:2}
+
+  .year-group{margin-top:30px;text-align:left}
+  .year-group:first-of-type{margin-top:8px}
+  .group-head{font-size:20px;font-weight:700;color:#0075b9;margin:0 0 16px;padding-left:14px;border-left:5px solid #1497e5;display:flex;align-items:center;gap:12px}
+  .group-head .gtag{background:#ffe98b;border-radius:20px;font-size:13px;font-weight:600;color:#7a5b00;padding:4px 14px}
+  .group-head .gtag.pending{background:#e6e6e6;color:#999}
+  .pending-note{margin-top:14px;font-size:12px;color:#999;background:#f5f5f5;border-radius:8px;padding:8px 10px}
+
+  .paper-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .paper-card{background:linear-gradient(180deg,#f4fbff 0%,#ffffff 70%);border:1px solid #e3eef6;border-radius:16px;box-sizing:border-box;min-height:300px;padding:52px 0 24px;position:relative;text-align:center;transition:transform .18s ease,box-shadow .18s ease}
+  .paper-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(20,151,229,.18)}
+  .paper-card .lable{background:#08b693;border-radius:53px;color:#feffc1;font-size:13px;line-height:30px;position:absolute;right:14px;top:14px;width:74px}
+  .paper-card .lable.disabled{background:#ace2d7;color:#15746e}
+  .paper-card strong{font-size:22px;color:#1a1a1a;display:block}
+  .paper-card .ptag{display:inline-block;margin-top:8px;background:#eaf6ff;color:#0a6fb5;border-radius:14px;font-size:12px;padding:3px 12px}
+  .paper-card p{color:#5d5d5d;margin:10px 22px 0;font-size:13px;line-height:1.6}
+
+  .paper-link{display:inline-block;background:#1497e5;border:1px solid #1497e5;border-radius:8px;color:#fff;font-size:14px;line-height:1;margin-top:18px;padding:10px 34px;transition:background .15s}
+  .paper-link:hover{background:#0f96e6}
+
+  .q-title{margin:20px 16px 10px;font-size:13px;color:#0075b9;font-weight:600;text-align:left;padding-left:4px}
+  .q-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;padding:0 16px}
+  .q-btn{display:block;background:#eaf6ff;border:1px solid #cfe8ff;border-radius:8px;color:#0a6fb5;padding:9px 2px 7px;transition:all .15s ease}
+  .q-btn:hover{background:#1497e5;color:#fff;border-color:#1497e5}
+  .q-btn .qn{font-weight:700;font-size:16px;display:block;line-height:1.2}
+  .q-btn .qs{font-size:11px;opacity:.85;display:block;margin-top:3px;line-height:1.2}
+
+  .copyright{background:#19a7e3;color:#fff;font-size:14px;text-align:center;padding:24px 20px;margin-top:30px;line-height:1.7}
+  .copyright a{color:#ffe98b}
+
+  @media (max-width:1240px){
+    .wrap,.papers-panel,.filter-bar{width:auto;margin-left:16px;margin-right:16px}
+    .paper-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:680px){
+    .paper-grid{grid-template-columns:1fr}
+    .q-grid{grid-template-columns:repeat(5,1fr)}
+  }
+</style>
+</head>
+<body>
+<div class="main-container">
+
+  <!-- 顶部标题 -->
+  <header class="topbar">
+    <div class="wrap">
+      <div class="crumbs">新高考真题研究 · 数学压轴题全息报告</div>
+      <h1>十年新高考数学压轴题全景研究 <span>2024—2033</span></h1>
+      <div class="sub">九省联考 + 2024—2033 全国Ⅰ卷、Ⅱ卷 · 第 8、11、14、18、19 题逐题深度解析</div>
+      <div class="stats" id="stats">
+        <span class="stat">覆盖年份：10 年</span>
+        <span class="stat">试卷卡片：21 套</span>
+        <span class="stat">压轴题报告：105 份</span>
+        <span class="stat" id="statStatus">已上线 7 · 待上线 14</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 筛选栏 -->
+  <div class="wrap">
+    <div class="filter-bar" id="filterBar">
+      <span class="filter-label">按年份筛选</span>
+      <button class="topic-item" data-filter="all">全部</button>
+      <!-- 其余年份标签由脚本按数据动态生成，保证与下方试卷分组一致 -->
+    </div>
+  </div>
+
+  <!-- 试卷面板 -->
+  <section class="papers-panel">
+    <div class="inner" id="panel"></div>
+  </section>
+
+  <footer class="copyright">
+    十年新高考数学压轴题全息研究报告 · 数据来源：2024 九省联考适应性演练、2024—2033 新高考全国Ⅰ卷 / Ⅱ卷<br>
+    本页面为研究入口，点击卡片中的题号可查看对应试题的逐题全息解析报告；标注「待上线」的年份，将在该年高考后（每年 6 月 15 日起）自动转为「已上线」，届时上传对应素材即可查看。<br>
+  关于作者：金太阳教育研究院 · 资深研究员 · 侯美森 (微信号：wxid18170872245)
+</footer>
+
+</div>
+
+<script>
+  // 试卷数据：code 用于拼接报告文件名（code + 题号 + .html）与试卷文件名（code + .html）
+  // status: "online" = 已上线（绿标，可点击）；"pending" = 待上线（灰标，链接预置待上传）
+  const papers = [
+    { group:"a2490", groupName:"2024 · 九省联考适应性演练", groupTag:"适应性演练", code:"2490", name:"2024 九省联考", ptag:"新高考适应性演练", status:"online", desc:"2024 年 1 月九省联考（适应性演练）数学试题，压轴结构首次定型。" },
+    { group:"2024",  groupName:"2024 · 新高考全国卷",        groupTag:"全国卷",   code:"2401", name:"2024 全国Ⅰ卷", ptag:"新高考Ⅰ卷", status:"online", desc:"2024 新高考Ⅰ卷数学试题，第19题开启“宽入口窄出口”新范式。" },
+    { group:"2024",  groupName:"2024 · 新高考全国卷",        groupTag:"全国卷",   code:"2402", name:"2024 全国Ⅱ卷", ptag:"新高考Ⅱ卷", status:"online", desc:"2024 新高考Ⅱ卷数学试题，解答题压轴强调综合与创新。" },
+    { group:"2025",  groupName:"2025 · 新高考全国卷",        groupTag:"全国卷",   code:"2501", name:"2025 全国Ⅰ卷", ptag:"新高考Ⅰ卷", status:"online", desc:"2025 新高考Ⅰ卷数学试题，反套路、多思少算特征明显。" },
+    { group:"2025",  groupName:"2025 · 新高考全国卷",        groupTag:"全国卷",   code:"2502", name:"2025 全国Ⅱ卷", ptag:"新高考Ⅱ卷", status:"online", desc:"2025 新高考Ⅱ卷数学试题，压轴大题突出探究能力。" },
+    { group:"2026",  groupName:"2026 · 新高考全国卷",        groupTag:"全国卷",   code:"2601", name:"2026 全国Ⅰ卷", ptag:"新高考Ⅰ卷", status:"online", desc:"2026 新高考Ⅰ卷数学试题，考点布局稳中有变。" },
+    { group:"2026",  groupName:"2026 · 新高考全国卷",        groupTag:"全国卷",   code:"2602", name:"2026 全国Ⅱ卷", ptag:"新高考Ⅱ卷", status:"online", desc:"2026 新高考Ⅱ卷数学试题，压轴题兼顾基础与深度。" }
+  ];
+
+  // 新增 2027—2033 共 7 年，按相同逻辑（每年全国Ⅰ卷 + Ⅱ卷，各含 5 道压轴题）加入，状态为“待上线”
+  const futureYears = [2027,2028,2029,2030,2031,2032,2033];
+  futureYears.forEach(y => {
+    const yy = String(y).slice(2);                       // 取年份后两位：27 / 28 / ... / 33
+    [["Ⅰ","新高考Ⅰ卷"],["Ⅱ","新高考Ⅱ卷"]].forEach(([vol,ptag],i) => {
+      papers.push({
+        group:String(y),
+        groupName:y + " · 新高考全国卷",
+        groupTag:"待上线",
+        code:yy + (i === 0 ? "01" : "02"),               // 2701 / 2702 ... 3301 / 3302
+        name:y + " 全国" + vol + "卷",
+        ptag:ptag,
+        status:"pending",
+        desc:y + " 新高考" + vol + "卷数学试题压轴题研究报告。"
+      });
+    });
+  });
+
+  // 依据当前日期自动判定上线状态：每年 6 月 15 日（高考后）起，该年全国卷自动由「待上线」转为「已上线」
+  const RELEASE_MONTH = 5, RELEASE_DAY = 15; // 月份为 0 基，5 即 6 月
+  papers.forEach(p => {
+    const yr = (p.group === "a2490") ? 2024 : parseInt(p.group, 10);
+    p.year = yr;
+    p.status = (new Date() >= new Date(yr, RELEASE_MONTH, RELEASE_DAY)) ? "online" : "pending";
+  });
+  const onlineCount = papers.filter(p => p.status === "online").length;
+  const pendingCount = papers.length - onlineCount;
+  const statStatus = document.getElementById("statStatus");
+  if (statStatus) statStatus.textContent = "已上线 " + onlineCount + " · 待上线 " + pendingCount;
+
+  // 五道压轴题：n 为题号两位编码，用于拼接报告文件名
+  const questions = [
+    { n:"08", label:"第8题",  sub:"单选·压轴" },
+    { n:"11", label:"第11题", sub:"多选·压轴" },
+    { n:"14", label:"第14题", sub:"填空·压轴" },
+    { n:"18", label:"第18题", sub:"解答·压轴" },
+    { n:"19", label:"第19题", sub:"压轴大题" }
+  ];
+
+  const panel = document.getElementById("panel");
+
+  // 按 group 分组渲染
+  const groups = [];
+  papers.forEach(p => {
+    let g = groups.find(x => x.key === p.group);
+    if (!g) { g = { key:p.group, name:p.groupName, year:p.year, tag:p.groupTag, items:[] }; groups.push(g); }
+    g.items.push(p);
+  });
+
+  groups.forEach(g => {
+    const sec = document.createElement("div");
+    sec.className = "year-group";
+    sec.dataset.group = g.key;
+    const released = (new Date() >= new Date(g.year, 5, 15));
+    const tagText = (g.key === "a2490") ? "适应性演练" : (released ? "全国卷" : "待上线");
+    const gtagCls = released ? "gtag" : "gtag pending";
+    sec.innerHTML = '<div class="group-head">' + g.name +
+      '<span class="' + gtagCls + '">' + tagText + '</span></div>';
+    const grid = document.createElement("div");
+    grid.className = "paper-grid";
+
+    g.items.forEach(p => {
+      const online = (p.status === "online");
+      const labelCls = online ? "lable" : "lable disabled";
+      const labelText = online ? "已上线" : "待上线";
+      const labelTitle = online ? "已上线，点击可查看" : "待上线，内容整理中";
+      const card = document.createElement("article");
+      card.className = "paper-card";
+      let qBtns = "";
+      questions.forEach(q => {
+        qBtns += '<a class="q-btn" href="' + p.code + q.n + '.html" target="_self" title="' + labelTitle + '">' +
+          '<span class="qn">' + q.label + '</span>' +
+          '<span class="qs">' + q.sub + '</span></a>';
+      });
+      const note = online ? "" : '<div class="pending-note">内容整理中 · 上传对应素材后即可查看</div>';
+      card.innerHTML =
+        '<div class="' + labelCls + '" title="' + labelTitle + '">' + labelText + '</div>' +
+        '<strong>' + p.name + '</strong>' +
+        '<span class="ptag">' + p.ptag + '</span>' +
+        '<p>' + p.desc + '</p>' +
+        '<a class="paper-link" href="' + p.code + '.html" target="_self" title="' + labelTitle + '">' +
+          (online ? "查看完整试卷 →" : "试卷待上线 →") + '</a>' +
+        '<div class="q-title">逐题全息报告</div>' +
+        '<div class="q-grid">' + qBtns + '</div>' +
+        note;
+      grid.appendChild(card);
+    });
+
+    sec.appendChild(grid);
+    panel.appendChild(sec);
+  });
+
+  // 根据分组动态生成年份筛选标签（与下方试卷分组保持一致）
+  const bar = document.getElementById("filterBar");
+  groups.forEach(g => {
+    const b = document.createElement("button");
+    b.className = "topic-item";
+    b.dataset.filter = g.key;
+    b.textContent = (g.key === "a2490") ? "2024·九省" : g.key;
+    bar.appendChild(b);
+  });
+
+  // 应用筛选：同步按钮高亮与各年份分栏的显示状态
+  function applyFilter(f) {
+    document.querySelectorAll(".topic-item").forEach(b => {
+      b.classList.toggle("active", b.dataset.filter === f);
+    });
+    document.querySelectorAll(".year-group").forEach(sec => {
+      sec.style.display = (f === "all" || sec.dataset.group === f) ? "" : "none";
+    });
+  }
+
+  // 默认展示当年（按系统日期取年份）的试卷／报告；数据中没有该年时回退到「全部」
+  const thisYear = String(new Date().getFullYear());
+  const defaultFilter = groups.some(g => g.key === thisYear) ? thisYear : "all";
+  applyFilter(defaultFilter);
+
+  // 筛选交互
+  bar.addEventListener("click", function(e){
+    const btn = e.target.closest(".topic-item");
+    if (!btn) return;
+    applyFilter(btn.dataset.filter);
+  });
+</script>
+</body>
+</html>
