@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高中数学新教材 · 知识点目录导航（七版本 38 册）</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232563eb'/%3E%3Cpath d='M14 18h16a6 6 0 0 1 6 6v24a6 6 0 0 0-6-6H14z' fill='%23fff' opacity='.92'/%3E%3Cpath d='M50 18H36a6 6 0 0 0-6 6v24a6 6 0 0 1 6-6h14z' fill='%23a8e6d8'/%3E%3C/svg%3E">
+<style>
+:root{
+  /* ---- html-generator 调色板 ink-blue 墨蓝：20 语义色位 ---- */
+  --c-primary:#0f1e33; --c-accent:#3b82f6; --c-bg:#f4f7fb; --c-bg_deep:#e6edf6;
+  --c-bg_gradient_a:#f8fafc; --c-bg_gradient_b:#cfe0f5; --c-card:#ffffff;
+  --c-text:#1f2d3d; --c-text_secondary:#5b6b80; --c-border:#dbe4ef;
+  --c-primary_light:#c9d6f3; --c-accent_light:#e8f0fe; --c-primary_dark:#0a1626;
+  --c-accent_dark:#2563eb; --c-accent_bg:#eef5ff; --c-gradient_start:#1e3a5f;
+  --c-gradient_mid:#3b82f6; --c-gradient_end:#4f8ef7;
+  --c-success:#16a34a; --c-warning:#d97706;
+  /* ---- 页面别名（映射到调色板；版本品牌色保持数据语义不变） ---- */
+  --bg:var(--c-bg); --panel:var(--c-card); --ink:var(--c-text); --muted:var(--c-text_secondary);
+  --line:var(--c-border); --blue:var(--c-accent_dark); --blue-soft:var(--c-accent_light);
+  --teal:#0d9488; --teal-soft:#e0f7f3; --amber:var(--c-warning); --amber-soft:#fff3e0;
+  --shadow:0 2px 10px rgba(31,64,110,.06);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB","Segoe UI",sans-serif;
+  font-size:15px;line-height:1.7;-webkit-text-size-adjust:100%}
+a{color:inherit;text-decoration:none}
+button,input{font-family:inherit}
+::selection{background:#cfe3ff}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-thumb{background:#cbdcee;border-radius:8px;border:2px solid var(--bg)}
+::-webkit-scrollbar-thumb:hover{background:#a9c5e6}
+
+/* ---------- 顶栏：站名 + 搜索框 + 视图切换，同一行 ---------- */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);
+  border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+.tb-inner{max-width:1320px;margin:0 auto;padding:9px 24px;display:flex;
+  align-items:center;gap:16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:11px;flex:none}
+.logo{width:38px;height:38px;border-radius:11px;flex:none;
+  background:linear-gradient(135deg,#2563eb,#0e9384);color:#fff;display:grid;place-items:center;
+  font-weight:800;font-size:16px;box-shadow:0 4px 12px rgba(37,99,235,.22)}
+.brand-t{font-size:16px;font-weight:800;color:#12325b;letter-spacing:.3px;line-height:1.35}
+.brand-s{font-size:11.5px;color:var(--muted);line-height:1.3}
+.tb-right{display:flex;align-items:center;gap:12px;margin-left:auto;flex:none}
+.tb-hint{font-size:12px;color:#93a6b9}
+.seg{display:flex;background:#eef4fb;border:1px solid var(--line);padding:3px;border-radius:10px;gap:2px}
+.seg button{border:0;background:transparent;border-radius:8px;padding:6px 17px;font-size:13px;
+  color:#5b7189;cursor:pointer;transition:.18s;white-space:nowrap}
+.seg button.on{background:#fff;color:var(--blue);font-weight:800;box-shadow:0 1px 5px rgba(31,64,110,.12)}
+/* 顶栏内紧凑搜索框 */
+.searchwrap{flex:1 1 360px;max-width:620px;min-width:210px;display:flex;align-items:center;gap:8px;
+  background:#f8fbff;border:1px solid var(--line);border-radius:10px;padding:0 11px;height:38px;
+  transition:.2s}
+.searchwrap:focus-within{background:#fff;border-color:#8fb8f5;
+  box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.searchwrap svg{flex:none;color:#7e95ad}
+.searchwrap input{flex:1;min-width:0;border:0;outline:0;background:transparent;font-size:13.5px;color:var(--ink)}
+.searchwrap input::placeholder{color:#a2b3c5}
+.kbd{font-size:10.5px;color:#93a6b9;border:1px solid var(--line);border-radius:5px;
+  padding:0 5px;background:#fff;flex:none}
+.clearq{border:0;background:#eef4fb;color:#7b90a6;width:20px;height:20px;border-radius:5px;
+  cursor:pointer;line-height:1;font-size:14px;display:none;flex:none}
+.clearq.show{display:block}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid #dfeaf7;
+  background:linear-gradient(118deg,var(--c-bg_gradient_a) 0%,var(--c-card) 48%,var(--c-bg_gradient_b) 100%)}
+.hero::before{content:"";position:absolute;inset:0;
+  background-image:radial-gradient(#a9c9f2 1px,transparent 1px);background-size:23px 23px;
+  opacity:.33;-webkit-mask-image:linear-gradient(90deg,#000,transparent 78%);
+  mask-image:linear-gradient(90deg,#000,transparent 78%)}
+.hero-inner{max-width:1320px;margin:0 auto;padding:22px 24px 20px;position:relative}
+.hero h1{margin:0 0 6px;font-size:31px;line-height:1.3;letter-spacing:.5px;color:#102f57;font-weight:800}
+.hero h1 em{font-style:normal;background:linear-gradient(180deg,transparent 68%,#ffe6a8 68%)}
+.lead{margin:0;font-size:14px;color:#55708c;max-width:900px}
+
+/* ---------- 工具条 ---------- */
+.filterbar{position:sticky;top:56px;z-index:40;background:rgba(255,255,255,.95);
+  border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
+.fb-inner{max-width:1320px;margin:0 auto;padding:9px 24px;display:flex;gap:7px;
+  align-items:center;flex-wrap:wrap}
+.fchip{border:1px solid var(--line);background:#fff;color:#5b7189;border-radius:8px;
+  padding:5px 12px;font-size:12.5px;cursor:pointer;transition:.18s;white-space:nowrap}
+.fchip:hover{border-color:#9fc0f5;color:var(--blue)}
+.fchip.on{background:var(--blue);border-color:var(--blue);color:#fff;font-weight:700;
+  box-shadow:0 2px 8px rgba(37,99,235,.22)}
+.fb-sep{width:1px;height:20px;background:var(--line);margin:0 4px}
+.fb-right{margin-left:auto;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.count{font-size:12.5px;color:var(--muted)}
+.count b{color:var(--blue)}
+.toggle{border:1px solid var(--line);background:#f8fbff;color:#52708e;border-radius:8px;
+  padding:5px 11px;font-size:12.5px;cursor:pointer}
+.toggle:hover{border-color:#9fc0f5;color:var(--blue)}
+
+/* ---------- 主体 ---------- */
+.wrap{max-width:1320px;margin:0 auto;padding:24px 24px 56px}
+.topic-intro{background:#fff;border:1px solid var(--line);border-radius:13px;padding:13px 18px;
+  margin-bottom:18px;font-size:13px;color:#55708c;box-shadow:var(--shadow)}
+.topic-intro b{color:#173b68}
+.ver-block{margin-bottom:34px;scroll-margin-top:118px}
+.ver-block.flash .ver-head{animation:flash 1.1s ease}
+@keyframes flash{0%,100%{box-shadow:var(--shadow)}30%{box-shadow:0 0 0 4px #cfe3ff}}
+.ver-head{display:flex;align-items:center;gap:13px;padding:13px 17px;background:#fff;
+  border:1px solid var(--line);border-left:5px solid var(--vc);border-radius:14px;box-shadow:var(--shadow)}
+.ver-badge{width:48px;height:48px;border-radius:12px;flex:none;background:var(--vcs);color:var(--vc);
+  display:grid;place-items:center;font-weight:800;font-size:14px;letter-spacing:.3px}
+.ver-txt{min-width:0}
+.ver-name{font-size:18px;font-weight:800;color:#153a66;line-height:1.35}
+.ver-desc{font-size:12px;color:var(--muted)}
+.ver-meta{margin-left:auto;display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}
+.vm{background:#f5f9fe;border:1px solid var(--line);border-radius:8px;padding:3px 9px;
+  font-size:11.5px;color:#6b7d91;white-space:nowrap}
+.vm b{color:var(--vc);font-size:13px}
+.group-title{display:flex;align-items:center;gap:9px;margin:20px 2px 11px;font-size:14px;
+  font-weight:800;color:#2c4a69}
+.group-title::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+.gtag{font-size:11.5px;font-weight:800;border-radius:6px;padding:2px 9px}
+.gtag.b{background:var(--amber-soft);color:var(--amber)}
+.gtag.xb{background:var(--teal-soft);color:var(--teal)}
+.gcount{font-size:12px;font-weight:400;color:#9aabbb}
+.book-grid{display:grid;grid-template-columns:repeat(var(--cols,3),minmax(0,1fr));gap:16px;align-items:stretch}
+.book-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 15px 14px;
+  box-shadow:var(--shadow);display:flex;flex-direction:column;position:relative;overflow:hidden;
+  transition:transform .2s,box-shadow .2s,border-color .2s;animation:fadeUp .38s backwards;
+  animation-delay:var(--d,0s)}
+body.filtering .book-card,body.filtering .topic-card{animation:none}
+@keyframes fadeUp{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+.book-card::before{content:"";position:absolute;left:0;top:0;right:0;height:3px;background:var(--vc)}
+.book-card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(31,64,110,.13);border-color:#c8dcf5}
+.bc-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.pill{font-size:11.5px;font-weight:800;padding:3px 10px;border-radius:20px;white-space:nowrap}
+.pill.b{background:var(--amber-soft);color:var(--amber)}
+.pill.xb{background:var(--teal-soft);color:var(--teal)}
+.code{font-size:11px;color:#a4b4c4;font-family:Consolas,"Courier New",monospace;letter-spacing:.4px}
+.bc-name{margin:11px 0 1px;font-size:16px;font-weight:800;color:#173b68;line-height:1.4}
+.bc-sub{font-size:11.5px;color:#9aabbb;line-height:1.5;min-height:17px;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.metrics{display:flex;gap:5px;flex-wrap:wrap;margin:11px 0 10px}
+.metric{font-size:11.5px;color:#5b7189;background:#f5f9fe;border:1px solid #ecf2fa;
+  border-radius:6px;padding:2px 8px}
+.metric b{color:var(--vc)}
+.chapters{border-top:1px dashed var(--line);padding-top:7px;flex:1}
+.chapter{display:flex;align-items:center;gap:8px;padding:5px 6px;border-radius:8px;font-size:13px;
+  color:#415a74;transition:.15s}
+.chapter:hover{background:var(--vcs);color:var(--vc)}
+.ch-no{flex:none;min-width:23px;height:21px;padding:0 4px;border-radius:6px;background:#f0f5fc;
+  color:#7d93aa;font-size:10.5px;display:grid;place-items:center;font-weight:700}
+.chapter:hover .ch-no{background:#fff;color:var(--vc)}
+.ch-name{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ch-kp{flex:none;font-size:10.5px;color:#a4b4c4}
+.ch-arrow{flex:none;color:#bccddd;font-size:16px;line-height:1}
+.chapter.hit{background:#fff5e0;color:#92400e;box-shadow:inset 0 0 0 1px #f6d79c}
+.chapter.hit .ch-no{background:#fff;color:#b45309}
+.more{display:block;width:100%;margin-top:4px;border:0;background:#f7faff;color:#5b7fa9;
+  border-radius:7px;padding:5px;font-size:12px;cursor:pointer}
+.more:hover{background:var(--blue-soft);color:var(--blue)}
+.open-btn{margin-top:12px;height:38px;border-radius:10px;background:var(--vc);color:#fff;
+  display:flex;align-items:center;justify-content:center;gap:7px;font-size:13.5px;font-weight:800;
+  box-shadow:0 4px 10px rgba(31,64,110,.15);transition:.18s}
+.open-btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.open-btn svg{transition:transform .18s}
+.open-btn:hover svg{transform:translateX(3px)}
+
+/* ---------- 主题视图 ---------- */
+.topic-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
+.topic-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px 16px;
+  box-shadow:var(--shadow);animation:fadeUp .35s backwards;animation-delay:var(--d,0s)}
+.tc-head{display:flex;align-items:center;gap:10px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.tc-icon{width:30px;height:30px;border-radius:9px;background:var(--blue-soft);color:var(--blue);
+  display:grid;place-items:center;font-size:14px;font-weight:800;flex:none}
+.tc-name{font-size:15px;font-weight:800;color:#173b68}
+.tc-count{margin-left:auto;font-size:11.5px;color:#93a6b9;white-space:nowrap}
+.tc-list{margin-top:7px}
+.tc-item{display:flex;gap:8px;align-items:center;padding:5px 6px;border-radius:7px;
+  font-size:12.5px;color:#415a74;transition:.15s}
+.tc-item:hover{background:#f2f7ff;color:var(--blue)}
+.vbadge{font-size:10px;font-weight:800;color:#fff;border-radius:5px;padding:1px 6px;flex:none;
+  letter-spacing:.2px}
+.tc-book{color:#8fa2b6;font-size:11.5px;flex:none;white-space:nowrap}
+.tc-ch{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tc-arrow{color:#bccddd;font-size:15px;flex:none}
+.topic-more{display:block;width:100%;margin-top:7px;border:1px dashed #d7e5f6;background:#f8fbff;
+  color:#5b7fa9;border-radius:8px;padding:6px;font-size:12px;cursor:pointer}
+.topic-more:hover{background:var(--blue-soft);color:var(--blue)}
+
+/* ---------- 其它 ---------- */
+.empty{background:#fff;border:1px dashed #cddff2;border-radius:16px;padding:56px 20px;
+  text-align:center;color:#7d93aa}
+.empty b{display:block;font-size:17px;color:#2c4a69;margin-bottom:6px}
+footer{border-top:1px solid var(--line);background:#fff;color:#8b9db0;font-size:12px}
+.ft-inner{max-width:1320px;margin:0 auto;padding:18px 24px 26px;display:flex;gap:16px;
+  justify-content:space-between;flex-wrap:wrap;line-height:1.9}
+.ft-inner b{color:#5b7189}
+#toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,14px);z-index:99;
+  background:#16345c;color:#fff;padding:10px 18px;border-radius:10px;font-size:13px;
+  box-shadow:0 8px 26px rgba(16,47,87,.3);opacity:0;pointer-events:none;transition:.25s;max-width:88vw}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:1120px){.book-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.tb-hint{display:none}}
+@media(max-width:760px){
+  .hero h1{font-size:25px}
+  .book-grid,.topic-grid{grid-template-columns:1fr!important}
+  .tb-hint{display:none}.ver-meta{display:none}
+  .tb-inner{gap:9px}.searchwrap{order:3;flex-basis:100%;max-width:none}
+  .filterbar{position:static}.hero-inner{padding:18px 16px 16px}
+  .wrap,.tb-inner,.fb-inner,.ft-inner{padding-left:16px;padding-right:16px}
+}
+@media print{.topbar,.filterbar,#toast{display:none}.hero{background:#fff}}
+
+/* ========== 语义 class 配套样式（html-generator 规范：供转换器识别，视觉沿用本页设计） ========== */
+.title{position:relative}
+.heading{margin:0}
+.card{min-width:0}
+.stat{display:flex}
+.list{list-style:none;margin:0}
+</style>
+</head>
+<body class="mode-auto" data-palette="ink-blue">
+
+<header class="topbar">
+  <div class="tb-inner">
+    <div class="brand">
+      <div class="logo">数</div>
+      <div>
+        <div class="brand-t">新教材 · 知识点目录导航</div>
+        <div class="brand-s">普通高中数学 · 七大版本 · 全册章节一页直达</div>
+      </div>
+    </div>
+    <div class="searchwrap">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="搜索版本 / 教材 / 章节，例如：圆锥曲线、导数、鄂教版" autocomplete="off">
+      <span class="kbd">/</span>
+      <button class="clearq" id="clearq" title="清空">×</button>
+    </div>
+    <div class="tb-right">
+      <span class="tb-hint">离线单文件 · 无需联网</span>
+      <div class="seg" id="viewSeg">
+        <button data-view="version" class="on">按版本浏览</button>
+        <button data-view="topic">按主题速查</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="hero title">
+  <div class="hero-inner">
+    <h1 class="heading" data-level="1">高中数学新教材· <em>知识点目录导航</em></h1>
+  </div>
+</section>
+
+<div class="filterbar">
+  <div class="fb-inner" id="filterBar">
+    <span id="verChips"></span>
+    <span class="fb-sep"></span>
+    <button class="fchip" data-filter="b">必修</button>
+    <button class="fchip" data-filter="xb">选择性必修</button>
+    <button class="fchip" data-filter="all">全部</button>
+    <div class="fb-right">
+      <span class="count" id="resultCount"></span>
+      <button class="toggle" id="toggleChapters">收起章目录</button>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <div id="versionView"></div>
+  <div id="topicView" hidden>
+    <div class="topic-intro" id="topicIntro"></div>
+    <div class="topic-grid" id="topicGrid"></div>
+  </div>
+  <div class="empty" id="empty" hidden><b>没有找到匹配的内容</b>换个关键词试试，或点击「全部」重置筛选</div>
+</main>
+
+<footer>
+  <div class="ft-inner">
+    <div>
+      <b>使用说明</b>：点击册名按钮打开该册完整知识点目录；点击章节将打开该册并定位到对应章，
+      章名同时复制到剪贴板，可在教材页搜索框中粘贴精确定位。<br>
+      所有目录均为自包含单文件 HTML，38 个目录文件 · 155 章 · 11,656 条知识点。
+    </div>
+    <div style="text-align:right;white-space:nowrap">
+      <b>开发作者</b>：金太阳教育研究院·资深研究员·侯美森<br>
+      微信号：wxid18170872245
+    </div>
+  </div>
+</footer>
+
+<div id="toast"></div>
+
+<script id="navData" type="application/json">{"versions":[{"code":"RA","name":"人教A版","pub":"人民教育出版社 · A 版","color":"#2563eb","soft":"#eaf2ff","books":[{"code":"RAb1","file":"RAb1.html","ver":"RA","verName":"人教A版","color":"#2563eb","soft":"#eaf2ff","type":"b","typeLabel":"必修","volume":"第一册","volNum":1,"short":"必修 · 第一册","name":"人教A版 · 必修第一册","title":"人教A版数学必修第一册 知识点总结","brief":"主题：集合与常用逻辑 · 函数 · 指数对数 · 导数 · 三角函数与解三角形","stats":{"ch":5,"sec":41,"sub":61,"kp":398},"chapters":[{"id":"n-1","no":"第一章","name":"集合与常用逻辑用语","ord":"1","full":"第一章 集合与常用逻辑用语","meta":"8 节 · 12 小节 · 74 知识点","kp":74,"topic":"集合与常用逻辑"},{"id":"n-2","no":"第二章","name":"一元二次函数、方程和不等式","ord":"2","full":"第二章 一元二次函数、方程和不等式","meta":"4 节 · 4 小节 · 39 知识点","kp":39,"topic":"函数 · 指数对数 · 导数"},{"id":"n-3","no":"第三章","name":"函数的概念与性质","ord":"3","full":"第三章 函数的概念与性质","meta":"8 节 · 11 小节 · 73 知识点","kp":73,"topic":"函数 · 指数对数 · 导数"},{"id":"n-4","no":"第四章","name":"指数函数与对数函数","ord":"4","full":"第四章 指数函数与对数函数","meta":"8 节 · 15 小节 · 77 知识点","kp":77,"topic":"函数 · 指数对数 · 导数"},{"id":"n-5","no":"第五章","name":"三角函数","ord":"5","full":"第五章 三角函数","meta":"13 节 · 19 小节 · 135 知识点","kp":135,"topic":"三角函数与解三角形"}],"search":"人教a版 ra rab1 必修 · 第一册 人教a版数学必修第一册 知识点总结 第一章 集合与常用逻辑用语 第二章 一元二次函数、方程和不等式 第三章 函数的概念与性质 第四章 指数函数与对数函数 第五章 三角函数"},{"code":"RAb2","file":"RAb2.html","ver":"RA","verName":"人教A版","color":"#2563eb","soft":"#eaf2ff","type":"b","typeLabel":"必修","volume":"第二册","volNum":2,"short":"必修 · 第二册","name":"人教A版 · 必修第二册","title":"人教A版数学必修第二册 知识点总结","brief":"主题：平面向量与复数 · 立体几何与空间向量 · 概率与统计 等 4 类","stats":{"ch":6,"sec":39,"sub":76,"kp":540},"chapters":[{"id":"n-1","no":"第六章","name":"平面向量及其应用","ord":"6","full":"第六章 平面向量及其应用","meta":"8 节 · 19 小节 · 135 知识点","kp":135,"topic":"平面向量与复数"},{"id":"n-2","no":"第七章","name":"复数","ord":"7","full":"第七章 复数","meta":"6 节 · 9 小节 · 74 知识点","kp":74,"topic":"平面向量与复数"},{"id":"n-3","no":"第八章","name":"立体几何初步","ord":"8","full":"第八章 立体几何初步","meta":"11 节 · 25 小节 · 165 知识点","kp":165,"topic":"立体几何与空间向量"},{"id":"n-4","no":"第九章","name":"统计","ord":"9","full":"第九章 统计","meta":"8 节 · 13 小节 · 96 知识点","kp":96,"topic":"概率与统计"},{"id":"n-5","no":"第十章","name":"概率","ord":"10","full":"第十章 概率","meta":"5 节 · 9 小节 · 69 知识点","kp":69,"topic":"概率与统计"},{"id":"n-6","no":"附录","name":"部分中英文词汇索引","ord":"附","full":"附录：部分中英文词汇索引","meta":"1 节 · 1 小节 · 1 知识点","kp":1,"topic":"数学建模 · 探究 · 附录"}],"search":"人教a版 ra rab2 必修 · 第二册 人教a版数学必修第二册 知识点总结 第六章 平面向量及其应用 第七章 复数 第八章 立体几何初步 第九章 统计 第十章 概率 附录：部分中英文词汇索引"},{"code":"RAxb1","file":"RAxb1.html","ver":"RA","verName":"人教A版","color":"#2563eb","soft":"#eaf2ff","type":"xb","typeLabel":"选择性必修","volume":"第一册","volNum":1,"short":"选择性必修 · 第一册","name":"人教A版 · 选择性必修第一册","title":"人教A版数学选择性必修第一册 知识点总结","brief":"主题：立体几何与空间向量 · 解析几何 · 直线圆与圆锥曲线 · 数学建模 · 探究 · 附录","stats":{"ch":4,"sec":13,"sub":27,"kp":182},"chapters":[{"id":"n-1","no":"第一章","name":"空间向量与立体几何","ord":"1","full":"第一章 空间向量与立体几何","meta":"4 节 · 7 小节 · 62 知识点","kp":62,"topic":"立体几何与空间向量"},{"id":"n-2","no":"第二章","name":"直线和圆的方程","ord":"2","full":"第二章 直线和圆的方程","meta":"5 节 · 13 小节 · 62 知识点","kp":62,"topic":"解析几何 · 直线圆与圆锥曲线"},{"id":"n-3","no":"第三章","name":"圆锥曲线的方程","ord":"3","full":"第三章 圆锥曲线的方程","meta":"3 节 · 6 小节 · 54 知识点","kp":54,"topic":"解析几何 · 直线圆与圆锥曲线"},{"id":"n-4","no":"附录","name":"全书核心方法术语一览","ord":"附","full":"附录 全书核心方法术语一览","meta":"1 节 · 1 小节 · 4 知识点","kp":4,"topic":"数学建模 · 探究 · 附录"}],"search":"人教a版 ra raxb1 选择性必修 · 第一册 人教a版数学选择性必修第一册 知识点总结 第一章 空间向量与立体几何 第二章 直线和圆的方程 第三章 圆锥曲线的方程 附录 全书核心方法术语一览"},{"code":"RAxb2","file":"RAxb2.html","ver":"RA","verName":"人教A版","color":"#2563eb","soft":"#eaf2ff","type":"xb","typeLabel":"选择性必修","volume":"第二册","volNum":2,"short":"选择性必修 · 第二册","name":"人教A版 · 选择性必修第二册","title":"人教A版数学选择性必修第二册 知识点总结","brief":"主题：数列与数学归纳 · 函数 · 指数对数 · 导数 · 数学建模 · 探究 · 附录","stats":{"ch":3,"sec":12,"sub":18,"kp":176},"chapters":[{"id":"n-1","no":"第四章","name":"数列","ord":"4","full":"第四章 数列","meta":"5 节 · 7 小节 · 82 知识点","kp":82,"topic":"数列与数学归纳"},{"id":"n-2","no":"第五章","name":"一元函数的导数及其应用","ord":"5","full":"第五章 一元函数的导数及其应用","meta":"6 节 · 10 小节 · 85 知识点","kp":85,"topic":"函数 · 指数对数 · 导数"},{"id":"n-3","no":"附录","name":"全书核心公式与术语速查","ord":"附","full":"附录 全书核心公式与术语速查","meta":"1 节 · 1 小节 · 9 知识点","kp":9,"topic":"数学建模 · 探究 · 附录"}],"search":"人教a版 ra raxb2 选择性必修 · 第二册 人教a版数学选择性必修第二册 知识点总结 第四章 数列 第五章 一元函数的导数及其应用 附录 全书核心公式与术语速查"},{"code":"RAxb3","file":"RAxb3.html","ver":"RA","verName":"人教A版","color":"#2563eb","soft":"#eaf2ff","type":"xb","typeLabel":"选择性必修","volume":"第三册","volNum":3,"short":"选择性必修 · 第三册","name":"人教A版 · 选择性必修第三册","title":"人教A版数学选择性必修第三册 知识点总结","brief":"主题：计数原理与排列组合 · 概率与统计 · 数学建模 · 探究 · 附录","stats":{"ch":4,"sec":17,"sub":28,"kp":216},"chapters":[{"id":"n-1","no":"第六章","name":"计数原理","ord":"6","full":"第六章 计数原理","meta":"4 节 · 8 小节 · 60 知识点","kp":60,"topic":"计数原理与排列组合"},{"id":"n-2","no":"第七章","name":"随机变量及其分布","ord":"7","full":"第七章 随机变量及其分布","meta":"6 节 · 10 小节 · 66 知识点","kp":66,"topic":"概率与统计"},{"id":"n-3","no":"第八章","name":"成对数据的统计分析","ord":"8","full":"第八章 成对数据的统计分析","meta":"4 节 · 7 小节 · 73 知识点","kp":73,"topic":"概率与统计"},{"id":"n-4","no":"附录","name":"附录","ord":"附","full":"附录","meta":"3 节 · 3 小节 · 17 知识点","kp":17,"topic":"数学建模 · 探究 · 附录"}],"search":"人教a版 ra raxb3 选择性必修 · 第三册 人教a版数学选择性必修第三册 知识点总结 第六章 计数原理 第七章 随机变量及其分布 第八章 成对数据的统计分析 附录"}],"totals":{"books":5,"chapters":22,"kps":1512,"sections":122}},{"code":"RB","name":"人教B版","pub":"人民教育出版社 · B 版","color":"#0891b2","soft":"#e3f6fb","books":[{"code":"RBb1","file":"RBb1.html","ver":"RB","verName":"人教B版","color":"#0891b2","soft":"#e3f6fb","type":"b","typeLabel":"必修","volume":"第一册","volNum":1,"short":"必修 · 第一册","name":"人教B版 · 必修第一册","title":"人教B版 数学 必修第一册 知识点总结","brief":"主题：集合与常用逻辑 · 等式与不等式 · 函数 · 指数对数 · 导数","stats":{"ch":3,"sec":8,"sub":22,"kp":168},"chapters":[{"id":"n-1","no":"第一章","name":"集合与常用逻辑用语","ord":"1","full":"第一章 集合与常用逻辑用语","meta":"2 节 · 6 小节 · 50 知识点","kp":50,"topic":"集合与常用逻辑"},{"id":"n-2","no":"第二章","name":"等式与不等式","ord":"2","full":"第二章 等式与不等式","meta":"2 节 · 7 小节 · 54 知识点","kp":54,"topic":"等式与不等式"},{"id":"n-3","no":"第三章","name":"函数","ord":"3","full":"第三章 函数","meta":"4 节 · 9 小节 · 64 知识点","kp":64,"topic":"函数 · 指数对数 · 导数"}],"search":"人教b版 rb rbb1 必修 · 第一册 人教b版 数学 必修第一册 知识点总结 第一章 集合与常用逻辑用语 第二章 等式与不等式 第三章 函数"},{"code":"RBb2","file":"RBb2.html","ver":"RB","verName":"人教B版","color":"#0891b2","soft":"#e3f6fb","type":"b","typeLabel":"必修","volume":"第二册","volNum":2,"short":"必修 · 第二册","name":"人教B版 · 必修第二册","title":"人教B版 数学 必修第二册 知识点总结","brief":"主题：函数 · 指数对数 · 导数 · 概率与统计 · 平面向量与复数","stats":{"ch":3,"sec":14,"sub":30,"kp":165},"chapters":[{"id":"n-1","no":"第四章","name":"指数与对数函数","ord":"4","full":"第四章 指数与对数函数","meta":"7 节 · 10 小节 · 58 知识点","kp":58,"topic":"函数 · 指数对数 · 导数"},{"id":"n-2","no":"第五章","name":"统计与概率","ord":"5","full":"第五章 统计与概率","meta":"4 节 · 11 小节 · 57 知识点","kp":57,"topic":"概率与统计"},{"id":"n-3","no":"第六章","name":"平面向量","ord":"6","full":"第六章 平面向量","meta":"3 节 · 9 小节 · 50 知识点","kp":50,"topic":"平面向量与复数"}],"search":"人教b版 rb rbb2 必修 · 第二册 人教b版 数学 必修第二册 知识点总结 第四章 指数与对数函数 第五章 统计与概率 第六章 平面向量"},{"code":"RBb3","file":"RBb3.html","ver":"RB","verName":"人教B版","color":"#0891b2","soft":"#e3f6fb","type":"b","typeLabel":"必修","volume":"第三册","volNum":3,"short":"必修 · 第三册","name":"人教B版 · 必修第三册","title":"人教B版 数学 必修第三册 知识点总结","brief":"主题：三角函数与解三角形","stats":{"ch":2,"sec":6,"sub":19,"kp":103},"chapters":[{"id":"n-1","no":"第七章","name":"三角函数","ord":"7","full":"第七章 三角函数","meta":"4 节 · 12 小节 · 67 知识点","kp":67,"topic":"三角函数与解三角形"},{"id":"n-2","no":"第八章","name":"向量的数量积与三角恒等变换","ord":"8","full":"第八章 向量的数量积与三角恒等变换","meta":"2 节 · 7 小节 · 36 知识点","kp":36,"topic":"三角函数与解三角形"}],"search":"人教b版 rb rbb3 必修 · 第三册 人教b版 数学 必修第三册 知识点总结 第七章 三角函数 第八章 向量的数量积与三角恒等变换"},{"code":"RBb4","file":"RBb4.html","ver":"RB","verName":"人教B版","color":"#0891b2","soft":"#e3f6fb","type":"b","typeLabel":"必修","volume":"第四册","volNum":4,"short":"必修 · 第四册","name":"人教B版 · 必修第四册","title":"人教B版 数学 必修第四册 知识点总结","brief":"主题：三角函数与解三角形 · 平面向量与复数 · 立体几何与空间向量","stats":{"ch":3,"sec":10,"sub":21,"kp":132},"chapters":[{"id":"n-1","no":"第九章","name":"解三角形","ord":"9","full":"第九章 解三角形","meta":"3 节 · 4 小节 · 24 知识点","kp":24,"topic":"三角函数与解三角形"},{"id":"n-2","no":"第十章","name":"复数","ord":"10","full":"第十章 复数","meta":"3 节 · 5 小节 · 30 知识点","kp":30,"topic":"平面向量与复数"},{"id":"n-3","no":"第十一章","name":"立体几何初步","ord":"11","full":"第十一章 立体几何初步","meta":"4 节 · 12 小节 · 78 知识点","kp":78,"topic":"立体几何与空间向量"}],"search":"人教b版 rb rbb4 必修 · 第四册 人教b版 数学 必修第四册 知识点总结 第九章 解三角形 第十章 复数 第十一章 立体几何初步"},{"code":"RBxb1","file":"RBxb1.html","ver":"RB","verName":"人教B版","color":"#0891b2","soft":"#e3f6fb","type":"xb","typeLabel":"选择性必修","volume":"第一册","volNum":1,"short":"选择性必修 · 第一册","name":"人教B版 · 选择性必修第一册","title":"人教B版 数学 选择性必修第一册 知识点总结","brief":"主题：立体几何与空间向量 · 解析几何 · 直线圆与圆锥曲线","stats":{"ch":2,"sec":10,"sub":25,"kp":150},"chapters":[{"id":"n-1","no":"第一章","name":"空间向量与立体几何","ord":"1","full":"第一章 空间向量与立体几何","meta":"2 节 · 8 小节 · 48 知识点","kp":48,"topic":"立体几何与空间向量"},{"id":"n-2","no":"第二章","name":"平面解析几何","ord":"2","full":"第二章 平面解析几何","meta":"8 节 · 17 小节 · 102 知识点","kp":102,"topic":"解析几何 · 直线圆与圆锥曲线"}],"search":"人教b版 rb rbxb1 选择性必修 · 第一册 人教b版 数学 选择性必修第一册 知识点总结 第一章 空间向量与立体几何 第二章 平面解析几何"},{"code":"RBxb2","file":"RBxb2.html","ver":"RB","verName":"人教B版","color":"#0891b2","soft":"#e3f6fb","type":"xb","typeLabel":"选择性必修","volume":"第二册","volNum":2,"short":"选择性必修 · 第二册","name":"人教B版 · 选择性必修第二册","title":"人教B版 数学 选择性必修第二册 知识点总结","brief":"主题：计数原理与排列组合 · 概率与统计","stats":{"ch":2,"sec":7,"sub":16,"kp":76},"chapters":[{"id":"n-1","no":"第三章","name":"计数原理","ord":"3","full":"第三章 计数原理","meta":"3 节 · 5 小节 · 25 知识点","kp":25,"topic":"计数原理与排列组合"},{"id":"n-2","no":"第四章","name":"概率与统计","ord":"4","full":"第四章 概率与统计","meta":"4 节 · 11 小节 · 51 知识点","kp":51,"topic":"概率与统计"}],"search":"人教b版 rb rbxb2 选择性必修 · 第二册 人教b版 数学 选择性必修第二册 知识点总结 第三章 计数原理 第四章 概率与统计"},{"code":"RBxb3","file":"RBxb3.html","ver":"RB","verName":"人教B版","color":"#0891b2","soft":"#e3f6fb","type":"xb","typeLabel":"选择性必修","volume":"第三册","volNum":3,"short":"选择性必修 · 第三册","name":"人教B版 · 选择性必修第三册","title":"人教B版 数学 选择性必修第三册 知识点总结","brief":"主题：数列与数学归纳 · 函数 · 指数对数 · 导数","stats":{"ch":2,"sec":9,"sub":16,"kp":64},"chapters":[{"id":"n-1","no":"第五章","name":"数列","ord":"5","full":"第五章 数列","meta":"5 节 · 8 小节 · 34 知识点","kp":34,"topic":"数列与数学归纳"},{"id":"n-2","no":"第六章","name":"导数及其应用","ord":"6","full":"第六章 导数及其应用","meta":"4 节 · 8 小节 · 30 知识点","kp":30,"topic":"函数 · 指数对数 · 导数"}],"search":"人教b版 rb rbxb3 选择性必修 · 第三册 人教b版 数学 选择性必修第三册 知识点总结 第五章 数列 第六章 导数及其应用"}],"totals":{"books":7,"chapters":17,"kps":858,"sections":64}},{"code":"BSD","name":"北师大版","pub":"北京师范大学出版社","color":"#7c3aed","soft":"#f1eaff","books":[{"code":"BSDb1","file":"BSDb1.html","ver":"BSD","verName":"北师大版","color":"#7c3aed","soft":"#f1eaff","type":"b","typeLabel":"必修","volume":"第一册","volNum":1,"short":"必修 · 第一册","name":"北师大版 · 必修第一册","title":"北师大版 数学 必修 第一册 知识点总结","brief":"主题：集合与常用逻辑 · 函数 · 指数对数 · 导数 · 概率与统计 等 4 类","stats":{"ch":8,"sec":52,"sub":67,"kp":397},"chapters":[{"id":"n-1","no":"第一章","name":"预备知识","ord":"1","full":"第一章 预备知识","meta":"10 节 · 18 小节 · 108 知识点","kp":108,"topic":"集合与常用逻辑"},{"id":"n-2","no":"第二章","name":"函数","ord":"2","full":"第二章 函数","meta":"6 节 · 10 小节 · 58 知识点","kp":58,"topic":"函数 · 指数对数 · 导数"},{"id":"n-3","no":"第三章","name":"指数运算与指数函数","ord":"3","full":"第三章 指数运算与指数函数","meta":"4 节 · 5 小节 · 30 知识点","kp":30,"topic":"函数 · 指数对数 · 导数"},{"id":"n-4","no":"第四章","name":"对数运算与对数函数","ord":"4","full":"第四章 对数运算与对数函数","meta":"7 节 · 7 小节 · 42 知识点","kp":42,"topic":"函数 · 指数对数 · 导数"},{"id":"n-5","no":"第五章","name":"函数应用","ord":"5","full":"第五章 函数应用","meta":"4 节 · 5 小节 · 30 知识点","kp":30,"topic":"函数 · 指数对数 · 导数"},{"id":"n-6","no":"第六章","name":"统计","ord":"6","full":"第六章 统计","meta":"10 节 · 11 小节 · 65 知识点","kp":65,"topic":"概率与统计"},{"id":"n-7","no":"第七章","name":"概率","ord":"7","full":"第七章 概率","meta":"8 节 · 8 小节 · 46 知识点","kp":46,"topic":"概率与统计"},{"id":"n-8","no":"第八章","name":"数学建模活动（一）","ord":"8","full":"第八章 数学建模活动（一）","meta":"3 节 · 3 小节 · 18 知识点","kp":18,"topic":"数学建模 · 探究 · 附录"}],"search":"北师大版 bsd bsdb1 必修 · 第一册 北师大版 数学 必修 第一册 知识点总结 第一章 预备知识 第二章 函数 第三章 指数运算与指数函数 第四章 对数运算与对数函数 第五章 函数应用 第六章 统计 第七章 概率 第八章 数学建模活动（一）"},{"code":"BSDb2","file":"BSDb2.html","ver":"BSD","verName":"北师大版","color":"#7c3aed","soft":"#f1eaff","type":"b","typeLabel":"必修","volume":"第二册","volNum":2,"short":"必修 · 第二册","name":"北师大版 · 必修第二册","title":"北师大版 数学 必修 第二册 知识点总结","brief":"主题：三角函数与解三角形 · 平面向量与复数 · 数学建模 · 探究 · 附录 等 4 类","stats":{"ch":6,"sec":45,"sub":66,"kp":387},"chapters":[{"id":"n-1","no":"第一章","name":"三角函数","ord":"1","full":"第一章 三角函数","meta":"18 节 · 20 小节 · 111 知识点","kp":111,"topic":"三角函数与解三角形"},{"id":"n-2","no":"第二章","name":"平面向量及其应用","ord":"2","full":"第二章 平面向量及其应用","meta":"13 节 · 14 小节 · 84 知识点","kp":84,"topic":"平面向量与复数"},{"id":"n-3","no":"第三章","name":"数学建模活动（二）","ord":"3","full":"第三章 数学建模活动（二）","meta":"2 节 · 2 小节 · 12 知识点","kp":12,"topic":"数学建模 · 探究 · 附录"},{"id":"n-4","no":"第四章","name":"三角恒等变换","ord":"4","full":"第四章 三角恒等变换","meta":"3 节 · 9 小节 · 54 知识点","kp":54,"topic":"三角函数与解三角形"},{"id":"n-5","no":"第五章","name":"复数","ord":"5","full":"第五章 复数","meta":"3 节 · 7 小节 · 42 知识点","kp":42,"topic":"平面向量与复数"},{"id":"n-6","no":"第六章","name":"立体几何初步","ord":"6","full":"第六章 立体几何初步","meta":"6 节 · 14 小节 · 84 知识点","kp":84,"topic":"立体几何与空间向量"}],"search":"北师大版 bsd bsdb2 必修 · 第二册 北师大版 数学 必修 第二册 知识点总结 第一章 三角函数 第二章 平面向量及其应用 第三章 数学建模活动（二） 第四章 三角恒等变换 第五章 复数 第六章 立体几何初步"},{"code":"BSDxb1","file":"BSDxb1.html","ver":"BSD","verName":"北师大版","color":"#7c3aed","soft":"#f1eaff","type":"xb","typeLabel":"选择性必修","volume":"第一册","volNum":1,"short":"选择性必修 · 第一册","name":"北师大版 · 选择性必修第一册","title":"北师大版 数学 选择性必修 第一册 知识点总结","brief":"主题：解析几何 · 直线圆与圆锥曲线 · 立体几何与空间向量 · 数学建模 · 探究 · 附录 等 5 类","stats":{"ch":7,"sec":25,"sub":66,"kp":295},"chapters":[{"id":"n-1","no":"第一章","name":"直线与圆","ord":"1","full":"第一章 直线与圆","meta":"2 节 · 11 小节 · 43 知识点","kp":43,"topic":"解析几何 · 直线圆与圆锥曲线"},{"id":"n-2","no":"第二章","name":"圆锥曲线","ord":"2","full":"第二章 圆锥曲线","meta":"4 节 · 9 小节 · 43 知识点","kp":43,"topic":"解析几何 · 直线圆与圆锥曲线"},{"id":"n-3","no":"第三章","name":"空间向量与立体几何","ord":"3","full":"第三章 空间向量与立体几何","meta":"5 节 · 10 小节 · 60 知识点","kp":60,"topic":"立体几何与空间向量"},{"id":"n-4","no":"第四章","name":"数学建模活动（三）","ord":"4","full":"第四章 数学建模活动（三）","meta":"2 节 · 7 小节 · 17 知识点","kp":17,"topic":"数学建模 · 探究 · 附录"},{"id":"n-5","no":"第五章","name":"计数原理","ord":"5","full":"第五章 计数原理","meta":"4 节 · 10 小节 · 41 知识点","kp":41,"topic":"计数原理与排列组合"},{"id":"n-6","no":"第六章","name":"概率","ord":"6","full":"第六章 概率","meta":"5 节 · 11 小节 · 56 知识点","kp":56,"topic":"概率与统计"},{"id":"n-7","no":"第七章","name":"统计案例","ord":"7","full":"第七章 统计案例","meta":"3 节 · 8 小节 · 35 知识点","kp":35,"topic":"概率与统计"}],"search":"北师大版 bsd bsdxb1 选择性必修 · 第一册 北师大版 数学 选择性必修 第一册 知识点总结 第一章 直线与圆 第二章 圆锥曲线 第三章 空间向量与立体几何 第四章 数学建模活动（三） 第五章 计数原理 第六章 概率 第七章 统计案例"},{"code":"BSDxb2","file":"BSDxb2.html","ver":"BSD","verName":"北师大版","color":"#7c3aed","soft":"#f1eaff","type":"xb","typeLabel":"选择性必修","volume":"第二册","volNum":2,"short":"选择性必修 · 第二册","name":"北师大版 · 选择性必修第二册","title":"北师大版 数学 选择性必修 第二册 知识点总结","brief":"主题：数列与数学归纳 · 函数 · 指数对数 · 导数","stats":{"ch":2,"sec":14,"sub":25,"kp":136},"chapters":[{"id":"n-1","no":"第一章","name":"数列","ord":"1","full":"第一章 数列","meta":"5 节 · 9 小节 · 55 知识点","kp":55,"topic":"数列与数学归纳"},{"id":"n-2","no":"第二章","name":"导数及其应用","ord":"2","full":"第二章 导数及其应用","meta":"9 节 · 16 小节 · 81 知识点","kp":81,"topic":"函数 · 指数对数 · 导数"}],"search":"北师大版 bsd bsdxb2 选择性必修 · 第二册 北师大版 数学 选择性必修 第二册 知识点总结 第一章 数列 第二章 导数及其应用"}],"totals":{"books":4,"chapters":23,"kps":1215,"sections":136}},{"code":"SJ","name":"苏教版","pub":"江苏凤凰教育出版社","color":"#ea7317","soft":"#fff1e2","books":[{"code":"SJb1","file":"SJb1.html","ver":"SJ","verName":"苏教版","color":"#ea7317","soft":"#fff1e2","type":"b","typeLabel":"必修","volume":"第一册","volNum":1,"short":"必修 · 第一册","name":"苏教版 · 必修第一册","title":"苏教版 普通高中教科书·数学 必修第一册 知识点总结","brief":"主题：集合与常用逻辑 · 等式与不等式 · 函数 · 指数对数 · 导数 等 4 类","stats":{"ch":8,"sec":24,"sub":54,"kp":272},"chapters":[{"id":"n-1","no":"第1章","name":"集合","ord":"1","full":"第1章 集合","meta":"3 节 · 8 小节 · 38 知识点","kp":38,"topic":"集合与常用逻辑"},{"id":"n-2","no":"第2章","name":"常用逻辑用语","ord":"2","full":"第2章 常用逻辑用语","meta":"3 节 · 8 小节 · 30 知识点","kp":30,"topic":"集合与常用逻辑"},{"id":"n-3","no":"第3章","name":"不等式","ord":"3","full":"第3章 不等式","meta":"3 节 · 6 小节 · 32 知识点","kp":32,"topic":"等式与不等式"},{"id":"n-4","no":"第4章","name":"指数与对数","ord":"4","full":"第4章 指数与对数","meta":"2 节 · 4 小节 · 23 知识点","kp":23,"topic":"函数 · 指数对数 · 导数"},{"id":"n-5","no":"第5章","name":"函数概念与性质","ord":"5","full":"第5章 函数概念与性质","meta":"4 节 · 8 小节 · 36 知识点","kp":36,"topic":"函数 · 指数对数 · 导数"},{"id":"n-6","no":"第6章","name":"幂函数、指数函数和对数函数","ord":"6","full":"第6章 幂函数、指数函数和对数函数","meta":"3 节 · 6 小节 · 28 知识点","kp":28,"topic":"函数 · 指数对数 · 导数"},{"id":"n-7","no":"第7章","name":"三角函数","ord":"7","full":"第7章 三角函数","meta":"4 节 · 10 小节 · 65 知识点","kp":65,"topic":"三角函数与解三角形"},{"id":"n-8","no":"第8章","name":"函数应用","ord":"8","full":"第8章 函数应用","meta":"2 节 · 4 小节 · 20 知识点","kp":20,"topic":"函数 · 指数对数 · 导数"}],"search":"苏教版 sj sjb1 必修 · 第一册 苏教版 普通高中教科书·数学 必修第一册 知识点总结 第1章 集合 第2章 常用逻辑用语 第3章 不等式 第4章 指数与对数 第5章 函数概念与性质 第6章 幂函数、指数函数和对数函数 第7章 三角函数 第8章 函数应用"},{"code":"SJb2","file":"SJb2.html","ver":"SJ","verName":"苏教版","color":"#ea7317","soft":"#fff1e2","type":"b","typeLabel":"必修","volume":"第二册","volNum":2,"short":"必修 · 第二册","name":"苏教版 · 必修第二册","title":"苏教版 普通高中教科书·数学 必修第二册 知识点总结","brief":"主题：平面向量与复数 · 三角函数与解三角形 · 立体几何与空间向量 等 4 类","stats":{"ch":7,"sec":24,"sub":73,"kp":518},"chapters":[{"id":"n-1","no":"第9章","name":"平面向量","ord":"9","full":"第9章 平面向量","meta":"4 节 · 11 小节 · 87 知识点","kp":87,"topic":"平面向量与复数"},{"id":"n-2","no":"第10章","name":"三角恒等变换","ord":"10","full":"第10章 三角恒等变换","meta":"3 节 · 10 小节 · 63 知识点","kp":63,"topic":"三角函数与解三角形"},{"id":"n-3","no":"第11章","name":"解三角形","ord":"11","full":"第11章 解三角形","meta":"3 节 · 8 小节 · 42 知识点","kp":42,"topic":"三角函数与解三角形"},{"id":"n-4","no":"第12章","name":"复数","ord":"12","full":"第12章 复数","meta":"4 节 · 14 小节 · 73 知识点","kp":73,"topic":"平面向量与复数"},{"id":"n-5","no":"第13章","name":"立体几何初步","ord":"13","full":"第13章 立体几何初步","meta":"3 节 · 9 小节 · 102 知识点","kp":102,"topic":"立体几何与空间向量"},{"id":"n-6","no":"第14章","name":"统计","ord":"14","full":"第14章 统计","meta":"4 节 · 10 小节 · 74 知识点","kp":74,"topic":"概率与统计"},{"id":"n-7","no":"第15章","name":"概率","ord":"15","full":"第15章 概率","meta":"3 节 · 11 小节 · 77 知识点","kp":77,"topic":"概率与统计"}],"search":"苏教版 sj sjb2 必修 · 第二册 苏教版 普通高中教科书·数学 必修第二册 知识点总结 第9章 平面向量 第10章 三角恒等变换 第11章 解三角形 第12章 复数 第13章 立体几何初步 第14章 统计 第15章 概率"},{"code":"SJxb1","file":"SJxb1.html","ver":"SJ","verName":"苏教版","color":"#ea7317","soft":"#fff1e2","type":"xb","typeLabel":"选择性必修","volume":"第一册","volNum":1,"short":"选择性必修 · 第一册","name":"苏教版 · 选择性必修第一册","title":"苏教版 普通高中教科书·数学 选择性必修第一册 知识点总结","brief":"主题：解析几何 · 直线圆与圆锥曲线 · 数列与数学归纳 · 函数 · 指数对数 · 导数","stats":{"ch":5,"sec":18,"sub":44,"kp":312},"chapters":[{"id":"n-1","no":"第1章","name":"直线与方程","ord":"1","full":"第1章 直线与方程","meta":"5 节 · 11 小节 · 77 知识点","kp":77,"topic":"解析几何 · 直线圆与圆锥曲线"},{"id":"n-2","no":"第2章","name":"圆与方程","ord":"2","full":"第2章 圆与方程","meta":"3 节 · 8 小节 · 46 知识点","kp":46,"topic":"解析几何 · 直线圆与圆锥曲线"},{"id":"n-3","no":"第3章","name":"圆锥曲线与方程","ord":"3","full":"第3章 圆锥曲线与方程","meta":"3 节 · 6 小节 · 55 知识点","kp":55,"topic":"解析几何 · 直线圆与圆锥曲线"},{"id":"n-4","no":"第4章","name":"数列","ord":"4","full":"第4章 数列","meta":"4 节 · 11 小节 · 67 知识点","kp":67,"topic":"数列与数学归纳"},{"id":"n-5","no":"第5章","name":"导数及其应用","ord":"5","full":"第5章 导数及其应用","meta":"3 节 · 8 小节 · 67 知识点","kp":67,"topic":"函数 · 指数对数 · 导数"}],"search":"苏教版 sj sjxb1 选择性必修 · 第一册 苏教版 普通高中教科书·数学 选择性必修第一册 知识点总结 第1章 直线与方程 第2章 圆与方程 第3章 圆锥曲线与方程 第4章 数列 第5章 导数及其应用"},{"code":"SJxb2","file":"SJxb2.html","ver":"SJ","verName":"苏教版","color":"#ea7317","soft":"#fff1e2","type":"xb","typeLabel":"选择性必修","volume":"第二册","volNum":2,"short":"选择性必修 · 第二册","name":"苏教版 · 选择性必修第二册","title":"苏教版 普通高中教科书·数学 选择性必修第二册 知识点总结","brief":"主题：立体几何与空间向量 · 计数原理与排列组合 · 概率与统计","stats":{"ch":4,"sec":12,"sub":35,"kp":229},"chapters":[{"id":"n-1","no":"第6章","name":"空间向量与立体几何","ord":"6","full":"第6章 空间向量与立体几何","meta":"3 节 · 9 小节 · 71 知识点","kp":71,"topic":"立体几何与空间向量"},{"id":"n-2","no":"第7章","name":"计数原理","ord":"7","full":"第7章 计数原理","meta":"4 节 · 12 小节 · 57 知识点","kp":57,"topic":"计数原理与排列组合"},{"id":"n-3","no":"第8章","name":"概率","ord":"8","full":"第8章 概率","meta":"3 节 · 10 小节 · 67 知识点","kp":67,"topic":"概率与统计"},{"id":"n-4","no":"第9章","name":"统计","ord":"9","full":"第9章 统计","meta":"2 节 · 4 小节 · 34 知识点","kp":34,"topic":"概率与统计"}],"search":"苏教版 sj sjxb2 选择性必修 · 第二册 苏教版 普通高中教科书·数学 选择性必修第二册 知识点总结 第6章 空间向量与立体几何 第7章 计数原理 第8章 概率 第9章 统计"}],"totals":{"books":4,"chapters":24,"kps":1331,"sections":78}},{"code":"XJ","name":"湘教版","pub":"湖南教育出版社","color":"#db2777","soft":"#ffeaf4","books":[{"code":"XJb1","file":"XJb1.html","ver":"XJ","verName":"湘教版","color":"#db2777","soft":"#ffeaf4","type":"b","typeLabel":"必修","volume":"第一册","volNum":1,"short":"必修 · 第一册","name":"湘教版 · 必修第一册","title":"湘教版 高中数学 必修第一册 知识点总结","brief":"主题：集合与常用逻辑 · 函数 · 指数对数 · 导数 · 三角函数与解三角形 等 4 类","stats":{"ch":6,"sec":21,"sub":48,"kp":299},"chapters":[{"id":"n-1","no":"第1章","name":"集合与逻辑","ord":"1","full":"第1章 集合与逻辑","meta":"2 节 · 6 小节 · 39 知识点","kp":39,"topic":"集合与常用逻辑"},{"id":"n-2","no":"第2章","name":"一元二次函数、方程和不等式","ord":"2","full":"第2章 一元二次函数、方程和不等式","meta":"3 节 · 7 小节 · 42 知识点","kp":42,"topic":"函数 · 指数对数 · 导数"},{"id":"n-3","no":"第3章","name":"函数的概念与性质","ord":"3","full":"第3章 函数的概念与性质","meta":"2 节 · 5 小节 · 33 知识点","kp":33,"topic":"函数 · 指数对数 · 导数"},{"id":"n-4","no":"第4章","name":"幂函数、指数函数和对数函数","ord":"4","full":"第4章 幂函数、指数函数和对数函数","meta":"5 节 · 12 小节 · 75 知识点","kp":75,"topic":"函数 · 指数对数 · 导数"},{"id":"n-5","no":"第5章","name":"三角函数","ord":"5","full":"第5章 三角函数","meta":"5 节 · 9 小节 · 54 知识点","kp":54,"topic":"三角函数与解三角形"},{"id":"n-6","no":"第6章","name":"统计学初步","ord":"6","full":"第6章 统计学初步","meta":"4 节 · 9 小节 · 56 知识点","kp":56,"topic":"概率与统计"}],"search":"湘教版 xj xjb1 必修 · 第一册 湘教版 高中数学 必修第一册 知识点总结 第1章 集合与逻辑 第2章 一元二次函数、方程和不等式 第3章 函数的概念与性质 第4章 幂函数、指数函数和对数函数 第5章 三角函数 第6章 统计学初步"},{"code":"XJb2","file":"XJb2.html","ver":"XJ","verName":"湘教版","color":"#db2777","soft":"#ffeaf4","type":"b","typeLabel":"必修","volume":"第二册","volNum":2,"short":"必修 · 第二册","name":"湘教版 · 必修第二册","title":"湘教版高中数学必修第二册 知识点总结","brief":"主题：平面向量与复数 · 三角函数与解三角形 · 立体几何与空间向量 等 5 类","stats":{"ch":6,"sec":28,"sub":64,"kp":394},"chapters":[{"id":"n-1","no":"第1章","name":"平面向量及其应用","ord":"1","full":"第1章 平面向量及其应用","meta":"7 节 · 18 小节 · 118 知识点","kp":118,"topic":"平面向量与复数"},{"id":"n-2","no":"第2章","name":"三角恒等变换","ord":"2","full":"第2章 三角恒等变换","meta":"3 节 · 6 小节 · 45 知识点","kp":45,"topic":"三角函数与解三角形"},{"id":"n-3","no":"第3章","name":"复数","ord":"3","full":"第3章 复数","meta":"4 节 · 11 小节 · 67 知识点","kp":67,"topic":"平面向量与复数"},{"id":"n-4","no":"第4章","name":"立体几何初步","ord":"4","full":"第4章 立体几何初步","meta":"5 节 · 14 小节 · 86 知识点","kp":86,"topic":"立体几何与空间向量"},{"id":"n-5","no":"第5章","name":"概率","ord":"5","full":"第5章 概率","meta":"4 节 · 9 小节 · 45 知识点","kp":45,"topic":"概率与统计"},{"id":"n-6","no":"第6章","name":"数学建模","ord":"6","full":"第6章 数学建模","meta":"5 节 · 6 小节 · 33 知识点","kp":33,"topic":"数学建模 · 探究 · 附录"}],"search":"湘教版 xj xjb2 必修 · 第二册 湘教版高中数学必修第二册 知识点总结 第1章 平面向量及其应用 第2章 三角恒等变换 第3章 复数 第4章 立体几何初步 第5章 概率 第6章 数学建模"},{"code":"XJxb1","file":"XJxb1.html","ver":"XJ","verName":"湘教版","color":"#db2777","soft":"#ffeaf4","type":"xb","typeLabel":"选择性必修","volume":"第一册","volNum":1,"short":"选择性必修 · 第一册","name":"湘教版 · 选择性必修第一册","title":"湘教版高中数学选择性必修第一册 知识点总结","brief":"主题：数列与数学归纳 · 解析几何 · 直线圆与圆锥曲线 · 计数原理与排列组合","stats":{"ch":4,"sec":24,"sub":56,"kp":246},"chapters":[{"id":"n-1","no":"第1章","name":"数列","ord":"1","full":"第1章 数列","meta":"5 节 · 15 小节 · 84 知识点","kp":84,"topic":"数列与数学归纳"},{"id":"n-2","no":"第2章","name":"平面解析几何初步","ord":"2","full":"第2章 平面解析几何初步","meta":"7 节 · 16 小节 · 74 知识点","kp":74,"topic":"解析几何 · 直线圆与圆锥曲线"},{"id":"n-3","no":"第3章","name":"圆锥曲线与方程","ord":"3","full":"第3章 圆锥曲线与方程","meta":"7 节 · 15 小节 · 55 知识点","kp":55,"topic":"解析几何 · 直线圆与圆锥曲线"},{"id":"n-4","no":"第4章","name":"计数原理","ord":"4","full":"第4章 计数原理","meta":"5 节 · 10 小节 · 33 知识点","kp":33,"topic":"计数原理与排列组合"}],"search":"湘教版 xj xjxb1 选择性必修 · 第一册 湘教版高中数学选择性必修第一册 知识点总结 第1章 数列 第2章 平面解析几何初步 第3章 圆锥曲线与方程 第4章 计数原理"},{"code":"XJxb2","file":"XJxb2.html","ver":"XJ","verName":"湘教版","color":"#db2777","soft":"#ffeaf4","type":"xb","typeLabel":"选择性必修","volume":"第二册","volNum":2,"short":"选择性必修 · 第二册","name":"湘教版 · 选择性必修第二册","title":"湘教版高中数学选择性必修第二册 知识点总结","brief":"主题：函数 · 指数对数 · 导数 · 立体几何与空间向量 · 概率与统计","stats":{"ch":4,"sec":15,"sub":39,"kp":211},"chapters":[{"id":"n-1","no":"第1章","name":"导数及其应用","ord":"1","full":"第1章 导数及其应用","meta":"4 节 · 12 小节 · 53 知识点","kp":53,"topic":"函数 · 指数对数 · 导数"},{"id":"n-2","no":"第2章","name":"空间向量与立体几何","ord":"2","full":"第2章 空间向量与立体几何","meta":"5 节 · 11 小节 · 60 知识点","kp":60,"topic":"立体几何与空间向量"},{"id":"n-3","no":"第3章","name":"概率","ord":"3","full":"第3章 概率","meta":"3 节 · 10 小节 · 53 知识点","kp":53,"topic":"概率与统计"},{"id":"n-4","no":"第4章","name":"统计","ord":"4","full":"第4章 统计","meta":"3 节 · 6 小节 · 45 知识点","kp":45,"topic":"概率与统计"}],"search":"湘教版 xj xjxb2 选择性必修 · 第二册 湘教版高中数学选择性必修第二册 知识点总结 第1章 导数及其应用 第2章 空间向量与立体几何 第3章 概率 第4章 统计"}],"totals":{"books":4,"chapters":20,"kps":1150,"sections":88}},{"code":"EJB","name":"鄂教版","pub":"湖北教育出版社","color":"#16a34a","soft":"#e6f8ee","books":[{"code":"EJBb1","file":"EJBb1.html","ver":"EJB","verName":"鄂教版","color":"#16a34a","soft":"#e6f8ee","type":"b","typeLabel":"必修","volume":"第一册","volNum":1,"short":"必修 · 第一册","name":"鄂教版 · 必修第一册","title":"鄂教版数学必修第一册 知识点总结","brief":"主题：集合与常用逻辑 · 等式与不等式","stats":{"ch":3,"sec":11,"sub":12,"kp":101},"chapters":[{"id":"n-1","no":"第一章","name":"集合","ord":"1","full":"第一章 集合","meta":"4 节 · 4 小节 · 37 知识点","kp":37,"topic":"集合与常用逻辑"},{"id":"n-2","no":"第二章","name":"常用逻辑用语","ord":"2","full":"第二章 常用逻辑用语","meta":"2 节 · 2 小节 · 20 知识点","kp":20,"topic":"集合与常用逻辑"},{"id":"n-3","no":"第三章","name":"不等式初步","ord":"3","full":"第三章 不等式初步","meta":"5 节 · 6 小节 · 44 知识点","kp":44,"topic":"等式与不等式"}],"search":"鄂教版 ejb ejbb1 必修 · 第一册 鄂教版 · 必修第一册 鄂教版数学必修第一册 知识点总结 第一章 集合 第二章 常用逻辑用语 第三章 不等式初步"},{"code":"EJBb2","file":"EJBb2.html","ver":"EJB","verName":"鄂教版","color":"#16a34a","soft":"#e6f8ee","type":"b","typeLabel":"必修","volume":"第二册","volNum":2,"short":"必修 · 第二册","name":"鄂教版 · 必修第二册","title":"鄂教版数学必修第二册 知识点总结","brief":"主题：函数 · 指数对数 · 导数 · 三角函数与解三角形","stats":{"ch":4,"sec":15,"sub":28,"kp":333},"chapters":[{"id":"n-1","no":"第一章","name":"函数的概念与性质","ord":"1","full":"第一章 函数的概念与性质","meta":"3 节 · 6 小节 · 79 知识点","kp":79,"topic":"函数 · 指数对数 · 导数"},{"id":"n-2","no":"第二章","name":"幂函数、指数函数、对数函数","ord":"2","full":"第二章 幂函数、指数函数、对数函数","meta":"4 节 · 4 小节 · 70 知识点","kp":70,"topic":"函数 · 指数对数 · 导数"},{"id":"n-3","no":"第三章","name":"三角函数","ord":"3","full":"第三章 三角函数","meta":"6 节 · 15 小节 · 150 知识点","kp":150,"topic":"三角函数与解三角形"},{"id":"n-4","no":"第四章","name":"函数的应用","ord":"4","full":"第四章 函数的应用","meta":"2 节 · 3 小节 · 34 知识点","kp":34,"topic":"函数 · 指数对数 · 导数"}],"search":"鄂教版 ejb ejbb2 必修 · 第二册 鄂教版 · 必修第二册 鄂教版数学必修第二册 知识点总结 第一章 函数的概念与性质 第二章 幂函数、指数函数、对数函数 第三章 三角函数 第四章 函数的应用"},{"code":"EJBb3","file":"EJBb3.html","ver":"EJB","verName":"鄂教版","color":"#16a34a","soft":"#e6f8ee","type":"b","typeLabel":"必修","volume":"第三册","volNum":3,"short":"必修 · 第三册","name":"鄂教版 · 必修第三册","title":"鄂教版数学必修第三册 知识点总结","brief":"主题：平面向量与复数 · 立体几何与空间向量","stats":{"ch":3,"sec":15,"sub":27,"kp":417},"chapters":[{"id":"n-1","no":"第一章","name":"平面向量及其应用","ord":"1","full":"第一章 平面向量及其应用","meta":"6 节 · 12 小节 · 171 知识点","kp":171,"topic":"平面向量与复数"},{"id":"n-2","no":"第二章","name":"复数","ord":"2","full":"第二章 复数","meta":"3 节 · 5 小节 · 80 知识点","kp":80,"topic":"平面向量与复数"},{"id":"n-3","no":"第三章","name":"立体几何初步","ord":"3","full":"第三章 立体几何初步","meta":"6 节 · 10 小节 · 166 知识点","kp":166,"topic":"立体几何与空间向量"}],"search":"鄂教版 ejb ejbb3 必修 · 第三册 鄂教版 · 必修第三册 鄂教版数学必修第三册 知识点总结 第一章 平面向量及其应用 第二章 复数 第三章 立体几何初步"},{"code":"EJBb4","file":"EJBb4.html","ver":"EJB","verName":"鄂教版","color":"#16a34a","soft":"#e6f8ee","type":"b","typeLabel":"必修","volume":"第四册","volNum":4,"short":"必修 · 第四册","name":"鄂教版 · 必修第四册","title":"鄂教版数学必修第四册 知识点总结","brief":"主题：概率与统计","stats":{"ch":2,"sec":9,"sub":19,"kp":281},"chapters":[{"id":"n-1","no":"第一章","name":"概率","ord":"1","full":"第一章 概率","meta":"6 节 · 9 小节 · 122 知识点","kp":122,"topic":"概率与统计"},{"id":"n-2","no":"第二章","name":"统计","ord":"2","full":"第二章 统计","meta":"3 节 · 10 小节 · 159 知识点","kp":159,"topic":"概率与统计"}],"search":"鄂教版 ejb ejbb4 必修 · 第四册 鄂教版 · 必修第四册 鄂教版数学必修第四册 知识点总结 第一章 概率 第二章 统计"},{"code":"EJBxb1","file":"EJBxb1.html","ver":"EJB","verName":"鄂教版","color":"#16a34a","soft":"#e6f8ee","type":"xb","typeLabel":"选择性必修","volume":"第一册","volNum":1,"short":"选择性必修 · 第一册","name":"鄂教版 · 选择性必修第一册","title":"鄂教版数学选择性必修第一册 知识点总结","brief":"主题：立体几何与空间向量 · 解析几何 · 直线圆与圆锥曲线","stats":{"ch":3,"sec":14,"sub":33,"kp":286},"chapters":[{"id":"n-1","no":"第一章","name":"空间向量与立体几何","ord":"1","full":"第一章 空间向量与立体几何","meta":"5 节 · 12 小节 · 88 知识点","kp":88,"topic":"立体几何与空间向量"},{"id":"n-2","no":"第二章","name":"平面解析几何初步","ord":"2","full":"第二章 平面解析几何初步","meta":"3 节 · 8 小节 · 73 知识点","kp":73,"topic":"解析几何 · 直线圆与圆锥曲线"},{"id":"n-3","no":"第三章","name":"圆锥曲线的方程","ord":"3","full":"第三章 圆锥曲线的方程","meta":"6 节 · 13 小节 · 125 知识点","kp":125,"topic":"解析几何 · 直线圆与圆锥曲线"}],"search":"鄂教版 ejb ejbxb1 选择性必修 · 第一册 鄂教版 · 选择性必修第一册 鄂教版数学选择性必修第一册 知识点总结 第一章 空间向量与立体几何 第二章 平面解析几何初步 第三章 圆锥曲线的方程"},{"code":"EJBxb2","file":"EJBxb2.html","ver":"EJB","verName":"鄂教版","color":"#16a34a","soft":"#e6f8ee","type":"xb","typeLabel":"选择性必修","volume":"第二册","volNum":2,"short":"选择性必修 · 第二册","name":"鄂教版 · 选择性必修第二册","title":"鄂教版数学选择性必修第二册 知识点总结","brief":"主题：数列与数学归纳 · 函数 · 指数对数 · 导数","stats":{"ch":2,"sec":13,"sub":13,"kp":195},"chapters":[{"id":"n-1","no":"第一章","name":"数列","ord":"1","full":"第一章 数列","meta":"8 节 · 8 小节 · 118 知识点","kp":118,"topic":"数列与数学归纳"},{"id":"n-2","no":"第二章","name":"一元函数导数及其应用","ord":"2","full":"第二章 一元函数导数及其应用","meta":"5 节 · 5 小节 · 77 知识点","kp":77,"topic":"函数 · 指数对数 · 导数"}],"search":"鄂教版 ejb ejbxb2 选择性必修 · 第二册 鄂教版 · 选择性必修第二册 鄂教版数学选择性必修第二册 知识点总结 第一章 数列 第二章 一元函数导数及其应用"},{"code":"EJBxb3","file":"EJBxb3.html","ver":"EJB","verName":"鄂教版","color":"#16a34a","soft":"#e6f8ee","type":"xb","typeLabel":"选择性必修","volume":"第三册","volNum":3,"short":"选择性必修 · 第三册","name":"鄂教版 · 选择性必修第三册","title":"鄂教版数学选择性必修第三册 知识点总结","brief":"主题：计数原理与排列组合 · 概率与统计","stats":{"ch":3,"sec":16,"sub":16,"kp":233},"chapters":[{"id":"n-1","no":"第一章","name":"计数原理","ord":"1","full":"第一章 计数原理","meta":"5 节 · 5 小节 · 82 知识点","kp":82,"topic":"计数原理与排列组合"},{"id":"n-2","no":"第二章","name":"概率","ord":"2","full":"第二章 概率","meta":"5 节 · 5 小节 · 78 知识点","kp":78,"topic":"概率与统计"},{"id":"n-3","no":"第三章","name":"统计","ord":"3","full":"第三章 统计","meta":"6 节 · 6 小节 · 73 知识点","kp":73,"topic":"概率与统计"}],"search":"鄂教版 ejb ejbxb3 选择性必修 · 第三册 鄂教版 · 选择性必修第三册 鄂教版数学选择性必修第三册 知识点总结 第一章 计数原理 第二章 概率 第三章 统计"}],"totals":{"books":7,"chapters":20,"kps":1846,"sections":93}},{"code":"HJB","name":"沪教版","pub":"上海教育出版社","color":"#c026d3","soft":"#fbe9fc","books":[{"code":"HJBb1","file":"HJBb1.html","ver":"HJB","verName":"沪教版","color":"#c026d3","soft":"#fbe9fc","type":"b","typeLabel":"必修","volume":"第一册","volNum":1,"short":"必修 · 第一册","name":"沪教版 · 必修第一册","title":"沪教版数学必修一 知识点总结","brief":"主题：集合与常用逻辑 · 等式与不等式 · 函数 · 指数对数 · 导数","stats":{"ch":5,"sec":14,"sub":39,"kp":612},"chapters":[{"id":"n-1","no":"第一章","name":"集合与逻辑","ord":"1","full":"第一章 集合与逻辑","meta":"2 节 · 7 小节 · 109 知识点","kp":109,"topic":"集合与常用逻辑"},{"id":"n-2","no":"第二章","name":"等式与不等式","ord":"2","full":"第二章 等式与不等式","meta":"3 节 · 10 小节 · 155 知识点","kp":155,"topic":"等式与不等式"},{"id":"n-3","no":"第三章","name":"幂、指数与对数","ord":"3","full":"第三章 幂、指数与对数","meta":"2 节 · 6 小节 · 87 知识点","kp":87,"topic":"函数 · 指数对数 · 导数"},{"id":"n-4","no":"第四章","name":"幂函数、指数函数与对数函数","ord":"4","full":"第四章 幂函数、指数函数与对数函数","meta":"3 节 · 6 小节 · 90 知识点","kp":90,"topic":"函数 · 指数对数 · 导数"},{"id":"n-5","no":"第五章","name":"函数的概念、性质及应用","ord":"5","full":"第五章 函数的概念、性质及应用","meta":"4 节 · 10 小节 · 171 知识点","kp":171,"topic":"函数 · 指数对数 · 导数"}],"search":"沪教版 hjb hjbb1 必修 · 第一册 沪教版 · 必修第一册 沪教版数学必修一 知识点总结 第一章 集合与逻辑 第二章 等式与不等式 第三章 幂、指数与对数 第四章 幂函数、指数函数与对数函数 第五章 函数的概念、性质及应用"},{"code":"HJBb2","file":"HJBb2.html","ver":"HJB","verName":"沪教版","color":"#c026d3","soft":"#fbe9fc","type":"b","typeLabel":"必修","volume":"第二册","volNum":2,"short":"必修 · 第二册","name":"沪教版 · 必修第二册","title":"沪教版数学必修二 知识点总结","brief":"主题：三角函数与解三角形 · 平面向量与复数","stats":{"ch":4,"sec":15,"sub":37,"kp":711},"chapters":[{"id":"n-1","no":"第六章","name":"三角","ord":"6","full":"第六章 三角","meta":"3 节 · 10 小节 · 164 知识点","kp":164,"topic":"三角函数与解三角形"},{"id":"n-2","no":"第七章","name":"三角函数","ord":"7","full":"第七章 三角函数","meta":"4 节 · 7 小节 · 127 知识点","kp":127,"topic":"三角函数与解三角形"},{"id":"n-3","no":"第八章","name":"平面向量","ord":"8","full":"第八章 平面向量","meta":"4 节 · 10 小节 · 208 知识点","kp":208,"topic":"平面向量与复数"},{"id":"n-4","no":"第九章","name":"复数","ord":"9","full":"第九章 复数","meta":"4 节 · 10 小节 · 212 知识点","kp":212,"topic":"平面向量与复数"}],"search":"沪教版 hjb hjbb2 必修 · 第二册 沪教版 · 必修第二册 沪教版数学必修二 知识点总结 第六章 三角 第七章 三角函数 第八章 平面向量 第九章 复数"},{"code":"HJBb3","file":"HJBb3.html","ver":"HJB","verName":"沪教版","color":"#c026d3","soft":"#fbe9fc","type":"b","typeLabel":"必修","volume":"第三册","volNum":3,"short":"必修 · 第三册","name":"沪教版 · 必修第三册","title":"沪教版数学必修三 知识点总结","brief":"主题：解析几何 · 直线圆与圆锥曲线 · 立体几何与空间向量 · 概率与统计","stats":{"ch":4,"sec":19,"sub":51,"kp":831},"chapters":[{"id":"n-1","no":"第十章","name":"空间直线与平面","ord":"10","full":"第十章 空间直线与平面","meta":"5 节 · 15 小节 · 260 知识点","kp":260,"topic":"解析几何 · 直线圆与圆锥曲线"},{"id":"n-2","no":"第十一章","name":"简单几何体","ord":"11","full":"第十一章 简单几何体","meta":"4 节 · 11 小节 · 176 知识点","kp":176,"topic":"立体几何与空间向量"},{"id":"n-3","no":"第十二章","name":"概率初步","ord":"12","full":"第十二章 概率初步","meta":"4 节 · 11 小节 · 149 知识点","kp":149,"topic":"概率与统计"},{"id":"n-4","no":"第十三章","name":"统计","ord":"13","full":"第十三章 统计","meta":"6 节 · 14 小节 · 246 知识点","kp":246,"topic":"概率与统计"}],"search":"沪教版 hjb hjbb3 必修 · 第三册 沪教版 · 必修第三册 沪教版数学必修三 知识点总结 第十章 空间直线与平面 第十一章 简单几何体 第十二章 概率初步 第十三章 统计"},{"code":"HJBb4","file":"HJBb4.html","ver":"HJB","verName":"沪教版","color":"#c026d3","soft":"#fbe9fc","type":"b","typeLabel":"必修","volume":"第四册","volNum":4,"short":"必修 · 第四册","name":"沪教版 · 必修第四册","title":"沪教版数学必修四 知识点总结","brief":"主题：数学建模 · 探究 · 附录","stats":{"ch":4,"sec":14,"sub":31,"kp":221},"chapters":[{"id":"n-1","no":"引论","name":"数学建模的基本认识","ord":"引论","full":"引论 数学建模的基本认识","meta":"3 节 · 3 小节 · 40 知识点","kp":40,"topic":"数学建模 · 探究 · 附录"},{"id":"n-2","no":"第一部分","name":"数学建模活动案例","ord":"第一部分","full":"第一部分 数学建模活动案例","meta":"4 节 · 21 小节 · 126 知识点","kp":126,"topic":"数学建模 · 探究 · 附录"},{"id":"n-3","no":"第二部分","name":"数学建模活动A","ord":"第二部分","full":"第二部分 数学建模活动A","meta":"3 节 · 3 小节 · 25 知识点","kp":25,"topic":"数学建模 · 探究 · 附录"},{"id":"n-4","no":"第三部分","name":"数学建模活动B","ord":"第三部分","full":"第三部分 数学建模活动B","meta":"4 节 · 4 小节 · 30 知识点","kp":30,"topic":"数学建模 · 探究 · 附录"}],"search":"沪教版 hjb hjbb4 必修 · 第四册 沪教版 · 必修第四册 沪教版数学必修四 知识点总结 引论 数学建模的基本认识 第一部分 数学建模活动案例 第二部分 数学建模活动a 第三部分 数学建模活动b"},{"code":"HJBxb1","file":"HJBxb1.html","ver":"HJB","verName":"沪教版","color":"#c026d3","soft":"#fbe9fc","type":"xb","typeLabel":"选择性必修","volume":"第一册","volNum":1,"short":"选择性必修 · 第一册","name":"沪教版 · 选择性必修第一册","title":"沪教版数学选必一 知识点总结","brief":"主题：解析几何 · 直线圆与圆锥曲线 · 立体几何与空间向量 · 数列与数学归纳","stats":{"ch":4,"sec":18,"sub":40,"kp":650},"chapters":[{"id":"n-1","no":"第一章","name":"平面直角坐标系中的直线","ord":"1","full":"第一章 平面直角坐标系中的直线","meta":"4 节 · 6 小节 · 81 知识点","kp":81,"topic":"解析几何 · 直线圆与圆锥曲线"},{"id":"n-2","no":"第二章","name":"圆锥曲线","ord":"2","full":"第二章 圆锥曲线","meta":"5 节 · 15 小节 · 223 知识点","kp":223,"topic":"解析几何 · 直线圆与圆锥曲线"},{"id":"n-3","no":"第三章","name":"空间向量及其应用","ord":"3","full":"第三章 空间向量及其应用","meta":"4 节 · 10 小节 · 181 知识点","kp":181,"topic":"立体几何与空间向量"},{"id":"n-4","no":"第四章","name":"数列","ord":"4","full":"第四章 数列","meta":"5 节 · 9 小节 · 165 知识点","kp":165,"topic":"数列与数学归纳"}],"search":"沪教版 hjb hjbxb1 选择性必修 · 第一册 沪教版 · 选择性必修第一册 沪教版数学选必一 知识点总结 第一章 平面直角坐标系中的直线 第二章 圆锥曲线 第三章 空间向量及其应用 第四章 数列"},{"code":"HJBxb2","file":"HJBxb2.html","ver":"HJB","verName":"沪教版","color":"#c026d3","soft":"#fbe9fc","type":"xb","typeLabel":"选择性必修","volume":"第二册","volNum":2,"short":"选择性必修 · 第二册","name":"沪教版 · 选择性必修第二册","title":"沪教版数学选必二 知识点总结","brief":"主题：函数 · 指数对数 · 导数 · 计数原理与排列组合 · 概率与统计","stats":{"ch":4,"sec":14,"sub":35,"kp":516},"chapters":[{"id":"n-1","no":"第五章","name":"导数及其应用","ord":"5","full":"第五章 导数及其应用","meta":"3 节 · 10 小节 · 134 知识点","kp":134,"topic":"函数 · 指数对数 · 导数"},{"id":"n-2","no":"第六章","name":"计数原理","ord":"6","full":"第六章 计数原理","meta":"5 节 · 10 小节 · 147 知识点","kp":147,"topic":"计数原理与排列组合"},{"id":"n-3","no":"第七章","name":"概率初步（续）","ord":"7","full":"第七章 概率初步（续）","meta":"3 节 · 9 小节 · 135 知识点","kp":135,"topic":"概率与统计"},{"id":"n-4","no":"第八章","name":"成对数据的统计分析","ord":"8","full":"第八章 成对数据的统计分析","meta":"3 节 · 6 小节 · 100 知识点","kp":100,"topic":"概率与统计"}],"search":"沪教版 hjb hjbxb2 选择性必修 · 第二册 沪教版 · 选择性必修第二册 沪教版数学选必二 知识点总结 第五章 导数及其应用 第六章 计数原理 第七章 概率初步（续） 第八章 成对数据的统计分析"},{"code":"HJBxb3","file":"HJBxb3.html","ver":"HJB","verName":"沪教版","color":"#c026d3","soft":"#fbe9fc","type":"xb","typeLabel":"选择性必修","volume":"第三册","volNum":3,"short":"选择性必修 · 第三册","name":"沪教版 · 选择性必修第三册","title":"沪教版数学选必三 知识点总结","brief":"主题：数学建模 · 探究 · 附录","stats":{"ch":4,"sec":14,"sub":33,"kp":203},"chapters":[{"id":"n-1","no":"引论","name":"数学建模的深化","ord":"引论","full":"引论 数学建模的深化","meta":"2 节 · 2 小节 · 26 知识点","kp":26,"topic":"数学建模 · 探究 · 附录"},{"id":"n-2","no":"第一部分","name":"数学建模活动案例","ord":"第一部分","full":"第一部分 数学建模活动案例","meta":"5 节 · 24 小节 · 136 知识点","kp":136,"topic":"数学建模 · 探究 · 附录"},{"id":"n-3","no":"第二部分","name":"数学建模活动A","ord":"第二部分","full":"第二部分 数学建模活动A","meta":"3 节 · 3 小节 · 19 知识点","kp":19,"topic":"数学建模 · 探究 · 附录"},{"id":"n-4","no":"第三部分","name":"数学建模活动B","ord":"第三部分","full":"第三部分 数学建模活动B","meta":"4 节 · 4 小节 · 22 知识点","kp":22,"topic":"数学建模 · 探究 · 附录"}],"search":"沪教版 hjb hjbxb3 选择性必修 · 第三册 沪教版 · 选择性必修第三册 沪教版数学选必三 知识点总结 引论 数学建模的深化 第一部分 数学建模活动案例 第二部分 数学建模活动a 第三部分 数学建模活动b"}],"totals":{"books":7,"chapters":29,"kps":3744,"sections":108}}],"topics":[{"name":"集合与常用逻辑","items":[{"ch":"第一章 集合与常用逻辑用语","chName":"集合与常用逻辑用语","no":"第一章","file":"RAb1.html","id":"n-1","book":"必修 · 第一册","ver":"RA","verName":"人教A版","color":"#2563eb","name":"人教A版 · 必修第一册"},{"ch":"第一章 集合与常用逻辑用语","chName":"集合与常用逻辑用语","no":"第一章","file":"RBb1.html","id":"n-1","book":"必修 · 第一册","ver":"RB","verName":"人教B版","color":"#0891b2","name":"人教B版 · 必修第一册"},{"ch":"第一章 预备知识","chName":"预备知识","no":"第一章","file":"BSDb1.html","id":"n-1","book":"必修 · 第一册","ver":"BSD","verName":"北师大版","color":"#7c3aed","name":"北师大版 · 必修第一册"},{"ch":"第1章 集合","chName":"集合","no":"第1章","file":"SJb1.html","id":"n-1","book":"必修 · 第一册","ver":"SJ","verName":"苏教版","color":"#ea7317","name":"苏教版 · 必修第一册"},{"ch":"第2章 常用逻辑用语","chName":"常用逻辑用语","no":"第2章","file":"SJb1.html","id":"n-2","book":"必修 · 第一册","ver":"SJ","verName":"苏教版","color":"#ea7317","name":"苏教版 · 必修第一册"},{"ch":"第1章 集合与逻辑","chName":"集合与逻辑","no":"第1章","file":"XJb1.html","id":"n-1","book":"必修 · 第一册","ver":"XJ","verName":"湘教版","color":"#db2777","name":"湘教版 · 必修第一册"},{"ch":"第一章 集合","chName":"集合","no":"第一章","file":"EJBb1.html","id":"n-1","book":"必修 · 第一册","ver":"EJB","verName":"鄂教版","color":"#16a34a","name":"鄂教版 · 必修第一册"},{"ch":"第二章 常用逻辑用语","chName":"常用逻辑用语","no":"第二章","file":"EJBb1.html","id":"n-2","book":"必修 · 第一册","ver":"EJB","verName":"鄂教版","color":"#16a34a","name":"鄂教版 · 必修第一册"},{"ch":"第一章 集合与逻辑","chName":"集合与逻辑","no":"第一章","file":"HJBb1.html","id":"n-1","book":"必修 · 第一册","ver":"HJB","verName":"沪教版","color":"#c026d3","name":"沪教版 · 必修第一册"}]},{"name":"三角函数与解三角形","items":[{"ch":"第五章 三角函数","chName":"三角函数","no":"第五章","file":"RAb1.html","id":"n-5","book":"必修 · 第一册","ver":"RA","verName":"人教A版","color":"#2563eb","name":"人教A版 · 必修第一册"},{"ch":"第七章 三角函数","chName":"三角函数","no":"第七章","file":"RBb3.html","id":"n-1","book":"必修 · 第三册","ver":"RB","verName":"人教B版","color":"#0891b2","name":"人教B版 · 必修第三册"},{"ch":"第八章 向量的数量积与三角恒等变换","chName":"向量的数量积与三角恒等变换","no":"第八章","file":"RBb3.html","id":"n-2","book":"必修 · 第三册","ver":"RB","verName":"人教B版","color":"#0891b2","name":"人教B版 · 必修第三册"},{"ch":"第九章 解三角形","chName":"解三角形","no":"第九章","file":"RBb4.html","id":"n-1","book":"必修 · 第四册","ver":"RB","verName":"人教B版","color":"#0891b2","name":"人教B版 · 必修第四册"},{"ch":"第一章 三角函数","chName":"三角函数","no":"第一章","file":"BSDb2.html","id":"n-1","book":"必修 · 第二册","ver":"BSD","verName":"北师大版","color":"#7c3aed","name":"北师大版 · 必修第二册"},{"ch":"第四章 三角恒等变换","chName":"三角恒等变换","no":"第四章","file":"BSDb2.html","id":"n-4","book":"必修 · 第二册","ver":"BSD","verName":"北师大版","color":"#7c3aed","name":"北师大版 · 必修第二册"},{"ch":"第7章 三角函数","chName":"三角函数","no":"第7章","file":"SJb1.html","id":"n-7","book":"必修 · 第一册","ver":"SJ","verName":"苏教版","color":"#ea7317","name":"苏教版 · 必修第一册"},{"ch":"第10章 三角恒等变换","chName":"三角恒等变换","no":"第10章","file":"SJb2.html","id":"n-2","book":"必修 · 第二册","ver":"SJ","verName":"苏教版","color":"#ea7317","name":"苏教版 · 必修第二册"},{"ch":"第11章 解三角形","chName":"解三角形","no":"第11章","file":"SJb2.html","id":"n-3","book":"必修 · 第二册","ver":"SJ","verName":"苏教版","color":"#ea7317","name":"苏教版 · 必修第二册"},{"ch":"第5章 三角函数","chName":"三角函数","no":"第5章","file":"XJb1.html","id":"n-5","book":"必修 · 第一册","ver":"XJ","verName":"湘教版","color":"#db2777","name":"湘教版 · 必修第一册"},{"ch":"第2章 三角恒等变换","chName":"三角恒等变换","no":"第2章","file":"XJb2.html","id":"n-2","book":"必修 · 第二册","ver":"XJ","verName":"湘教版","color":"#db2777","name":"湘教版 · 必修第二册"},{"ch":"第三章 三角函数","chName":"三角函数","no":"第三章","file":"EJBb2.html","id":"n-3","book":"必修 · 第二册","ver":"EJB","verName":"鄂教版","color":"#16a34a","name":"鄂教版 · 必修第二册"},{"ch":"第六章 三角","chName":"三角","no":"第六章","file":"HJBb2.html","id":"n-1","book":"必修 · 第二册","ver":"HJB","verName":"沪教版","color":"#c026d3","name":"沪教版 · 必修第二册"},{"ch":"第七章 三角函数","chName":"三角函数","no":"第七章","file":"HJBb2.html","id":"n-2","book":"必修 · 第二册","ver":"HJB","verName":"沪教版","color":"#c026d3","name":"沪教版 · 必修第二册"}]},{"name":"函数 · 指数对数 · 导数","items":[{"ch":"第二章 一元二次函数、方程和不等式","chName":"一元二次函数、方程和不等式","no":"第二章","file":"RAb1.html","id":"n-2","book":"必修 · 第一册","ver":"RA","verName":"人教A版","color":"#2563eb","name":"人教A版 · 必修第一册"},{"ch":"第三章 函数的概念与性质","chName":"函数的概念与性质","no":"第三章","file":"RAb1.html","id":"n-3","book":"必修 · 第一册","ver":"RA","verName":"人教A版","color":"#2563eb","name":"人教A版 · 必修第一册"},{"ch":"第四章 指数函数与对数函数","chName":"指数函数与对数函数","no":"第四章","file":"RAb1.html","id":"n-4","book":"必修 · 第一册","ver":"RA","verName":"人教A版","color":"#2563eb","name":"人教A版 · 必修第一册"},{"ch":"第五章 一元函数的导数及其应用","chName":"一元函数的导数及其应用","no":"第五章","file":"RAxb2.html","id":"n-2","book":"选择性必修 · 第二册","ver":"RA","verName":"人教A版","color":"#2563eb","name":"人教A版 · 选择性必修第二册"},{"ch":"第三章 函数","chName":"函数","no":"第三章","file":"RBb1.html","id":"n-3","book":"必修 · 第一册","ver":"RB","verName":"人教B版","color":"#0891b2","name":"人教B版 · 必修第一册"},{"ch":"第四章 指数与对数函数","chName":"指数与对数函数","no":"第四章","file":"RBb2.html","id":"n-1","book":"必修 · 第二册","ver":"RB","verName":"人教B版","color":"#0891b2","name":"人教B版 · 必修第二册"},{"ch":"第六章 导数及其应用","chName":"导数及其应用","no":"第六章","file":"RBxb3.html","id":"n-2","book":"选择性必修 · 第三册","ver":"RB","verName":"人教B版","color":"#0891b2","name":"人教B版 · 选择性必修第三册"},{"ch":"第二章 函数","chName":"函数","no":"第二章","file":"BSDb1.html","id":"n-2","book":"必修 · 第一册","ver":"BSD","verName":"北师大版","color":"#7c3aed","name":"北师大版 · 必修第一册"},{"ch":"第三章 指数运算与指数函数","chName":"指数运算与指数函数","no":"第三章","file":"BSDb1.html","id":"n-3","book":"必修 · 第一册","ver":"BSD","verName":"北师大版","color":"#7c3aed","name":"北师大版 · 必修第一册"},{"ch":"第四章 对数运算与对数函数","chName":"对数运算与对数函数","no":"第四章","file":"BSDb1.html","id":"n-4","book":"必修 · 第一册","ver":"BSD","verName":"北师大版","color":"#7c3aed","name":"北师大版 · 必修第一册"},{"ch":"第五章 函数应用","chName":"函数应用","no":"第五章","file":"BSDb1.html","id":"n-5","book":"必修 · 第一册","ver":"BSD","verName":"北师大版","color":"#7c3aed","name":"北师大版 · 必修第一册"},{"ch":"第二章 导数及其应用","chName":"导数及其应用","no":"第二章","file":"BSDxb2.html","id":"n-2","book":"选择性必修 · 第二册","ver":"BSD","verName":"北师大版","color":"#7c3aed","name":"北师大版 · 选择性必修第二册"},{"ch":"第4章 指数与对数","chName":"指数与对数","no":"第4章","file":"SJb1.html","id":"n-4","book":"必修 · 第一册","ver":"SJ","verName":"苏教版","color":"#ea7317","name":"苏教版 · 必修第一册"},{"ch":"第5章 函数概念与性质","chName":"函数概念与性质","no":"第5章","file":"SJb1.html","id":"n-5","book":"必修 · 第一册","ver":"SJ","verName":"苏教版","color":"#ea7317","name":"苏教版 · 必修第一册"},{"ch":"第6章 幂函数、指数函数和对数函数","chName":"幂函数、指数函数和对数函数","no":"第6章","file":"SJb1.html","id":"n-6","book":"必修 · 第一册","ver":"SJ","verName":"苏教版","color":"#ea7317","name":"苏教版 · 必修第一册"},{"ch":"第8章 函数应用","chName":"函数应用","no":"第8章","file":"SJb1.html","id":"n-8","book":"必修 · 第一册","ver":"SJ","verName":"苏教版","color":"#ea7317","name":"苏教版 · 必修第一册"},{"ch":"第5章 导数及其应用","chName":"导数及其应用","no":"第5章","file":"SJxb1.html","id":"n-5","book":"选择性必修 · 第一册","ver":"SJ","verName":"苏教版","color":"#ea7317","name":"苏教版 · 选择性必修第一册"},{"ch":"第2章 一元二次函数、方程和不等式","chName":"一元二次函数、方程和不等式","no":"第2章","file":"XJb1.html","id":"n-2","book":"必修 · 第一册","ver":"XJ","verName":"湘教版","color":"#db2777","name":"湘教版 · 必修第一册"},{"ch":"第3章 函数的概念与性质","chName":"函数的概念与性质","no":"第3章","file":"XJb1.html","id":"n-3","book":"必修 · 第一册","ver":"XJ","verName":"湘教版","color":"#db2777","name":"湘教版 · 必修第一册"},{"ch":"第4章 幂函数、指数函数和对数函数","chName":"幂函数、指数函数和对数函数","no":"第4章","file":"XJb1.html","id":"n-4","book":"必修 · 第一册","ver":"XJ","verName":"湘教版","color":"#db2777","name":"湘教版 · 必修第一册"},{"ch":"第1章 导数及其应用","chName":"导数及其应用","no":"第1章","file":"XJxb2.html","id":"n-1","book":"选择性必修 · 第二册","ver":"XJ","verName":"湘教版","color":"#db2777","name":"湘教版 · 选择性必修第二册"},{"ch":"第一章 函数的概念与性质","chName":"函数的概念与性质","no":"第一章","file":"EJBb2.html","id":"n-1","book":"必修 · 第二册","ver":"EJB","verName":"鄂教版","color":"#16a34a","name":"鄂教版 · 必修第二册"},{"ch":"第二章 幂函数、指数函数、对数函数","chName":"幂函数、指数函数、对数函数","no":"第二章","file":"EJBb2.html","id":"n-2","book":"必修 · 第二册","ver":"EJB","verName":"鄂教版","color":"#16a34a","name":"鄂教版 · 必修第二册"},{"ch":"第四章 函数的应用","chName":"函数的应用","no":"第四章","file":"EJBb2.html","id":"n-4","book":"必修 · 第二册","ver":"EJB","verName":"鄂教版","color":"#16a34a","name":"鄂教版 · 必修第二册"},{"ch":"第二章 一元函数导数及其应用","chName":"一元函数导数及其应用","no":"第二章","file":"EJBxb2.html","id":"n-2","book":"选择性必修 · 第二册","ver":"EJB","verName":"鄂教版","color":"#16a34a","name":"鄂教版 · 选择性必修第二册"},{"ch":"第三章 幂、指数与对数","chName":"幂、指数与对数","no":"第三章","file":"HJBb1.html","id":"n-3","book":"必修 · 第一册","ver":"HJB","verName":"沪教版","color":"#c026d3","name":"沪教版 · 必修第一册"},{"ch":"第四章 幂函数、指数函数与对数函数","chName":"幂函数、指数函数与对数函数","no":"第四章","file":"HJBb1.html","id":"n-4","book":"必修 · 第一册","ver":"HJB","verName":"沪教版","color":"#c026d3","name":"沪教版 · 必修第一册"},{"ch":"第五章 函数的概念、性质及应用","chName":"函数的概念、性质及应用","no":"第五章","file":"HJBb1.html","id":"n-5","book":"必修 · 第一册","ver":"HJB","verName":"沪教版","color":"#c026d3","name":"沪教版 · 必修第一册"},{"ch":"第五章 导数及其应用","chName":"导数及其应用","no":"第五章","file":"HJBxb2.html","id":"n-1","book":"选择性必修 · 第二册","ver":"HJB","verName":"沪教版","color":"#c026d3","name":"沪教版 · 选择性必修第二册"}]},{"name":"等式与不等式","items":[{"ch":"第二章 等式与不等式","chName":"等式与不等式","no":"第二章","file":"RBb1.html","id":"n-2","book":"必修 · 第一册","ver":"RB","verName":"人教B版","color":"#0891b2","name":"人教B版 · 必修第一册"},{"ch":"第3章 不等式","chName":"不等式","no":"第3章","file":"SJb1.html","id":"n-3","book":"必修 · 第一册","ver":"SJ","verName":"苏教版","color":"#ea7317","name":"苏教版 · 必修第一册"},{"ch":"第三章 不等式初步","chName":"不等式初步","no":"第三章","file":"EJBb1.html","id":"n-3","book":"必修 · 第一册","ver":"EJB","verName":"鄂教版","color":"#16a34a","name":"鄂教版 · 必修第一册"},{"ch":"第二章 等式与不等式","chName":"等式与不等式","no":"第二章","file":"HJBb1.html","id":"n-2","book":"必修 · 第一册","ver":"HJB","verName":"沪教版","color":"#c026d3","name":"沪教版 · 必修第一册"}]},{"name":"数列与数学归纳","items":[{"ch":"第四章 数列","chName":"数列","no":"第四章","file":"RAxb2.html","id":"n-1","book":"选择性必修 · 第二册","ver":"RA","verName":"人教A版","color":"#2563eb","name":"人教A版 · 选择性必修第二册"},{"ch":"第五章 数列","chName":"数列","no":"第五章","file":"RBxb3.html","id":"n-1","book":"选择性必修 · 第三册","ver":"RB","verName":"人教B版","color":"#0891b2","name":"人教B版 · 选择性必修第三册"},{"ch":"第一章 数列","chName":"数列","no":"第一章","file":"BSDxb2.html","id":"n-1","book":"选择性必修 · 第二册","ver":"BSD","verName":"北师大版","color":"#7c3aed","name":"北师大版 · 选择性必修第二册"},{"ch":"第4章 数列","chName":"数列","no":"第4章","file":"SJxb1.html","id":"n-4","book":"选择性必修 · 第一册","ver":"SJ","verName":"苏教版","color":"#ea7317","name":"苏教版 · 选择性必修第一册"},{"ch":"第1章 数列","chName":"数列","no":"第1章","file":"XJxb1.html","id":"n-1","book":"选择性必修 · 第一册","ver":"XJ","verName":"湘教版","color":"#db2777","name":"湘教版 · 选择性必修第一册"},{"ch":"第一章 数列","chName":"数列","no":"第一章","file":"EJBxb2.html","id":"n-1","book":"选择性必修 · 第二册","ver":"EJB","verName":"鄂教版","color":"#16a34a","name":"鄂教版 · 选择性必修第二册"},{"ch":"第四章 数列","chName":"数列","no":"第四章","file":"HJBxb1.html","id":"n-4","book":"选择性必修 · 第一册","ver":"HJB","verName":"沪教版","color":"#c026d3","name":"沪教版 · 选择性必修第一册"}]},{"name":"立体几何与空间向量","items":[{"ch":"第八章 立体几何初步","chName":"立体几何初步","no":"第八章","file":"RAb2.html","id":"n-3","book":"必修 · 第二册","ver":"RA","verName":"人教A版","color":"#2563eb","name":"人教A版 · 必修第二册"},{"ch":"第一章 空间向量与立体几何","chName":"空间向量与立体几何","no":"第一章","file":"RAxb1.html","id":"n-1","book":"选择性必修 · 第一册","ver":"RA","verName":"人教A版","color":"#2563eb","name":"人教A版 · 选择性必修第一册"},{"ch":"第十一章 立体几何初步","chName":"立体几何初步","no":"第十一章","file":"RBb4.html","id":"n-3","book":"必修 · 第四册","ver":"RB","verName":"人教B版","color":"#0891b2","name":"人教B版 · 必修第四册"},{"ch":"第一章 空间向量与立体几何","chName":"空间向量与立体几何","no":"第一章","file":"RBxb1.html","id":"n-1","book":"选择性必修 · 第一册","ver":"RB","verName":"人教B版","color":"#0891b2","name":"人教B版 · 选择性必修第一册"},{"ch":"第六章 立体几何初步","chName":"立体几何初步","no":"第六章","file":"BSDb2.html","id":"n-6","book":"必修 · 第二册","ver":"BSD","verName":"北师大版","color":"#7c3aed","name":"北师大版 · 必修第二册"},{"ch":"第三章 空间向量与立体几何","chName":"空间向量与立体几何","no":"第三章","file":"BSDxb1.html","id":"n-3","book":"选择性必修 · 第一册","ver":"BSD","verName":"北师大版","color":"#7c3aed","name":"北师大版 · 选择性必修第一册"},{"ch":"第13章 立体几何初步","chName":"立体几何初步","no":"第13章","file":"SJb2.html","id":"n-5","book":"必修 · 第二册","ver":"SJ","verName":"苏教版","color":"#ea7317","name":"苏教版 · 必修第二册"},{"ch":"第6章 空间向量与立体几何","chName":"空间向量与立体几何","no":"第6章","file":"SJxb2.html","id":"n-1","book":"选择性必修 · 第二册","ver":"SJ","verName":"苏教版","color":"#ea7317","name":"苏教版 · 选择性必修第二册"},{"ch":"第4章 立体几何初步","chName":"立体几何初步","no":"第4章","file":"XJb2.html","id":"n-4","book":"必修 · 第二册","ver":"XJ","verName":"湘教版","color":"#db2777","name":"湘教版 · 必修第二册"},{"ch":"第2章 空间向量与立体几何","chName":"空间向量与立体几何","no":"第2章","file":"XJxb2.html","id":"n-2","book":"选择性必修 · 第二册","ver":"XJ","verName":"湘教版","color":"#db2777","name":"湘教版 · 选择性必修第二册"},{"ch":"第三章 立体几何初步","chName":"立体几何初步","no":"第三章","file":"EJBb3.html","id":"n-3","book":"必修 · 第三册","ver":"EJB","verName":"鄂教版","color":"#16a34a","name":"鄂教版 · 必修第三册"},{"ch":"第一章 空间向量与立体几何","chName":"空间向量与立体几何","no":"第一章","file":"EJBxb1.html","id":"n-1","book":"选择性必修 · 第一册","ver":"EJB","verName":"鄂教版","color":"#16a34a","name":"鄂教版 · 选择性必修第一册"},{"ch":"第十一章 简单几何体","chName":"简单几何体","no":"第十一章","file":"HJBb3.html","id":"n-2","book":"必修 · 第三册","ver":"HJB","verName":"沪教版","color":"#c026d3","name":"沪教版 · 必修第三册"},{"ch":"第三章 空间向量及其应用","chName":"空间向量及其应用","no":"第三章","file":"HJBxb1.html","id":"n-3","book":"选择性必修 · 第一册","ver":"HJB","verName":"沪教版","color":"#c026d3","name":"沪教版 · 选择性必修第一册"}]},{"name":"平面向量与复数","items":[{"ch":"第六章 平面向量及其应用","chName":"平面向量及其应用","no":"第六章","file":"RAb2.html","id":"n-1","book":"必修 · 第二册","ver":"RA","verName":"人教A版","color":"#2563eb","name":"人教A版 · 必修第二册"},{"ch":"第七章 复数","chName":"复数","no":"第七章","file":"RAb2.html","id":"n-2","book":"必修 · 第二册","ver":"RA","verName":"人教A版","color":"#2563eb","name":"人教A版 · 必修第二册"},{"ch":"第六章 平面向量","chName":"平面向量","no":"第六章","file":"RBb2.html","id":"n-3","book":"必修 · 第二册","ver":"RB","verName":"人教B版","color":"#0891b2","name":"人教B版 · 必修第二册"},{"ch":"第十章 复数","chName":"复数","no":"第十章","file":"RBb4.html","id":"n-2","book":"必修 · 第四册","ver":"RB","verName":"人教B版","color":"#0891b2","name":"人教B版 · 必修第四册"},{"ch":"第二章 平面向量及其应用","chName":"平面向量及其应用","no":"第二章","file":"BSDb2.html","id":"n-2","book":"必修 · 第二册","ver":"BSD","verName":"北师大版","color":"#7c3aed","name":"北师大版 · 必修第二册"},{"ch":"第五章 复数","chName":"复数","no":"第五章","file":"BSDb2.html","id":"n-5","book":"必修 · 第二册","ver":"BSD","verName":"北师大版","color":"#7c3aed","name":"北师大版 · 必修第二册"},{"ch":"第9章 平面向量","chName":"平面向量","no":"第9章","file":"SJb2.html","id":"n-1","book":"必修 · 第二册","ver":"SJ","verName":"苏教版","color":"#ea7317","name":"苏教版 · 必修第二册"},{"ch":"第12章 复数","chName":"复数","no":"第12章","file":"SJb2.html","id":"n-4","book":"必修 · 第二册","ver":"SJ","verName":"苏教版","color":"#ea7317","name":"苏教版 · 必修第二册"},{"ch":"第1章 平面向量及其应用","chName":"平面向量及其应用","no":"第1章","file":"XJb2.html","id":"n-1","book":"必修 · 第二册","ver":"XJ","verName":"湘教版","color":"#db2777","name":"湘教版 · 必修第二册"},{"ch":"第3章 复数","chName":"复数","no":"第3章","file":"XJb2.html","id":"n-3","book":"必修 · 第二册","ver":"XJ","verName":"湘教版","color":"#db2777","name":"湘教版 · 必修第二册"},{"ch":"第一章 平面向量及其应用","chName":"平面向量及其应用","no":"第一章","file":"EJBb3.html","id":"n-1","book":"必修 · 第三册","ver":"EJB","verName":"鄂教版","color":"#16a34a","name":"鄂教版 · 必修第三册"},{"ch":"第二章 复数","chName":"复数","no":"第二章","file":"EJBb3.html","id":"n-2","book":"必修 · 第三册","ver":"EJB","verName":"鄂教版","color":"#16a34a","name":"鄂教版 · 必修第三册"},{"ch":"第八章 平面向量","chName":"平面向量","no":"第八章","file":"HJBb2.html","id":"n-3","book":"必修 · 第二册","ver":"HJB","verName":"沪教版","color":"#c026d3","name":"沪教版 · 必修第二册"},{"ch":"第九章 复数","chName":"复数","no":"第九章","file":"HJBb2.html","id":"n-4","book":"必修 · 第二册","ver":"HJB","verName":"沪教版","color":"#c026d3","name":"沪教版 · 必修第二册"}]},{"name":"解析几何 · 直线圆与圆锥曲线","items":[{"ch":"第二章 直线和圆的方程","chName":"直线和圆的方程","no":"第二章","file":"RAxb1.html","id":"n-2","book":"选择性必修 · 第一册","ver":"RA","verName":"人教A版","color":"#2563eb","name":"人教A版 · 选择性必修第一册"},{"ch":"第三章 圆锥曲线的方程","chName":"圆锥曲线的方程","no":"第三章","file":"RAxb1.html","id":"n-3","book":"选择性必修 · 第一册","ver":"RA","verName":"人教A版","color":"#2563eb","name":"人教A版 · 选择性必修第一册"},{"ch":"第二章 平面解析几何","chName":"平面解析几何","no":"第二章","file":"RBxb1.html","id":"n-2","book":"选择性必修 · 第一册","ver":"RB","verName":"人教B版","color":"#0891b2","name":"人教B版 · 选择性必修第一册"},{"ch":"第一章 直线与圆","chName":"直线与圆","no":"第一章","file":"BSDxb1.html","id":"n-1","book":"选择性必修 · 第一册","ver":"BSD","verName":"北师大版","color":"#7c3aed","name":"北师大版 · 选择性必修第一册"},{"ch":"第二章 圆锥曲线","chName":"圆锥曲线","no":"第二章","file":"BSDxb1.html","id":"n-2","book":"选择性必修 · 第一册","ver":"BSD","verName":"北师大版","color":"#7c3aed","name":"北师大版 · 选择性必修第一册"},{"ch":"第1章 直线与方程","chName":"直线与方程","no":"第1章","file":"SJxb1.html","id":"n-1","book":"选择性必修 · 第一册","ver":"SJ","verName":"苏教版","color":"#ea7317","name":"苏教版 · 选择性必修第一册"},{"ch":"第2章 圆与方程","chName":"圆与方程","no":"第2章","file":"SJxb1.html","id":"n-2","book":"选择性必修 · 第一册","ver":"SJ","verName":"苏教版","color":"#ea7317","name":"苏教版 · 选择性必修第一册"},{"ch":"第3章 圆锥曲线与方程","chName":"圆锥曲线与方程","no":"第3章","file":"SJxb1.html","id":"n-3","book":"选择性必修 · 第一册","ver":"SJ","verName":"苏教版","color":"#ea7317","name":"苏教版 · 选择性必修第一册"},{"ch":"第2章 平面解析几何初步","chName":"平面解析几何初步","no":"第2章","file":"XJxb1.html","id":"n-2","book":"选择性必修 · 第一册","ver":"XJ","verName":"湘教版","color":"#db2777","name":"湘教版 · 选择性必修第一册"},{"ch":"第3章 圆锥曲线与方程","chName":"圆锥曲线与方程","no":"第3章","file":"XJxb1.html","id":"n-3","book":"选择性必修 · 第一册","ver":"XJ","verName":"湘教版","color":"#db2777","name":"湘教版 · 选择性必修第一册"},{"ch":"第二章 平面解析几何初步","chName":"平面解析几何初步","no":"第二章","file":"EJBxb1.html","id":"n-2","book":"选择性必修 · 第一册","ver":"EJB","verName":"鄂教版","color":"#16a34a","name":"鄂教版 · 选择性必修第一册"},{"ch":"第三章 圆锥曲线的方程","chName":"圆锥曲线的方程","no":"第三章","file":"EJBxb1.html","id":"n-3","book":"选择性必修 · 第一册","ver":"EJB","verName":"鄂教版","color":"#16a34a","name":"鄂教版 · 选择性必修第一册"},{"ch":"第十章 空间直线与平面","chName":"空间直线与平面","no":"第十章","file":"HJBb3.html","id":"n-1","book":"必修 · 第三册","ver":"HJB","verName":"沪教版","color":"#c026d3","name":"沪教版 · 必修第三册"},{"ch":"第一章 平面直角坐标系中的直线","chName":"平面直角坐标系中的直线","no":"第一章","file":"HJBxb1.html","id":"n-1","book":"选择性必修 · 第一册","ver":"HJB","verName":"沪教版","color":"#c026d3","name":"沪教版 · 选择性必修第一册"},{"ch":"第二章 圆锥曲线","chName":"圆锥曲线","no":"第二章","file":"HJBxb1.html","id":"n-2","book":"选择性必修 · 第一册","ver":"HJB","verName":"沪教版","color":"#c026d3","name":"沪教版 · 选择性必修第一册"}]},{"name":"计数原理与排列组合","items":[{"ch":"第六章 计数原理","chName":"计数原理","no":"第六章","file":"RAxb3.html","id":"n-1","book":"选择性必修 · 第三册","ver":"RA","verName":"人教A版","color":"#2563eb","name":"人教A版 · 选择性必修第三册"},{"ch":"第三章 计数原理","chName":"计数原理","no":"第三章","file":"RBxb2.html","id":"n-1","book":"选择性必修 · 第二册","ver":"RB","verName":"人教B版","color":"#0891b2","name":"人教B版 · 选择性必修第二册"},{"ch":"第五章 计数原理","chName":"计数原理","no":"第五章","file":"BSDxb1.html","id":"n-5","book":"选择性必修 · 第一册","ver":"BSD","verName":"北师大版","color":"#7c3aed","name":"北师大版 · 选择性必修第一册"},{"ch":"第7章 计数原理","chName":"计数原理","no":"第7章","file":"SJxb2.html","id":"n-2","book":"选择性必修 · 第二册","ver":"SJ","verName":"苏教版","color":"#ea7317","name":"苏教版 · 选择性必修第二册"},{"ch":"第4章 计数原理","chName":"计数原理","no":"第4章","file":"XJxb1.html","id":"n-4","book":"选择性必修 · 第一册","ver":"XJ","verName":"湘教版","color":"#db2777","name":"湘教版 · 选择性必修第一册"},{"ch":"第一章 计数原理","chName":"计数原理","no":"第一章","file":"EJBxb3.html","id":"n-1","book":"选择性必修 · 第三册","ver":"EJB","verName":"鄂教版","color":"#16a34a","name":"鄂教版 · 选择性必修第三册"},{"ch":"第六章 计数原理","chName":"计数原理","no":"第六章","file":"HJBxb2.html","id":"n-2","book":"选择性必修 · 第二册","ver":"HJB","verName":"沪教版","color":"#c026d3","name":"沪教版 · 选择性必修第二册"}]},{"name":"概率与统计","items":[{"ch":"第九章 统计","chName":"统计","no":"第九章","file":"RAb2.html","id":"n-4","book":"必修 · 第二册","ver":"RA","verName":"人教A版","color":"#2563eb","name":"人教A版 · 必修第二册"},{"ch":"第十章 概率","chName":"概率","no":"第十章","file":"RAb2.html","id":"n-5","book":"必修 · 第二册","ver":"RA","verName":"人教A版","color":"#2563eb","name":"人教A版 · 必修第二册"},{"ch":"第七章 随机变量及其分布","chName":"随机变量及其分布","no":"第七章","file":"RAxb3.html","id":"n-2","book":"选择性必修 · 第三册","ver":"RA","verName":"人教A版","color":"#2563eb","name":"人教A版 · 选择性必修第三册"},{"ch":"第八章 成对数据的统计分析","chName":"成对数据的统计分析","no":"第八章","file":"RAxb3.html","id":"n-3","book":"选择性必修 · 第三册","ver":"RA","verName":"人教A版","color":"#2563eb","name":"人教A版 · 选择性必修第三册"},{"ch":"第五章 统计与概率","chName":"统计与概率","no":"第五章","file":"RBb2.html","id":"n-2","book":"必修 · 第二册","ver":"RB","verName":"人教B版","color":"#0891b2","name":"人教B版 · 必修第二册"},{"ch":"第四章 概率与统计","chName":"概率与统计","no":"第四章","file":"RBxb2.html","id":"n-2","book":"选择性必修 · 第二册","ver":"RB","verName":"人教B版","color":"#0891b2","name":"人教B版 · 选择性必修第二册"},{"ch":"第六章 统计","chName":"统计","no":"第六章","file":"BSDb1.html","id":"n-6","book":"必修 · 第一册","ver":"BSD","verName":"北师大版","color":"#7c3aed","name":"北师大版 · 必修第一册"},{"ch":"第七章 概率","chName":"概率","no":"第七章","file":"BSDb1.html","id":"n-7","book":"必修 · 第一册","ver":"BSD","verName":"北师大版","color":"#7c3aed","name":"北师大版 · 必修第一册"},{"ch":"第六章 概率","chName":"概率","no":"第六章","file":"BSDxb1.html","id":"n-6","book":"选择性必修 · 第一册","ver":"BSD","verName":"北师大版","color":"#7c3aed","name":"北师大版 · 选择性必修第一册"},{"ch":"第七章 统计案例","chName":"统计案例","no":"第七章","file":"BSDxb1.html","id":"n-7","book":"选择性必修 · 第一册","ver":"BSD","verName":"北师大版","color":"#7c3aed","name":"北师大版 · 选择性必修第一册"},{"ch":"第14章 统计","chName":"统计","no":"第14章","file":"SJb2.html","id":"n-6","book":"必修 · 第二册","ver":"SJ","verName":"苏教版","color":"#ea7317","name":"苏教版 · 必修第二册"},{"ch":"第15章 概率","chName":"概率","no":"第15章","file":"SJb2.html","id":"n-7","book":"必修 · 第二册","ver":"SJ","verName":"苏教版","color":"#ea7317","name":"苏教版 · 必修第二册"},{"ch":"第8章 概率","chName":"概率","no":"第8章","file":"SJxb2.html","id":"n-3","book":"选择性必修 · 第二册","ver":"SJ","verName":"苏教版","color":"#ea7317","name":"苏教版 · 选择性必修第二册"},{"ch":"第9章 统计","chName":"统计","no":"第9章","file":"SJxb2.html","id":"n-4","book":"选择性必修 · 第二册","ver":"SJ","verName":"苏教版","color":"#ea7317","name":"苏教版 · 选择性必修第二册"},{"ch":"第6章 统计学初步","chName":"统计学初步","no":"第6章","file":"XJb1.html","id":"n-6","book":"必修 · 第一册","ver":"XJ","verName":"湘教版","color":"#db2777","name":"湘教版 · 必修第一册"},{"ch":"第5章 概率","chName":"概率","no":"第5章","file":"XJb2.html","id":"n-5","book":"必修 · 第二册","ver":"XJ","verName":"湘教版","color":"#db2777","name":"湘教版 · 必修第二册"},{"ch":"第3章 概率","chName":"概率","no":"第3章","file":"XJxb2.html","id":"n-3","book":"选择性必修 · 第二册","ver":"XJ","verName":"湘教版","color":"#db2777","name":"湘教版 · 选择性必修第二册"},{"ch":"第4章 统计","chName":"统计","no":"第4章","file":"XJxb2.html","id":"n-4","book":"选择性必修 · 第二册","ver":"XJ","verName":"湘教版","color":"#db2777","name":"湘教版 · 选择性必修第二册"},{"ch":"第一章 概率","chName":"概率","no":"第一章","file":"EJBb4.html","id":"n-1","book":"必修 · 第四册","ver":"EJB","verName":"鄂教版","color":"#16a34a","name":"鄂教版 · 必修第四册"},{"ch":"第二章 统计","chName":"统计","no":"第二章","file":"EJBb4.html","id":"n-2","book":"必修 · 第四册","ver":"EJB","verName":"鄂教版","color":"#16a34a","name":"鄂教版 · 必修第四册"},{"ch":"第二章 概率","chName":"概率","no":"第二章","file":"EJBxb3.html","id":"n-2","book":"选择性必修 · 第三册","ver":"EJB","verName":"鄂教版","color":"#16a34a","name":"鄂教版 · 选择性必修第三册"},{"ch":"第三章 统计","chName":"统计","no":"第三章","file":"EJBxb3.html","id":"n-3","book":"选择性必修 · 第三册","ver":"EJB","verName":"鄂教版","color":"#16a34a","name":"鄂教版 · 选择性必修第三册"},{"ch":"第十二章 概率初步","chName":"概率初步","no":"第十二章","file":"HJBb3.html","id":"n-3","book":"必修 · 第三册","ver":"HJB","verName":"沪教版","color":"#c026d3","name":"沪教版 · 必修第三册"},{"ch":"第十三章 统计","chName":"统计","no":"第十三章","file":"HJBb3.html","id":"n-4","book":"必修 · 第三册","ver":"HJB","verName":"沪教版","color":"#c026d3","name":"沪教版 · 必修第三册"},{"ch":"第七章 概率初步（续）","chName":"概率初步（续）","no":"第七章","file":"HJBxb2.html","id":"n-3","book":"选择性必修 · 第二册","ver":"HJB","verName":"沪教版","color":"#c026d3","name":"沪教版 · 选择性必修第二册"},{"ch":"第八章 成对数据的统计分析","chName":"成对数据的统计分析","no":"第八章","file":"HJBxb2.html","id":"n-4","book":"选择性必修 · 第二册","ver":"HJB","verName":"沪教版","color":"#c026d3","name":"沪教版 · 选择性必修第二册"}]},{"name":"数学建模 · 探究 · 附录","items":[{"ch":"附录：部分中英文词汇索引","chName":"部分中英文词汇索引","no":"附录","file":"RAb2.html","id":"n-6","book":"必修 · 第二册","ver":"RA","verName":"人教A版","color":"#2563eb","name":"人教A版 · 必修第二册"},{"ch":"附录 全书核心方法术语一览","chName":"全书核心方法术语一览","no":"附录","file":"RAxb1.html","id":"n-4","book":"选择性必修 · 第一册","ver":"RA","verName":"人教A版","color":"#2563eb","name":"人教A版 · 选择性必修第一册"},{"ch":"附录 全书核心公式与术语速查","chName":"全书核心公式与术语速查","no":"附录","file":"RAxb2.html","id":"n-3","book":"选择性必修 · 第二册","ver":"RA","verName":"人教A版","color":"#2563eb","name":"人教A版 · 选择性必修第二册"},{"ch":"附录","chName":"附录","no":"附录","file":"RAxb3.html","id":"n-4","book":"选择性必修 · 第三册","ver":"RA","verName":"人教A版","color":"#2563eb","name":"人教A版 · 选择性必修第三册"},{"ch":"第八章 数学建模活动（一）","chName":"数学建模活动（一）","no":"第八章","file":"BSDb1.html","id":"n-8","book":"必修 · 第一册","ver":"BSD","verName":"北师大版","color":"#7c3aed","name":"北师大版 · 必修第一册"},{"ch":"第三章 数学建模活动（二）","chName":"数学建模活动（二）","no":"第三章","file":"BSDb2.html","id":"n-3","book":"必修 · 第二册","ver":"BSD","verName":"北师大版","color":"#7c3aed","name":"北师大版 · 必修第二册"},{"ch":"第四章 数学建模活动（三）","chName":"数学建模活动（三）","no":"第四章","file":"BSDxb1.html","id":"n-4","book":"选择性必修 · 第一册","ver":"BSD","verName":"北师大版","color":"#7c3aed","name":"北师大版 · 选择性必修第一册"},{"ch":"第6章 数学建模","chName":"数学建模","no":"第6章","file":"XJb2.html","id":"n-6","book":"必修 · 第二册","ver":"XJ","verName":"湘教版","color":"#db2777","name":"湘教版 · 必修第二册"},{"ch":"引论 数学建模的基本认识","chName":"数学建模的基本认识","no":"引论","file":"HJBb4.html","id":"n-1","book":"必修 · 第四册","ver":"HJB","verName":"沪教版","color":"#c026d3","name":"沪教版 · 必修第四册"},{"ch":"第一部分 数学建模活动案例","chName":"数学建模活动案例","no":"第一部分","file":"HJBb4.html","id":"n-2","book":"必修 · 第四册","ver":"HJB","verName":"沪教版","color":"#c026d3","name":"沪教版 · 必修第四册"},{"ch":"第二部分 数学建模活动A","chName":"数学建模活动A","no":"第二部分","file":"HJBb4.html","id":"n-3","book":"必修 · 第四册","ver":"HJB","verName":"沪教版","color":"#c026d3","name":"沪教版 · 必修第四册"},{"ch":"第三部分 数学建模活动B","chName":"数学建模活动B","no":"第三部分","file":"HJBb4.html","id":"n-4","book":"必修 · 第四册","ver":"HJB","verName":"沪教版","color":"#c026d3","name":"沪教版 · 必修第四册"},{"ch":"引论 数学建模的深化","chName":"数学建模的深化","no":"引论","file":"HJBxb3.html","id":"n-1","book":"选择性必修 · 第三册","ver":"HJB","verName":"沪教版","color":"#c026d3","name":"沪教版 · 选择性必修第三册"},{"ch":"第一部分 数学建模活动案例","chName":"数学建模活动案例","no":"第一部分","file":"HJBxb3.html","id":"n-2","book":"选择性必修 · 第三册","ver":"HJB","verName":"沪教版","color":"#c026d3","name":"沪教版 · 选择性必修第三册"},{"ch":"第二部分 数学建模活动A","chName":"数学建模活动A","no":"第二部分","file":"HJBxb3.html","id":"n-3","book":"选择性必修 · 第三册","ver":"HJB","verName":"沪教版","color":"#c026d3","name":"沪教版 · 选择性必修第三册"},{"ch":"第三部分 数学建模活动B","chName":"数学建模活动B","no":"第三部分","file":"HJBxb3.html","id":"n-4","book":"选择性必修 · 第三册","ver":"HJB","verName":"沪教版","color":"#c026d3","name":"沪教版 · 选择性必修第三册"}]}],"totals":{"versions":7,"books":38,"chapters":155,"sections":689,"subsections":1410,"kps":11656,"files":38},"generated":"2026-11-06"}</script>
+<script>
+(function(){
+  "use strict";
+  var D = JSON.parse(document.getElementById('navData').textContent);
+  var state = {view:'version', filter:'RA', q:'', chapters:'open', cardOpen:{}, topicOpen:{}};
+  var $ = function(s){ return document.querySelector(s); };
+  function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g,function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+  function hl(text, q){
+    var s = esc(text);
+    if(!q) return s;
+    try { return s.replace(new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig'),'<mark style="background:#ffe6a1;color:#7c3a00;border-radius:2px;padding:0 1px">$1</mark>'); }
+    catch(e){ return s; }
+  }
+  function num(n){ return (n||0).toLocaleString('zh-CN'); }
+
+  // ---------- 工具条版本筛选 ----------
+  $('#verChips').innerHTML = D.versions.map(function(v){
+    return '<button class="fchip" data-filter="'+v.code+'" style="margin-right:6px">'+esc(v.name)+'</button>';
+  }).join('');
+
+  // ---------- 按版本视图 ----------
+  function bookCard(b, idx, forceOpen){
+    var q = state.q, all = b.chapters;
+    var hits = q ? all.filter(function(c){ return c.full.toLowerCase().indexOf(q) >= 0; }) : [];
+    var open = (state.chapters === 'open') || !!state.cardOpen[b.code] || forceOpen || hits.length > 0;
+    var limit = open ? all.length : 4;
+    var list = all.slice(0, limit).map(function(c, i){
+      var hit = q && c.full.toLowerCase().indexOf(q) >= 0;
+      return '<a class="chapter'+(hit?' hit':'')+'" href="'+b.file+'#'+c.id+'" target="_blank" rel="noopener" '+
+        'data-ch="'+esc(c.full)+'" data-book="'+esc(b.name)+'" title="打开《'+esc(b.name)+'》并定位：'+esc(c.full)+(c.meta?'（'+esc(c.meta)+'）':'')+'">'+
+        '<span class="ch-no">'+esc(isNaN(Number(c.ord))?c.ord:(Number(c.ord)<10?'0'+c.ord:c.ord))+'</span>'+
+        '<span class="ch-name">'+hl(c.full,q)+'</span>'+
+        (c.kp?'<span class="ch-kp">'+c.kp+' 点</span>':'')+
+        '<span class="ch-arrow">›</span></a>';
+    }).join('');
+    if(!open && all.length > 4){
+      list += '<button class="more" data-more="'+b.code+'">展开全部 '+all.length+' 章 ▾</button>';
+    } else if(state.chapters === 'closed' && !forceOpen && !hits.length && state.cardOpen[b.code]){
+      list += '<button class="more" data-fold="'+b.code+'">收起章目录 ▴</button>';
+    }
+    var s = b.stats;
+    return '<article class="book-card card" style="--vc:'+b.color+';--vcs:'+b.soft+';--d:'+(idx%6*0.035)+'s" data-code="'+b.code+'">'+
+      '<div class="bc-top"><span class="pill '+b.type+'">'+esc(b.short)+'</span><span class="code">'+esc(b.code)+'</span></div>'+
+      '<h3 class="bc-name">'+hl(b.name,q)+'</h3>'+
+      '<div class="bc-sub" title="'+esc(b.title)+' · '+esc(b.brief)+'">'+esc(b.brief)+'</div>'+
+      '<div class="metrics stat"><span class="metric"><b>'+s.ch+'</b> 章</span>'+
+        '<span class="metric"><b>'+s.sec+'</b> 节</span>'+
+        '<span class="metric"><b>'+s.sub+'</b> 小节</span>'+
+        '<span class="metric"><b>'+num(s.kp)+'</b> 知识点</span></div>'+
+      '<div class="chapters list">'+list+'</div>'+
+      '<a class="open-btn" href="'+b.file+'" target="_blank" rel="noopener" data-book="'+esc(b.name)+'">'+
+        '打开完整知识点目录'+
+        '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h13m-5-6 6 6-6 6"/></svg></a>'+
+      '</article>';
+  }
+
+  function renderVersion(){
+    var q = state.q, html = '', shownBooks = 0, shownChapters = 0, hitChapters = 0;
+    D.versions.forEach(function(v){
+      if(state.filter !== 'all' && state.filter !== 'b' && state.filter !== 'xb' && state.filter !== v.code) return;
+      var groups = [
+        {key:'b', label:'必修系列', cls:'b'},
+        {key:'xb', label:'选择性必修系列', cls:'xb'}
+      ];
+      var inner = '', vb = 0;
+      groups.forEach(function(g){
+        if(state.filter === 'b' && g.key !== 'b') return;
+        if(state.filter === 'xb' && g.key !== 'xb') return;
+        var books = v.books.filter(function(b){
+          if(b.type !== g.key) return false;
+          if(q && b.search.indexOf(q) < 0) return false;
+          return true;
+        });
+        if(!books.length) return;
+        vb += books.length;
+        var cols = ({1:2,2:2,3:3,4:2})[books.length] || 3;
+        inner += '<div class="group-title"><span class="gtag '+g.cls+'">'+g.label+'</span>'+
+                 '<span class="gcount">'+books.length+' 册</span></div>'+
+                 '<div class="book-grid" style="--cols:'+cols+'">'+
+                 books.map(function(b,i){ return bookCard(b,i,false); }).join('')+'</div>';
+      });
+      if(!vb) return;
+      shownBooks += vb;
+      v.books.forEach(function(b){
+        if((state.filter==='b'||state.filter==='xb') && b.type!==state.filter) return;
+        if(q && b.search.indexOf(q)<0) return;
+        shownChapters += b.chapters.length;
+        if(q) hitChapters += b.chapters.filter(function(c){
+          return c.full.toLowerCase().indexOf(q) >= 0; }).length;
+      });
+      html += '<section class="ver-block" id="ver-'+v.code+'" style="--vc:'+v.color+';--vcs:'+v.soft+'">'+
+        '<div class="ver-head"><div class="ver-badge">'+v.code+'</div>'+
+        '<div class="ver-txt"><div class="ver-name heading" data-level="2">'+esc(v.name)+'</div>'+
+        '<div class="ver-desc">'+esc(v.pub)+' · 共 '+v.books.length+' 册</div></div>'+
+        '<div class="ver-meta"><span class="vm"><b>'+v.totals.books+'</b> 册</span>'+
+        '<span class="vm"><b>'+v.totals.chapters+'</b> 章</span>'+
+        '<span class="vm"><b>'+num(v.totals.kps)+'</b> 知识点</span></div></div>'+
+        inner+'</section>';
+    });
+    $('#versionView').innerHTML = html;
+    return [shownBooks, shownChapters, hitChapters];
+  }
+
+  // ---------- 按主题视图 ----------
+  function renderTopic(){
+    var q = state.q, html = '', totalItems = 0, shownTopics = 0;
+    D.topics.forEach(function(t, ti){
+      var items = t.items.filter(function(it){
+        return !q || (it.ch + ' ' + it.name + ' ' + it.verName + ' ' + it.book).toLowerCase().indexOf(q) >= 0;
+      });
+      if(!items.length) return;
+      shownTopics++; totalItems += items.length;
+      var open = state.topicOpen[t.name] || !!q;
+      var list = items.slice(0, open ? items.length : 6).map(function(it){
+        return '<a class="tc-item" href="'+it.file+'#'+it.id+'" target="_blank" rel="noopener" '+
+          'data-ch="'+esc(it.ch)+'" data-book="'+esc(it.name)+'" title="'+esc(it.name)+' · '+esc(it.ch)+'">'+
+          '<span class="vbadge" style="background:'+it.color+'">'+esc(it.ver)+'</span>'+
+          '<span class="tc-book">'+esc(it.book)+'</span>'+
+          '<span class="tc-ch">'+hl(it.ch,q)+'</span><span class="tc-arrow">›</span></a>';
+      }).join('');
+      if(items.length > 6 && !q){
+        list += '<button class="topic-more" data-topic="'+esc(t.name)+'">'+
+          (open ? '收起 ▴' : '展开其余 '+(items.length-6)+' 章 ▾')+'</button>';
+      }
+      html += '<div class="topic-card card" style="--d:'+(ti%8*0.03)+'s">'+
+        '<div class="tc-head"><div class="tc-icon">'+(ti+1<10?'0':'')+(ti+1)+'</div>'+
+        '<div class="tc-name">'+esc(t.name)+'</div>'+
+        '<div class="tc-count">'+items.length+' 章 · 跨 '+new Set(items.map(function(x){return x.ver;})).size+' 个版本</div></div>'+
+        '<div class="tc-list">'+list+'</div></div>';
+    });
+    $('#topicGrid').innerHTML = html;
+    $('#topicIntro').innerHTML = '<b>按主题横向速查</b>：把七个版本 '+D.totals.chapters+
+      ' 个章按主题关键词归类，点击任意章即可直达对应教材目录。'+
+      (q ? ' 当前关键词「<b>'+esc(q)+'</b>」命中 '+totalItems+' 章。' : ' 共 '+shownTopics+' 个主题、'+totalItems+' 章。');
+    return [shownTopics, totalItems];
+  }
+
+  // ---------- 总渲染 ----------
+  function render(){
+    document.body.classList.toggle('filtering', !!state.q);
+    var isV = state.view === 'version';
+    $('#versionView').hidden = !isV;
+    $('#topicView').hidden = isV;
+    $('#toggleChapters').style.display = isV ? '' : 'none';
+    var r = isV ? renderVersion() : renderTopic();
+    var noResult = r[0] === 0;
+    $('#empty').hidden = !noResult;
+    if(isV){
+      $('#resultCount').innerHTML = state.q
+        ? '搜索「<b>'+esc(state.q)+'</b>」· 命中 <b>'+r[0]+'</b> 册 / <b>'+r[2]+'</b> 章'
+        : '共 <b>'+r[0]+'</b> 册教材 · <b>'+r[1]+'</b> 章';
+    } else {
+      $('#resultCount').innerHTML = state.q
+        ? '搜索「<b>'+esc(state.q)+'</b>」· 命中 <b>'+r[1]+'</b> 章'
+        : '共 <b>'+r[0]+'</b> 个主题 · <b>'+r[1]+'</b> 章';
+    }
+    Array.prototype.forEach.call(document.querySelectorAll('#viewSeg button'), function(b){
+      b.classList.toggle('on', b.dataset.view === state.view);
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('.fchip'), function(b){
+      b.classList.toggle('on', b.dataset.filter === state.filter);
+    });
+    $('#clearq').classList.toggle('show', !!state.q);
+  }
+
+  // ---------- 提示与剪贴板 ----------
+  var toastTimer;
+  function toast(msg){
+    var el = $('#toast'); el.textContent = msg; el.classList.add('show');
+    clearTimeout(toastTimer); toastTimer = setTimeout(function(){ el.classList.remove('show'); }, 3000);
+  }
+  function copyText(t){
+    try {
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(t).catch(function(){}); return;
+      }
+    } catch(e){}
+    try {
+      var ta = document.createElement('textarea'); ta.value = t;
+      ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta);
+      ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+    } catch(e){}
+  }
+
+  // ---------- 事件 ----------
+  $('#q').addEventListener('input', function(e){
+    state.q = e.target.value.trim().toLowerCase(); render();
+  });
+  $('#clearq').addEventListener('click', function(){
+    $('#q').value = ''; state.q = ''; render(); $('#q').focus();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === '/' && document.activeElement !== $('#q')){ e.preventDefault(); $('#q').focus(); }
+    if(e.key === 'Escape' && document.activeElement === $('#q')){
+      $('#q').value = ''; state.q = ''; render(); $('#q').blur();
+    }
+  });
+  $('#viewSeg').addEventListener('click', function(e){
+    var b = e.target.closest('button[data-view]'); if(!b) return;
+    state.view = b.dataset.view; render(); window.scrollTo({top:0,behavior:'smooth'});
+  });
+  $('#filterBar').addEventListener('click', function(e){
+    var b = e.target.closest('.fchip');
+    if(b){
+      state.filter = b.dataset.filter;
+      if(state.view !== 'version') state.view = 'version';
+      render(); return;
+    }
+    if(e.target.id === 'toggleChapters'){
+      state.chapters = state.chapters === 'open' ? 'closed' : 'open';
+      state.cardOpen = {};
+      e.target.textContent = state.chapters === 'open' ? '收起章目录' : '展开章目录';
+      render();
+    }
+  });
+  document.querySelector('main').addEventListener('click', function(e){
+    var m = e.target.closest('[data-more]');
+    if(m){ state.cardOpen[m.dataset.more] = true; render(); return; }
+    var f = e.target.closest('[data-fold]');
+    if(f){ delete state.cardOpen[f.dataset.fold]; render(); return; }
+    var t = e.target.closest('[data-topic]');
+    if(t){
+      var k = t.dataset.topic;
+      if(state.topicOpen[k]) delete state.topicOpen[k]; else state.topicOpen[k] = true;
+      render(); return;
+    }
+    var a = e.target.closest('a[data-ch]');
+    if(a){
+      copyText(a.dataset.ch);
+      toast('已打开《' + a.dataset.book + '》 · 章名「' + a.dataset.ch + '」已复制，可在页内搜索框精确定位');
+    }
+  });
+  render();
+})();
+</script>
+</body>
+</html>
